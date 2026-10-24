@@ -1,0 +1,56 @@
+/**
+ * PT Universal Theme Preset: Dracula Official (20_dracula.css)
+ * Zeno Rocha's iconic gothic developer color scheme.
+ * Canvas (#282A36), Current Line (#44475A), Dracula Purple (#BD93F9),
+ * Hot Pink (#FF79C6), Cyan (#8BE9FD), and Green (#50FA7B).
+ */
+
+:root[data-theme="dracula"] {
+  /* Surfaces */
+  --theme-bg: #282A36;
+  --theme-bg-subtle: #21222C;
+  --theme-surface: #282A36;
+  --theme-surface-container: #44475A;
+  --theme-surface-container-high: #6272A4;
+  --theme-surface-elevated: #44475A;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #F8F8F2;
+  --theme-text-muted: #6272A4;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-mono: 'Fira Code', 'Courier New', monospace;
+
+  /* Primary Action: Dracula Purple */
+  --theme-primary: #BD93F9;
+  --theme-primary-hover: #D6ACFF;
+  --theme-on-primary: #282A36;
+  --theme-primary-container: rgba(189, 147, 249, 0.20);
+  --theme-on-primary-container: #BD93F9;
+
+  /* Secondary & Accents */
+  --theme-secondary: #44475A;
+  --theme-on-secondary: #F8F8F2;
+  --theme-secondary-container: #6272A4;
+
+  --theme-accent: #FF79C6;
+  --theme-danger: #FF5555;
+  --theme-on-danger: #282A36;
+
+  /* Contrast Borders */
+  --theme-border: 1px solid #6272A4;
+  --theme-border-subtle: 1px solid rgba(98, 114, 164, 0.50);
+
+  /* Curvature: 8px */
+  --theme-border-radius: 8px;
+  --theme-card-radius: 8px;
+  --theme-btn-radius: 6px;
+
+  /* Shadows with purple glow */
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), 0 0 1px rgba(189, 147, 249, 0.2);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 10px rgba(189, 147, 249, 0.3);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}

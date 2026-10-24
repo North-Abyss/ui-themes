@@ -1,0 +1,60 @@
+/**
+ * ==============================================================================
+ * Preset 04: Claymorphism (3D Puffy Matte Clay / Inflatable UI)
+ * Aesthetic: Playful, tactile squishy volume, chunky organic curves, dual inset shadows
+ * ==============================================================================
+ */
+
+[data-theme="claymorphism"],
+[data-theme="clay-light"] {
+  --theme-name: "Claymorphism Light";
+  --theme-bg: #F4F0FD;
+  --theme-bg-subtle: #ECE6FA;
+
+  --theme-surface: #E8DFF5;
+  --theme-surface-container: #E0D4FC;
+  --theme-surface-elevated: #EDE4FC;
+
+  --theme-text: #4C1D95;
+  --theme-text-muted: #6D28D9;
+
+  --theme-primary: #8B5CF6;
+  --theme-primary-hover: #7C3AED;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #DDD6FE;
+  --theme-on-primary-container: #4C1D95;
+
+  --theme-secondary: #EC4899;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #FCE7F3;
+
+  --theme-accent: #10B981;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-2xl);     /* 32px chunky organic */
+  --theme-btn-radius: var(--radius-xl);         /* 24px */
+
+  /* Triple Box-Shadow Clay Recipe: Outer Float + Inner Dark + Inner Light */
+  --theme-shadow-sm: 8px 8px 16px rgba(139, 92, 246, 0.20),
+                     inset -4px -4px 8px rgba(109, 40, 217, 0.30),
+                     inset 4px 4px 8px rgba(255, 255, 255, 0.70);
+
+  --theme-shadow: 16px 16px 32px rgba(139, 92, 246, 0.22),
+                  inset -8px -8px 16px rgba(109, 40, 217, 0.35),
+                  inset 8px 8px 16px rgba(255, 255, 255, 0.75);
+
+  --theme-shadow-hover: 20px 20px 40px rgba(139, 92, 246, 0.28),
+                        inset -10px -10px 18px rgba(109, 40, 217, 0.40),
+                        inset 10px 10px 18px rgba(255, 255, 255, 0.85);
+
+  /* Recessed / Inset Input Field Shadow */
+  --theme-shadow-inset: inset 4px 4px 8px rgba(139, 92, 246, 0.20),
+                        inset -4px -4px 8px rgba(255, 255, 255, 0.80);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

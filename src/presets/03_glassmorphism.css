@@ -1,0 +1,97 @@
+/**
+ * ==============================================================================
+ * Preset 03: Glassmorphism 2.0 (Spatial Frosted Glass / visionOS)
+ * Aesthetic: Translucent frosted panels, specular borders, optical blur
+ * ==============================================================================
+ */
+
+[data-theme="glassmorphism"],
+[data-theme="glass-dark"] {
+  --theme-name: "Glassmorphism Dark";
+  --theme-bg: #0b0f19;
+  --theme-bg-subtle: #111827;
+
+  /* Ambient Mesh Glow Backdrop */
+  --theme-canvas-pattern: radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.20) 0%, transparent 45%),
+                          radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.20) 0%, transparent 50%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: rgba(255, 255, 255, 0.06);
+  --theme-surface-container: rgba(255, 255, 255, 0.10);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.15);
+
+  --theme-text: #F9FAFB;
+  --theme-text-muted: #9CA3AF;
+
+  --theme-primary: #38BDF8;
+  --theme-primary-hover: #0EA5E9;
+  --theme-on-primary: #0F172A;
+  --theme-primary-container: rgba(56, 189, 248, 0.20);
+  --theme-on-primary-container: #E0F2FE;
+
+  --theme-secondary: #C084FC;
+  --theme-on-secondary: #1E1B4B;
+  --theme-secondary-container: rgba(192, 132, 252, 0.20);
+
+  --theme-accent: #F472B6;
+  --theme-danger: #FB7185;
+  --theme-on-danger: #881337;
+
+  /* Specular Edge Highlights */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.18);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-border-radius: var(--radius-xl);      /* 24px */
+  --theme-btn-radius: var(--radius-md);         /* 12px */
+
+  --theme-shadow-sm: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --theme-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(16px) saturate(180%);
+}
+
+[data-theme="glass-light"] {
+  --theme-name: "Glassmorphism Light";
+  --theme-bg: #E0E7FF;
+  --theme-bg-subtle: #EEF2FF;
+
+  --theme-canvas-pattern: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.25) 0%, transparent 40%),
+                          radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.20) 0%, transparent 45%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: rgba(255, 255, 255, 0.45);
+  --theme-surface-container: rgba(255, 255, 255, 0.65);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.85);
+
+  --theme-text: #1E293B;
+  --theme-text-muted: #64748B;
+
+  --theme-primary: #4F46E5;
+  --theme-primary-hover: #4338CA;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(79, 70, 229, 0.15);
+  --theme-on-primary-container: #312E81;
+
+  --theme-secondary: #7C3AED;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: rgba(124, 58, 237, 0.15);
+
+  --theme-accent: #DB2777;
+  --theme-danger: #E11D48;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid rgba(255, 255, 255, 0.50);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.30);
+  --theme-border-radius: var(--radius-xl);
+  --theme-btn-radius: var(--radius-md);
+
+  --theme-shadow-sm: 0 4px 16px 0 rgba(31, 38, 135, 0.08);
+  --theme-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --theme-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(16px) saturate(180%);
+}

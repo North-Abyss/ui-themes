@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="material3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Theme Engine & Component Kitchen Sink — PT</title>
+  
+  <!-- Google Material Symbols & Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- Master Theme Stylesheets -->
+  <!-- Standalone Universal Theme Tokens & Presets (Zero-Latency Local Switching) -->
+  <style id="universalThemePresets">
+/**
+ * ==============================================================================
+ * Tier 1: Design Token Primitives (src/themes/tokens/primitives.css)
+ * Low-level raw values: Palettes, Spacing scales, Radii scales, Easings
+ * ==============================================================================
+ */
+
+:root {
+  /* Typography Stacks */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: "Outfit", "Space Grotesk", var(--font-sans);
+
+  /* Spacing Scale (4px Base Grid) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* Border Radius Primitives */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Animation & Easings */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* Material 3 Neutral Palette Scale (0 - 100) */
+  --pal-neutral-0: #000000;
+  --pal-neutral-4: #0e0e11;
+  --pal-neutral-6: #121316;
+  --pal-neutral-10: #1b1b1f;
+  --pal-neutral-12: #201f24;
+  --pal-neutral-17: #2a2a2f;
+  --pal-neutral-20: #303034;
+  --pal-neutral-22: #353539;
+  --pal-neutral-24: #3a393e;
+  --pal-neutral-30: #46464a;
+  --pal-neutral-40: #5e5e62;
+  --pal-neutral-50: #77767b;
+  --pal-neutral-60: #919095;
+  --pal-neutral-70: #acabb0;
+  --pal-neutral-80: #c8c6cb;
+  --pal-neutral-87: #dbd8de;
+  --pal-neutral-90: #e4e2e6;
+  --pal-neutral-92: #eae7ec;
+  --pal-neutral-94: #f0edf2;
+  --pal-neutral-95: #f3f0f5;
+  --pal-neutral-96: #f6f3f8;
+  --pal-neutral-98: #fdf8fd;
+  --pal-neutral-99: #fffbfe;
+  --pal-neutral-100: #ffffff;
+
+  /* M3 Primary Seed Palette (Indigo / Tech Blue) */
+  --pal-primary-10: #00105c;
+  --pal-primary-20: #001f8f;
+  --pal-primary-30: #0032b4;
+  --pal-primary-40: #294ede;
+  --pal-primary-80: #bac3ff;
+  --pal-primary-90: #dce1ff;
+
+  /* Neo-Brutalist Pop Primitives */
+  --pal-pop-yellow: #FFE600;
+  --pal-pop-mint: #00F0FF;
+  --pal-pop-lilac: #D6B4FC;
+  --pal-pop-coral: #FF5C5C;
+  --pal-pop-black: #000000;
+  --pal-pop-white: #FFFFFF;
+
+  /* Cyberpunk / Synthwave Primitives */
+  --pal-cyber-abyss: #0B001A;
+  --pal-cyber-neon-cyan: #00F0FF;
+  --pal-cyber-neon-magenta: #FF007F;
+  --pal-cyber-purple: #8B00FF;
+  --pal-cyber-hud-yellow: #FFE600;
+
+  /* Clay Pastel Primitives */
+  --pal-clay-lilac: #e0d4fc;
+  --pal-clay-mint: #d4fce5;
+  --pal-clay-peach: #fcdcd4;
+  --pal-clay-sky: #d4f0fc;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 01: Google Material 3 / Flutter (Material You)
+ * Aesthetic: Fluid, accessible, surface container elevation, pill buttons
+ * ==============================================================================
+ */
+
+[data-theme="material3"],
+[data-theme="material3-light"] {
+  --theme-name: "Material 3 Light";
+  --theme-bg: var(--pal-neutral-98);
+  --theme-bg-subtle: var(--pal-neutral-95);
+  
+  /* M3 Surface Container Hierarchy */
+  --theme-surface: var(--pal-neutral-99);
+  --theme-surface-container-low: var(--pal-neutral-96);
+  --theme-surface-container: var(--pal-neutral-94);
+  --theme-surface-container-high: var(--pal-neutral-92);
+  --theme-surface-elevated: var(--theme-surface-container);
+
+  --theme-text: var(--pal-neutral-10);
+  --theme-text-muted: var(--pal-neutral-40);
+
+  --theme-primary: var(--pal-primary-40);
+  --theme-primary-hover: var(--pal-primary-30);
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: var(--pal-primary-90);
+  --theme-on-primary-container: var(--pal-primary-10);
+
+  --theme-secondary: #575e71;
+  --theme-on-secondary: #ffffff;
+  --theme-secondary-container: #dbe2f9;
+
+  --theme-accent: #715573;
+  --theme-danger: #ba1a1a;
+  --theme-on-danger: #ffffff;
+
+  --theme-border: 1px solid var(--pal-neutral-87);
+  --theme-border-subtle: 1px solid var(--pal-neutral-92);
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-full);        /* 9999px (M3 Pills) */
+
+  /* M3 Elevation Level Shadows */
+  --theme-shadow-sm: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
+  --theme-shadow: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
+  --theme-shadow-hover: 0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px 0 rgba(0,0,0,0.30);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="material3-dark"] {
+  --theme-name: "Material 3 Dark";
+  --theme-bg: var(--pal-neutral-6);
+  --theme-bg-subtle: var(--pal-neutral-10);
+
+  --theme-surface: var(--pal-neutral-10);
+  --theme-surface-container-low: var(--pal-neutral-12);
+  --theme-surface-container: var(--pal-neutral-17);
+  --theme-surface-container-high: var(--pal-neutral-22);
+  --theme-surface-elevated: var(--theme-surface-container);
+
+  --theme-text: var(--pal-neutral-90);
+  --theme-text-muted: var(--pal-neutral-70);
+
+  --theme-primary: var(--pal-primary-80);
+  --theme-primary-hover: var(--pal-primary-90);
+  --theme-on-primary: var(--pal-primary-20);
+  --theme-primary-container: var(--pal-primary-30);
+  --theme-on-primary-container: var(--pal-primary-90);
+
+  --theme-secondary: #bfc6dc;
+  --theme-on-secondary: #293041;
+  --theme-secondary-container: #3f4759;
+
+  --theme-accent: #dfbbde;
+  --theme-danger: #ffb4ab;
+  --theme-on-danger: #690005;
+
+  --theme-border: 1px solid var(--pal-neutral-30);
+  --theme-border-subtle: 1px solid var(--pal-neutral-24);
+  --theme-border-radius: var(--radius-lg);
+  --theme-btn-radius: var(--radius-full);
+
+  --theme-shadow-sm: 0 1px 3px 1px rgba(0,0,0,0.35);
+  --theme-shadow: 0 2px 6px 2px rgba(0,0,0,0.40);
+  --theme-shadow-hover: 0 4px 10px 3px rgba(0,0,0,0.50);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 02: Minimal 2D Monochrome / Line Art ("Nothing" / Dieter Rams)
+ * Aesthetic: Stark, architectural, hairline outlines, 2D flat, dot-matrix grid
+ * ==============================================================================
+ */
+
+[data-theme="minimal-mono"],
+[data-theme="minimal-light"] {
+  --theme-name: "Minimal 2D Mono Light";
+  --theme-bg: #FFFFFF;
+  --theme-bg-subtle: #F6F6F6;
+  
+  /* Canvas Texture: Subtle 16px Dot-Matrix Grid */
+  --theme-canvas-pattern: radial-gradient(#111111 1px, transparent 1px);
+  --theme-canvas-size: 16px 16px;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #FAFAFA;
+  --theme-surface-elevated: #FFFFFF;
+
+  --theme-text: #000000;
+  --theme-text-muted: #666666;
+
+  --theme-primary: #000000;
+  --theme-primary-hover: #222222;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #EEEEEE;
+  --theme-on-primary-container: #000000;
+
+  --theme-secondary: #444444;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EAEAEA;
+
+  --theme-accent: #000000;
+  --theme-danger: #D32F2F;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #000000;
+  --theme-border-subtle: 1px solid #E0E0E0;
+  --theme-border-radius: var(--radius-xs);       /* 4px crisp micro-radius */
+  --theme-btn-radius: var(--radius-xs);          /* 4px */
+
+  /* Zero Drop Shadow — Flat 2D Blueprint Pure Aesthetic */
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #000000;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="minimal-dark"] {
+  --theme-name: "Minimal 2D Mono Dark";
+  --theme-bg: #0A0A0A;
+  --theme-bg-subtle: #141414;
+
+  --theme-canvas-pattern: radial-gradient(#333333 1px, transparent 1px);
+  --theme-canvas-size: 16px 16px;
+
+  --theme-surface: #111111;
+  --theme-surface-container: #181818;
+  --theme-surface-elevated: #1F1F1F;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #888888;
+
+  --theme-primary: #FFFFFF;
+  --theme-primary-hover: #E0E0E0;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #262626;
+  --theme-on-primary-container: #FFFFFF;
+
+  --theme-secondary: #CCCCCC;
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: #222222;
+
+  --theme-accent: #FFFFFF;
+  --theme-danger: #EF5350;
+  --theme-on-danger: #000000;
+
+  --theme-border: 1px solid #333333;
+  --theme-border-subtle: 1px solid #222222;
+  --theme-border-radius: var(--radius-xs);
+  --theme-btn-radius: var(--radius-xs);
+
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #FFFFFF;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 03: Glassmorphism 2.0 (Spatial Frosted Glass / visionOS)
+ * Aesthetic: Translucent frosted panels, specular borders, optical blur
+ * ==============================================================================
+ */
+
+[data-theme="glassmorphism"],
+[data-theme="glass-dark"] {
+  --theme-name: "Glassmorphism Dark";
+  --theme-bg: #0b0f19;
+  --theme-bg-subtle: #111827;
+
+  /* Ambient Mesh Glow Backdrop */
+  --theme-canvas-pattern: radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.20) 0%, transparent 45%),
+                          radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.20) 0%, transparent 50%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: rgba(255, 255, 255, 0.06);
+  --theme-surface-container: rgba(255, 255, 255, 0.10);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.15);
+
+  --theme-text: #F9FAFB;
+  --theme-text-muted: #9CA3AF;
+
+  --theme-primary: #38BDF8;
+  --theme-primary-hover: #0EA5E9;
+  --theme-on-primary: #0F172A;
+  --theme-primary-container: rgba(56, 189, 248, 0.20);
+  --theme-on-primary-container: #E0F2FE;
+
+  --theme-secondary: #C084FC;
+  --theme-on-secondary: #1E1B4B;
+  --theme-secondary-container: rgba(192, 132, 252, 0.20);
+
+  --theme-accent: #F472B6;
+  --theme-danger: #FB7185;
+  --theme-on-danger: #881337;
+
+  /* Specular Edge Highlights */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.18);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-border-radius: var(--radius-xl);      /* 24px */
+  --theme-btn-radius: var(--radius-md);         /* 12px */
+
+  --theme-shadow-sm: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --theme-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(16px) saturate(180%);
+}
+
+[data-theme="glass-light"] {
+  --theme-name: "Glassmorphism Light";
+  --theme-bg: #E0E7FF;
+  --theme-bg-subtle: #EEF2FF;
+
+  --theme-canvas-pattern: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.25) 0%, transparent 40%),
+                          radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.20) 0%, transparent 45%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: rgba(255, 255, 255, 0.45);
+  --theme-surface-container: rgba(255, 255, 255, 0.65);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.85);
+
+  --theme-text: #1E293B;
+  --theme-text-muted: #64748B;
+
+  --theme-primary: #4F46E5;
+  --theme-primary-hover: #4338CA;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(79, 70, 229, 0.15);
+  --theme-on-primary-container: #312E81;
+
+  --theme-secondary: #7C3AED;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: rgba(124, 58, 237, 0.15);
+
+  --theme-accent: #DB2777;
+  --theme-danger: #E11D48;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid rgba(255, 255, 255, 0.50);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.30);
+  --theme-border-radius: var(--radius-xl);
+  --theme-btn-radius: var(--radius-md);
+
+  --theme-shadow-sm: 0 4px 16px 0 rgba(31, 38, 135, 0.08);
+  --theme-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --theme-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(16px) saturate(180%);
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 04: Claymorphism (3D Puffy Matte Clay / Inflatable UI)
+ * Aesthetic: Playful, tactile squishy volume, chunky organic curves, dual inset shadows
+ * ==============================================================================
+ */
+
+[data-theme="claymorphism"],
+[data-theme="clay-light"] {
+  --theme-name: "Claymorphism Light";
+  --theme-bg: #F4F0FD;
+  --theme-bg-subtle: #ECE6FA;
+
+  --theme-surface: #E8DFF5;
+  --theme-surface-container: #E0D4FC;
+  --theme-surface-elevated: #EDE4FC;
+
+  --theme-text: #4C1D95;
+  --theme-text-muted: #6D28D9;
+
+  --theme-primary: #8B5CF6;
+  --theme-primary-hover: #7C3AED;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #DDD6FE;
+  --theme-on-primary-container: #4C1D95;
+
+  --theme-secondary: #EC4899;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #FCE7F3;
+
+  --theme-accent: #10B981;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-2xl);     /* 32px chunky organic */
+  --theme-btn-radius: var(--radius-xl);         /* 24px */
+
+  /* Triple Box-Shadow Clay Recipe: Outer Float + Inner Dark + Inner Light */
+  --theme-shadow-sm: 8px 8px 16px rgba(139, 92, 246, 0.20),
+                     inset -4px -4px 8px rgba(109, 40, 217, 0.30),
+                     inset 4px 4px 8px rgba(255, 255, 255, 0.70);
+
+  --theme-shadow: 16px 16px 32px rgba(139, 92, 246, 0.22),
+                  inset -8px -8px 16px rgba(109, 40, 217, 0.35),
+                  inset 8px 8px 16px rgba(255, 255, 255, 0.75);
+
+  --theme-shadow-hover: 20px 20px 40px rgba(139, 92, 246, 0.28),
+                        inset -10px -10px 18px rgba(109, 40, 217, 0.40),
+                        inset 10px 10px 18px rgba(255, 255, 255, 0.85);
+
+  /* Recessed / Inset Input Field Shadow */
+  --theme-shadow-inset: inset 4px 4px 8px rgba(139, 92, 246, 0.20),
+                        inset -4px -4px 8px rgba(255, 255, 255, 0.80);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 05: Neo-Brutalism & Retrobento (Gumroad / Figma Community)
+ * Aesthetic: High contrast, thick 2.5px solid black borders, 4px hard drop shadow
+ * ==============================================================================
+ */
+
+[data-theme="neobrutalism"],
+[data-theme="neo-light"] {
+  --theme-name: "Neo-Brutalism Pop";
+  --theme-bg: #FFFDF8;
+  --theme-bg-subtle: #FFF4D0;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #FFE600;          /* Signature Electric Yellow */
+  --theme-surface-elevated: #D6B4FC;           /* Pop Lilac */
+
+  --theme-text: #000000;
+  --theme-text-muted: #333333;
+
+  --theme-primary: #FFE600;
+  --theme-primary-hover: #E6CE00;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #FFF7A8;
+  --theme-on-primary-container: #000000;
+
+  --theme-secondary: #00F0FF;
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: #B8F9FF;
+
+  --theme-accent: #D6B4FC;
+  --theme-danger: #FF5C5C;
+  --theme-on-danger: #000000;
+
+  /* Hard Unapologetic Solid Outlines */
+  --theme-border: 2.5px solid #000000;
+  --theme-border-subtle: 2px solid #000000;
+  --theme-border-radius: var(--radius-sm);      /* 8px */
+  --theme-btn-radius: var(--radius-sm);
+
+  /* Hard Offset Drop Shadows (Zero Blur) */
+  --theme-shadow-sm: 2px 2px 0px #000000;
+  --theme-shadow: 4px 4px 0px #000000;
+  --theme-shadow-hover: 6px 6px 0px #000000;
+
+  --theme-font: var(--font-display);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 06: Neumorphism / Soft UI (Extruded Plastic)
+ * Aesthetic: Seamless background extrusion, opposing light and dark soft shadows
+ * ==============================================================================
+ */
+
+[data-theme="neumorphism"],
+[data-theme="neu-light"] {
+  --theme-name: "Neumorphism Light";
+  --theme-bg: #E0E5EC;
+  --theme-bg-subtle: #D8DFE9;
+
+  --theme-surface: #E0E5EC;
+  --theme-surface-container: #E0E5EC;
+  --theme-surface-elevated: #E0E5EC;
+
+  --theme-text: #3D4451;
+  --theme-text-muted: #798393;
+
+  --theme-primary: #3B82F6;
+  --theme-primary-hover: #2563EB;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #DBEAFE;
+  --theme-on-primary-container: #1E3A8A;
+
+  --theme-secondary: #6B7280;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #E5E7EB;
+
+  --theme-accent: #8B5CF6;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-md);          /* 12px */
+
+  /* Dual Extruded Shadows: Bottom-Right Dark + Top-Left Pure White Highlight */
+  --theme-shadow-sm: 4px 4px 8px #bec3c9, -4px -4px 8px #ffffff;
+  --theme-shadow: 8px 8px 16px #bec3c9, -8px -8px 16px #ffffff;
+  --theme-shadow-hover: 12px 12px 20px #bec3c9, -12px -12px 20px #ffffff;
+
+  /* Debossed Inset Shadow (Pressed button / Input field) */
+  --theme-shadow-inset: inset 5px 5px 10px #bec3c9, inset -5px -5px 10px #ffffff;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 07: Cyberpunk / Synthwave (Neon Glow HUD)
+ * Aesthetic: Dark abyss, electric cyan/magenta glowing borders, sci-fi telemetry
+ * ==============================================================================
+ */
+
+[data-theme="cyberpunk"],
+[data-theme="cyber-dark"] {
+  --theme-name: "Cyberpunk Synthwave";
+  --theme-bg: #090014;
+  --theme-bg-subtle: #120029;
+
+  /* CRT Scanline Overlay */
+  --theme-canvas-pattern: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.40) 50%),
+                          linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  --theme-canvas-size: 100% 4px, 6px 100%;
+
+  --theme-surface: #13032b;
+  --theme-surface-container: #1b053d;
+  --theme-surface-elevated: #28085c;
+
+  --theme-text: #00F0FF;                        /* Electric Cyan HUD Text */
+  --theme-text-muted: #FF77E9;
+
+  --theme-primary: #FF007F;                      /* Neon Magenta */
+  --theme-primary-hover: #E60073;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(255, 0, 127, 0.25);
+  --theme-on-primary-container: #FFB3DE;
+
+  --theme-secondary: #00F0FF;                    /* Electric Cyan */
+  --theme-on-secondary: #090014;
+  --theme-secondary-container: rgba(0, 240, 255, 0.20);
+
+  --theme-accent: #FFE600;                       /* Warning Yellow */
+  --theme-danger: #FF003C;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #00F0FF;
+  --theme-border-subtle: 1px solid rgba(255, 0, 127, 0.40);
+  --theme-border-radius: var(--radius-xs);       /* 4px angular HUD */
+  --theme-btn-radius: var(--radius-xs);
+
+  /* Neon Aura Glows */
+  --theme-shadow-sm: 0 0 10px rgba(0, 240, 255, 0.35);
+  --theme-shadow: 0 0 20px rgba(255, 0, 127, 0.40), inset 0 0 10px rgba(0, 240, 255, 0.15);
+  --theme-shadow-hover: 0 0 30px rgba(0, 240, 255, 0.60), inset 0 0 15px rgba(255, 0, 127, 0.30);
+
+  --theme-font: var(--font-mono);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 08: Bento Grid / Linear-Vercel Modern Dark
+ * Aesthetic: Deep obsidian charcoal, luminous hairline gradient borders, modular SaaS
+ * ==============================================================================
+ */
+
+[data-theme="bento-modern"],
+[data-theme="linear-dark"] {
+  --theme-name: "Bento Modern Dark";
+  --theme-bg: #080808;
+  --theme-bg-subtle: #0F0F0F;
+
+  --theme-canvas-pattern: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.12) 0%, transparent 60%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: #121212;
+  --theme-surface-container: #171717;
+  --theme-surface-elevated: #222222;
+
+  --theme-text: #EDEDED;
+  --theme-text-muted: #888888;
+
+  --theme-primary: #5E6AD2;                      /* Linear Signature Indigo */
+  --theme-primary-hover: #4F5BC0;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(94, 106, 210, 0.20);
+  --theme-on-primary-container: #C8CCFF;
+
+  --theme-secondary: #262626;
+  --theme-on-secondary: #EDEDED;
+  --theme-secondary-container: #1C1C1C;
+
+  --theme-accent: #E5E5E5;
+  --theme-danger: #F87171;
+  --theme-on-danger: #450A0A;
+
+  /* Luminous Hairline Borders */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.05);
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-sm);          /* 8px */
+
+  --theme-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.50);
+  --theme-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.65);
+  --theme-shadow-hover: 0 8px 30px 0 rgba(0, 0, 0, 0.80), 0 0 0 1px rgba(255, 255, 255, 0.20);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 09: Retro Y2K / 90s OS (Classic Windows 95 & System 7)
+ * Aesthetic: Battleship gray, beveled chrome 3D buttons, nostalgic computing
+ * ==============================================================================
+ */
+
+[data-theme="retro-90s"],
+[data-theme="win95"] {
+  --theme-name: "Retro 90s OS";
+  --theme-bg: #008080;                          /* Classic Win95 Teal Canvas */
+  --theme-bg-subtle: #C0C0C0;
+
+  --theme-surface: #C0C0C0;
+  --theme-surface-container: #DFDFDF;
+  --theme-surface-elevated: #C0C0C0;
+
+  --theme-text: #000000;
+  --theme-text-muted: #555555;
+
+  --theme-primary: #000080;                      /* Classic Active Titlebar Navy */
+  --theme-primary-hover: #1084D0;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #C0C0C0;
+  --theme-on-primary-container: #000080;
+
+  --theme-secondary: #808080;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #D4D0C8;
+
+  --theme-accent: #000080;
+  --theme-danger: #800000;
+  --theme-on-danger: #FFFFFF;
+
+  /* Classic 3D Bevel Borders */
+  --theme-border: 2px solid;
+  --theme-border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  --theme-border-subtle: 1px solid #808080;
+  --theme-border-radius: var(--radius-none);    /* Pure 0px Sharp */
+  --theme-btn-radius: var(--radius-none);
+
+  /* Windows 95 Beveled Button Outlines */
+  --theme-shadow-sm: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+  --theme-shadow: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+  --theme-shadow-hover: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+
+  /* Pressed / Depressed Button State */
+  --theme-shadow-inset: inset 1px 1px #000000, inset -1px -1px #FFFFFF, inset 2px 2px #808080, inset -2px -2px #DFDFDF;
+
+  --theme-font: "MS Sans Serif", Tahoma, var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+
+/**
+ * ==============================================================================
+ * Preset 10: OLED Pure Black Minimalist
+ * Aesthetic: True #000000 black canvas, infinite contrast, extreme battery-saver
+ * ==============================================================================
+ */
+
+[data-theme="oled-black"],
+[data-theme="oled-pure"] {
+  --theme-name: "OLED Pure Black";
+  --theme-bg: #000000;
+  --theme-bg-subtle: #080808;
+
+  --theme-surface: #000000;
+  --theme-surface-container: #0C0C0C;
+  --theme-surface-elevated: #141414;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #8E8E93;
+
+  --theme-primary: #FFFFFF;
+  --theme-primary-hover: #E5E5EA;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #1C1C1E;
+  --theme-on-primary-container: #FFFFFF;
+
+  --theme-secondary: #2C2C2E;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #1C1C1E;
+
+  --theme-accent: #30D158;                      /* Minimalist Phosphor Mint */
+  --theme-danger: #FF453A;
+  --theme-on-danger: #000000;
+
+  --theme-border: 1px solid #222222;
+  --theme-border-subtle: 1px solid #161616;
+  --theme-border-radius: var(--radius-md);       /* 12px */
+  --theme-btn-radius: var(--radius-sm);          /* 8px */
+
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #333333;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   11. Aurora Mesh Glow / Spatial Morphism (iOS 18 Siri / VisionOS Spatial UI)
+   -------------------------------------------------------------------------- */
+:root[data-theme="aurora-glow"] {
+  --theme-name: "Aurora Mesh Glow / Spatial";
+  --theme-bg: #090714;
+  --theme-bg-subtle: #120e24;
+  --theme-canvas-pattern: radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.28) 0%, transparent 45%), radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.25) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.16) 0%, transparent 55%);
+  --theme-surface: rgba(19, 14, 36, 0.65);
+  --theme-surface-container: rgba(28, 20, 52, 0.60);
+  --theme-surface-elevated: rgba(38, 28, 68, 0.75);
+
+  --theme-text: #F8FAFC;
+  --theme-text-muted: #94A3B8;
+
+  --theme-primary: #A855F7;
+  --theme-primary-hover: #9333EA;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(168, 85, 247, 0.25);
+  --theme-on-primary-container: #F3E8FF;
+
+  --theme-secondary: #38BDF8;
+  --theme-on-secondary: #0B0813;
+  --theme-secondary-container: rgba(56, 189, 248, 0.25);
+
+  --theme-accent: #EC4899;
+  --theme-danger: #F43F5E;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid rgba(255, 255, 255, 0.18);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-border-radius: 22px;
+  --theme-btn-radius: 9999px;
+
+  --theme-shadow-sm: 0 4px 16px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  --theme-shadow: 0 12px 36px 0 rgba(168, 85, 247, 0.22), 0 4px 12px 0 rgba(0, 0, 0, 0.40), inset 0 1px 1px rgba(255, 255, 255, 0.30);
+  --theme-shadow-hover: 0 20px 50px 0 rgba(168, 85, 247, 0.38), 0 6px 18px 0 rgba(0, 0, 0, 0.50);
+
+  --theme-font: 'Inter', -apple-system, sans-serif;
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(28px) saturate(180%);
+}
+
+/* --------------------------------------------------------------------------
+   12. Frutiger Aero / Y2K Glossy Liquid Glass
+   -------------------------------------------------------------------------- */
+:root[data-theme="frutiger-aero"] {
+  --theme-name: "Frutiger Aero / Y2K Liquid Glass";
+  --theme-bg: #E0F2FE;
+  --theme-bg-subtle: #BAE6FD;
+  --theme-canvas-pattern: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 35%, #7DD3FC 100%);
+  --theme-surface: rgba(255, 255, 255, 0.78);
+  --theme-surface-container: rgba(255, 255, 255, 0.65);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.92);
+
+  --theme-text: #0C4A6E;
+  --theme-text-muted: #0369A1;
+
+  --theme-primary: #0284C7;
+  --theme-primary-hover: #0369A1;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(2, 132, 199, 0.20);
+  --theme-on-primary-container: #082F49;
+
+  --theme-secondary: #10B981;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: rgba(16, 185, 129, 0.20);
+
+  --theme-accent: #38BDF8;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid rgba(255, 255, 255, 0.85);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.50);
+  --theme-border-radius: 18px;
+  --theme-btn-radius: 9999px;
+
+  --theme-shadow-sm: 0 4px 12px rgba(2, 132, 199, 0.12), inset 0 2px 2px rgba(255, 255, 255, 0.9);
+  --theme-shadow: 0 10px 28px rgba(2, 132, 199, 0.18), inset 0 2px 3px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(14, 165, 233, 0.25);
+  --theme-shadow-hover: 0 16px 36px rgba(2, 132, 199, 0.28), inset 0 2px 3px rgba(255, 255, 255, 1);
+
+  --theme-font: 'Segoe UI', -apple-system, sans-serif;
+  --theme-font-mono: 'Consolas', monospace;
+  --theme-backdrop: blur(16px);
+}
+
+/* --------------------------------------------------------------------------
+   13. Phosphor CRT Cyber Terminal
+   -------------------------------------------------------------------------- */
+:root[data-theme="phosphor-terminal"] {
+  --theme-name: "Phosphor CRT Cyber Terminal";
+  --theme-bg: #070B07;
+  --theme-bg-subtle: #0C140C;
+  --theme-canvas-pattern: repeating-linear-gradient(0deg, rgba(0, 255, 102, 0.04) 0px, rgba(0, 255, 102, 0.04) 1px, transparent 1px, transparent 3px);
+  --theme-surface: rgba(12, 20, 12, 0.92);
+  --theme-surface-container: #0C160C;
+  --theme-surface-elevated: #142414;
+
+  --theme-text: #00FF66;
+  --theme-text-muted: #008833;
+
+  --theme-primary: #00FF66;
+  --theme-primary-hover: #33FF88;
+  --theme-on-primary: #070B07;
+  --theme-primary-container: rgba(0, 255, 102, 0.15);
+  --theme-on-primary-container: #00FF66;
+
+  --theme-secondary: #008833;
+  --theme-on-secondary: #00FF66;
+  --theme-secondary-container: rgba(0, 136, 51, 0.20);
+
+  --theme-accent: #FFB000;
+  --theme-danger: #FF3333;
+  --theme-on-danger: #070B07;
+
+  --theme-border: 1px solid #00FF66;
+  --theme-border-subtle: 1px solid #008833;
+  --theme-border-radius: 2px;
+  --theme-btn-radius: 2px;
+
+  --theme-shadow-sm: 0 0 10px rgba(0, 255, 102, 0.20);
+  --theme-shadow: 0 0 20px rgba(0, 255, 102, 0.35), inset 0 0 8px rgba(0, 255, 102, 0.15);
+  --theme-shadow-hover: 0 0 30px rgba(0, 255, 102, 0.55), inset 0 0 12px rgba(0, 255, 102, 0.25);
+
+  --theme-font: 'Courier New', 'Fira Code', monospace;
+  --theme-font-mono: 'Courier New', monospace;
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   14. Nord Arctic Frost
+   -------------------------------------------------------------------------- */
+:root[data-theme="nord-frost"] {
+  --theme-name: "Nord Arctic Frost";
+  --theme-bg: #2E3440;
+  --theme-bg-subtle: #242933;
+  --theme-canvas-pattern: none;
+  --theme-surface: #3B4252;
+  --theme-surface-container: #434C5E;
+  --theme-surface-elevated: #4C566A;
+
+  --theme-text: #ECEFF4;
+  --theme-text-muted: #D8DEE9;
+
+  --theme-primary: #88C0D0;
+  --theme-primary-hover: #81A1C1;
+  --theme-on-primary: #2E3440;
+  --theme-primary-container: rgba(136, 192, 208, 0.20);
+  --theme-on-primary-container: #88C0D0;
+
+  --theme-secondary: #8FBCBB;
+  --theme-on-secondary: #2E3440;
+  --theme-secondary-container: rgba(143, 188, 187, 0.20);
+
+  --theme-accent: #EBCB8B;
+  --theme-danger: #BF616A;
+  --theme-on-danger: #ECEFF4;
+
+  --theme-border: 1px solid #4C566A;
+  --theme-border-subtle: 1px solid rgba(76, 86, 106, 0.60);
+  --theme-border-radius: 12px;
+  --theme-btn-radius: 8px;
+
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.45);
+
+  --theme-font: 'Inter', -apple-system, sans-serif;
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   15. Papercraft & Origami Tactile
+   -------------------------------------------------------------------------- */
+:root[data-theme="papercraft"] {
+  --theme-name: "Papercraft & Origami";
+  --theme-bg: #F5F2EB;
+  --theme-bg-subtle: #EBE6DC;
+  --theme-canvas-pattern: linear-gradient(135deg, #F8F5EE 0%, #EFEBE0 100%);
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #FAF8F5;
+  --theme-surface-elevated: #F3EFE6;
+
+  --theme-text: #2B2620;
+  --theme-text-muted: #78716C;
+
+  --theme-primary: #C25E3E;
+  --theme-primary-hover: #A84D31;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #F9EBE6;
+  --theme-on-primary-container: #5C2514;
+
+  --theme-secondary: #2C5E55;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #E3EDE9;
+
+  --theme-accent: #D97706;
+  --theme-danger: #DC2626;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #E5E0D5;
+  --theme-border-subtle: 1px solid #ECE7DC;
+  --theme-border-radius: 6px;
+  --theme-btn-radius: 4px;
+
+  --theme-shadow-sm: 0 1px 3px rgba(43, 38, 32, 0.05), 0 1px 2px rgba(43, 38, 32, 0.08);
+  --theme-shadow: 0 4px 12px rgba(43, 38, 32, 0.08), 0 1px 3px rgba(43, 38, 32, 0.06);
+  --theme-shadow-hover: 0 8px 20px rgba(43, 38, 32, 0.12), 0 2px 4px rgba(43, 38, 32, 0.08);
+
+  --theme-font: 'Georgia', serif;
+  --theme-font-mono: 'Courier New', monospace;
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   16. GitHub Primer Dark Default
+   -------------------------------------------------------------------------- */
+:root[data-theme="github-dark"] {
+  --theme-name: "GitHub Primer Dark";
+  --theme-bg: #0D1117;
+  --theme-bg-subtle: #161B22;
+  --theme-surface: #161B22;
+  --theme-surface-container: #161B22;
+  --theme-surface-elevated: #21262D;
+
+  --theme-text: #F0F6FC;
+  --theme-text-muted: #8B949E;
+
+  --theme-primary: #238636;
+  --theme-primary-hover: #2EA043;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(35, 134, 54, 0.18);
+  --theme-on-primary-container: #3FB950;
+
+  --theme-secondary: #21262D;
+  --theme-on-secondary: #C9D1D9;
+  --theme-secondary-container: #30363D;
+
+  --theme-accent: #58A6FF;
+  --theme-danger: #DA3633;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #30363D;
+  --theme-border-subtle: 1px solid #21262D;
+  --theme-border-radius: 6px;
+  --theme-btn-radius: 6px;
+
+  --theme-shadow-sm: none;
+  --theme-shadow: 0 1px 0 rgba(1, 4, 9, 0.1);
+  --theme-shadow-hover: 0 3px 6px rgba(1, 4, 9, 0.2);
+
+  --theme-font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --theme-font-mono: ui-monospace, SFMono-Regular, monospace;
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   17. VS Code Modern Dark+
+   -------------------------------------------------------------------------- */
+:root[data-theme="vscode-dark"] {
+  --theme-name: "VS Code Dark+";
+  --theme-bg: #1E1E1E;
+  --theme-bg-subtle: #252526;
+  --theme-surface: #252526;
+  --theme-surface-container: #2D2D2D;
+  --theme-surface-elevated: #333333;
+
+  --theme-text: #D4D4D4;
+  --theme-text-muted: #858585;
+
+  --theme-primary: #007ACC;
+  --theme-primary-hover: #0062A3;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(0, 122, 204, 0.20);
+  --theme-on-primary-container: #4FC1FF;
+
+  --theme-secondary: #3C3C3C;
+  --theme-on-secondary: #CCCCCC;
+  --theme-secondary-container: #333333;
+
+  --theme-accent: #4EC9B0;
+  --theme-danger: #F14C4C;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #3C3C3C;
+  --theme-border-subtle: 1px solid #2D2D2D;
+  --theme-border-radius: 2px;
+  --theme-btn-radius: 2px;
+
+  --theme-shadow-sm: none;
+  --theme-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.50);
+
+  --theme-font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --theme-font-mono: 'Consolas', monospace;
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   18. Tokyo Night (Folke)
+   -------------------------------------------------------------------------- */
+:root[data-theme="tokyo-night"] {
+  --theme-name: "Tokyo Night";
+  --theme-bg: #1A1B26;
+  --theme-bg-subtle: #16161E;
+  --theme-surface: #24283B;
+  --theme-surface-container: #1F2335;
+  --theme-surface-elevated: #292E42;
+
+  --theme-text: #C0CAF5;
+  --theme-text-muted: #565F89;
+
+  --theme-primary: #7AA2F7;
+  --theme-primary-hover: #89DDFF;
+  --theme-on-primary: #15161E;
+  --theme-primary-container: rgba(122, 162, 247, 0.20);
+  --theme-on-primary-container: #7AA2F7;
+
+  --theme-secondary: #292E42;
+  --theme-on-secondary: #C0CAF5;
+  --theme-secondary-container: #3B4261;
+
+  --theme-accent: #BB9AF7;
+  --theme-danger: #F7768E;
+  --theme-on-danger: #15161E;
+
+  --theme-border: 1px solid #292E42;
+  --theme-border-subtle: 1px solid rgba(41, 46, 66, 0.60);
+  --theme-border-radius: 8px;
+  --theme-btn-radius: 6px;
+
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 1px rgba(122, 162, 247, 0.15);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 8px rgba(122, 162, 247, 0.25);
+
+  --theme-font: 'Inter', -apple-system, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', monospace;
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   19. Catppuccin Mocha
+   -------------------------------------------------------------------------- */
+:root[data-theme="catppuccin-mocha"] {
+  --theme-name: "Catppuccin Mocha";
+  --theme-bg: #1E1E2E;
+  --theme-bg-subtle: #181825;
+  --theme-surface: #181825;
+  --theme-surface-container: #313244;
+  --theme-surface-elevated: #45475A;
+
+  --theme-text: #CDD6F4;
+  --theme-text-muted: #A6ADC8;
+
+  --theme-primary: #CBA6F7;
+  --theme-primary-hover: #B4BEFE;
+  --theme-on-primary: #11111B;
+  --theme-primary-container: rgba(203, 166, 247, 0.20);
+  --theme-on-primary-container: #CBA6F7;
+
+  --theme-secondary: #45475A;
+  --theme-on-secondary: #CDD6F4;
+  --theme-secondary-container: #313244;
+
+  --theme-accent: #89B4FA;
+  --theme-danger: #F38BA8;
+  --theme-on-danger: #11111B;
+
+  --theme-border: 1px solid #45475A;
+  --theme-border-subtle: 1px solid #313244;
+  --theme-border-radius: 12px;
+  --theme-btn-radius: 8px;
+
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  --theme-font: 'Inter', -apple-system, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', monospace;
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   20. Dracula Official
+   -------------------------------------------------------------------------- */
+:root[data-theme="dracula"] {
+  --theme-name: "Dracula Official";
+  --theme-bg: #282A36;
+  --theme-bg-subtle: #21222C;
+  --theme-surface: #282A36;
+  --theme-surface-container: #44475A;
+  --theme-surface-elevated: #6272A4;
+
+  --theme-text: #F8F8F2;
+  --theme-text-muted: #6272A4;
+
+  --theme-primary: #BD93F9;
+  --theme-primary-hover: #D6ACFF;
+  --theme-on-primary: #282A36;
+  --theme-primary-container: rgba(189, 147, 249, 0.20);
+  --theme-on-primary-container: #BD93F9;
+
+  --theme-secondary: #44475A;
+  --theme-on-secondary: #F8F8F2;
+  --theme-secondary-container: #6272A4;
+
+  --theme-accent: #FF79C6;
+  --theme-danger: #FF5555;
+  --theme-on-danger: #282A36;
+
+  --theme-border: 1px solid #6272A4;
+  --theme-border-subtle: 1px solid rgba(98, 114, 164, 0.50);
+  --theme-border-radius: 8px;
+  --theme-btn-radius: 6px;
+
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), 0 0 1px rgba(189, 147, 249, 0.2);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 10px rgba(189, 147, 249, 0.3);
+
+  --theme-font: 'Inter', -apple-system, sans-serif;
+  --theme-font-mono: 'Fira Code', monospace;
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   21. One Dark Pro
+   -------------------------------------------------------------------------- */
+:root[data-theme="one-dark"] {
+  --theme-name: "One Dark Pro";
+  --theme-bg: #282C34;
+  --theme-bg-subtle: #21252B;
+  --theme-surface: #2C313A;
+  --theme-surface-container: #21252B;
+  --theme-surface-elevated: #353B45;
+
+  --theme-text: #ABB2BF;
+  --theme-text-muted: #5C6370;
+
+  --theme-primary: #61AFEF;
+  --theme-primary-hover: #4D97D5;
+  --theme-on-primary: #282C34;
+  --theme-primary-container: rgba(97, 175, 239, 0.20);
+  --theme-on-primary-container: #61AFEF;
+
+  --theme-secondary: #353B45;
+  --theme-on-secondary: #ABB2BF;
+  --theme-secondary-container: #2C313A;
+
+  --theme-accent: #98C379;
+  --theme-danger: #E06C75;
+  --theme-on-danger: #282C34;
+
+  --theme-border: 1px solid #3E4451;
+  --theme-border-subtle: 1px solid #2C313A;
+  --theme-border-radius: 6px;
+  --theme-btn-radius: 6px;
+
+  --theme-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --theme-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.45);
+
+  --theme-font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --theme-font-mono: 'Fira Code', monospace;
+  --theme-backdrop: none;
+}
+
+/* --------------------------------------------------------------------------
+   22. Solarized Dark
+   -------------------------------------------------------------------------- */
+:root[data-theme="solarized-dark"] {
+  --theme-name: "Solarized Dark";
+  --theme-bg: #002B36;
+  --theme-bg-subtle: #073642;
+  --theme-surface: #073642;
+  --theme-surface-container: #002B36;
+  --theme-surface-elevated: #0A4554;
+
+  --theme-text: #839496;
+  --theme-text-muted: #586E75;
+
+  --theme-primary: #268BD2;
+  --theme-primary-hover: #2AA198;
+  --theme-on-primary: #002B36;
+  --theme-primary-container: rgba(38, 139, 210, 0.20);
+  --theme-on-primary-container: #268BD2;
+
+  --theme-secondary: #073642;
+  --theme-on-secondary: #93A1A1;
+  --theme-secondary-container: #0A4554;
+
+  --theme-accent: #2AA198;
+  --theme-danger: #DC322F;
+  --theme-on-danger: #FDF6E3;
+
+  --theme-border: 1px solid #073642;
+  --theme-border-subtle: 1px solid rgba(7, 54, 66, 0.60);
+  --theme-border-radius: 4px;
+  --theme-btn-radius: 4px;
+
+  --theme-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.45);
+
+  --theme-font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --theme-font-mono: 'Consolas', monospace;
+  --theme-backdrop: none;
+}
+  </style>
+
+
+  <style>
+    /* ==========================================================================
+       SHOWCASE CORE STYLES & LAYOUT (Consumes Universal Theme Tokens)
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+    }
+
+    body {
+      background-color: var(--theme-bg);
+      background-image: var(--theme-canvas-pattern, none);
+      background-size: var(--theme-canvas-size, auto);
+      color: var(--theme-text);
+      font-family: var(--theme-font, sans-serif);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 5rem;
+    }
+
+    /* Google Material Symbols Font & Fallbacks */
+    .material-symbols-outlined,
+    .google-icon {
+      font-family: 'Material Symbols Outlined', system-ui, sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      vertical-align: middle;
+      -webkit-font-feature-settings: 'liga';
+      font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Canvas Lighting for Frosted Glass & Spatial Refraction */
+    .ambient-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+      opacity: 0.75;
+    }
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(85px);
+      transition: all 0.5s ease;
+    }
+    .orb-1 {
+      width: 480px; height: 480px;
+      top: -120px; left: -60px;
+      background: var(--theme-primary);
+      opacity: 0.22;
+    }
+    .orb-2 {
+      width: 400px; height: 400px;
+      bottom: 60px; right: -50px;
+      background: var(--theme-accent, var(--theme-secondary));
+      opacity: 0.18;
+    }
+
+    /* Tactile 3D Claymorphism Highlights */
+    [data-theme="claymorphism"] .btn {
+      box-shadow: var(--theme-shadow-sm), inset 2px 2px 4px rgba(255, 255, 255, 0.7), inset -2px -2px 4px rgba(0, 0, 0, 0.15) !important;
+    }
+    [data-theme="claymorphism"] .btn-primary {
+      box-shadow: 0 10px 22px rgba(124, 77, 255, 0.35), inset 3px 3px 6px rgba(255, 255, 255, 0.8), inset -3px -3px 6px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* Cyberpunk Angled HUD Polygons */
+    [data-theme="cyberpunk"] .btn,
+    [data-theme="cyberpunk"] .section-card,
+    [data-theme="cyberpunk"] .hero-banner,
+    [data-theme="cyberpunk"] .bento-tile {
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+    }
+
+    /* Telemetry Sparkline & Chart Styles */
+    .telemetry-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .sparkline-svg {
+      width: 100%;
+      height: 90px;
+      overflow: visible;
+    }
+
+    /* Top Sticky Theme Controller Bar */
+    .theme-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--theme-surface);
+      border-bottom: var(--theme-border, 1px solid rgba(0,0,0,0.1));
+      box-shadow: var(--theme-shadow-sm);
+      backdrop-filter: var(--theme-backdrop, none);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .theme-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .theme-select {
+      padding: 0.5rem 1rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border, 1px solid #ccc);
+      background-color: var(--theme-surface-container, var(--theme-bg));
+      color: var(--theme-text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .theme-chips {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--theme-btn-radius, 6px);
+      border: var(--theme-border-subtle, 1px solid #ccc);
+      background-color: var(--theme-surface-container, #eee);
+      color: var(--theme-text);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .chip-btn.active {
+      background-color: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border-color: var(--theme-primary);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: var(--theme-border-radius, 16px);
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border);
+      box-shadow: var(--theme-shadow);
+      backdrop-filter: var(--theme-backdrop, none);
+    }
+
+    .hero-banner h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-banner p {
+      color: var(--theme-text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    /* Section Cards */
+    .section-card {
+      background-color: var(--theme-surface);
+      border: var(--theme-border);
+      border-radius: var(--theme-border-radius, 16px);
+      box-shadow: var(--theme-shadow);
+      backdrop-filter: var(--theme-backdrop, none);
+      padding: 2rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: var(--theme-border-subtle);
+    }
+
+    .section-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Buttons Group */
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: var(--theme-btn-radius, 8px);
+      cursor: pointer;
+      text-decoration: none;
+      outline: none;
+      border: var(--theme-border, 1px solid transparent);
+    }
+
+    .btn:active {
+      transform: translateY(2px) scale(0.98);
+    }
+
+    .btn-primary {
+      background-color: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border-color: var(--theme-primary);
+      box-shadow: var(--theme-shadow-sm);
+    }
+    .btn-primary:hover {
+      background-color: var(--theme-primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--theme-secondary-container, var(--theme-surface-container));
+      color: var(--theme-text);
+      border-color: var(--theme-border-subtle);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--theme-text);
+      border: var(--theme-border);
+    }
+    .btn-outline:hover {
+      background-color: var(--theme-surface-container);
+    }
+
+    .btn-danger {
+      background-color: var(--theme-danger);
+      color: var(--theme-on-danger);
+      border-color: var(--theme-danger);
+    }
+
+    .btn-fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: var(--theme-primary-container);
+      color: var(--theme-on-primary-container);
+      box-shadow: var(--theme-shadow);
+      font-size: 1.4rem;
+      padding: 0;
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    /* Form Grid */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--theme-text);
+    }
+
+    .form-input, .form-select {
+      padding: 0.65rem 0.9rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border, 1px solid #ccc);
+      background-color: var(--theme-surface-container, var(--theme-bg));
+      color: var(--theme-text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--theme-primary);
+      box-shadow: 0 0 0 2px var(--theme-primary-container);
+    }
+
+    /* Toggle Switch */
+    .toggle-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 26px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border);
+      border-radius: 34px;
+      transition: 0.3s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: var(--theme-text);
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    input:checked + .slider {
+      background-color: var(--theme-primary);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+      background-color: var(--theme-on-primary);
+    }
+
+    /* Bento Grid Layout */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .bento-tile {
+      padding: 1.5rem;
+      border-radius: var(--theme-border-radius, 16px);
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border);
+      box-shadow: var(--theme-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      backdrop-filter: var(--theme-backdrop, none);
+    }
+
+    .bento-metric {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--theme-primary);
+      font-family: var(--theme-font-mono, monospace);
+    }
+
+    /* Status Badges */
+    .badge-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--theme-btn-radius, 9999px);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: var(--theme-border-subtle);
+    }
+
+    .badge-primary { background-color: var(--theme-primary-container); color: var(--theme-on-primary-container); }
+    .badge-success { background-color: rgba(16, 185, 129, 0.2); color: #10B981; }
+    .badge-warning { background-color: rgba(245, 158, 11, 0.2); color: #F59E0B; }
+    .badge-danger  { background-color: rgba(239, 68, 68, 0.2); color: #EF4444; }
+
+    /* Code Block */
+    pre code {
+      display: block;
+      padding: 1rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border);
+      font-family: var(--theme-font-mono, monospace);
+      font-size: 0.85rem;
+      overflow-x: auto;
+      color: var(--theme-text);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background Lighting Canvas (Refracted by Frosted Glass & Spatial Glow) -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+  </div>
+
+  <!-- Top Sticky Theme Switcher Controller Bar -->
+  <header class="theme-header">
+    <div class="brand-title" style="display: flex; align-items: center; gap: 0.75rem;">
+      <span class="google-icon material-symbols-outlined" title="Universal Design Theme Palette" aria-label="Palette Icon" role="img">palette</span>
+      <div>
+        <span>Universal Theme Engine</span>
+        <div style="font-size: 0.75rem; font-weight: 500; opacity: 0.8;">
+          by <a href="https://github.com/North-Abyss" target="_blank" style="color: inherit; text-decoration: underline;">Yuvanesh KS (@North-Abyss)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="theme-controls">
+      <a href="https://github.com/North-Abyss/ui-themes" target="_blank" class="chip-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; background-color: var(--theme-primary); color: var(--theme-on-primary); border-color: var(--theme-primary); padding: 0.5rem 0.85rem;" title="Star on GitHub" aria-label="Star on GitHub">
+        <span class="google-icon material-symbols-outlined" style="font-size: 16px;" title="Star Icon">star</span>
+        <span>Star on GitHub</span>
+      </a>
+      <select id="themeSelect" class="theme-select" aria-label="Select Theme Preset">
+        <optgroup label="✨ Design System Morphisms & Aesthetics">
+          <option value="material3">01. Google Material 3 (Light)</option>
+          <option value="material3-dark">01. Google Material 3 (Dark)</option>
+          <option value="minimal-mono">02. Minimal 2D Mono (Light)</option>
+          <option value="minimal-dark">02. Minimal 2D Mono (Dark)</option>
+          <option value="glassmorphism">03. Glassmorphism (Dark)</option>
+          <option value="glass-light">03. Glassmorphism (Light)</option>
+          <option value="claymorphism">04. Claymorphism (3D Soft Puffy)</option>
+          <option value="neobrutalism">05. Neo-Brutalism (Bold Pop)</option>
+          <option value="neumorphism">06. Neumorphism (Soft UI Extruded)</option>
+          <option value="cyberpunk">07. Cyberpunk (Neon Glow HUD)</option>
+          <option value="bento-modern">08. Bento Modern Dark (Linear/SaaS)</option>
+          <option value="retro-90s">09. Retro 90s OS (Win95 Chrome)</option>
+          <option value="oled-black">10. OLED Pure Black (#000000)</option>
+          <option value="aurora-glow">11. Aurora Mesh Glow (Spatial UI)</option>
+          <option value="frutiger-aero">12. Frutiger Aero (Y2K Liquid Glass)</option>
+          <option value="phosphor-terminal">13. Phosphor CRT (Cyberdeck)</option>
+          <option value="nord-frost">14. Nord Arctic Frost (Polar Night)</option>
+          <option value="papercraft">15. Papercraft & Origami (Tactile)</option>
+        </optgroup>
+        <optgroup label="🚀 Famous Developer & Platform Themes">
+          <option value="github-dark">16. GitHub Primer Dark Default</option>
+          <option value="vscode-dark">17. VS Code Modern Dark+</option>
+          <option value="tokyo-night">18. Tokyo Night (Folke)</option>
+          <option value="catppuccin-mocha">19. Catppuccin Mocha</option>
+          <option value="dracula">20. Dracula Official</option>
+          <option value="one-dark">21. One Dark Pro (Atom)</option>
+          <option value="solarized-dark">22. Solarized Dark (Precision)</option>
+        </optgroup>
+      </select>
+
+      <div class="theme-chips">
+        <button class="chip-btn" data-set-theme="material3">M3</button>
+        <button class="chip-btn" data-set-theme="glassmorphism">Glass</button>
+        <button class="chip-btn" data-set-theme="claymorphism">Clay</button>
+        <button class="chip-btn" data-set-theme="neobrutalism">Neo-Brutal</button>
+        <button class="chip-btn" data-set-theme="aurora-glow">Aurora</button>
+        <button class="chip-btn" data-set-theme="frutiger-aero">Frutiger</button>
+        <button class="chip-btn" data-set-theme="phosphor-terminal">CRT</button>
+        <button class="chip-btn" data-set-theme="github-dark">GitHub</button>
+        <button class="chip-btn" data-set-theme="vscode-dark">VS Code</button>
+        <button class="chip-btn" data-set-theme="tokyo-night">Tokyo Night</button>
+        <button class="chip-btn" data-set-theme="catppuccin-mocha">Catppuccin</button>
+        <button class="chip-btn" data-set-theme="dracula">Dracula</button>
+        <button class="chip-btn" data-set-theme="one-dark">One Dark</button>
+        <button class="chip-btn" data-set-theme="solarized-dark">Solarized</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <h1 id="themeTitleDisplay">Google Material 3</h1>
+      <p id="themeDescDisplay">A live interactive kitchen sink demonstrating buttons, form inputs, typography, and card containers styled purely through CSS custom property design tokens.</p>
+    </section>
+
+    <!-- Buttons & Interactive Actions -->
+    <section class="section-card">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" title="Interactive Touch Controls" aria-label="Touch Control Icon" role="img">touch_app</span>
+          <h2>Buttons & Interactive Controls</h2>
+        </div>
+        <span class="badge badge-primary">Interactive Tokens</span>
+      </div>
+
+      <div class="button-row">
+        <button class="btn btn-primary">
+          <span class="google-icon material-symbols-outlined" title="Checkmark Validation" aria-label="Check Icon" role="img">check_circle</span>
+          Primary Action
+        </button>
+        <button class="btn btn-secondary">
+          <span class="google-icon material-symbols-outlined" title="Stacked Layers Architecture" aria-label="Layers Icon" role="img">layers</span>
+          Secondary Container
+        </button>
+        <button class="btn btn-outline">
+          <span class="google-icon material-symbols-outlined" title="Code Editor Symbol" aria-label="Code Icon" role="img">code</span>
+          Hairline Outline
+        </button>
+        <button class="btn btn-danger">
+          <span class="google-icon material-symbols-outlined" title="Warning Amber Alert" aria-label="Warning Icon" role="img">warning</span>
+          Danger Action
+        </button>
+        <button class="btn" disabled>
+          <span class="google-icon material-symbols-outlined" title="Locked Disabled State" aria-label="Lock Icon" role="img">lock</span>
+          Disabled State
+        </button>
+        <button class="btn btn-fab" title="Floating Action Add Item" aria-label="Add Item">
+          <span class="google-icon material-symbols-outlined" title="Add Plus Icon" aria-label="Add Icon" role="img">add</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Form Elements & Inputs -->
+    <section class="section-card">
+      <div class="section-header">
+        <h2>Form Controls & Inputs</h2>
+        <span class="badge badge-warning">Accessibility</span>
+      </div>
+
+      <form class="form-grid" onsubmit="event.preventDefault();">
+        <div class="form-field">
+          <label for="sampleText">Text Input</label>
+          <input type="text" id="sampleText" class="form-input" placeholder="Type something...">
+        </div>
+
+        <div class="form-field">
+          <label for="sampleSelect">Select Dropdown</label>
+          <select id="sampleSelect" class="form-select">
+            <option>Option 1: Production Server</option>
+            <option>Option 2: Staging Canary</option>
+            <option>Option 3: Local Dev Container</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label>Toggle Switch</label>
+          <div class="toggle-wrapper">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+            <span style="font-size: 0.88rem; font-weight: 500;">Notifications Enabled</span>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="sampleRange">Range Slider</label>
+          <input type="range" id="sampleRange" min="0" max="100" value="65" style="accent-color: var(--theme-primary);">
+        </div>
+      </form>
+    </section>
+
+    <!-- Bento Metric Cards -->
+    <section class="section-card">
+      <div class="section-header">
+        <h2>Bento Grid & Information Architecture</h2>
+        <span class="badge badge-success">Modular</span>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-tile">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--theme-text-muted);">Weekly Token Efficiency</span>
+          <div class="bento-metric">98.4%</div>
+          <span style="font-size: 0.85rem; color: var(--theme-primary);">+14.2% from last cycle</span>
+        </div>
+
+        <div class="bento-tile">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--theme-text-muted);">Active Design Presets</span>
+          <div class="bento-metric">22</div>
+          <span style="font-size: 0.85rem; color: var(--theme-text-muted);">Morphisms & Developer Themes</span>
+        </div>
+
+        <div class="bento-tile">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--theme-text-muted);">CSS Architecture Tier</span>
+          <div class="bento-metric">Tier 3</div>
+          <span style="font-size: 0.85rem; color: var(--theme-primary);">Primitives → Semantic → Component</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-time Telemetry & Dynamic Trend Chart -->
+    <section class="section-card">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" title="Telemetry Analytics Icon" aria-label="Analytics Icon" role="img">analytics</span>
+          <h2>Live Telemetry & Component Activity</h2>
+        </div>
+        <span class="badge badge-success">
+          <span class="google-icon material-symbols-outlined" style="font-size: 14px;" title="Online Status Dot" aria-label="Online">fiber_manual_record</span> 99.98% Uptime
+        </span>
+      </div>
+
+      <div class="telemetry-container">
+        <!-- Responsive SVG Trend Sparkline -->
+        <svg class="sparkline-svg" viewBox="0 0 500 80" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="sparklineGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--theme-primary)" stop-opacity="0.45" />
+              <stop offset="100%" stop-color="var(--theme-primary)" stop-opacity="0.0" />
+            </linearGradient>
+          </defs>
+          <path d="M 0 65 Q 60 20, 120 45 T 240 30 T 360 15 T 480 35 L 500 25 L 500 80 L 0 80 Z" fill="url(#sparklineGrad)" />
+          <path d="M 0 65 Q 60 20, 120 45 T 240 30 T 360 15 T 480 35 L 500 25" fill="none" stroke="var(--theme-primary)" stroke-width="3" stroke-linecap="round" />
+          <circle cx="500" cy="25" r="5" fill="var(--theme-primary)" stroke="var(--theme-surface)" stroke-width="2" />
+        </svg>
+
+        <div class="badge-row" style="margin-top: 0.5rem;">
+          <span class="badge badge-primary">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;" title="Speed Performance Icon" aria-label="Speed">speed</span> 14.2k req/sec
+          </span>
+          <span class="badge badge-success">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;" title="Security Protection Icon" aria-label="Security">verified_user</span> Edge Guard Active
+          </span>
+          <span class="badge badge-warning">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;" title="Memory Chip Icon" aria-label="Memory">memory</span> 41% Buffer
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CDN Quick Start Card -->
+    <section class="section-card">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" title="Rocket CDN Delivery" aria-label="CDN Icon" role="img">rocket_launch</span>
+          <h2>1-Line CDN Quick Start</h2>
+        </div>
+        <span class="badge badge-primary">Zero Dependencies</span>
+      </div>
+
+      <p style="margin-bottom: 0.75rem; color: var(--theme-text-muted);">Drop all 22 theme presets and design token primitives into any web project, HTML page, or framework with zero build tools:</p>
+
+      <pre style="margin-bottom: 1rem;"><code>&lt;!-- 1. Include Universal Theme Engine via CDN --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/North-Abyss/ui-themes@main/dist/universal-themes.min.css"&gt;
+
+&lt;!-- 2. Activate any of the 22 themes --&gt;
+&lt;html data-theme="<span class="active-cdn-theme">material3</span>"&gt;</code></pre>
+
+      <div style="font-size: 0.85rem; color: var(--theme-text-muted);">
+        Works in Vanilla HTML, React, Vue, Svelte, Astro, Angular, and Next.js.
+      </div>
+    </section>
+
+    <!-- Status Badges & Alerts -->
+    <section class="section-card">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" title="Status Notification Bell" aria-label="Notification Bell" role="img">notifications</span>
+          <h2>Status Badges & Alerts</h2>
+        </div>
+        <span class="badge badge-danger">Live Feedback</span>
+      </div>
+
+      <div class="badge-row" style="margin-bottom: 1.25rem;">
+        <span class="badge badge-primary">
+          <span class="google-icon material-symbols-outlined" style="font-size: 14px;" title="Active Token Icon" aria-label="Token">toll</span> Active Token
+        </span>
+        <span class="badge badge-success">
+          <span class="google-icon material-symbols-outlined" style="font-size: 14px;" title="Passed Checkmark Icon" aria-label="Passed">task_alt</span> Build Passed
+        </span>
+        <span class="badge badge-warning">
+          <span class="google-icon material-symbols-outlined" style="font-size: 14px;" title="Quota Warning Icon" aria-label="Quota">hourglass_top</span> High Quota
+        </span>
+        <span class="badge badge-danger">
+          <span class="google-icon material-symbols-outlined" style="font-size: 14px;" title="Error Intercepted Icon" aria-label="Error">error</span> Intercepted
+        </span>
+      </div>
+
+      <pre><code>// Current active theme CSS binding
+&lt;html data-theme="<span id="activeThemeCode">material3</span>"&gt;</code></pre>
+    </section>
+
+    <footer style="text-align: center; padding: 2.5rem 1rem 1rem; border-top: var(--theme-border-subtle); margin-top: 3rem; color: var(--theme-text-muted); font-size: 0.9rem;">
+      <p style="margin-bottom: 0.5rem;">
+        Crafted with 💜 by <a href="https://github.com/North-Abyss" target="_blank" style="color: var(--theme-primary); font-weight: 600; text-decoration: none;">Yuvanesh KS (@North-Abyss)</a>
+      </p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">
+        Released under the <a href="https://github.com/North-Abyss/ui-themes/blob/main/LICENSE" target="_blank" style="color: inherit;">MIT License</a> • 100% Free & Open Source
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    const themeSelect = document.getElementById('themeSelect');
+    const htmlElem = document.documentElement;
+    const activeThemeCode = document.getElementById('activeThemeCode');
+    const themeTitleDisplay = document.getElementById('themeTitleDisplay');
+    const chipButtons = document.querySelectorAll('.chip-btn');
+
+    const descriptions = {
+      'material3': 'Google Material Design 3 (Material You): Dynamic tonal palettes, surface container hierarchy, and accessible pill buttons.',
+      'material3-dark': 'Google Material Design 3 (Dark): Low-glare tonal elevation with dark neutral surfaces.',
+      'minimal-mono': 'Minimal 2D Monochrome / Line Art: Stark black and white, hairline 1px solid outlines, and subtle 16px dot-matrix grid.',
+      'minimal-dark': 'Minimal 2D Monochrome (Dark): High-contrast white line art over an obsidian charcoal canvas.',
+      'glassmorphism': 'Glassmorphism 2.0: Translucent frosted panels with backdrop blur, specular edge borders, and ambient mesh glows.',
+      'glass-light': 'Glassmorphism (Light): Frosted translucent glass floating over soft indigo/rose gradients.',
+      'claymorphism': 'Claymorphism: 3D squishy matte clay with chunky 32px curves and triple-shadow volume depth.',
+      'neobrutalism': 'Neo-Brutalism & Retrobento: High-contrast 2.5px solid black borders, electric pop colors, and 4px hard offset drop shadows.',
+      'neumorphism': 'Neumorphism: Seamless extruded soft plastic with opposing light and dark drop shadows.',
+      'cyberpunk': 'Cyberpunk / Synthwave: Neon cyan and magenta glowing borders over an abyss violet canvas with CRT scanlines.',
+      'bento-modern': 'Bento Grid / Linear Modern Dark: Deep charcoal surfaces with luminous hairline borders and precision spacing.',
+      'retro-90s': 'Retro 90s OS: Classic Windows 95 battleship gray with 3D beveled chrome buttons and teal canvas.',
+      'oled-black': 'OLED Pure Black Minimalist: True #000000 pitch black for infinite contrast and maximum battery efficiency.',
+      'aurora-glow': 'Aurora Mesh Glow (Spatial UI): Multi-layer ambient radiant glows, luminous iridescent borders, and frosted glass.',
+      'frutiger-aero': 'Frutiger Aero (Y2K Liquid Glass): Glossy specular highlights, vibrant sky-blue/emerald gradients, and liquid bubble controls.',
+      'phosphor-terminal': 'Phosphor CRT Terminal: Cathode ray tube dark canvas, vintage P1 phosphor green bloom, monospace font, and scanlines.',
+      'nord-frost': 'Nord Arctic Frost: Polar night slate, glacial ice blues, frozen mint accents, and clean arctic contrast.',
+      'papercraft': 'Papercraft & Origami: Soft handmade paper parchment, layered paper drop-shadows, terracotta and warm ink accents.',
+      'github-dark': 'GitHub Primer Dark: Official GitHub dark theme with #0D1117 canvas, #238636 primer green action buttons, and #30363D borders.',
+      'vscode-dark': 'VS Code Modern Dark+: Microsoft Visual Studio Code IDE theme with #1E1E1E editor canvas, #007ACC signature blue, and 2px radii.',
+      'tokyo-night': 'Tokyo Night (Folke): Iconic Neovim/terminal theme with #1A1B26 night canvas, #7AA2F7 primary blue, and vibrant neon accents.',
+      'catppuccin-mocha': 'Catppuccin Mocha: Global community favorite pastel theme with #1E1E2E base, #CBA6F7 mauve primary, and soothing contrast.',
+      'dracula': 'Dracula Official (Zeno Rocha): Legendary gothic developer theme with #282A36 canvas, #BD93F9 vibrant purple, and hot pink accents.',
+      'one-dark': 'One Dark Pro: The classic Atom & JetBrains dark palette with #282C34 canvas, #61AFEF atom blue, and leaf green accents.',
+      'solarized-dark': 'Solarized Dark (Ethan Schoonover): Scientifically calibrated LAB color space theme with #002B36 base and precision cyan/blue contrast.'
+    };
+
+    function applyTheme(themeKey) {
+      htmlElem.setAttribute('data-theme', themeKey);
+      themeSelect.value = themeKey;
+      if (activeThemeCode) activeThemeCode.textContent = themeKey;
+      document.querySelectorAll('.active-cdn-theme').forEach(el => el.textContent = themeKey);
+      if (themeTitleDisplay) themeTitleDisplay.textContent = themeSelect.options[themeSelect.selectedIndex].text;
+      const desc = document.getElementById('themeDescDisplay');
+      if (desc && descriptions[themeKey]) desc.textContent = descriptions[themeKey];
+
+      // Update chip active states
+      chipButtons.forEach(btn => {
+        if (btn.getAttribute('data-set-theme') === themeKey) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      localStorage.setItem('pt-selected-theme', themeKey);
+    }
+
+    // Event listener for select dropdown
+    themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
+
+    // Event listener for quick chips
+    chipButtons.forEach(btn => {
+      btn.addEventListener('click', () => applyTheme(btn.getAttribute('data-set-theme')));
+    });
+
+    // Check localStorage on load
+    const savedTheme = localStorage.getItem('pt-selected-theme') || 'material3';
+    applyTheme(savedTheme);
+  </script>
+
+</body>
+</html>

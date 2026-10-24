@@ -1,0 +1,75 @@
+/**
+ * ==============================================================================
+ * Master Theme Entrypoint (src/themes/index.css)
+ * Aggregates token primitives, theme presets, and sets default active theme
+ * ==============================================================================
+ */
+
+/* 1. Tier 1: Token Primitives (palettes, spacing, radii) */
+@import "./tokens/primitives.css";
+
+/* 2. Tier 2: Universal Theme Presets */
+@import "./presets/01_material3.css";
+@import "./presets/02_minimal_mono.css";
+@import "./presets/03_glassmorphism.css";
+@import "./presets/04_claymorphism.css";
+@import "./presets/05_neobrutalism.css";
+@import "./presets/06_neumorphism.css";
+@import "./presets/07_cyberpunk.css";
+@import "./presets/08_bento_modern.css";
+@import "./presets/09_retro_90s.css";
+@import "./presets/10_oled_pure_black.css";
+@import "./presets/11_aurora_glow.css";
+@import "./presets/12_frutiger_aero.css";
+@import "./presets/13_phosphor_terminal.css";
+@import "./presets/14_nord_frost.css";
+@import "./presets/15_papercraft.css";
+@import "./presets/16_github_dark.css";
+@import "./presets/17_vscode_modern.css";
+@import "./presets/18_tokyo_night.css";
+@import "./presets/19_catppuccin_mocha.css";
+@import "./presets/20_dracula.css";
+@import "./presets/21_one_dark_pro.css";
+@import "./presets/22_solarized_dark.css";
+
+/* 3. Default Fallback Binding (Only applies when data-theme is NOT specified) */
+:root:not([data-theme]),
+:root[data-theme="default"] {
+  --theme-name: "Material 3 Light (Default)";
+  --theme-bg: var(--pal-neutral-98);
+  --theme-bg-subtle: var(--pal-neutral-95);
+  
+  --theme-surface: var(--pal-neutral-99);
+  --theme-surface-container: var(--pal-neutral-94);
+  --theme-surface-elevated: var(--theme-surface-container);
+
+  --theme-text: var(--pal-neutral-10);
+  --theme-text-muted: var(--pal-neutral-40);
+
+  --theme-primary: var(--pal-primary-40);
+  --theme-primary-hover: var(--pal-primary-30);
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: var(--pal-primary-90);
+  --theme-on-primary-container: var(--pal-primary-10);
+
+  --theme-secondary: #575e71;
+  --theme-on-secondary: #ffffff;
+  --theme-secondary-container: #dbe2f9;
+
+  --theme-accent: #715573;
+  --theme-danger: #ba1a1a;
+  --theme-on-danger: #ffffff;
+
+  --theme-border: 1px solid var(--pal-neutral-87);
+  --theme-border-subtle: 1px solid var(--pal-neutral-92);
+  --theme-border-radius: var(--radius-lg);
+  --theme-btn-radius: var(--radius-full);
+
+  --theme-shadow-sm: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
+  --theme-shadow: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
+  --theme-shadow-hover: 0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px 0 rgba(0,0,0,0.30);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

@@ -1,0 +1,47 @@
+/**
+ * ==============================================================================
+ * Preset 10: OLED Pure Black Minimalist
+ * Aesthetic: True #000000 black canvas, infinite contrast, extreme battery-saver
+ * ==============================================================================
+ */
+
+[data-theme="oled-black"],
+[data-theme="oled-pure"] {
+  --theme-name: "OLED Pure Black";
+  --theme-bg: #000000;
+  --theme-bg-subtle: #080808;
+
+  --theme-surface: #000000;
+  --theme-surface-container: #0C0C0C;
+  --theme-surface-elevated: #141414;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #8E8E93;
+
+  --theme-primary: #FFFFFF;
+  --theme-primary-hover: #E5E5EA;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #1C1C1E;
+  --theme-on-primary-container: #FFFFFF;
+
+  --theme-secondary: #2C2C2E;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #1C1C1E;
+
+  --theme-accent: #30D158;                      /* Minimalist Phosphor Mint */
+  --theme-danger: #FF453A;
+  --theme-on-danger: #000000;
+
+  --theme-border: 1px solid #222222;
+  --theme-border-subtle: 1px solid #161616;
+  --theme-border-radius: var(--radius-md);       /* 12px */
+  --theme-btn-radius: var(--radius-sm);          /* 8px */
+
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #333333;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

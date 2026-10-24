@@ -1,0 +1,56 @@
+/**
+ * PT Universal Theme Preset: Tokyo Night (18_tokyo_night.css)
+ * Folke's celebrated Neovim / terminal developer theme.
+ * Night canvas (#1A1B26), storm surface (#24283B), luminous blue (#7AA2F7),
+ * neon cyan (#7DCFFF), magenta (#BB9AF7), and emerald (#9ECE6A).
+ */
+
+:root[data-theme="tokyo-night"] {
+  /* Surfaces */
+  --theme-bg: #1A1B26;
+  --theme-bg-subtle: #16161E;
+  --theme-surface: #24283B;
+  --theme-surface-container: #1F2335;
+  --theme-surface-container-high: #292E42;
+  --theme-surface-elevated: #2F354D;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #C0CAF5;
+  --theme-text-muted: #565F89;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Primary Action: Tokyo Blue */
+  --theme-primary: #7AA2F7;
+  --theme-primary-hover: #89DDFF;
+  --theme-on-primary: #15161E;
+  --theme-primary-container: rgba(122, 162, 247, 0.20);
+  --theme-on-primary-container: #7AA2F7;
+
+  /* Secondary & Accents */
+  --theme-secondary: #292E42;
+  --theme-on-secondary: #C0CAF5;
+  --theme-secondary-container: #3B4261;
+
+  --theme-accent: #BB9AF7;
+  --theme-danger: #F7768E;
+  --theme-on-danger: #15161E;
+
+  /* Subtle Midnight Borders */
+  --theme-border: 1px solid #292E42;
+  --theme-border-subtle: 1px solid rgba(41, 46, 66, 0.60);
+
+  /* Curvature: 8px modern curved geometry */
+  --theme-border-radius: 8px;
+  --theme-card-radius: 8px;
+  --theme-btn-radius: 6px;
+
+  /* Shadows with subtle violet tint */
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 1px rgba(122, 162, 247, 0.15);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 8px rgba(122, 162, 247, 0.25);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}

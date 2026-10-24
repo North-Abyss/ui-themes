@@ -1,0 +1,56 @@
+/**
+ * PT Universal Theme Preset: Catppuccin Mocha (19_catppuccin_mocha.css)
+ * Official Catppuccin community palette.
+ * Base (#1E1E2E), Mantle (#181825), Crust (#11111B),
+ * Mauve (#CBA6F7), Blue (#89B4FA), Green (#A6E3A1), Peach (#FAB387).
+ */
+
+:root[data-theme="catppuccin-mocha"] {
+  /* Surfaces */
+  --theme-bg: #1E1E2E;
+  --theme-bg-subtle: #181825;
+  --theme-surface: #181825;
+  --theme-surface-container: #313244;
+  --theme-surface-container-high: #45475A;
+  --theme-surface-elevated: #585B70;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #CDD6F4;
+  --theme-text-muted: #A6ADC8;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Primary Action: Mauve */
+  --theme-primary: #CBA6F7;
+  --theme-primary-hover: #B4BEFE;
+  --theme-on-primary: #11111B;
+  --theme-primary-container: rgba(203, 166, 247, 0.20);
+  --theme-on-primary-container: #CBA6F7;
+
+  /* Secondary & Accents */
+  --theme-secondary: #45475A;
+  --theme-on-secondary: #CDD6F4;
+  --theme-secondary-container: #313244;
+
+  --theme-accent: #89B4FA;
+  --theme-danger: #F38BA8;
+  --theme-on-danger: #11111B;
+
+  /* Soft Pastel Borders */
+  --theme-border: 1px solid #45475A;
+  --theme-border-subtle: 1px solid #313244;
+
+  /* Curvature: 12px friendly rounded */
+  --theme-border-radius: 12px;
+  --theme-card-radius: 12px;
+  --theme-btn-radius: 8px;
+
+  /* Shadows */
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}

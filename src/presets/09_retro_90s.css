@@ -1,0 +1,53 @@
+/**
+ * ==============================================================================
+ * Preset 09: Retro Y2K / 90s OS (Classic Windows 95 & System 7)
+ * Aesthetic: Battleship gray, beveled chrome 3D buttons, nostalgic computing
+ * ==============================================================================
+ */
+
+[data-theme="retro-90s"],
+[data-theme="win95"] {
+  --theme-name: "Retro 90s OS";
+  --theme-bg: #008080;                          /* Classic Win95 Teal Canvas */
+  --theme-bg-subtle: #C0C0C0;
+
+  --theme-surface: #C0C0C0;
+  --theme-surface-container: #DFDFDF;
+  --theme-surface-elevated: #C0C0C0;
+
+  --theme-text: #000000;
+  --theme-text-muted: #555555;
+
+  --theme-primary: #000080;                      /* Classic Active Titlebar Navy */
+  --theme-primary-hover: #1084D0;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #C0C0C0;
+  --theme-on-primary-container: #000080;
+
+  --theme-secondary: #808080;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #D4D0C8;
+
+  --theme-accent: #000080;
+  --theme-danger: #800000;
+  --theme-on-danger: #FFFFFF;
+
+  /* Classic 3D Bevel Borders */
+  --theme-border: 2px solid;
+  --theme-border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  --theme-border-subtle: 1px solid #808080;
+  --theme-border-radius: var(--radius-none);    /* Pure 0px Sharp */
+  --theme-btn-radius: var(--radius-none);
+
+  /* Windows 95 Beveled Button Outlines */
+  --theme-shadow-sm: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+  --theme-shadow: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+  --theme-shadow-hover: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+
+  /* Pressed / Depressed Button State */
+  --theme-shadow-inset: inset 1px 1px #000000, inset -1px -1px #FFFFFF, inset 2px 2px #808080, inset -2px -2px #DFDFDF;
+
+  --theme-font: "MS Sans Serif", Tahoma, var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

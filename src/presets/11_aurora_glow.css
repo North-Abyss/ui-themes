@@ -1,0 +1,54 @@
+/**
+ * PT Universal Theme Preset: Aurora Mesh Glow / Spatial Morphism (11_aurora_glow.css)
+ * Inspired by iOS 18 Siri / Apple Intelligence / VisionOS Spatial UI.
+ * Multi-layer ambient radiant mesh glows, luminous iridescent borders, and frosted glass.
+ */
+
+:root[data-theme="aurora-glow"] {
+  /* Surfaces & Ambient Gradients */
+  --theme-bg: #090714;
+  --theme-bg-gradient: radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.28) 0%, transparent 45%),
+                       radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.25) 0%, transparent 50%),
+                       radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.16) 0%, transparent 55%),
+                       #090714;
+  --theme-surface: rgba(19, 14, 36, 0.65);
+  --theme-surface-container: rgba(28, 20, 52, 0.60);
+  --theme-surface-container-high: rgba(38, 28, 68, 0.70);
+  --theme-backdrop: blur(28px) saturate(180%);
+
+  /* Primary & Accents */
+  --theme-primary: #A855F7;
+  --theme-primary-container: rgba(168, 85, 247, 0.25);
+  --theme-on-primary: #FFFFFF;
+  --theme-on-primary-container: #F3E8FF;
+
+  --theme-secondary: #38BDF8;
+  --theme-secondary-container: rgba(56, 189, 248, 0.25);
+  --theme-on-secondary: #0B0813;
+  --theme-on-secondary-container: #E0F2FE;
+
+  --theme-tertiary: #F43F5E;
+  --theme-tertiary-container: rgba(244, 63, 94, 0.25);
+  --theme-on-tertiary: #FFFFFF;
+  --theme-on-tertiary-container: #FFE4E6;
+
+  /* Typography */
+  --theme-text: #F8FAFC;
+  --theme-text-muted: #94A3B8;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  --theme-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spatial Iridescent Shadows & Borders */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.18);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-shadow-sm: 0 4px 16px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  --theme-shadow-md: 0 12px 36px 0 rgba(168, 85, 247, 0.22), 0 4px 12px 0 rgba(0, 0, 0, 0.40), inset 0 1px 1px rgba(255, 255, 255, 0.30);
+  --theme-shadow-lg: 0 24px 64px 0 rgba(168, 85, 247, 0.35), 0 8px 24px 0 rgba(0, 0, 0, 0.60), inset 0 1px 2px rgba(255, 255, 255, 0.40);
+
+  /* Curvature & Geometry */
+  --theme-border-radius: 22px;
+  --theme-card-radius: 22px;
+  --theme-btn-radius: 9999px;
+  --theme-btn-transform: translateY(-2px) scale(1.02);
+  --theme-btn-active-transform: translateY(1px) scale(0.98);
+}

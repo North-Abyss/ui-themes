@@ -1,0 +1,56 @@
+/**
+ * PT Universal Theme Preset: GitHub Primer Dark Default (16_github_dark.css)
+ * Official GitHub Primer Design System tokens.
+ * Pristine canvas (#0D1117), iconic Primer green action button (#238636),
+ * subtle dividers (#30363D), and link blue (#58A6FF).
+ */
+
+:root[data-theme="github-dark"] {
+  /* Canvas & Backgrounds */
+  --theme-bg: #0D1117;
+  --theme-bg-subtle: #161B22;
+  --theme-surface: #161B22;
+  --theme-surface-container: #161B22;
+  --theme-surface-container-high: #21262D;
+  --theme-surface-elevated: #21262D;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #F0F6FC;
+  --theme-text-muted: #8B949E;
+  --theme-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --theme-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Primary Action: Iconic Primer Green */
+  --theme-primary: #238636;
+  --theme-primary-hover: #2EA043;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(35, 134, 54, 0.18);
+  --theme-on-primary-container: #3FB950;
+
+  /* Secondary & Accents */
+  --theme-secondary: #21262D;
+  --theme-on-secondary: #C9D1D9;
+  --theme-secondary-container: #30363D;
+
+  --theme-accent: #58A6FF;
+  --theme-danger: #DA3633;
+  --theme-on-danger: #FFFFFF;
+
+  /* Borders & Dividers */
+  --theme-border: 1px solid #30363D;
+  --theme-border-subtle: 1px solid #21262D;
+
+  /* Curvature: 6px standard */
+  --theme-border-radius: 6px;
+  --theme-card-radius: 6px;
+  --theme-btn-radius: 6px;
+
+  /* Shadows */
+  --theme-shadow-sm: 0 0 transparent;
+  --theme-shadow: 0 1px 0 rgba(1, 4, 9, 0.1);
+  --theme-shadow-hover: 0 3px 6px rgba(1, 4, 9, 0.2);
+
+  --theme-btn-transform: translateY(0);
+  --theme-btn-active-transform: translateY(1px);
+}

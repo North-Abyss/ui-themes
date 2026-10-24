@@ -1,0 +1,56 @@
+/**
+ * PT Universal Theme Preset: Solarized Dark (22_solarized_dark.css)
+ * Ethan Schoonover's precision LAB color space palette.
+ * Base03 (#002B36), Base02 (#073642), Solarized Blue (#268BD2),
+ * Cyan (#2AA198), Green (#859900), Yellow (#B58900), Orange (#CB4B16).
+ */
+
+:root[data-theme="solarized-dark"] {
+  /* Surfaces */
+  --theme-bg: #002B36;
+  --theme-bg-subtle: #073642;
+  --theme-surface: #073642;
+  --theme-surface-container: #002B36;
+  --theme-surface-container-high: #0A4554;
+  --theme-surface-elevated: #0E5265;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #839496;
+  --theme-text-muted: #586E75;
+  --theme-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --theme-font-mono: 'Consolas', 'Courier New', monospace;
+
+  /* Primary Action: Solarized Blue */
+  --theme-primary: #268BD2;
+  --theme-primary-hover: #2AA198;
+  --theme-on-primary: #002B36;
+  --theme-primary-container: rgba(38, 139, 210, 0.20);
+  --theme-on-primary-container: #268BD2;
+
+  /* Secondary & Accents */
+  --theme-secondary: #073642;
+  --theme-on-secondary: #93A1A1;
+  --theme-secondary-container: #0A4554;
+
+  --theme-accent: #2AA198;
+  --theme-danger: #DC322F;
+  --theme-on-danger: #FDF6E3;
+
+  /* Precision Lab Borders */
+  --theme-border: 1px solid #073642;
+  --theme-border-subtle: 1px solid rgba(7, 54, 66, 0.60);
+
+  /* Curvature: 4px precision */
+  --theme-border-radius: 4px;
+  --theme-card-radius: 4px;
+  --theme-btn-radius: 4px;
+
+  /* Shadows */
+  --theme-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.45);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}

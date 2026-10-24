@@ -1,0 +1,98 @@
+/**
+ * ==============================================================================
+ * Tier 1: Design Token Primitives (src/themes/tokens/primitives.css)
+ * Low-level raw values: Palettes, Spacing scales, Radii scales, Easings
+ * ==============================================================================
+ */
+
+:root {
+  /* Typography Stacks */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: "Outfit", "Space Grotesk", var(--font-sans);
+
+  /* Spacing Scale (4px Base Grid) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* Border Radius Primitives */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Animation & Easings */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* Material 3 Neutral Palette Scale (0 - 100) */
+  --pal-neutral-0: #000000;
+  --pal-neutral-4: #0e0e11;
+  --pal-neutral-6: #121316;
+  --pal-neutral-10: #1b1b1f;
+  --pal-neutral-12: #201f24;
+  --pal-neutral-17: #2a2a2f;
+  --pal-neutral-20: #303034;
+  --pal-neutral-22: #353539;
+  --pal-neutral-24: #3a393e;
+  --pal-neutral-30: #46464a;
+  --pal-neutral-40: #5e5e62;
+  --pal-neutral-50: #77767b;
+  --pal-neutral-60: #919095;
+  --pal-neutral-70: #acabb0;
+  --pal-neutral-80: #c8c6cb;
+  --pal-neutral-87: #dbd8de;
+  --pal-neutral-90: #e4e2e6;
+  --pal-neutral-92: #eae7ec;
+  --pal-neutral-94: #f0edf2;
+  --pal-neutral-95: #f3f0f5;
+  --pal-neutral-96: #f6f3f8;
+  --pal-neutral-98: #fdf8fd;
+  --pal-neutral-99: #fffbfe;
+  --pal-neutral-100: #ffffff;
+
+  /* M3 Primary Seed Palette (Indigo / Tech Blue) */
+  --pal-primary-10: #00105c;
+  --pal-primary-20: #001f8f;
+  --pal-primary-30: #0032b4;
+  --pal-primary-40: #294ede;
+  --pal-primary-80: #bac3ff;
+  --pal-primary-90: #dce1ff;
+
+  /* Neo-Brutalist Pop Primitives */
+  --pal-pop-yellow: #FFE600;
+  --pal-pop-mint: #00F0FF;
+  --pal-pop-lilac: #D6B4FC;
+  --pal-pop-coral: #FF5C5C;
+  --pal-pop-black: #000000;
+  --pal-pop-white: #FFFFFF;
+
+  /* Cyberpunk / Synthwave Primitives */
+  --pal-cyber-abyss: #0B001A;
+  --pal-cyber-neon-cyan: #00F0FF;
+  --pal-cyber-neon-magenta: #FF007F;
+  --pal-cyber-purple: #8B00FF;
+  --pal-cyber-hud-yellow: #FFE600;
+
+  /* Clay Pastel Primitives */
+  --pal-clay-lilac: #e0d4fc;
+  --pal-clay-mint: #d4fce5;
+  --pal-clay-peach: #fcdcd4;
+  --pal-clay-sky: #d4f0fc;
+}

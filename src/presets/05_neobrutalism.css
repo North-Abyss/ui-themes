@@ -1,0 +1,49 @@
+/**
+ * ==============================================================================
+ * Preset 05: Neo-Brutalism & Retrobento (Gumroad / Figma Community)
+ * Aesthetic: High contrast, thick 2.5px solid black borders, 4px hard drop shadow
+ * ==============================================================================
+ */
+
+[data-theme="neobrutalism"],
+[data-theme="neo-light"] {
+  --theme-name: "Neo-Brutalism Pop";
+  --theme-bg: #FFFDF8;
+  --theme-bg-subtle: #FFF4D0;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #FFE600;          /* Signature Electric Yellow */
+  --theme-surface-elevated: #D6B4FC;           /* Pop Lilac */
+
+  --theme-text: #000000;
+  --theme-text-muted: #333333;
+
+  --theme-primary: #FFE600;
+  --theme-primary-hover: #E6CE00;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #FFF7A8;
+  --theme-on-primary-container: #000000;
+
+  --theme-secondary: #00F0FF;
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: #B8F9FF;
+
+  --theme-accent: #D6B4FC;
+  --theme-danger: #FF5C5C;
+  --theme-on-danger: #000000;
+
+  /* Hard Unapologetic Solid Outlines */
+  --theme-border: 2.5px solid #000000;
+  --theme-border-subtle: 2px solid #000000;
+  --theme-border-radius: var(--radius-sm);      /* 8px */
+  --theme-btn-radius: var(--radius-sm);
+
+  /* Hard Offset Drop Shadows (Zero Blur) */
+  --theme-shadow-sm: 2px 2px 0px #000000;
+  --theme-shadow: 4px 4px 0px #000000;
+  --theme-shadow-hover: 6px 6px 0px #000000;
+
+  --theme-font: var(--font-display);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

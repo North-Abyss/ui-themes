@@ -1,0 +1,53 @@
+/**
+ * ==============================================================================
+ * Preset 07: Cyberpunk / Synthwave (Neon Glow HUD)
+ * Aesthetic: Dark abyss, electric cyan/magenta glowing borders, sci-fi telemetry
+ * ==============================================================================
+ */
+
+[data-theme="cyberpunk"],
+[data-theme="cyber-dark"] {
+  --theme-name: "Cyberpunk Synthwave";
+  --theme-bg: #090014;
+  --theme-bg-subtle: #120029;
+
+  /* CRT Scanline Overlay */
+  --theme-canvas-pattern: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.40) 50%),
+                          linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  --theme-canvas-size: 100% 4px, 6px 100%;
+
+  --theme-surface: #13032b;
+  --theme-surface-container: #1b053d;
+  --theme-surface-elevated: #28085c;
+
+  --theme-text: #00F0FF;                        /* Electric Cyan HUD Text */
+  --theme-text-muted: #FF77E9;
+
+  --theme-primary: #FF007F;                      /* Neon Magenta */
+  --theme-primary-hover: #E60073;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(255, 0, 127, 0.25);
+  --theme-on-primary-container: #FFB3DE;
+
+  --theme-secondary: #00F0FF;                    /* Electric Cyan */
+  --theme-on-secondary: #090014;
+  --theme-secondary-container: rgba(0, 240, 255, 0.20);
+
+  --theme-accent: #FFE600;                       /* Warning Yellow */
+  --theme-danger: #FF003C;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #00F0FF;
+  --theme-border-subtle: 1px solid rgba(255, 0, 127, 0.40);
+  --theme-border-radius: var(--radius-xs);       /* 4px angular HUD */
+  --theme-btn-radius: var(--radius-xs);
+
+  /* Neon Aura Glows */
+  --theme-shadow-sm: 0 0 10px rgba(0, 240, 255, 0.35);
+  --theme-shadow: 0 0 20px rgba(255, 0, 127, 0.40), inset 0 0 10px rgba(0, 240, 255, 0.15);
+  --theme-shadow-hover: 0 0 30px rgba(0, 240, 255, 0.60), inset 0 0 15px rgba(255, 0, 127, 0.30);
+
+  --theme-font: var(--font-mono);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

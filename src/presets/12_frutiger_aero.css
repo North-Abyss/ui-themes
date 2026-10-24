@@ -1,0 +1,51 @@
+/**
+ * PT Universal Theme Preset: Frutiger Aero / Y2K Glossy Liquid Glass (12_frutiger_aero.css)
+ * Iconic 2000s glassy aesthetic (Windows 7 Aero, Mac OS X Aqua, PS3 XMB).
+ * Glossy specular highlights, vibrant sky-blue/emerald gradients, and glossy bubble buttons.
+ */
+
+:root[data-theme="frutiger-aero"] {
+  /* Surfaces & Sky Canvas */
+  --theme-bg: #E0F2FE;
+  --theme-bg-gradient: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 35%, #7DD3FC 100%);
+  --theme-surface: rgba(255, 255, 255, 0.75);
+  --theme-surface-container: rgba(255, 255, 255, 0.65);
+  --theme-surface-container-high: rgba(255, 255, 255, 0.90);
+  --theme-backdrop: blur(16px);
+
+  /* Primary & Glossy Water Droplet Accents */
+  --theme-primary: #0284C7;
+  --theme-primary-container: rgba(2, 132, 199, 0.20);
+  --theme-on-primary: #FFFFFF;
+  --theme-on-primary-container: #082F49;
+
+  --theme-secondary: #10B981;
+  --theme-secondary-container: rgba(16, 185, 129, 0.20);
+  --theme-on-secondary: #FFFFFF;
+  --theme-on-secondary-container: #064E3B;
+
+  --theme-tertiary: #F59E0B;
+  --theme-tertiary-container: rgba(245, 158, 11, 0.20);
+  --theme-on-tertiary: #FFFFFF;
+  --theme-on-tertiary-container: #78350F;
+
+  /* Typography */
+  --theme-text: #0C4A6E;
+  --theme-text-muted: #0369A1;
+  --theme-font-sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Frutiger', sans-serif;
+  --theme-font-mono: 'Consolas', monospace;
+
+  /* Glossy Skeuomorphic Borders & Reflection Shadows */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.85);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.50);
+  --theme-shadow-sm: 0 4px 12px rgba(2, 132, 199, 0.12), inset 0 2px 2px rgba(255, 255, 255, 0.9);
+  --theme-shadow-md: 0 10px 28px rgba(2, 132, 199, 0.18), inset 0 2px 3px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(14, 165, 233, 0.25);
+  --theme-shadow-lg: 0 20px 48px rgba(2, 132, 199, 0.25), inset 0 3px 4px rgba(255, 255, 255, 1), inset 0 -4px 8px rgba(14, 165, 233, 0.35);
+
+  /* Curvature & Geometry */
+  --theme-border-radius: 18px;
+  --theme-card-radius: 18px;
+  --theme-btn-radius: 9999px;
+  --theme-btn-transform: translateY(-2px) scale(1.02);
+  --theme-btn-active-transform: translateY(1px);
+}

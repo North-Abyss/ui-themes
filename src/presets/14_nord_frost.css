@@ -1,0 +1,51 @@
+/**
+ * PT Universal Theme Preset: Nord Arctic Frost (14_nord_frost.css)
+ * Iconic developer-favorite Arctic slate and glacier palette.
+ * Polar night surfaces, glacial ice blues, frozen mint accents, and clean modern contrast.
+ */
+
+:root[data-theme="nord-frost"] {
+  /* Polar Night Surfaces */
+  --theme-bg: #2E3440;
+  --theme-bg-gradient: linear-gradient(180deg, #2E3440 0%, #242933 100%);
+  --theme-surface: #3B4252;
+  --theme-surface-container: #434C5E;
+  --theme-surface-container-high: #4C566A;
+  --theme-backdrop: none;
+
+  /* Glacier Frost Accents */
+  --theme-primary: #88C0D0;
+  --theme-primary-container: rgba(136, 192, 208, 0.20);
+  --theme-on-primary: #2E3440;
+  --theme-on-primary-container: #88C0D0;
+
+  --theme-secondary: #8FBCBB;
+  --theme-secondary-container: rgba(143, 188, 187, 0.20);
+  --theme-on-secondary: #2E3440;
+  --theme-on-secondary-container: #8FBCBB;
+
+  --theme-tertiary: #EBCB8B;
+  --theme-tertiary-container: rgba(235, 203, 139, 0.20);
+  --theme-on-tertiary: #2E3440;
+  --theme-on-tertiary-container: #EBCB8B;
+
+  /* Snow Storm Typography */
+  --theme-text: #ECEFF4;
+  --theme-text-muted: #D8DEE9;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', monospace;
+
+  /* Arctic Frost Borders & Shadows */
+  --theme-border: 1px solid #4C566A;
+  --theme-border-subtle: 1px solid rgba(76, 86, 106, 0.60);
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --theme-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.35);
+  --theme-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* Curvature & Geometry */
+  --theme-border-radius: 12px;
+  --theme-card-radius: 12px;
+  --theme-btn-radius: 8px;
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}

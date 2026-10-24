@@ -1,0 +1,51 @@
+/**
+ * ==============================================================================
+ * Preset 06: Neumorphism / Soft UI (Extruded Plastic)
+ * Aesthetic: Seamless background extrusion, opposing light and dark soft shadows
+ * ==============================================================================
+ */
+
+[data-theme="neumorphism"],
+[data-theme="neu-light"] {
+  --theme-name: "Neumorphism Light";
+  --theme-bg: #E0E5EC;
+  --theme-bg-subtle: #D8DFE9;
+
+  --theme-surface: #E0E5EC;
+  --theme-surface-container: #E0E5EC;
+  --theme-surface-elevated: #E0E5EC;
+
+  --theme-text: #3D4451;
+  --theme-text-muted: #798393;
+
+  --theme-primary: #3B82F6;
+  --theme-primary-hover: #2563EB;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #DBEAFE;
+  --theme-on-primary-container: #1E3A8A;
+
+  --theme-secondary: #6B7280;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #E5E7EB;
+
+  --theme-accent: #8B5CF6;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-md);          /* 12px */
+
+  /* Dual Extruded Shadows: Bottom-Right Dark + Top-Left Pure White Highlight */
+  --theme-shadow-sm: 4px 4px 8px #bec3c9, -4px -4px 8px #ffffff;
+  --theme-shadow: 8px 8px 16px #bec3c9, -8px -8px 16px #ffffff;
+  --theme-shadow-hover: 12px 12px 20px #bec3c9, -12px -12px 20px #ffffff;
+
+  /* Debossed Inset Shadow (Pressed button / Input field) */
+  --theme-shadow-inset: inset 5px 5px 10px #bec3c9, inset -5px -5px 10px #ffffff;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

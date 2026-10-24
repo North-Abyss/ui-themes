@@ -1,0 +1,51 @@
+/**
+ * ==============================================================================
+ * Preset 08: Bento Grid / Linear-Vercel Modern Dark
+ * Aesthetic: Deep obsidian charcoal, luminous hairline gradient borders, modular SaaS
+ * ==============================================================================
+ */
+
+[data-theme="bento-modern"],
+[data-theme="linear-dark"] {
+  --theme-name: "Bento Modern Dark";
+  --theme-bg: #080808;
+  --theme-bg-subtle: #0F0F0F;
+
+  --theme-canvas-pattern: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.12) 0%, transparent 60%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: #121212;
+  --theme-surface-container: #171717;
+  --theme-surface-elevated: #222222;
+
+  --theme-text: #EDEDED;
+  --theme-text-muted: #888888;
+
+  --theme-primary: #5E6AD2;                      /* Linear Signature Indigo */
+  --theme-primary-hover: #4F5BC0;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(94, 106, 210, 0.20);
+  --theme-on-primary-container: #C8CCFF;
+
+  --theme-secondary: #262626;
+  --theme-on-secondary: #EDEDED;
+  --theme-secondary-container: #1C1C1C;
+
+  --theme-accent: #E5E5E5;
+  --theme-danger: #F87171;
+  --theme-on-danger: #450A0A;
+
+  /* Luminous Hairline Borders */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.05);
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-sm);          /* 8px */
+
+  --theme-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.50);
+  --theme-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.65);
+  --theme-shadow-hover: 0 8px 30px 0 rgba(0, 0, 0, 0.80), 0 0 0 1px rgba(255, 255, 255, 0.20);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

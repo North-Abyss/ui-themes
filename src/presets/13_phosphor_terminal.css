@@ -1,0 +1,57 @@
+/**
+ * PT Universal Theme Preset: Phosphor CRT Hacker Terminal (13_phosphor_terminal.css)
+ * Authentic monochrome P1 Phosphor Green CRT retro cyberdeck terminal.
+ * Monospace typography, CRT scanlines, luminous text blooming, sharp industrial edges.
+ */
+
+:root[data-theme="phosphor-terminal"] {
+  /* CRT Monitor Canvas & Scanlines */
+  --theme-bg: #070B07;
+  --theme-bg-gradient: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 102, 0.04) 0px,
+    rgba(0, 255, 102, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  ), #070B07;
+  --theme-surface: rgba(12, 20, 12, 0.90);
+  --theme-surface-container: #0C160C;
+  --theme-surface-container-high: #142414;
+  --theme-backdrop: none;
+
+  /* Phosphor Green Primary & Blooming */
+  --theme-primary: #00FF66;
+  --theme-primary-container: rgba(0, 255, 102, 0.15);
+  --theme-on-primary: #070B07;
+  --theme-on-primary-container: #00FF66;
+
+  --theme-secondary: #33FF88;
+  --theme-secondary-container: rgba(51, 255, 136, 0.15);
+  --theme-on-secondary: #070B07;
+  --theme-on-secondary-container: #33FF88;
+
+  --theme-tertiary: #FFB000;
+  --theme-tertiary-container: rgba(255, 176, 0, 0.15);
+  --theme-on-tertiary: #070B07;
+  --theme-on-tertiary-container: #FFB000;
+
+  /* Monospace Typography */
+  --theme-text: #00FF66;
+  --theme-text-muted: #008833;
+  --theme-font-sans: 'Courier New', 'Fira Code', 'JetBrains Mono', monospace;
+  --theme-font-mono: 'Courier New', 'Fira Code', monospace;
+
+  /* Glowing CRT Wireframe Borders & Shadows */
+  --theme-border: 1px solid #00FF66;
+  --theme-border-subtle: 1px solid #008833;
+  --theme-shadow-sm: 0 0 10px rgba(0, 255, 102, 0.20);
+  --theme-shadow-md: 0 0 20px rgba(0, 255, 102, 0.35), inset 0 0 8px rgba(0, 255, 102, 0.15);
+  --theme-shadow-lg: 0 0 35px rgba(0, 255, 102, 0.50), inset 0 0 16px rgba(0, 255, 102, 0.25);
+
+  /* Curvature & Geometry: Sharp Industrial Hardware */
+  --theme-border-radius: 2px;
+  --theme-card-radius: 2px;
+  --theme-btn-radius: 2px;
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}

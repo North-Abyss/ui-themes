@@ -1,0 +1,56 @@
+/**
+ * PT Universal Theme Preset: VS Code Modern Dark+ (17_vscode_modern.css)
+ * Official Microsoft Visual Studio Code IDE design tokens.
+ * Editor background (#1E1E1E), sidebar (#252526), VS Code Blue (#007ACC),
+ * syntax highlights: mint (#4EC9B0), coral (#CE9178), keyword blue (#569CD6).
+ */
+
+:root[data-theme="vscode-dark"] {
+  /* Surfaces */
+  --theme-bg: #1E1E1E;
+  --theme-bg-subtle: #252526;
+  --theme-surface: #252526;
+  --theme-surface-container: #2D2D2D;
+  --theme-surface-container-high: #333333;
+  --theme-surface-elevated: #3C3C3C;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #D4D4D4;
+  --theme-text-muted: #858585;
+  --theme-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --theme-font-mono: 'Consolas', 'Courier New', monospace;
+
+  /* Primary Action: VS Code Blue */
+  --theme-primary: #007ACC;
+  --theme-primary-hover: #0062A3;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(0, 122, 204, 0.20);
+  --theme-on-primary-container: #4FC1FF;
+
+  /* Secondary & Syntax Accents */
+  --theme-secondary: #3C3C3C;
+  --theme-on-secondary: #CCCCCC;
+  --theme-secondary-container: #333333;
+
+  --theme-accent: #4EC9B0;
+  --theme-danger: #F14C4C;
+  --theme-on-danger: #FFFFFF;
+
+  /* Borders: 1px subtle dark */
+  --theme-border: 1px solid #3C3C3C;
+  --theme-border-subtle: 1px solid #2D2D2D;
+
+  /* Curvature: 2px sharp IDE feel */
+  --theme-border-radius: 2px;
+  --theme-card-radius: 2px;
+  --theme-btn-radius: 2px;
+
+  /* Shadows */
+  --theme-shadow-sm: none;
+  --theme-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.50);
+
+  --theme-btn-transform: translateY(0);
+  --theme-btn-active-transform: translateY(1px);
+}

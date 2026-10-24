@@ -1,0 +1,95 @@
+/**
+ * ==============================================================================
+ * Preset 02: Minimal 2D Monochrome / Line Art ("Nothing" / Dieter Rams)
+ * Aesthetic: Stark, architectural, hairline outlines, 2D flat, dot-matrix grid
+ * ==============================================================================
+ */
+
+[data-theme="minimal-mono"],
+[data-theme="minimal-light"] {
+  --theme-name: "Minimal 2D Mono Light";
+  --theme-bg: #FFFFFF;
+  --theme-bg-subtle: #F6F6F6;
+  
+  /* Canvas Texture: Subtle 16px Dot-Matrix Grid */
+  --theme-canvas-pattern: radial-gradient(#111111 1px, transparent 1px);
+  --theme-canvas-size: 16px 16px;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #FAFAFA;
+  --theme-surface-elevated: #FFFFFF;
+
+  --theme-text: #000000;
+  --theme-text-muted: #666666;
+
+  --theme-primary: #000000;
+  --theme-primary-hover: #222222;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #EEEEEE;
+  --theme-on-primary-container: #000000;
+
+  --theme-secondary: #444444;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EAEAEA;
+
+  --theme-accent: #000000;
+  --theme-danger: #D32F2F;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #000000;
+  --theme-border-subtle: 1px solid #E0E0E0;
+  --theme-border-radius: var(--radius-xs);       /* 4px crisp micro-radius */
+  --theme-btn-radius: var(--radius-xs);          /* 4px */
+
+  /* Zero Drop Shadow — Flat 2D Blueprint Pure Aesthetic */
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #000000;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="minimal-dark"] {
+  --theme-name: "Minimal 2D Mono Dark";
+  --theme-bg: #0A0A0A;
+  --theme-bg-subtle: #141414;
+
+  --theme-canvas-pattern: radial-gradient(#333333 1px, transparent 1px);
+  --theme-canvas-size: 16px 16px;
+
+  --theme-surface: #111111;
+  --theme-surface-container: #181818;
+  --theme-surface-elevated: #1F1F1F;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #888888;
+
+  --theme-primary: #FFFFFF;
+  --theme-primary-hover: #E0E0E0;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #262626;
+  --theme-on-primary-container: #FFFFFF;
+
+  --theme-secondary: #CCCCCC;
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: #222222;
+
+  --theme-accent: #FFFFFF;
+  --theme-danger: #EF5350;
+  --theme-on-danger: #000000;
+
+  --theme-border: 1px solid #333333;
+  --theme-border-subtle: 1px solid #222222;
+  --theme-border-radius: var(--radius-xs);
+  --theme-btn-radius: var(--radius-xs);
+
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #FFFFFF;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
