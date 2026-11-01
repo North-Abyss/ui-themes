@@ -1,0 +1,3989 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="material3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Theme Engine & Modular UI Studio — 22+ Themes in Pure CSS</title>
+  
+  <!-- SEO Primary Metadata -->
+  <meta name="description" content="Production-ready Universal Theme Engine and Live Modular UI Studio with 22+ aesthetic design systems and famous developer themes in zero-dependency pure CSS. 22 presets available now with continuous additions.">
+  <meta name="keywords" content="design system, css themes, dark mode, light mode, tokyo night, dracula, catppuccin, glassmorphism, neumorphism, ui studio, material 3, pure css">
+  <meta name="author" content="Yuvanesh KS (@North-Abyss)">
+  <link rel="canonical" href="https://north-abyss.github.io/ui-themes/">
+
+  <!-- Open Graph / Facebook (5:4 Aspect Ratio) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://north-abyss.github.io/ui-themes/">
+  <meta property="og:title" content="Universal Theme Engine & Modular UI Studio — 22+ Themes in Pure CSS">
+  <meta property="og:description" content="22+ beautiful aesthetic & developer themes in pure CSS (growing list). Live token modular studio, instant theme switcher, and zero dependencies.">
+  <meta property="og:image" content="https://north-abyss.github.io/ui-themes/assets/social-preview-5x4.png">
+  <meta property="og:image:secure_url" content="https://north-abyss.github.io/ui-themes/assets/social-preview-5x4.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1350">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="Universal Theme Engine Social Preview - 22+ CSS Themes & Modular UI Studio">
+
+  <!-- Twitter Card (5:4 Ratio Optimized) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://north-abyss.github.io/ui-themes/">
+  <meta name="twitter:title" content="Universal Theme Engine & Modular UI Studio — 22+ Themes in Pure CSS">
+  <meta name="twitter:description" content="22+ design systems & developer themes in pure CSS with Live UI Studio. Continuously expanding preset library.">
+  <meta name="twitter:image" content="https://north-abyss.github.io/ui-themes/assets/social-preview-5x4.png">
+  <meta name="twitter:creator" content="@North-Abyss">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Universal Theme Engine & Modular UI Studio",
+    "operatingSystem": "All",
+    "applicationCategory": "DesignApplication",
+    "description": "Zero-dependency pure CSS design system offering 22 aesthetic morphisms and developer themes with a live modular UI token editor.",
+    "url": "https://north-abyss.github.io/ui-themes/",
+    "author": {
+      "@type": "Person",
+      "name": "Yuvanesh KS",
+      "url": "https://github.com/North-Abyss"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Google Material Symbols & Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- Master Theme Stylesheets -->
+  <style id="universalThemePresets">
+/**
+ * ==============================================================================
+ * Tier 1: Design Token Primitives (src/themes/tokens/primitives.css)
+ * Low-level raw values: Palettes, Spacing scales, Radii scales, Easings
+ * ==============================================================================
+ */
+
+:root {
+  /* Typography Stacks */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: "Outfit", "Space Grotesk", var(--font-sans);
+
+  /* Spacing Scale (4px Base Grid) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* Border Radius Primitives */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Animation & Easings */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* Material 3 Neutral Palette Scale (0 - 100) */
+  --pal-neutral-0: #000000;
+  --pal-neutral-4: #0e0e11;
+  --pal-neutral-6: #121316;
+  --pal-neutral-10: #1b1b1f;
+  --pal-neutral-12: #201f24;
+  --pal-neutral-17: #2a2a2f;
+  --pal-neutral-20: #303034;
+  --pal-neutral-22: #353539;
+  --pal-neutral-24: #3a393e;
+  --pal-neutral-30: #46464a;
+  --pal-neutral-40: #5e5e62;
+  --pal-neutral-50: #77767b;
+  --pal-neutral-60: #919095;
+  --pal-neutral-70: #acabb0;
+  --pal-neutral-80: #c8c6cb;
+  --pal-neutral-87: #dbd8de;
+  --pal-neutral-90: #e4e2e6;
+  --pal-neutral-92: #eae7ec;
+  --pal-neutral-94: #f0edf2;
+  --pal-neutral-95: #f3f0f5;
+  --pal-neutral-96: #f6f3f8;
+  --pal-neutral-98: #fdf8fd;
+  --pal-neutral-99: #fffbfe;
+  --pal-neutral-100: #ffffff;
+
+  /* M3 Primary Seed Palette (Indigo / Tech Blue) */
+  --pal-primary-10: #00105c;
+  --pal-primary-20: #001f8f;
+  --pal-primary-30: #0032b4;
+  --pal-primary-40: #294ede;
+  --pal-primary-80: #bac3ff;
+  --pal-primary-90: #dce1ff;
+
+  /* Neo-Brutalist Pop Primitives */
+  --pal-pop-yellow: #FFE600;
+  --pal-pop-mint: #00F0FF;
+  --pal-pop-lilac: #D6B4FC;
+  --pal-pop-coral: #FF5C5C;
+  --pal-pop-black: #000000;
+  --pal-pop-white: #FFFFFF;
+
+  /* Cyberpunk / Synthwave Primitives */
+  --pal-cyber-abyss: #0B001A;
+  --pal-cyber-neon-cyan: #00F0FF;
+  --pal-cyber-neon-magenta: #FF007F;
+  --pal-cyber-purple: #8B00FF;
+  --pal-cyber-hud-yellow: #FFE600;
+
+  /* Clay Pastel Primitives */
+  --pal-clay-lilac: #e0d4fc;
+  --pal-clay-mint: #d4fce5;
+  --pal-clay-peach: #fcdcd4;
+  --pal-clay-sky: #d4f0fc;
+}
+/**
+ * ==============================================================================
+ * Preset 01: Google Material 3 / Flutter (Material You)
+ * Aesthetic: Fluid, accessible, surface container elevation, pill buttons
+ * ==============================================================================
+ */
+
+[data-theme="material3"],
+[data-theme="material3-light"] {
+  --theme-name: "Material 3 Light";
+  --theme-mode: light;
+  --theme-name: "Material 3 Light";
+  --theme-bg: var(--pal-neutral-98);
+  --theme-bg-subtle: var(--pal-neutral-95);
+  
+  /* M3 Surface Container Hierarchy */
+  --theme-surface: var(--pal-neutral-99);
+  --theme-surface-container-low: var(--pal-neutral-96);
+  --theme-surface-container: var(--pal-neutral-94);
+  --theme-surface-container-high: var(--pal-neutral-92);
+  --theme-surface-elevated: var(--theme-surface-container);
+
+  --theme-text: var(--pal-neutral-10);
+  --theme-text-muted: var(--pal-neutral-40);
+
+  --theme-primary: var(--pal-primary-40);
+  --theme-primary-hover: var(--pal-primary-30);
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: var(--pal-primary-90);
+  --theme-on-primary-container: var(--pal-primary-10);
+
+  --theme-secondary: #575e71;
+  --theme-on-secondary: #ffffff;
+  --theme-secondary-container: #dbe2f9;
+
+  --theme-accent: #715573;
+  --theme-danger: #ba1a1a;
+  --theme-on-danger: #ffffff;
+
+  --theme-border: 1px solid var(--pal-neutral-87);
+  --theme-border-subtle: 1px solid var(--pal-neutral-92);
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-full);        /* 9999px (M3 Pills) */
+
+  /* M3 Elevation Level Shadows */
+  --theme-shadow-sm: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
+  --theme-shadow: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.30);
+  --theme-shadow-hover: 0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px 0 rgba(0,0,0,0.30);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="material3-dark"] {
+  --theme-name: "Material 3 Dark";
+  --theme-mode: dark;
+  --theme-name: "Material 3 Dark";
+  --theme-bg: var(--pal-neutral-6);
+  --theme-bg-subtle: var(--pal-neutral-10);
+
+  --theme-surface: var(--pal-neutral-10);
+  --theme-surface-container-low: var(--pal-neutral-12);
+  --theme-surface-container: var(--pal-neutral-17);
+  --theme-surface-container-high: var(--pal-neutral-22);
+  --theme-surface-elevated: var(--theme-surface-container);
+
+  --theme-text: var(--pal-neutral-90);
+  --theme-text-muted: var(--pal-neutral-70);
+
+  --theme-primary: var(--pal-primary-80);
+  --theme-primary-hover: var(--pal-primary-90);
+  --theme-on-primary: var(--pal-primary-20);
+  --theme-primary-container: var(--pal-primary-30);
+  --theme-on-primary-container: var(--pal-primary-90);
+
+  --theme-secondary: #bfc6dc;
+  --theme-on-secondary: #293041;
+  --theme-secondary-container: #3f4759;
+
+  --theme-accent: #dfbbde;
+  --theme-danger: #ffb4ab;
+  --theme-on-danger: #690005;
+
+  --theme-border: 1px solid var(--pal-neutral-30);
+  --theme-border-subtle: 1px solid var(--pal-neutral-24);
+  --theme-border-radius: var(--radius-lg);
+  --theme-btn-radius: var(--radius-full);
+
+  --theme-shadow-sm: 0 1px 3px 1px rgba(0,0,0,0.35);
+  --theme-shadow: 0 2px 6px 2px rgba(0,0,0,0.40);
+  --theme-shadow-hover: 0 4px 10px 3px rgba(0,0,0,0.50);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 02: Minimal 2D Monochrome / Line Art ("Nothing" / Dieter Rams)
+ * Aesthetic: Stark, architectural, hairline outlines, 2D flat, dot-matrix grid
+ * ==============================================================================
+ */
+
+[data-theme="minimal-mono"],
+[data-theme="minimal-light"] {
+  --theme-name: "Minimal 2D Mono Light";
+  --theme-mode: light;
+  --theme-name: "Minimal 2D Mono Light";
+  --theme-bg: #FFFFFF;
+  --theme-bg-subtle: #F6F6F6;
+  
+  /* Canvas Texture: Subtle 16px Dot-Matrix Grid */
+  --theme-canvas-pattern: radial-gradient(#111111 1px, transparent 1px);
+  --theme-canvas-size: 16px 16px;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #FAFAFA;
+  --theme-surface-elevated: #FFFFFF;
+
+  --theme-text: #000000;
+  --theme-text-muted: #666666;
+
+  --theme-primary: #000000;
+  --theme-primary-hover: #222222;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #EEEEEE;
+  --theme-on-primary-container: #000000;
+
+  --theme-secondary: #444444;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EAEAEA;
+
+  --theme-accent: #000000;
+  --theme-danger: #D32F2F;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #000000;
+  --theme-border-subtle: 1px solid #E0E0E0;
+  --theme-border-radius: var(--radius-xs);       /* 4px crisp micro-radius */
+  --theme-btn-radius: var(--radius-xs);          /* 4px */
+
+  /* Zero Drop Shadow — Flat 2D Blueprint Pure Aesthetic */
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #000000;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="minimal-dark"] {
+  --theme-name: "Minimal 2D Mono Dark";
+  --theme-mode: dark;
+  --theme-name: "Minimal 2D Mono Dark";
+  --theme-bg: #0A0A0A;
+  --theme-bg-subtle: #141414;
+
+  --theme-canvas-pattern: radial-gradient(#333333 1px, transparent 1px);
+  --theme-canvas-size: 16px 16px;
+
+  --theme-surface: #111111;
+  --theme-surface-container: #181818;
+  --theme-surface-elevated: #1F1F1F;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #888888;
+
+  --theme-primary: #FFFFFF;
+  --theme-primary-hover: #E0E0E0;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #262626;
+  --theme-on-primary-container: #FFFFFF;
+
+  --theme-secondary: #CCCCCC;
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: #222222;
+
+  --theme-accent: #FFFFFF;
+  --theme-danger: #EF5350;
+  --theme-on-danger: #000000;
+
+  --theme-border: 1px solid #333333;
+  --theme-border-subtle: 1px solid #222222;
+  --theme-border-radius: var(--radius-xs);
+  --theme-btn-radius: var(--radius-xs);
+
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #FFFFFF;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 03: Glassmorphism 2.0 (Spatial Frosted Glass / visionOS)
+ * Aesthetic: Translucent frosted panels, specular borders, optical blur
+ * ==============================================================================
+ */
+
+[data-theme="glassmorphism"],
+[data-theme="glass-dark"] {
+  --theme-name: "Glassmorphism 2.0 Dark";
+  --theme-mode: dark;
+  --theme-name: "Glassmorphism Dark";
+  --theme-bg: #0b0f19;
+  --theme-bg-subtle: #111827;
+
+  /* Ambient Mesh Glow Backdrop */
+  --theme-canvas-pattern: radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.20) 0%, transparent 45%),
+                          radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.20) 0%, transparent 50%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: rgba(255, 255, 255, 0.06);
+  --theme-surface-container: rgba(255, 255, 255, 0.10);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.15);
+
+  --theme-text: #F9FAFB;
+  --theme-text-muted: #9CA3AF;
+
+  --theme-primary: #38BDF8;
+  --theme-primary-hover: #0EA5E9;
+  --theme-on-primary: #0F172A;
+  --theme-primary-container: rgba(56, 189, 248, 0.20);
+  --theme-on-primary-container: #E0F2FE;
+
+  --theme-secondary: #C084FC;
+  --theme-on-secondary: #1E1B4B;
+  --theme-secondary-container: rgba(192, 132, 252, 0.20);
+
+  --theme-accent: #F472B6;
+  --theme-danger: #FB7185;
+  --theme-on-danger: #881337;
+
+  /* Specular Edge Highlights */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.18);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-border-radius: var(--radius-xl);      /* 24px */
+  --theme-btn-radius: var(--radius-md);         /* 12px */
+
+  --theme-shadow-sm: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --theme-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(16px) saturate(180%);
+}
+
+[data-theme="glass-light"] {
+  --theme-name: "Glassmorphism Light";
+  --theme-mode: light;
+  --theme-name: "Glassmorphism Light";
+  --theme-bg: #E0E7FF;
+  --theme-bg-subtle: #EEF2FF;
+
+  --theme-canvas-pattern: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.25) 0%, transparent 40%),
+                          radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.20) 0%, transparent 45%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: rgba(255, 255, 255, 0.45);
+  --theme-surface-container: rgba(255, 255, 255, 0.65);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.85);
+
+  --theme-text: #1E293B;
+  --theme-text-muted: #64748B;
+
+  --theme-primary: #4F46E5;
+  --theme-primary-hover: #4338CA;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(79, 70, 229, 0.15);
+  --theme-on-primary-container: #312E81;
+
+  --theme-secondary: #7C3AED;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: rgba(124, 58, 237, 0.15);
+
+  --theme-accent: #DB2777;
+  --theme-danger: #E11D48;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid rgba(255, 255, 255, 0.50);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.30);
+  --theme-border-radius: var(--radius-xl);
+  --theme-btn-radius: var(--radius-md);
+
+  --theme-shadow-sm: 0 4px 16px 0 rgba(31, 38, 135, 0.08);
+  --theme-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --theme-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(16px) saturate(180%);
+}
+/**
+ * ==============================================================================
+ * Preset 04: Claymorphism (3D Puffy Matte Clay / Inflatable UI)
+ * Aesthetic: Playful, tactile squishy volume, chunky organic curves, dual inset shadows
+ * ==============================================================================
+ */
+
+[data-theme="claymorphism"],
+[data-theme="clay-light"] {
+  --theme-name: "Claymorphism Light";
+  --theme-mode: light;
+  --theme-bg: #F4F0FD;
+  --theme-bg-subtle: #ECE6FA;
+
+  --theme-surface: #E8DFF5;
+  --theme-surface-container: #E0D4FC;
+  --theme-surface-elevated: #EDE4FC;
+
+  --theme-text: #4C1D95;
+  --theme-text-muted: #6D28D9;
+
+  --theme-primary: #8B5CF6;
+  --theme-primary-hover: #7C3AED;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #DDD6FE;
+  --theme-on-primary-container: #4C1D95;
+
+  --theme-secondary: #EC4899;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #FCE7F3;
+
+  --theme-accent: #10B981;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-2xl);     /* 32px chunky organic */
+  --theme-btn-radius: var(--radius-xl);         /* 24px */
+
+  /* Triple Box-Shadow Clay Recipe: Outer Float + Inner Dark + Inner Light */
+  --theme-shadow-sm: 8px 8px 16px rgba(139, 92, 246, 0.20),
+                     inset -4px -4px 8px rgba(109, 40, 217, 0.30),
+                     inset 4px 4px 8px rgba(255, 255, 255, 0.70);
+
+  --theme-shadow: 16px 16px 32px rgba(139, 92, 246, 0.22),
+                  inset -8px -8px 16px rgba(109, 40, 217, 0.35),
+                  inset 8px 8px 16px rgba(255, 255, 255, 0.75);
+
+  --theme-shadow-hover: 20px 20px 40px rgba(139, 92, 246, 0.28),
+                        inset -10px -10px 18px rgba(109, 40, 217, 0.40),
+                        inset 10px 10px 18px rgba(255, 255, 255, 0.85);
+
+  /* Recessed / Inset Input Field Shadow */
+  --theme-shadow-inset: inset 4px 4px 8px rgba(139, 92, 246, 0.20),
+                        inset -4px -4px 8px rgba(255, 255, 255, 0.80);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 05: Neo-Brutalism & Retrobento (Gumroad / Figma Community)
+ * Aesthetic: High contrast, thick 2.5px solid black borders, 4px hard drop shadow
+ * ==============================================================================
+ */
+
+[data-theme="neobrutalism"],
+[data-theme="neo-light"] {
+  --theme-name: "Neo-Brutalism Pop";
+  --theme-mode: light;
+  --theme-bg: #FFFDF8;
+  --theme-bg-subtle: #FFF4D0;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #FFE600;          /* Signature Electric Yellow */
+  --theme-surface-elevated: #D6B4FC;           /* Pop Lilac */
+
+  --theme-text: #000000;
+  --theme-text-muted: #333333;
+
+  --theme-primary: #FFE600;
+  --theme-primary-hover: #E6CE00;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #FFF7A8;
+  --theme-on-primary-container: #000000;
+
+  --theme-secondary: #00F0FF;
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: #B8F9FF;
+
+  --theme-accent: #D6B4FC;
+  --theme-danger: #FF5C5C;
+  --theme-on-danger: #000000;
+
+  /* Hard Unapologetic Solid Outlines */
+  --theme-border: 2.5px solid #000000;
+  --theme-border-subtle: 2px solid #000000;
+  --theme-border-radius: var(--radius-sm);      /* 8px */
+  --theme-btn-radius: var(--radius-sm);
+
+  /* Hard Offset Drop Shadows (Zero Blur) */
+  --theme-shadow-sm: 2px 2px 0px #000000;
+  --theme-shadow: 4px 4px 0px #000000;
+  --theme-shadow-hover: 6px 6px 0px #000000;
+
+  --theme-font: var(--font-display);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 06: Neumorphism / Soft UI (Extruded Plastic)
+ * Aesthetic: Seamless background extrusion, opposing light and dark soft shadows
+ * ==============================================================================
+ */
+
+[data-theme="neumorphism"],
+[data-theme="neu-light"] {
+  --theme-name: "Neumorphism Light";
+  --theme-mode: light;
+  --theme-bg: #E0E5EC;
+  --theme-bg-subtle: #D8DFE9;
+
+  --theme-surface: #E0E5EC;
+  --theme-surface-container: #E0E5EC;
+  --theme-surface-elevated: #E0E5EC;
+
+  --theme-text: #3D4451;
+  --theme-text-muted: #798393;
+
+  --theme-primary: #3B82F6;
+  --theme-primary-hover: #2563EB;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #DBEAFE;
+  --theme-on-primary-container: #1E3A8A;
+
+  --theme-secondary: #6B7280;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #E5E7EB;
+
+  --theme-accent: #8B5CF6;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-md);          /* 12px */
+
+  /* Dual Extruded Shadows: Bottom-Right Dark + Top-Left Pure White Highlight */
+  --theme-shadow-sm: 4px 4px 8px #bec3c9, -4px -4px 8px #ffffff;
+  --theme-shadow: 8px 8px 16px #bec3c9, -8px -8px 16px #ffffff;
+  --theme-shadow-hover: 12px 12px 20px #bec3c9, -12px -12px 20px #ffffff;
+
+  /* Debossed Inset Shadow (Pressed button / Input field) */
+  --theme-shadow-inset: inset 5px 5px 10px #bec3c9, inset -5px -5px 10px #ffffff;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 07: Cyberpunk / Synthwave (Neon Glow HUD)
+ * Aesthetic: Dark abyss, electric cyan/magenta glowing borders, sci-fi telemetry
+ * ==============================================================================
+ */
+
+[data-theme="cyberpunk"],
+[data-theme="cyber-dark"] {
+  --theme-name: "Cyberpunk Synthwave";
+  --theme-mode: dark;
+  --theme-bg: #090014;
+  --theme-bg-subtle: #120029;
+
+  /* CRT Scanline Overlay */
+  --theme-canvas-pattern: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.40) 50%),
+                          linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  --theme-canvas-size: 100% 4px, 6px 100%;
+
+  --theme-surface: #13032b;
+  --theme-surface-container: #1b053d;
+  --theme-surface-elevated: #28085c;
+
+  --theme-text: #00F0FF;                        /* Electric Cyan HUD Text */
+  --theme-text-muted: #FF77E9;
+
+  --theme-primary: #FF007F;                      /* Neon Magenta */
+  --theme-primary-hover: #E60073;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(255, 0, 127, 0.25);
+  --theme-on-primary-container: #FFB3DE;
+
+  --theme-secondary: #00F0FF;                    /* Electric Cyan */
+  --theme-on-secondary: #090014;
+  --theme-secondary-container: rgba(0, 240, 255, 0.20);
+
+  --theme-accent: #FFE600;                       /* Warning Yellow */
+  --theme-danger: #FF003C;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #00F0FF;
+  --theme-border-subtle: 1px solid rgba(255, 0, 127, 0.40);
+  --theme-border-radius: var(--radius-xs);       /* 4px angular HUD */
+  --theme-btn-radius: var(--radius-xs);
+
+  /* Neon Aura Glows */
+  --theme-shadow-sm: 0 0 10px rgba(0, 240, 255, 0.35);
+  --theme-shadow: 0 0 20px rgba(255, 0, 127, 0.40), inset 0 0 10px rgba(0, 240, 255, 0.15);
+  --theme-shadow-hover: 0 0 30px rgba(0, 240, 255, 0.60), inset 0 0 15px rgba(255, 0, 127, 0.30);
+
+  --theme-font: var(--font-mono);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 08: Bento Grid / Linear-Vercel Modern Dark
+ * Aesthetic: Deep obsidian charcoal, luminous hairline gradient borders, modular SaaS
+ * ==============================================================================
+ */
+
+[data-theme="bento-modern"],
+[data-theme="linear-dark"] {
+  --theme-name: "Bento Modern Dark";
+  --theme-mode: dark;
+  --theme-bg: #080808;
+  --theme-bg-subtle: #0F0F0F;
+
+  --theme-canvas-pattern: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.12) 0%, transparent 60%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: #121212;
+  --theme-surface-container: #171717;
+  --theme-surface-elevated: #222222;
+
+  --theme-text: #EDEDED;
+  --theme-text-muted: #888888;
+
+  --theme-primary: #5E6AD2;                      /* Linear Signature Indigo */
+  --theme-primary-hover: #4F5BC0;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(94, 106, 210, 0.20);
+  --theme-on-primary-container: #C8CCFF;
+
+  --theme-secondary: #262626;
+  --theme-on-secondary: #EDEDED;
+  --theme-secondary-container: #1C1C1C;
+
+  --theme-accent: #E5E5E5;
+  --theme-danger: #F87171;
+  --theme-on-danger: #450A0A;
+
+  /* Luminous Hairline Borders */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.05);
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-sm);          /* 8px */
+
+  --theme-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.50);
+  --theme-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.65);
+  --theme-shadow-hover: 0 8px 30px 0 rgba(0, 0, 0, 0.80), 0 0 0 1px rgba(255, 255, 255, 0.20);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 09: Retro Y2K / 90s OS (Classic Windows 95 & System 7)
+ * Aesthetic: Battleship gray, beveled chrome 3D buttons, nostalgic computing
+ * ==============================================================================
+ */
+
+[data-theme="retro-90s"],
+[data-theme="win95"] {
+  --theme-name: "Retro 90s OS";
+  --theme-mode: light;
+  --theme-bg: #008080;                          /* Classic Win95 Teal Canvas */
+  --theme-bg-subtle: #C0C0C0;
+
+  --theme-surface: #C0C0C0;
+  --theme-surface-container: #DFDFDF;
+  --theme-surface-elevated: #C0C0C0;
+
+  --theme-text: #000000;
+  --theme-text-muted: #555555;
+
+  --theme-primary: #000080;                      /* Classic Active Titlebar Navy */
+  --theme-primary-hover: #1084D0;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #C0C0C0;
+  --theme-on-primary-container: #000080;
+
+  --theme-secondary: #808080;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #D4D0C8;
+
+  --theme-accent: #000080;
+  --theme-danger: #800000;
+  --theme-on-danger: #FFFFFF;
+
+  /* Classic 3D Bevel Borders */
+  --theme-border: 2px solid;
+  --theme-border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  --theme-border-subtle: 1px solid #808080;
+  --theme-border-radius: var(--radius-none);    /* Pure 0px Sharp */
+  --theme-btn-radius: var(--radius-none);
+
+  /* Windows 95 Beveled Button Outlines */
+  --theme-shadow-sm: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+  --theme-shadow: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+  --theme-shadow-hover: inset -1px -1px #000000, inset 1px 1px #FFFFFF, inset -2px -2px #808080, inset 2px 2px #DFDFDF;
+
+  /* Pressed / Depressed Button State */
+  --theme-shadow-inset: inset 1px 1px #000000, inset -1px -1px #FFFFFF, inset 2px 2px #808080, inset -2px -2px #DFDFDF;
+
+  --theme-font: "MS Sans Serif", Tahoma, var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 10: OLED Pure Black Minimalist
+ * Aesthetic: True #000000 black canvas, infinite contrast, extreme battery-saver
+ * ==============================================================================
+ */
+
+[data-theme="oled-black"],
+[data-theme="oled-pure"] {
+  --theme-name: "OLED Pure Black";
+  --theme-mode: dark;
+  --theme-bg: #000000;
+  --theme-bg-subtle: #080808;
+
+  --theme-surface: #000000;
+  --theme-surface-container: #0C0C0C;
+  --theme-surface-elevated: #141414;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #8E8E93;
+
+  --theme-primary: #FFFFFF;
+  --theme-primary-hover: #E5E5EA;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #1C1C1E;
+  --theme-on-primary-container: #FFFFFF;
+
+  --theme-secondary: #2C2C2E;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #1C1C1E;
+
+  --theme-accent: #30D158;                      /* Minimalist Phosphor Mint */
+  --theme-danger: #FF453A;
+  --theme-on-danger: #000000;
+
+  --theme-border: 1px solid #222222;
+  --theme-border-subtle: 1px solid #161616;
+  --theme-border-radius: var(--radius-md);       /* 12px */
+  --theme-btn-radius: var(--radius-sm);          /* 8px */
+
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #333333;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * PT Universal Theme Preset: Aurora Mesh Glow / Spatial Morphism (11_aurora_glow.css)
+ * Inspired by iOS 18 Siri / Apple Intelligence / VisionOS Spatial UI.
+ * Multi-layer ambient radiant mesh glows, luminous iridescent borders, and frosted glass.
+ */
+
+:root[data-theme="aurora-glow"] {
+  --theme-name: "Aurora Mesh Glow";
+  --theme-mode: dark;
+  /* Surfaces & Ambient Gradients */
+  --theme-bg: #090714;
+  --theme-bg-gradient: radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.28) 0%, transparent 45%),
+                       radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.25) 0%, transparent 50%),
+                       radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.16) 0%, transparent 55%),
+                       #090714;
+  --theme-surface: rgba(19, 14, 36, 0.65);
+  --theme-surface-container: rgba(28, 20, 52, 0.60);
+  --theme-surface-container-high: rgba(38, 28, 68, 0.70);
+  --theme-backdrop: blur(28px) saturate(180%);
+
+  /* Primary & Accents */
+  --theme-primary: #A855F7;
+  --theme-primary-container: rgba(168, 85, 247, 0.25);
+  --theme-on-primary: #FFFFFF;
+  --theme-on-primary-container: #F3E8FF;
+
+  --theme-secondary: #38BDF8;
+  --theme-secondary-container: rgba(56, 189, 248, 0.25);
+  --theme-on-secondary: #0B0813;
+  --theme-on-secondary-container: #E0F2FE;
+
+  --theme-tertiary: #F43F5E;
+  --theme-tertiary-container: rgba(244, 63, 94, 0.25);
+  --theme-on-tertiary: #FFFFFF;
+  --theme-on-tertiary-container: #FFE4E6;
+
+  /* Typography */
+  --theme-text: #F8FAFC;
+  --theme-text-muted: #94A3B8;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  --theme-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spatial Iridescent Shadows & Borders */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.18);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.10);
+  --theme-shadow-sm: 0 4px 16px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  --theme-shadow-md: 0 12px 36px 0 rgba(168, 85, 247, 0.22), 0 4px 12px 0 rgba(0, 0, 0, 0.40), inset 0 1px 1px rgba(255, 255, 255, 0.30);
+  --theme-shadow-lg: 0 24px 64px 0 rgba(168, 85, 247, 0.35), 0 8px 24px 0 rgba(0, 0, 0, 0.60), inset 0 1px 2px rgba(255, 255, 255, 0.40);
+
+  /* Curvature & Geometry */
+  --theme-border-radius: 22px;
+  --theme-card-radius: 22px;
+  --theme-btn-radius: 9999px;
+  --theme-btn-transform: translateY(-2px) scale(1.02);
+  --theme-btn-active-transform: translateY(1px) scale(0.98);
+}
+/**
+ * PT Universal Theme Preset: Frutiger Aero / Y2K Glossy Liquid Glass (12_frutiger_aero.css)
+ * Iconic 2000s glassy aesthetic (Windows 7 Aero, Mac OS X Aqua, PS3 XMB).
+ * Glossy specular highlights, vibrant sky-blue/emerald gradients, and glossy bubble buttons.
+ */
+
+:root[data-theme="frutiger-aero"] {
+  --theme-name: "Frutiger Aero (Y2K Liquid)";
+  --theme-mode: light;
+  /* Surfaces & Sky Canvas */
+  --theme-bg: #E0F2FE;
+  --theme-bg-gradient: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 35%, #7DD3FC 100%);
+  --theme-surface: rgba(255, 255, 255, 0.75);
+  --theme-surface-container: rgba(255, 255, 255, 0.65);
+  --theme-surface-container-high: rgba(255, 255, 255, 0.90);
+  --theme-backdrop: blur(16px);
+
+  /* Primary & Glossy Water Droplet Accents */
+  --theme-primary: #0284C7;
+  --theme-primary-container: rgba(2, 132, 199, 0.20);
+  --theme-on-primary: #FFFFFF;
+  --theme-on-primary-container: #082F49;
+
+  --theme-secondary: #10B981;
+  --theme-secondary-container: rgba(16, 185, 129, 0.20);
+  --theme-on-secondary: #FFFFFF;
+  --theme-on-secondary-container: #064E3B;
+
+  --theme-tertiary: #F59E0B;
+  --theme-tertiary-container: rgba(245, 158, 11, 0.20);
+  --theme-on-tertiary: #FFFFFF;
+  --theme-on-tertiary-container: #78350F;
+
+  /* Typography */
+  --theme-text: #0C4A6E;
+  --theme-text-muted: #0369A1;
+  --theme-font-sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Frutiger', sans-serif;
+  --theme-font-mono: 'Consolas', monospace;
+
+  /* Glossy Skeuomorphic Borders & Reflection Shadows */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.85);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.50);
+  --theme-shadow-sm: 0 4px 12px rgba(2, 132, 199, 0.12), inset 0 2px 2px rgba(255, 255, 255, 0.9);
+  --theme-shadow-md: 0 10px 28px rgba(2, 132, 199, 0.18), inset 0 2px 3px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(14, 165, 233, 0.25);
+  --theme-shadow-lg: 0 20px 48px rgba(2, 132, 199, 0.25), inset 0 3px 4px rgba(255, 255, 255, 1), inset 0 -4px 8px rgba(14, 165, 233, 0.35);
+
+  /* Curvature & Geometry */
+  --theme-border-radius: 18px;
+  --theme-card-radius: 18px;
+  --theme-btn-radius: 9999px;
+  --theme-btn-transform: translateY(-2px) scale(1.02);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: Phosphor CRT Hacker Terminal (13_phosphor_terminal.css)
+ * Authentic monochrome P1 Phosphor Green CRT retro cyberdeck terminal.
+ * Monospace typography, CRT scanlines, luminous text blooming, sharp industrial edges.
+ */
+
+:root[data-theme="phosphor-terminal"] {
+  --theme-name: "Phosphor CRT Terminal";
+  --theme-mode: dark;
+  /* CRT Monitor Canvas & Scanlines */
+  --theme-bg: #070B07;
+  --theme-bg-gradient: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 102, 0.04) 0px,
+    rgba(0, 255, 102, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  ), #070B07;
+  --theme-surface: rgba(12, 20, 12, 0.90);
+  --theme-surface-container: #0C160C;
+  --theme-surface-container-high: #142414;
+  --theme-backdrop: none;
+
+  /* Phosphor Green Primary & Blooming */
+  --theme-primary: #00FF66;
+  --theme-primary-container: rgba(0, 255, 102, 0.15);
+  --theme-on-primary: #070B07;
+  --theme-on-primary-container: #00FF66;
+
+  --theme-secondary: #33FF88;
+  --theme-secondary-container: rgba(51, 255, 136, 0.15);
+  --theme-on-secondary: #070B07;
+  --theme-on-secondary-container: #33FF88;
+
+  --theme-tertiary: #FFB000;
+  --theme-tertiary-container: rgba(255, 176, 0, 0.15);
+  --theme-on-tertiary: #070B07;
+  --theme-on-tertiary-container: #FFB000;
+
+  /* Monospace Typography */
+  --theme-text: #00FF66;
+  --theme-text-muted: #008833;
+  --theme-font-sans: 'Courier New', 'Fira Code', 'JetBrains Mono', monospace;
+  --theme-font-mono: 'Courier New', 'Fira Code', monospace;
+
+  /* Glowing CRT Wireframe Borders & Shadows */
+  --theme-border: 1px solid #00FF66;
+  --theme-border-subtle: 1px solid #008833;
+  --theme-shadow-sm: 0 0 10px rgba(0, 255, 102, 0.20);
+  --theme-shadow-md: 0 0 20px rgba(0, 255, 102, 0.35), inset 0 0 8px rgba(0, 255, 102, 0.15);
+  --theme-shadow-lg: 0 0 35px rgba(0, 255, 102, 0.50), inset 0 0 16px rgba(0, 255, 102, 0.25);
+
+  /* Curvature & Geometry: Sharp Industrial Hardware */
+  --theme-border-radius: 2px;
+  --theme-card-radius: 2px;
+  --theme-btn-radius: 2px;
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: Nord Arctic Frost (14_nord_frost.css)
+ * Iconic developer-favorite Arctic slate and glacier palette.
+ * Polar night surfaces, glacial ice blues, frozen mint accents, and clean modern contrast.
+ */
+
+:root[data-theme="nord-frost"] {
+  --theme-name: "Nord Arctic Frost";
+  --theme-mode: dark;
+  /* Polar Night Surfaces */
+  --theme-bg: #2E3440;
+  --theme-bg-gradient: linear-gradient(180deg, #2E3440 0%, #242933 100%);
+  --theme-surface: #3B4252;
+  --theme-surface-container: #434C5E;
+  --theme-surface-container-high: #4C566A;
+  --theme-backdrop: none;
+
+  /* Glacier Frost Accents */
+  --theme-primary: #88C0D0;
+  --theme-primary-container: rgba(136, 192, 208, 0.20);
+  --theme-on-primary: #2E3440;
+  --theme-on-primary-container: #88C0D0;
+
+  --theme-secondary: #8FBCBB;
+  --theme-secondary-container: rgba(143, 188, 187, 0.20);
+  --theme-on-secondary: #2E3440;
+  --theme-on-secondary-container: #8FBCBB;
+
+  --theme-tertiary: #EBCB8B;
+  --theme-tertiary-container: rgba(235, 203, 139, 0.20);
+  --theme-on-tertiary: #2E3440;
+  --theme-on-tertiary-container: #EBCB8B;
+
+  /* Snow Storm Typography */
+  --theme-text: #ECEFF4;
+  --theme-text-muted: #D8DEE9;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', monospace;
+
+  /* Arctic Frost Borders & Shadows */
+  --theme-border: 1px solid #4C566A;
+  --theme-border-subtle: 1px solid rgba(76, 86, 106, 0.60);
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --theme-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.35);
+  --theme-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* Curvature & Geometry */
+  --theme-border-radius: 12px;
+  --theme-card-radius: 12px;
+  --theme-btn-radius: 8px;
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: Papercraft & Origami Tactile (15_papercraft.css)
+ * Organic fibrous paper textures, layered paper drop-shadows, terracotta and warm ink accents.
+ * Tactile bookbinding craftsmanship, subtle creases, and refined editorial typography.
+ */
+
+:root[data-theme="papercraft"] {
+  --theme-name: "Papercraft & Origami";
+  --theme-mode: light;
+  /* Handmade Paper Parchment */
+  --theme-bg: #F5F2EB;
+  --theme-bg-gradient: linear-gradient(135deg, #F8F5EE 0%, #EFEBE0 100%);
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #FAF8F5;
+  --theme-surface-container-high: #F3EFE6;
+  --theme-backdrop: none;
+
+  /* Terracotta & Editorial Ink */
+  --theme-primary: #C25E3E;
+  --theme-primary-container: #F9EBE6;
+  --theme-on-primary: #FFFFFF;
+  --theme-on-primary-container: #5C2514;
+
+  --theme-secondary: #2C5E55;
+  --theme-secondary-container: #E3EDE9;
+  --theme-on-secondary: #FFFFFF;
+  --theme-on-secondary-container: #12332D;
+
+  --theme-tertiary: #D97706;
+  --theme-tertiary-container: #FEF3C7;
+  --theme-on-tertiary: #FFFFFF;
+  --theme-on-tertiary-container: #78350F;
+
+  /* Warm Ink Typography */
+  --theme-text: #2B2620;
+  --theme-text-muted: #78716C;
+  --theme-font-sans: 'Georgia', -apple-system, BlinkMacSystemFont, serif;
+  --theme-font-mono: 'Courier New', monospace;
+
+  /* Layered Origami Paper Crease Shadows */
+  --theme-border: 1px solid #E5E0D5;
+  --theme-border-subtle: 1px solid #ECE7DC;
+  --theme-shadow-sm: 0 1px 3px rgba(43, 38, 32, 0.05), 0 1px 2px rgba(43, 38, 32, 0.08);
+  --theme-shadow-md: 0 4px 12px rgba(43, 38, 32, 0.08), 0 1px 3px rgba(43, 38, 32, 0.06);
+  --theme-shadow-lg: 0 12px 30px rgba(43, 38, 32, 0.12), 0 2px 6px rgba(43, 38, 32, 0.08);
+
+  /* Curvature & Geometry: Hand-cut Paper */
+  --theme-border-radius: 6px;
+  --theme-card-radius: 6px;
+  --theme-btn-radius: 4px;
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: GitHub Primer Dark Default (16_github_dark.css)
+ * Official GitHub Primer Design System tokens.
+ * Pristine canvas (#0D1117), iconic Primer green action button (#238636),
+ * subtle dividers (#30363D), and link blue (#58A6FF).
+ */
+
+:root[data-theme="github-dark"] {
+  --theme-name: "GitHub Primer Dark";
+  --theme-mode: dark;
+  /* Canvas & Backgrounds */
+  --theme-bg: #0D1117;
+  --theme-bg-subtle: #161B22;
+  --theme-surface: #161B22;
+  --theme-surface-container: #161B22;
+  --theme-surface-container-high: #21262D;
+  --theme-surface-elevated: #21262D;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #F0F6FC;
+  --theme-text-muted: #8B949E;
+  --theme-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --theme-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Primary Action: Iconic Primer Green */
+  --theme-primary: #238636;
+  --theme-primary-hover: #2EA043;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(35, 134, 54, 0.18);
+  --theme-on-primary-container: #3FB950;
+
+  /* Secondary & Accents */
+  --theme-secondary: #21262D;
+  --theme-on-secondary: #C9D1D9;
+  --theme-secondary-container: #30363D;
+
+  --theme-accent: #58A6FF;
+  --theme-danger: #DA3633;
+  --theme-on-danger: #FFFFFF;
+
+  /* Borders & Dividers */
+  --theme-border: 1px solid #30363D;
+  --theme-border-subtle: 1px solid #21262D;
+
+  /* Curvature: 6px standard */
+  --theme-border-radius: 6px;
+  --theme-card-radius: 6px;
+  --theme-btn-radius: 6px;
+
+  /* Shadows */
+  --theme-shadow-sm: 0 0 transparent;
+  --theme-shadow: 0 1px 0 rgba(1, 4, 9, 0.1);
+  --theme-shadow-hover: 0 3px 6px rgba(1, 4, 9, 0.2);
+
+  --theme-btn-transform: translateY(0);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: VS Code Modern Dark+ (17_vscode_modern.css)
+ * Official Microsoft Visual Studio Code IDE design tokens.
+ * Editor background (#1E1E1E), sidebar (#252526), VS Code Blue (#007ACC),
+ * syntax highlights: mint (#4EC9B0), coral (#CE9178), keyword blue (#569CD6).
+ */
+
+:root[data-theme="vscode-dark"] {
+  --theme-name: "VS Code Modern Dark+";
+  --theme-mode: dark;
+  /* Surfaces */
+  --theme-bg: #1E1E1E;
+  --theme-bg-subtle: #252526;
+  --theme-surface: #252526;
+  --theme-surface-container: #2D2D2D;
+  --theme-surface-container-high: #333333;
+  --theme-surface-elevated: #3C3C3C;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #D4D4D4;
+  --theme-text-muted: #858585;
+  --theme-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --theme-font-mono: 'Consolas', 'Courier New', monospace;
+
+  /* Primary Action: VS Code Blue */
+  --theme-primary: #007ACC;
+  --theme-primary-hover: #0062A3;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(0, 122, 204, 0.20);
+  --theme-on-primary-container: #4FC1FF;
+
+  /* Secondary & Syntax Accents */
+  --theme-secondary: #3C3C3C;
+  --theme-on-secondary: #CCCCCC;
+  --theme-secondary-container: #333333;
+
+  --theme-accent: #4EC9B0;
+  --theme-danger: #F14C4C;
+  --theme-on-danger: #FFFFFF;
+
+  /* Borders: 1px subtle dark */
+  --theme-border: 1px solid #3C3C3C;
+  --theme-border-subtle: 1px solid #2D2D2D;
+
+  /* Curvature: 2px sharp IDE feel */
+  --theme-border-radius: 2px;
+  --theme-card-radius: 2px;
+  --theme-btn-radius: 2px;
+
+  /* Shadows */
+  --theme-shadow-sm: none;
+  --theme-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.50);
+
+  --theme-btn-transform: translateY(0);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: Tokyo Night (18_tokyo_night.css)
+ * Folke's celebrated Neovim / terminal developer theme.
+ * Night canvas (#1A1B26), storm surface (#24283B), luminous blue (#7AA2F7),
+ * neon cyan (#7DCFFF), magenta (#BB9AF7), and emerald (#9ECE6A).
+ */
+
+:root[data-theme="tokyo-night"] {
+  --theme-name: "Tokyo Night (Folke)";
+  --theme-mode: dark;
+  /* Surfaces */
+  --theme-bg: #1A1B26;
+  --theme-bg-subtle: #16161E;
+  --theme-surface: #24283B;
+  --theme-surface-container: #1F2335;
+  --theme-surface-container-high: #292E42;
+  --theme-surface-elevated: #2F354D;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #C0CAF5;
+  --theme-text-muted: #565F89;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Primary Action: Tokyo Blue */
+  --theme-primary: #7AA2F7;
+  --theme-primary-hover: #89DDFF;
+  --theme-on-primary: #15161E;
+  --theme-primary-container: rgba(122, 162, 247, 0.20);
+  --theme-on-primary-container: #7AA2F7;
+
+  /* Secondary & Accents */
+  --theme-secondary: #292E42;
+  --theme-on-secondary: #C0CAF5;
+  --theme-secondary-container: #3B4261;
+
+  --theme-accent: #BB9AF7;
+  --theme-danger: #F7768E;
+  --theme-on-danger: #15161E;
+
+  /* Subtle Midnight Borders */
+  --theme-border: 1px solid #292E42;
+  --theme-border-subtle: 1px solid rgba(41, 46, 66, 0.60);
+
+  /* Curvature: 8px modern curved geometry */
+  --theme-border-radius: 8px;
+  --theme-card-radius: 8px;
+  --theme-btn-radius: 6px;
+
+  /* Shadows with subtle violet tint */
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 1px rgba(122, 162, 247, 0.15);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 8px rgba(122, 162, 247, 0.25);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: Catppuccin Mocha (19_catppuccin_mocha.css)
+ * Official Catppuccin community palette.
+ * Base (#1E1E2E), Mantle (#181825), Crust (#11111B),
+ * Mauve (#CBA6F7), Blue (#89B4FA), Green (#A6E3A1), Peach (#FAB387).
+ */
+
+:root[data-theme="catppuccin-mocha"] {
+  --theme-name: "Catppuccin Mocha";
+  --theme-mode: dark;
+  /* Surfaces */
+  --theme-bg: #1E1E2E;
+  --theme-bg-subtle: #181825;
+  --theme-surface: #181825;
+  --theme-surface-container: #313244;
+  --theme-surface-container-high: #45475A;
+  --theme-surface-elevated: #585B70;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #CDD6F4;
+  --theme-text-muted: #A6ADC8;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Primary Action: Mauve */
+  --theme-primary: #CBA6F7;
+  --theme-primary-hover: #B4BEFE;
+  --theme-on-primary: #11111B;
+  --theme-primary-container: rgba(203, 166, 247, 0.20);
+  --theme-on-primary-container: #CBA6F7;
+
+  /* Secondary & Accents */
+  --theme-secondary: #45475A;
+  --theme-on-secondary: #CDD6F4;
+  --theme-secondary-container: #313244;
+
+  --theme-accent: #89B4FA;
+  --theme-danger: #F38BA8;
+  --theme-on-danger: #11111B;
+
+  /* Soft Pastel Borders */
+  --theme-border: 1px solid #45475A;
+  --theme-border-subtle: 1px solid #313244;
+
+  /* Curvature: 12px friendly rounded */
+  --theme-border-radius: 12px;
+  --theme-card-radius: 12px;
+  --theme-btn-radius: 8px;
+
+  /* Shadows */
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: Dracula Official (20_dracula.css)
+ * Zeno Rocha's iconic gothic developer color scheme.
+ * Canvas (#282A36), Current Line (#44475A), Dracula Purple (#BD93F9),
+ * Hot Pink (#FF79C6), Cyan (#8BE9FD), and Green (#50FA7B).
+ */
+
+:root[data-theme="dracula"] {
+  --theme-name: "Dracula Official";
+  --theme-mode: dark;
+  /* Surfaces */
+  --theme-bg: #282A36;
+  --theme-bg-subtle: #21222C;
+  --theme-surface: #282A36;
+  --theme-surface-container: #44475A;
+  --theme-surface-container-high: #6272A4;
+  --theme-surface-elevated: #44475A;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #F8F8F2;
+  --theme-text-muted: #6272A4;
+  --theme-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-mono: 'Fira Code', 'Courier New', monospace;
+
+  /* Primary Action: Dracula Purple */
+  --theme-primary: #BD93F9;
+  --theme-primary-hover: #D6ACFF;
+  --theme-on-primary: #282A36;
+  --theme-primary-container: rgba(189, 147, 249, 0.20);
+  --theme-on-primary-container: #BD93F9;
+
+  /* Secondary & Accents */
+  --theme-secondary: #44475A;
+  --theme-on-secondary: #F8F8F2;
+  --theme-secondary-container: #6272A4;
+
+  --theme-accent: #FF79C6;
+  --theme-danger: #FF5555;
+  --theme-on-danger: #282A36;
+
+  /* Contrast Borders */
+  --theme-border: 1px solid #6272A4;
+  --theme-border-subtle: 1px solid rgba(98, 114, 164, 0.50);
+
+  /* Curvature: 8px */
+  --theme-border-radius: 8px;
+  --theme-card-radius: 8px;
+  --theme-btn-radius: 6px;
+
+  /* Shadows with purple glow */
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --theme-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), 0 0 1px rgba(189, 147, 249, 0.2);
+  --theme-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 10px rgba(189, 147, 249, 0.3);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: One Dark Pro (21_one_dark_pro.css)
+ * Iconic Atom and JetBrains developer dark palette.
+ * Canvas (#282C34), Surface (#2C313A), Atom Blue (#61AFEF),
+ * Leaf Green (#98C379), Ochre (#E5C07B), Salmon (#E06C75), Orchid (#C678DD).
+ */
+
+:root[data-theme="one-dark"] {
+  --theme-name: "One Dark Pro";
+  --theme-mode: dark;
+  /* Surfaces */
+  --theme-bg: #282C34;
+  --theme-bg-subtle: #21252B;
+  --theme-surface: #2C313A;
+  --theme-surface-container: #21252B;
+  --theme-surface-container-high: #353B45;
+  --theme-surface-elevated: #3E4451;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #ABB2BF;
+  --theme-text-muted: #5C6370;
+  --theme-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --theme-font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+
+  /* Primary Action: Atom Blue */
+  --theme-primary: #61AFEF;
+  --theme-primary-hover: #4D97D5;
+  --theme-on-primary: #282C34;
+  --theme-primary-container: rgba(97, 175, 239, 0.20);
+  --theme-on-primary-container: #61AFEF;
+
+  /* Secondary & Accents */
+  --theme-secondary: #353B45;
+  --theme-on-secondary: #ABB2BF;
+  --theme-secondary-container: #2C313A;
+
+  --theme-accent: #98C379;
+  --theme-danger: #E06C75;
+  --theme-on-danger: #282C34;
+
+  /* Clean Borders */
+  --theme-border: 1px solid #3E4451;
+  --theme-border-subtle: 1px solid #2C313A;
+
+  /* Curvature: 6px */
+  --theme-border-radius: 6px;
+  --theme-card-radius: 6px;
+  --theme-btn-radius: 6px;
+
+  /* Shadows */
+  --theme-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --theme-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.45);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * PT Universal Theme Preset: Solarized Dark (22_solarized_dark.css)
+ * Ethan Schoonover's precision LAB color space palette.
+ * Base03 (#002B36), Base02 (#073642), Solarized Blue (#268BD2),
+ * Cyan (#2AA198), Green (#859900), Yellow (#B58900), Orange (#CB4B16).
+ */
+
+:root[data-theme="solarized-dark"] {
+  --theme-name: "Solarized Dark";
+  --theme-mode: dark;
+  /* Surfaces */
+  --theme-bg: #002B36;
+  --theme-bg-subtle: #073642;
+  --theme-surface: #073642;
+  --theme-surface-container: #002B36;
+  --theme-surface-container-high: #0A4554;
+  --theme-surface-elevated: #0E5265;
+  --theme-backdrop: none;
+
+  /* Typography */
+  --theme-text: #839496;
+  --theme-text-muted: #586E75;
+  --theme-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --theme-font-mono: 'Consolas', 'Courier New', monospace;
+
+  /* Primary Action: Solarized Blue */
+  --theme-primary: #268BD2;
+  --theme-primary-hover: #2AA198;
+  --theme-on-primary: #002B36;
+  --theme-primary-container: rgba(38, 139, 210, 0.20);
+  --theme-on-primary-container: #268BD2;
+
+  /* Secondary & Accents */
+  --theme-secondary: #073642;
+  --theme-on-secondary: #93A1A1;
+  --theme-secondary-container: #0A4554;
+
+  --theme-accent: #2AA198;
+  --theme-danger: #DC322F;
+  --theme-on-danger: #FDF6E3;
+
+  /* Precision Lab Borders */
+  --theme-border: 1px solid #073642;
+  --theme-border-subtle: 1px solid rgba(7, 54, 66, 0.60);
+
+  /* Curvature: 4px precision */
+  --theme-border-radius: 4px;
+  --theme-card-radius: 4px;
+  --theme-btn-radius: 4px;
+
+  /* Shadows */
+  --theme-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --theme-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  --theme-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.45);
+
+  --theme-btn-transform: translateY(-1px);
+  --theme-btn-active-transform: translateY(1px);
+}
+
+  </style>
+
+
+  <style>
+    /* ==========================================================================
+       SHOWCASE CORE STYLES & LAYOUT (Consumes Universal Theme Tokens)
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+    }
+
+    /* ==========================================================================
+       Master Showcase Layout, UI Modular Studio & Component Demo Styles
+       ========================================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+    }
+
+    body {
+      background-color: var(--theme-bg);
+      background-image: var(--theme-canvas-pattern, none);
+      background-size: var(--theme-canvas-size, auto);
+      color: var(--theme-text);
+      font-family: var(--theme-font, sans-serif);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 5rem;
+      overflow-x: hidden;
+    }
+
+    /* Material Symbols Outlined Icon Helper */
+    .material-symbols-outlined,
+    .google-icon {
+      font-family: 'Material Symbols Outlined', system-ui, sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      vertical-align: middle;
+      -webkit-font-feature-settings: 'liga';
+      font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Canvas Lighting for Frosted Glass & Spatial Refraction */
+    .ambient-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+      opacity: var(--theme-ambient-opacity, 0.75);
+      transition: opacity 0.3s ease;
+    }
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(85px);
+      transition: all 0.5s ease;
+    }
+    .orb-1 {
+      width: 480px; height: 480px;
+      top: -120px; left: -60px;
+      background: var(--theme-primary);
+      opacity: 0.22;
+    }
+    .orb-2 {
+      width: 400px; height: 400px;
+      bottom: 60px; right: -50px;
+      background: var(--theme-accent, var(--theme-secondary));
+      opacity: 0.18;
+    }
+
+    /* STRICT AUDIT FIX: Hide ambient light bleed on pitch black OLED, Retro 90s, & Minimal Mono */
+    [data-theme="oled-black"] .ambient-canvas,
+    [data-theme="minimal-mono"] .ambient-canvas,
+    [data-theme="retro-90s"] .ambient-canvas {
+      display: none !important;
+    }
+
+    /* STRICT AUDIT FIX: Retro 90s 3D Bevel Outset Borders */
+    [data-theme="retro-90s"] .section-card,
+    [data-theme="retro-90s"] .hero-banner,
+    [data-theme="retro-90s"] .bento-tile,
+    [data-theme="retro-90s"] .studio-card {
+      border-style: solid !important;
+      border-width: 2px !important;
+      border-color: #FFFFFF #808080 #808080 #FFFFFF !important;
+    }
+    [data-theme="retro-90s"] .badge {
+      border-radius: 0px !important;
+      border-style: solid !important;
+      border-width: 1px !important;
+      border-color: #808080 #FFFFFF #FFFFFF #808080 !important;
+    }
+
+    /* Tactile 3D Claymorphism Highlights */
+    [data-theme="claymorphism"] .btn {
+      box-shadow: var(--theme-shadow-sm), inset 2px 2px 4px rgba(255, 255, 255, 0.7), inset -2px -2px 4px rgba(0, 0, 0, 0.15) !important;
+    }
+    [data-theme="claymorphism"] .btn-primary {
+      box-shadow: 0 10px 22px rgba(124, 77, 255, 0.35), inset 3px 3px 6px rgba(255, 255, 255, 0.8), inset -3px -3px 6px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* Cyberpunk Angled HUD Polygons */
+    [data-theme="cyberpunk"] .btn,
+    [data-theme="cyberpunk"] .section-card,
+    [data-theme="cyberpunk"] .hero-banner,
+    [data-theme="cyberpunk"] .bento-tile {
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+    }
+
+    /* Telemetry Sparkline & Chart Styles */
+    .telemetry-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .sparkline-svg {
+      width: 100%;
+      height: 90px;
+      overflow: visible;
+    }
+
+    /* Top Sticky Theme Controller Bar */
+    .theme-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--theme-surface);
+      border-bottom: var(--theme-border, 1px solid rgba(0,0,0,0.1));
+      box-shadow: var(--theme-shadow-sm);
+      backdrop-filter: var(--theme-backdrop, blur(16px));
+      padding: 0.65rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .header-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .theme-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .theme-select {
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border, 1px solid #ccc);
+      background-color: var(--theme-surface-container, var(--theme-bg));
+      color: var(--theme-text);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      max-width: 240px;
+    }
+
+    /* Swipeable Horizontal Quick Chips Track */
+    .theme-chips-wrapper {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-chips {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 0.15rem 0.1rem 0.35rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .theme-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chip-btn {
+      padding: 0.32rem 0.75rem;
+      border-radius: var(--theme-btn-radius, 6px);
+      border: var(--theme-border-subtle, 1px solid #ccc);
+      background-color: var(--theme-surface-container, #eee);
+      color: var(--theme-text);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .chip-btn.active {
+      background-color: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border-color: var(--theme-primary);
+    }
+
+    /* Studio & Action Buttons in Header */
+    .studio-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      background-color: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border: 1px solid var(--theme-primary);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--theme-shadow-sm);
+      position: relative;
+    }
+    .studio-toggle-btn:hover {
+      filter: brightness(1.1);
+    }
+
+    .inspect-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      background-color: var(--theme-surface-container);
+      color: var(--theme-text);
+      border: var(--theme-border-subtle);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .inspect-toggle-btn.active {
+      background: #00F0FF;
+      color: #000;
+      border-color: #00F0FF;
+      box-shadow: 0 0 12px rgba(0,240,255,0.4);
+    }
+
+    .custom-edited-pill {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      margin-left: 2px;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    /* Container */
+    .container {
+      max-width: 1040px;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      text-align: center;
+      padding: var(--theme-hero-padding, 2.5rem 1.5rem);
+      border-radius: var(--theme-border-radius, 16px);
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border);
+      border-color: var(--theme-border-color, inherit);
+      box-shadow: var(--theme-shadow);
+      backdrop-filter: var(--theme-backdrop, none);
+      position: relative;
+    }
+
+    .hero-banner h1 {
+      font-size: clamp(1.4rem, 4.2vw, 2.3rem);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+    }
+
+    .hero-banner p {
+      color: var(--theme-text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+    }
+
+    /* Section Cards */
+    .section-card {
+      background-color: var(--theme-surface);
+      border: var(--theme-border);
+      border-color: var(--theme-border-color, inherit);
+      border-radius: var(--theme-border-radius, 16px);
+      box-shadow: var(--theme-shadow);
+      backdrop-filter: var(--theme-backdrop, none);
+      padding: var(--theme-card-padding, 2rem);
+      position: relative;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: var(--theme-border-subtle);
+    }
+
+    .section-header h2 {
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .edit-section-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.28rem 0.65rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      border-radius: var(--theme-btn-radius, 4px);
+      background-color: var(--theme-surface-container);
+      color: var(--theme-primary);
+      border: var(--theme-border-subtle);
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .edit-section-btn:hover {
+      background-color: var(--theme-primary-container);
+      color: var(--theme-on-primary-container);
+      border-color: var(--theme-primary);
+    }
+
+    /* Buttons Group */
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: var(--theme-btn-padding-y, 0.65rem) var(--theme-btn-padding-x, 1.4rem);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: var(--theme-btn-radius, 8px);
+      cursor: pointer;
+      text-decoration: none;
+      outline: none;
+      border: var(--theme-border, 1px solid transparent);
+    }
+
+    .btn:active {
+      transform: translateY(2px) scale(0.98);
+    }
+
+    .btn-primary {
+      background-color: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border-color: var(--theme-primary);
+      box-shadow: var(--theme-shadow-sm);
+    }
+    .btn-primary:hover {
+      background-color: var(--theme-primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--theme-secondary-container, var(--theme-surface-container));
+      color: var(--theme-text);
+      border-color: var(--theme-border-subtle);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--theme-text);
+      border: var(--theme-border);
+    }
+    .btn-outline:hover {
+      background-color: var(--theme-surface-container);
+    }
+
+    .btn-danger {
+      background-color: var(--theme-danger);
+      color: var(--theme-on-danger);
+      border-color: var(--theme-danger);
+    }
+
+    /* STRICT AUDIT FIX: FAB radius respects theme button geometry */
+    .btn-fab {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--theme-btn-radius, 50%);
+      background-color: var(--theme-primary-container);
+      color: var(--theme-on-primary-container);
+      box-shadow: var(--theme-shadow);
+      font-size: 1.4rem;
+      padding: 0;
+    }
+
+    /* STRICT AUDIT FIX: Accessible WCAG AA contrast for disabled buttons */
+    .btn:disabled {
+      opacity: 0.45;
+      filter: grayscale(0.8);
+      color: var(--theme-text-muted) !important;
+      background-color: var(--theme-surface-container) !important;
+      border-color: var(--theme-border-subtle) !important;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    /* Form Grid */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--theme-text);
+    }
+
+    .form-input, .form-select {
+      padding: 0.65rem 0.9rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border, 1px solid #ccc);
+      background-color: var(--theme-surface-container, var(--theme-bg));
+      color: var(--theme-text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--theme-primary);
+      box-shadow: 0 0 0 2px var(--theme-primary-container);
+    }
+
+    /* Toggle Switch */
+    .toggle-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 26px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border);
+      border-radius: 34px;
+      transition: 0.3s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: var(--theme-text);
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    input:checked + .slider {
+      background-color: var(--theme-primary);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+      background-color: var(--theme-on-primary);
+    }
+
+    /* Bento Grid Layout */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .bento-tile {
+      padding: 1.5rem;
+      border-radius: var(--theme-border-radius, 16px);
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border);
+      border-color: var(--theme-border-color, inherit);
+      box-shadow: var(--theme-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      backdrop-filter: var(--theme-backdrop, none);
+    }
+
+    .bento-metric {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--theme-primary);
+      font-family: var(--theme-font-mono, monospace);
+    }
+
+    /* Status Badges */
+    .badge-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--theme-btn-radius, 9999px);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: var(--theme-border-subtle);
+    }
+
+    .badge-primary { background-color: var(--theme-primary-container); color: var(--theme-on-primary-container); }
+    .badge-success { background-color: rgba(16, 185, 129, 0.2); color: #10B981; }
+    .badge-warning { background-color: rgba(245, 158, 11, 0.2); color: #F59E0B; }
+    .badge-danger  { background-color: rgba(239, 68, 68, 0.2); color: #EF4444; }
+
+    /* Code Block */
+    pre code {
+      display: block;
+      padding: 1rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border);
+      font-family: var(--theme-font-mono, monospace);
+      font-size: 0.85rem;
+      overflow-x: auto;
+      color: var(--theme-text);
+      line-height: 1.5;
+    }
+
+    /* Inspect Mode Click-to-Select Tool on Page */
+    body.inspect-mode [data-section-id] {
+      cursor: crosshair !important;
+      position: relative;
+    }
+    body.inspect-mode [data-section-id]:hover {
+      outline: 3px dashed var(--theme-primary, #00F0FF) !important;
+      outline-offset: 4px;
+      box-shadow: 0 0 24px rgba(0, 240, 255, 0.35) !important;
+    }
+    body.inspect-mode [data-section-id]::after {
+      content: "🎯 Click to Edit HTML & CSS in Studio";
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: var(--theme-primary);
+      color: var(--theme-on-primary);
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: none;
+      pointer-events: none;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    body.inspect-mode [data-section-id]:hover::after {
+      display: block;
+    }
+
+    /* ==========================================================================
+       UI Modular Studio Sidebar & Drawer
+       ========================================================================== */
+
+    .studio-backdrop {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1990;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .studio-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .studio-drawer {
+      position: fixed;
+      top: 0; right: 0;
+      width: 440px;
+      max-width: 100vw;
+      height: 100vh;
+      background-color: var(--theme-surface);
+      border-left: var(--theme-border, 1px solid rgba(0,0,0,0.15));
+      box-shadow: -8px 0 36px rgba(0, 0, 0, 0.35);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      color: var(--theme-text);
+    }
+    .studio-drawer.open {
+      transform: translateX(0);
+    }
+
+    .studio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      border-bottom: var(--theme-border-subtle);
+      background-color: var(--theme-surface-container);
+    }
+    .studio-header-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .studio-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .studio-tabs {
+      display: flex;
+      background-color: var(--theme-surface-container);
+      border-bottom: var(--theme-border-subtle);
+      padding: 0 0.75rem;
+      gap: 0.25rem;
+    }
+
+    .studio-tab-btn {
+      flex: 1;
+      padding: 0.7rem 0.5rem;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      color: var(--theme-text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+    .studio-tab-btn.active {
+      color: var(--theme-primary);
+      border-bottom-color: var(--theme-primary);
+    }
+
+    .studio-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .studio-tab-panel {
+      display: none;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .studio-tab-panel.active {
+      display: flex;
+    }
+
+    .studio-card {
+      background-color: var(--theme-surface-container);
+      border: var(--theme-border-subtle);
+      border-radius: var(--theme-btn-radius, 8px);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .studio-card-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--theme-text);
+    }
+
+    .color-control-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .color-control-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .color-control-item label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--theme-text-muted);
+    }
+
+    .color-picker-input-group {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--theme-surface);
+      border: var(--theme-border-subtle);
+      border-radius: var(--theme-btn-radius, 6px);
+      padding: 0.25rem 0.5rem;
+    }
+    .color-picker-input-group input[type="color"] {
+      border: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      cursor: pointer;
+      background: none;
+      padding: 0;
+    }
+    .color-picker-input-group input[type="text"] {
+      border: none;
+      background: transparent;
+      font-family: var(--theme-font-mono, monospace);
+      font-size: 0.8rem;
+      color: var(--theme-text);
+      width: 100%;
+      outline: none;
+    }
+
+    .slider-control-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--theme-text-muted);
+    }
+    .slider-control-item input[type="range"] {
+      width: 100%;
+      accent-color: var(--theme-primary);
+      cursor: pointer;
+    }
+
+    .code-editor-area {
+      width: 100%;
+      min-height: 180px;
+      font-family: var(--theme-font-mono, monospace);
+      font-size: 0.82rem;
+      padding: 0.75rem;
+      border-radius: var(--theme-btn-radius, 6px);
+      background-color: var(--theme-surface);
+      border: var(--theme-border-subtle);
+      color: var(--theme-text);
+      line-height: 1.5;
+      resize: vertical;
+      outline: none;
+      tab-size: 2;
+    }
+    .code-editor-area:focus {
+      border-color: var(--theme-primary);
+      box-shadow: 0 0 0 2px var(--theme-primary-container);
+    }
+
+    .snippet-chips {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .snippet-chip {
+      padding: 0.25rem 0.55rem;
+      font-size: 0.73rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      border: var(--theme-border-subtle);
+      background: var(--theme-surface);
+      color: var(--theme-text);
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .snippet-chip:hover {
+      background: var(--theme-primary-container);
+      color: var(--theme-on-primary-container);
+      border-color: var(--theme-primary);
+    }
+
+    .action-btn-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .action-btn-sm {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: var(--theme-btn-radius, 6px);
+      border: var(--theme-border-subtle);
+      background: var(--theme-surface);
+      color: var(--theme-text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: inherit;
+    }
+    .action-btn-sm:hover {
+      background: var(--theme-surface-container);
+    }
+    .action-btn-sm.primary {
+      background: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border-color: var(--theme-primary);
+    }
+    .action-btn-sm.primary:hover {
+      background: var(--theme-primary-hover);
+    }
+
+    .download-card {
+      background: var(--theme-surface-container);
+      border: var(--theme-border-subtle);
+      border-radius: var(--theme-btn-radius, 8px);
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .download-card h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .download-card p {
+      font-size: 0.8rem;
+      color: var(--theme-text-muted);
+      margin: 0;
+    }
+
+    .toast-notification {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--theme-surface-container);
+      color: var(--theme-text);
+      border: var(--theme-border);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+      padding: 0.65rem 1.35rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Media Queries for Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .theme-header {
+        padding: 0.5rem 1rem;
+      }
+      .brand-title span:first-child {
+        font-size: 1rem;
+      }
+      .theme-select {
+        max-width: 170px;
+        font-size: 0.82rem;
+      }
+      .container {
+        padding: 0 0.85rem;
+        margin: 1.25rem auto;
+        gap: 1.5rem;
+      }
+      .section-card {
+        padding: 1.25rem;
+      }
+      .hero-banner {
+        padding: 1.75rem 1rem;
+      }
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .studio-drawer {
+        width: 100vw;
+      }
+    }
+
+
+    /* Mode Segmented Control */
+    .mode-segmented-control {
+      display: inline-flex;
+      align-items: center;
+      background: var(--theme-surface-container);
+      border: var(--theme-border-subtle);
+      border-radius: var(--theme-btn-radius, 9999px);
+      padding: 3px;
+      gap: 2px;
+    }
+    .mode-segment-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      color: var(--theme-text-muted);
+      border-radius: var(--theme-btn-radius, 9999px);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .mode-segment-btn:hover {
+      color: var(--theme-text);
+      background: rgba(127, 127, 127, 0.12);
+    }
+    .mode-segment-btn.active {
+      background: var(--theme-primary);
+      color: var(--theme-on-primary);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 640px) {
+      .mode-segment-btn .mode-text {
+        display: none;
+      }
+      .mode-segment-btn {
+        padding: 0.35rem 0.5rem;
+      }
+    }
+
+    /* Desktop Docked Live Editing Layout */
+    body {
+      transition: padding-right 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease;
+    }
+    .theme-header {
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease;
+    }
+    @media (min-width: 1024px) {
+      body.studio-docked {
+        padding-right: 440px;
+      }
+      body.studio-docked .theme-header {
+        width: 100%;
+      }
+      body.studio-docked .studio-backdrop {
+        display: none !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
+      }
+    }
+  </style>
+
+  <!-- Live Injected Custom CSS Sandbox -->
+  <style id="user-custom-css">
+    /* Custom CSS injected in real time via UI Modular Studio */
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background Lighting Canvas (Refracted by Frosted Glass & Spatial Glow) -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+  </div>
+
+  <!-- Studio Backdrop Overlay -->
+  <div id="studioBackdrop" class="studio-backdrop"></div>
+
+  <!-- Top Sticky Theme Switcher Controller Bar -->
+  <header class="theme-header">
+    <div class="header-top-row">
+      <div class="brand-title">
+        <span class="google-icon material-symbols-outlined" title="Universal Design Theme Palette" aria-label="Palette Icon" role="img">palette</span>
+        <div>
+          <span>Universal Theme Engine</span>
+          <div style="font-size: 0.72rem; font-weight: 500; opacity: 0.8;">
+            by <a href="https://github.com/North-Abyss" target="_blank" style="color: inherit; text-decoration: underline;">Yuvanesh KS (@North-Abyss)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-controls">
+        <!-- 3-Way Mode Switcher: System | Light | Dark -->
+        <div class="mode-segmented-control" role="radiogroup" aria-label="Theme Appearance Mode">
+          <button id="modeBtnSystem" class="mode-segment-btn active" data-mode="system" title="Follow OS Preference">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">devices</span>
+            <span class="mode-text">System</span>
+          </button>
+          <button id="modeBtnLight" class="mode-segment-btn" data-mode="light" title="Light Mode Themes">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">light_mode</span>
+            <span class="mode-text">Light</span>
+          </button>
+          <button id="modeBtnDark" class="mode-segment-btn" data-mode="dark" title="Dark Mode Themes">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">dark_mode</span>
+            <span class="mode-text">Dark</span>
+          </button>
+        </div>
+
+        <button id="toggleSidebarBtn" class="studio-toggle-btn" title="Open Modular UI Studio Editor">
+          <span class="google-icon material-symbols-outlined" style="font-size: 18px;">tune</span>
+          <span>UI Studio</span>
+          <span id="customEditedPill" class="custom-edited-pill" style="display:none;" title="Active Custom Modifications"></span>
+        </button>
+
+        <button id="inspectModeBtn" class="inspect-toggle-btn" title="Toggle Inspect on Page Mode">
+          <span class="google-icon material-symbols-outlined" style="font-size: 18px;">ads_click</span>
+          <span>Inspect</span>
+        </button>
+
+        <!-- Cleanly Categorized Presets Dropdown -->
+        <select id="themeSelect" class="theme-select" aria-label="Select Theme Preset">
+          <optgroup label="☀️ Curated Light Themes (8)">
+            <option value="material3">01. Google Material 3 (Light)</option>
+            <option value="minimal-mono">02. Minimal 2D Mono (Light)</option>
+            <option value="glass-light">03. Glassmorphism (Light)</option>
+            <option value="claymorphism">04. Claymorphism (3D Soft Puffy)</option>
+            <option value="neobrutalism">05. Neo-Brutalism (Bold Pop)</option>
+            <option value="neumorphism">06. Neumorphism (Soft UI Extruded)</option>
+            <option value="nord-frost">14. Nord Arctic Frost (Polar Snow)</option>
+            <option value="papercraft">15. Papercraft & Origami (Tactile)</option>
+          </optgroup>
+          <optgroup label="🌙 Modern Dark & Spatial Morphisms (7)">
+            <option value="material3-dark">01. Google Material 3 (Dark)</option>
+            <option value="minimal-dark">02. Minimal 2D Mono (Dark)</option>
+            <option value="glassmorphism">03. Glassmorphism (Dark)</option>
+            <option value="cyberpunk">07. Cyberpunk (Neon Glow HUD)</option>
+            <option value="bento-modern">08. Bento Modern Dark (Linear/SaaS)</option>
+            <option value="retro-90s">09. Retro 90s OS (Win95 Chrome)</option>
+            <option value="oled-black">10. OLED Pure Black (#000000)</option>
+            <option value="aurora-glow">11. Aurora Mesh Glow (Spatial UI)</option>
+            <option value="frutiger-aero">12. Frutiger Aero (Y2K Liquid Glass)</option>
+            <option value="phosphor-terminal">13. Phosphor CRT (Cyberdeck)</option>
+          </optgroup>
+          <optgroup label="💻 Legendary Developer Themes (7)">
+            <option value="tokyo-night">18. Tokyo Night (Folke)</option>
+            <option value="catppuccin-mocha">19. Catppuccin Mocha</option>
+            <option value="dracula">20. Dracula Official</option>
+            <option value="github-dark">16. GitHub Primer Dark Default</option>
+            <option value="vscode-dark">17. VS Code Modern Dark+</option>
+            <option value="one-dark">21. One Dark Pro (Atom)</option>
+            <option value="solarized-dark">22. Solarized Dark (Precision)</option>
+          </optgroup>
+        </select>
+
+        <a href="https://github.com/North-Abyss/ui-themes" target="_blank" class="chip-btn" style="text-decoration: none; background-color: var(--theme-primary); color: var(--theme-on-primary); border-color: var(--theme-primary);" title="Star on GitHub" aria-label="Star on GitHub">
+          <span class="google-icon material-symbols-outlined" style="font-size: 16px;">star</span>
+          <span>Star</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Swipeable Horizontal Quick Chips Track -->
+    <div class="theme-chips-wrapper">
+      <div class="theme-chips">
+        <!-- Light Presets -->
+        <button class="chip-btn" data-set-theme="material3" data-mode="light">☀️ M3 Light</button>
+        <button class="chip-btn" data-set-theme="minimal-mono" data-mode="light">Minimal Mono</button>
+        <button class="chip-btn" data-set-theme="glass-light" data-mode="light">Glass Light</button>
+        <button class="chip-btn" data-set-theme="claymorphism" data-mode="light">Claymorphism</button>
+        <button class="chip-btn" data-set-theme="neobrutalism" data-mode="light">Neo-Brutal</button>
+        <button class="chip-btn" data-set-theme="neumorphism" data-mode="light">Neumorphism</button>
+        <button class="chip-btn" data-set-theme="nord-frost" data-mode="light">Nord Frost</button>
+        <button class="chip-btn" data-set-theme="papercraft" data-mode="light">Papercraft</button>
+        <!-- Dark & Spatial Presets -->
+        <button class="chip-btn" data-set-theme="material3-dark" data-mode="dark">🌙 M3 Dark</button>
+        <button class="chip-btn" data-set-theme="glassmorphism" data-mode="dark">Glass Dark</button>
+        <button class="chip-btn" data-set-theme="bento-modern" data-mode="dark">Bento Dark</button>
+        <button class="chip-btn" data-set-theme="cyberpunk" data-mode="dark">Cyberpunk</button>
+        <button class="chip-btn" data-set-theme="aurora-glow" data-mode="dark">Aurora Glow</button>
+        <button class="chip-btn" data-set-theme="frutiger-aero" data-mode="dark">Frutiger Aero</button>
+        <button class="chip-btn" data-set-theme="phosphor-terminal" data-mode="dark">Phosphor CRT</button>
+        <button class="chip-btn" data-set-theme="oled-black" data-mode="dark">OLED Black</button>
+        <button class="chip-btn" data-set-theme="retro-90s" data-mode="dark">Retro 90s</button>
+        <!-- Developer Presets -->
+        <button class="chip-btn" data-set-theme="tokyo-night" data-mode="dark">💻 Tokyo Night</button>
+        <button class="chip-btn" data-set-theme="catppuccin-mocha" data-mode="dark">Catppuccin</button>
+        <button class="chip-btn" data-set-theme="dracula" data-mode="dark">Dracula</button>
+        <button class="chip-btn" data-set-theme="github-dark" data-mode="dark">GitHub Dark</button>
+        <button class="chip-btn" data-set-theme="vscode-dark" data-mode="dark">VS Code</button>
+        <button class="chip-btn" data-set-theme="one-dark" data-mode="dark">One Dark</button>
+        <button class="chip-btn" data-set-theme="solarized-dark" data-mode="dark">Solarized Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- UI Modular Studio Sidebar Drawer -->
+  <aside id="themeSidebar" class="studio-drawer" aria-label="UI Modular Studio">
+    <div class="studio-header">
+      <div class="studio-header-title">
+        <span class="google-icon material-symbols-outlined" style="color: var(--theme-primary);">tune</span>
+        <div>
+          <span>UI Modular Studio</span>
+          <div style="font-size: 0.72rem; color: var(--theme-text-muted); font-weight: normal;">Live Token & Component Editor</div>
+        </div>
+      </div>
+      <div class="studio-header-actions">
+        <button id="resetAllBtn" class="action-btn-sm" title="Reset All Customizations">
+          <span class="google-icon material-symbols-outlined" style="font-size: 16px;">restart_alt</span>
+          <span>Reset</span>
+        </button>
+        <button id="closeSidebarBtn" class="action-btn-sm" title="Close Studio" style="padding: 0.4rem 0.5rem;">
+          <span class="google-icon material-symbols-outlined" style="font-size: 18px;">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Studio Tab Navigation -->
+    <nav class="studio-tabs">
+      <button class="studio-tab-btn active" data-tab="tokens">
+        <span class="google-icon material-symbols-outlined" style="font-size: 16px;">sliders</span>
+        <span>Tokens</span>
+      </button>
+      <button class="studio-tab-btn" data-tab="livecode">
+        <span class="google-icon material-symbols-outlined" style="font-size: 16px;">code</span>
+        <span>Live HTML & CSS</span>
+      </button>
+      <button class="studio-tab-btn" data-tab="download">
+        <span class="google-icon material-symbols-outlined" style="font-size: 16px;">download</span>
+        <span>Download</span>
+      </button>
+    </nav>
+
+    <!-- Studio Body -->
+    <div class="studio-body">
+      
+      <!-- TAB 1: MODULAR TOKENS -->
+      <div id="tab-tokens" class="studio-tab-panel active">
+        <!-- Color Palette Controls -->
+        <div class="studio-card">
+          <div class="studio-card-title">
+            <span>🎨 Color System</span>
+            <span class="badge badge-primary">CSS Variables</span>
+          </div>
+
+          <div class="color-control-grid">
+            <div class="color-control-item">
+              <label>Primary Brand</label>
+              <div class="color-picker-input-group">
+                <input type="color" id="picker-primary" value="#00639B">
+                <input type="text" id="hex-primary" value="#00639B">
+              </div>
+            </div>
+
+            <div class="color-control-item">
+              <label>Page Background</label>
+              <div class="color-picker-input-group">
+                <input type="color" id="picker-bg" value="#fdf8fd">
+                <input type="text" id="hex-bg" value="#fdf8fd">
+              </div>
+            </div>
+
+            <div class="color-control-item">
+              <label>Surface / Card</label>
+              <div class="color-picker-input-group">
+                <input type="color" id="picker-surface" value="#fffbfe">
+                <input type="text" id="hex-surface" value="#fffbfe">
+              </div>
+            </div>
+
+            <div class="color-control-item">
+              <label>Surface Container</label>
+              <div class="color-picker-input-group">
+                <input type="color" id="picker-surface-container" value="#f0edf2">
+                <input type="text" id="hex-surface-container" value="#f0edf2">
+              </div>
+            </div>
+
+            <div class="color-control-item">
+              <label>Text Color</label>
+              <div class="color-picker-input-group">
+                <input type="color" id="picker-text" value="#1b1b1f">
+                <input type="text" id="hex-text" value="#1b1b1f">
+              </div>
+            </div>
+
+            <div class="color-control-item">
+              <label>Accent Glow</label>
+              <div class="color-picker-input-group">
+                <input type="color" id="picker-accent" value="#715573">
+                <input type="text" id="hex-accent" value="#715573">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Geometry & Spacing Sliders -->
+        <div class="studio-card">
+          <div class="studio-card-title">
+            <span>📐 Modular Geometry & Radii</span>
+            <span class="badge badge-success">Sliders</span>
+          </div>
+
+          <div class="slider-control-item">
+            <div class="slider-header">
+              <span>Card Corner Radius (--theme-border-radius)</span>
+              <span id="radiusCardVal">16px</span>
+            </div>
+            <input type="range" id="sliderCardRadius" min="0" max="36" value="16">
+          </div>
+
+          <div class="slider-control-item">
+            <div class="slider-header">
+              <span>Button Radius (--theme-btn-radius)</span>
+              <span id="radiusBtnVal">9999px (Pill)</span>
+            </div>
+            <input type="range" id="sliderBtnRadius" min="0" max="50" value="50">
+          </div>
+
+          <div class="slider-control-item">
+            <div class="slider-header">
+              <span>Card Padding (--theme-card-padding)</span>
+              <span id="cardPadVal">32px</span>
+            </div>
+            <input type="range" id="sliderCardPad" min="12" max="48" value="32">
+          </div>
+
+          <div class="slider-control-item">
+            <div class="slider-header">
+              <span>Button Padding X (--theme-btn-padding-x)</span>
+              <span id="btnPadXVal">22px</span>
+            </div>
+            <input type="range" id="sliderBtnPadX" min="8" max="36" value="22">
+          </div>
+
+          <div class="slider-control-item">
+            <div class="slider-header">
+              <span>Button Padding Y (--theme-btn-padding-y)</span>
+              <span id="btnPadYVal">10px</span>
+            </div>
+            <input type="range" id="sliderBtnPadY" min="4" max="24" value="10">
+          </div>
+
+          <div class="slider-control-item">
+            <div class="slider-header">
+              <span>Ambient Glow Intensity</span>
+              <span id="ambientVal">75%</span>
+            </div>
+            <input type="range" id="sliderAmbient" min="0" max="100" value="75">
+          </div>
+        </div>
+
+        <!-- Token Actions -->
+        <div class="action-btn-row">
+          <button id="copyTokensBtn" class="action-btn-sm primary" style="flex:1;">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">content_copy</span>
+            <span>Copy CSS Variables</span>
+          </button>
+          <button id="resetTokensBtn" class="action-btn-sm">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">refresh</span>
+            <span>Reset Preset Tokens</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 2: LIVE HTML & CSS FOR SELECTION OF OURS -->
+      <div id="tab-livecode" class="studio-tab-panel">
+        
+        <!-- Selection Controller -->
+        <div class="studio-card">
+          <div class="studio-card-title">
+            <span>🎯 Selected Component</span>
+            <button id="pickOnPageBtn" class="action-btn-sm" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">
+              <span class="google-icon material-symbols-outlined" style="font-size: 14px;">ads_click</span>
+              <span>Pick on Page</span>
+            </button>
+          </div>
+
+          <select id="componentSelect" class="form-select" style="font-size: 0.88rem; padding: 0.5rem 0.75rem;">
+            <option value="buttons">Buttons & Interactive Controls</option>
+            <option value="forms">Form Controls & Inputs</option>
+            <option value="bento">Bento Grid & Information Architecture</option>
+            <option value="telemetry">Live Telemetry & Activity Chart</option>
+            <option value="cdn">1-Line CDN Quick Start</option>
+            <option value="badges">Status Badges & Alerts</option>
+            <option value="hero">Hero Banner Title & Description</option>
+            <option value="sandbox">Custom Component Sandbox (Blank Canvas)</option>
+          </select>
+        </div>
+
+        <!-- HTML Editor -->
+        <div class="studio-card">
+          <div class="studio-card-title">
+            <span>📄 Live HTML Markup</span>
+            <div class="action-btn-row">
+              <button id="resetHtmlBtn" class="action-btn-sm" style="padding: 0.2rem 0.45rem; font-size: 0.72rem;">Reset HTML</button>
+              <button id="copyHtmlBtn" class="action-btn-sm" style="padding: 0.2rem 0.45rem; font-size: 0.72rem;">Copy</button>
+            </div>
+          </div>
+
+          <div class="snippet-chips">
+            <span style="font-size: 0.72rem; color: var(--theme-text-muted); align-self: center;">Insert:</span>
+            <button class="snippet-chip" data-insert-html='<button class="btn btn-primary"><span class="google-icon material-symbols-outlined">bolt</span> Fast Action</button>'>+ Primary Btn</button>
+            <button class="snippet-chip" data-insert-html='<span class="badge badge-success"><span class="google-icon material-symbols-outlined" style="font-size: 14px;">verified</span> Verified</span>'>+ Badge</button>
+            <button class="snippet-chip" data-insert-html='<div class="bento-tile"><span style="color:var(--theme-text-muted);font-size:0.85rem;">Custom Stat</span><div class="bento-metric">100%</div></div>'>+ Bento Tile</button>
+          </div>
+
+          <textarea id="liveHtmlEditor" class="code-editor-area" rows="8" spellcheck="false" placeholder="Loading HTML..."></textarea>
+        </div>
+
+        <!-- Custom CSS Editor -->
+        <div class="studio-card">
+          <div class="studio-card-title">
+            <span>✨ Custom CSS Overrides</span>
+            <div class="action-btn-row">
+              <button id="clearCssBtn" class="action-btn-sm" style="padding: 0.2rem 0.45rem; font-size: 0.72rem;">Clear</button>
+              <button id="copyCssBtn" class="action-btn-sm" style="padding: 0.2rem 0.45rem; font-size: 0.72rem;">Copy</button>
+            </div>
+          </div>
+
+          <div class="snippet-chips">
+            <span style="font-size: 0.72rem; color: var(--theme-text-muted); align-self: center;">Presets:</span>
+            <button class="snippet-chip" data-insert-css=".btn-primary { box-shadow: 0 0 20px var(--theme-primary) !important; animation: pulse 2s infinite; }">+ Glow Pulse</button>
+            <button class="snippet-chip" data-insert-css=".section-card { border: 2px solid transparent !important; background-image: linear-gradient(var(--theme-surface), var(--theme-surface)), linear-gradient(135deg, var(--theme-primary), var(--theme-accent)) !important; background-origin: border-box !important; background-clip: padding-box, border-box !important; }">+ Gradient Border</button>
+            <button class="snippet-chip" data-insert-css=".btn:hover { transform: translateY(-3px) scale(1.03) !important; }">+ Hover Lift</button>
+            <button class="snippet-chip" data-insert-css=".bento-tile { backdrop-filter: blur(25px) !important; background-color: rgba(255,255,255,0.08) !important; }">+ Glass Frost</button>
+          </div>
+
+          <textarea id="liveCssEditor" class="code-editor-area" rows="8" spellcheck="false" placeholder="/* Write custom CSS overrides here. Injected live into the page! */
+.btn-primary {
+  /* try your custom styles */
+}"></textarea>
+        </div>
+      </div>
+
+      <!-- TAB 3: DOWNLOAD & EXPORT AS UI EDITOR -->
+      <div id="tab-download" class="studio-tab-panel">
+        <div class="download-card">
+          <h4>
+            <span class="google-icon material-symbols-outlined" style="color:var(--theme-primary);">css</span>
+            <span>Download Custom Theme CSS</span>
+          </h4>
+          <p>Export your customized theme variables and custom CSS rules as a production-ready stylesheet bundle.</p>
+          <button id="downloadCssBtn" class="action-btn-sm primary" style="align-self: flex-start; margin-top: 0.5rem;">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">download</span>
+            <span>universal-theme-custom.css</span>
+          </button>
+        </div>
+
+        <div class="download-card">
+          <h4>
+            <span class="google-icon material-symbols-outlined" style="color:var(--theme-primary);">html</span>
+            <span>Download Standalone UI Editor Showcase</span>
+          </h4>
+          <p>Download the complete interactive showcase with your custom tokens, live HTML edits, and CSS baked in to host or share as your own custom UI editor!</p>
+          <button id="downloadHtmlBtn" class="action-btn-sm primary" style="align-self: flex-start; margin-top: 0.5rem;">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">download</span>
+            <span>custom-ui-showcase.html</span>
+          </button>
+        </div>
+
+        <div class="download-card">
+          <h4>
+            <span class="google-icon material-symbols-outlined" style="color:var(--theme-primary);">widgets</span>
+            <span>Download Selected Component</span>
+          </h4>
+          <p>Export only the currently selected component with its custom HTML and scoped styling ready to drop into any project.</p>
+          <button id="downloadCompBtn" class="action-btn-sm" style="align-self: flex-start; margin-top: 0.5rem;">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">download</span>
+            <span>component.html</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Main Container Kitchen Sink -->
+  <main class="container">
+    
+    <!-- Hero Banner -->
+    <section class="hero-banner" data-section-id="hero">
+      <div style="position: absolute; top: 12px; right: 14px;">
+        <button class="edit-section-btn" data-edit-section="hero" title="Edit Hero in Studio">
+          <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+          <span>Edit</span>
+        </button>
+      </div>
+      <div class="component-content" id="content-hero">
+        <h1 id="themeTitleDisplay">Google Material 3</h1>
+        <p id="themeDescDisplay">A live interactive kitchen sink demonstrating buttons, form inputs, typography, and card containers styled purely through CSS custom property design tokens.</p>
+      </div>
+    </section>
+
+    <!-- Buttons & Interactive Actions -->
+    <section class="section-card" data-section-id="buttons">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" title="Interactive Touch Controls" aria-label="Touch Control Icon" role="img">touch_app</span>
+          <h2>Buttons & Interactive Controls</h2>
+        </div>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="buttons" title="Edit Buttons in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit</span>
+          </button>
+          <span class="badge badge-primary">Interactive Tokens</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-buttons">
+        <div class="button-row">
+          <button class="btn btn-primary">
+            <span class="google-icon material-symbols-outlined" title="Checkmark Validation" aria-label="Check Icon" role="img">check_circle</span>
+            Primary Action
+          </button>
+          <button class="btn btn-secondary">
+            <span class="google-icon material-symbols-outlined" title="Stacked Layers Architecture" aria-label="Layers Icon" role="img">layers</span>
+            Secondary Container
+          </button>
+          <button class="btn btn-outline">
+            <span class="google-icon material-symbols-outlined" title="Code Editor Symbol" aria-label="Code Icon" role="img">code</span>
+            Hairline Outline
+          </button>
+          <button class="btn btn-danger">
+            <span class="google-icon material-symbols-outlined" title="Warning Amber Alert" aria-label="Warning Icon" role="img">warning</span>
+            Danger Action
+          </button>
+          <button class="btn" disabled>
+            <span class="google-icon material-symbols-outlined" title="Locked Disabled State" aria-label="Lock Icon" role="img">lock</span>
+            Disabled State
+          </button>
+          <button class="btn btn-fab" title="Floating Action Add Item" aria-label="Add Item">
+            <span class="google-icon material-symbols-outlined" title="Add Plus Icon" aria-label="Add Icon" role="img">add</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Elements & Inputs -->
+    <section class="section-card" data-section-id="forms">
+      <div class="section-header">
+        <h2>Form Controls & Inputs</h2>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="forms" title="Edit Forms in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit</span>
+          </button>
+          <span class="badge badge-warning">Accessibility</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-forms">
+        <form class="form-grid" onsubmit="event.preventDefault();">
+          <div class="form-field">
+            <label for="sampleText">Text Input</label>
+            <input type="text" id="sampleText" class="form-input" placeholder="Type something...">
+          </div>
+
+          <div class="form-field">
+            <label for="sampleSelect">Select Dropdown</label>
+            <select id="sampleSelect" class="form-select">
+              <option>Option 1: Production Server</option>
+              <option>Option 2: Staging Canary</option>
+              <option>Option 3: Local Dev Container</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>Toggle Switch</label>
+            <div class="toggle-wrapper">
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+              <span style="font-size: 0.88rem; font-weight: 500;">Notifications Enabled</span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="sampleRange">Range Slider</label>
+            <input type="range" id="sampleRange" min="0" max="100" value="65" style="accent-color: var(--theme-primary);">
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Bento Metric Cards -->
+    <section class="section-card" data-section-id="bento">
+      <div class="section-header">
+        <h2>Bento Grid & Information Architecture</h2>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="bento" title="Edit Bento in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit</span>
+          </button>
+          <span class="badge badge-success">Modular</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-bento">
+        <div class="bento-grid">
+          <div class="bento-tile">
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--theme-text-muted);">Weekly Token Efficiency</span>
+            <div class="bento-metric">98.4%</div>
+            <span style="font-size: 0.85rem; color: var(--theme-primary);">+14.2% from last cycle</span>
+          </div>
+
+          <div class="bento-tile">
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--theme-text-muted);">Active Design Presets</span>
+            <div class="bento-metric">22</div>
+            <span style="font-size: 0.85rem; color: var(--theme-text-muted);">Morphisms & Developer Themes</span>
+          </div>
+
+          <div class="bento-tile">
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--theme-text-muted);">CSS Architecture Tier</span>
+            <div class="bento-metric">Tier 3</div>
+            <span style="font-size: 0.85rem; color: var(--theme-primary);">Primitives → Semantic → Component</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-time Telemetry & Dynamic Trend Chart -->
+    <section class="section-card" data-section-id="telemetry">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" title="Telemetry Analytics Icon" aria-label="Analytics Icon" role="img">analytics</span>
+          <h2>Live Telemetry & Component Activity</h2>
+        </div>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="telemetry" title="Edit Telemetry in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit</span>
+          </button>
+          <span class="badge badge-success">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">fiber_manual_record</span> 99.98% Uptime
+          </span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-telemetry">
+        <div class="telemetry-container">
+          <svg class="sparkline-svg" viewBox="0 0 500 80" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="sparklineGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--theme-primary)" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="var(--theme-primary)" stop-opacity="0.0" />
+              </linearGradient>
+            </defs>
+            <path d="M 0 65 Q 60 20, 120 45 T 240 30 T 360 15 T 480 35 L 500 25 L 500 80 L 0 80 Z" fill="url(#sparklineGrad)" />
+            <path d="M 0 65 Q 60 20, 120 45 T 240 30 T 360 15 T 480 35 L 500 25" fill="none" stroke="var(--theme-primary)" stroke-width="3" stroke-linecap="round" />
+            <circle cx="500" cy="25" r="5" fill="var(--theme-primary)" stroke="var(--theme-surface)" stroke-width="2" />
+          </svg>
+
+          <div class="badge-row" style="margin-top: 0.5rem;">
+            <span class="badge badge-primary">
+              <span class="google-icon material-symbols-outlined" style="font-size: 14px;">speed</span> 14.2k req/sec
+            </span>
+            <span class="badge badge-success">
+              <span class="google-icon material-symbols-outlined" style="font-size: 14px;">verified_user</span> Edge Guard Active
+            </span>
+            <span class="badge badge-warning">
+              <span class="google-icon material-symbols-outlined" style="font-size: 14px;">memory</span> 41% Buffer
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CDN Quick Start Card -->
+    <section class="section-card" data-section-id="cdn">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" title="Rocket CDN Delivery" aria-label="CDN Icon" role="img">rocket_launch</span>
+          <h2>1-Line CDN Quick Start</h2>
+        </div>
+        <div class="section-actions">
+          <button id="copyCdnCodeBtn" class="action-btn-sm" title="Copy CDN Snippet">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">content_copy</span>
+            <span>Copy</span>
+          </button>
+          <span class="badge badge-primary">Zero Dependencies</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-cdn">
+        <p style="margin-bottom: 0.75rem; color: var(--theme-text-muted);">Drop all 22 theme presets and design token primitives into any web project, HTML page, or framework with zero build tools:</p>
+
+        <pre style="margin-bottom: 1rem;"><code id="cdnCodeBlock">&lt;!-- 1. Include Universal Theme Engine via CDN --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/North-Abyss/ui-themes@main/dist/universal-themes.min.css"&gt;
+
+&lt;!-- 2. Activate any of the 22 themes --&gt;
+&lt;html data-theme="<span class="active-cdn-theme">material3</span>"&gt;</code></pre>
+
+        <div style="font-size: 0.85rem; color: var(--theme-text-muted);">
+          Works in Vanilla HTML, React, Vue, Svelte, Astro, Angular, and Next.js.
+        </div>
+      </div>
+    </section>
+
+    <!-- Status Badges & Alerts -->
+    <section class="section-card" data-section-id="badges">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" title="Status Notification Bell" aria-label="Notification Bell" role="img">notifications</span>
+          <h2>Status Badges & Alerts</h2>
+        </div>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="badges" title="Edit Badges in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit</span>
+          </button>
+          <span class="badge badge-danger">Live Feedback</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-badges">
+        <div class="badge-row" style="margin-bottom: 1.25rem;">
+          <span class="badge badge-primary">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">toll</span> Active Token
+          </span>
+          <span class="badge badge-success">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">task_alt</span> Build Passed
+          </span>
+          <span class="badge badge-warning">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">hourglass_top</span> High Quota
+          </span>
+          <span class="badge badge-danger">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">error</span> Intercepted
+          </span>
+        </div>
+
+        <pre><code>// Current active theme CSS binding
+&lt;html data-theme="<span id="activeThemeCode">material3</span>"&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- Live Custom Component Sandbox -->
+    <section class="section-card" data-section-id="sandbox" style="border: 2px dashed var(--theme-primary);">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" style="color:var(--theme-primary);">developer_board</span>
+          <h2>Custom Component Sandbox</h2>
+        </div>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="sandbox" title="Edit Sandbox in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit HTML & CSS</span>
+          </button>
+          <span class="badge badge-primary">Playground</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-sandbox">
+        <div style="text-align: center; padding: 1.5rem; background: var(--theme-surface-container); border-radius: var(--theme-btn-radius, 8px);">
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--theme-primary);">Your Custom Component Appears Here</h3>
+          <p style="font-size: 0.88rem; color: var(--theme-text-muted); max-width: 500px; margin: 0 auto 1rem;">Use the UI Modular Studio to edit this live sandbox or any component on the page in real time!</p>
+          <button class="btn btn-primary" onclick="openStudioToSection('sandbox')">
+            <span class="google-icon material-symbols-outlined">edit_note</span>
+            Launch Sandbox Editor
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2.5rem 1rem 1rem; border-top: var(--theme-border-subtle); margin-top: 3rem; color: var(--theme-text-muted); font-size: 0.9rem;">
+      <p style="margin-bottom: 0.5rem;">
+        Crafted with 💜 by <a href="https://github.com/North-Abyss" target="_blank" style="color: var(--theme-primary); font-weight: 600; text-decoration: none;">Yuvanesh KS (@North-Abyss)</a>
+      </p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">
+        Released under the <a href="https://github.com/North-Abyss/ui-themes/blob/main/LICENSE" target="_blank" style="color: inherit;">MIT License</a> • 100% Free & Open Source
+      </p>
+    </footer>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="toast-notification">
+    <span id="toastIcon" class="google-icon material-symbols-outlined" style="font-size: 18px;">check</span>
+    <span id="toastMsg">Action completed successfully!</span>
+  </div>
+
+  <script>
+    // Theme presets catalogue & descriptions
+    const themeSelect = document.getElementById('themeSelect');
+    const htmlElem = document.documentElement;
+    const activeThemeCode = document.getElementById('activeThemeCode');
+    const themeTitleDisplay = document.getElementById('themeTitleDisplay');
+    const chipButtons = document.querySelectorAll('.chip-btn[data-set-theme]');
+
+    const descriptions = {
+      'material3': 'Google Material Design 3 (Material You): Dynamic tonal palettes, surface container hierarchy, and accessible pill buttons.',
+      'material3-dark': 'Google Material Design 3 (Dark): Low-glare tonal elevation with dark neutral surfaces.',
+      'minimal-mono': 'Minimal 2D Monochrome / Line Art: Stark black and white, hairline 1px solid outlines, and subtle 16px dot-matrix grid.',
+      'minimal-dark': 'Minimal 2D Monochrome (Dark): High-contrast white line art over an obsidian charcoal canvas.',
+      'glassmorphism': 'Glassmorphism 2.0: Translucent frosted panels with backdrop blur, specular edge borders, and ambient mesh glows.',
+      'glass-light': 'Glassmorphism (Light): Frosted translucent glass floating over soft indigo/rose gradients.',
+      'claymorphism': 'Claymorphism: 3D squishy matte clay with chunky 32px curves and triple-shadow volume depth.',
+      'neobrutalism': 'Neo-Brutalism & Retrobento: High-contrast 2.5px solid black borders, electric pop colors, and 4px hard offset drop shadows.',
+      'neumorphism': 'Neumorphism: Seamless extruded soft plastic with opposing light and dark drop shadows.',
+      'cyberpunk': 'Cyberpunk / Synthwave: Neon cyan and magenta glowing borders over an abyss violet canvas with CRT scanlines.',
+      'bento-modern': 'Bento Grid / Linear Modern Dark: Deep charcoal surfaces with luminous hairline borders and precision spacing.',
+      'retro-90s': 'Retro 90s OS: Classic Windows 95 battleship gray with 3D beveled chrome buttons and teal canvas.',
+      'oled-black': 'OLED Pure Black Minimalist: True #000000 pitch black for infinite contrast and maximum battery efficiency.',
+      'aurora-glow': 'Aurora Mesh Glow (Spatial UI): Multi-layer ambient radiant glows, luminous iridescent borders, and frosted glass.',
+      'frutiger-aero': 'Frutiger Aero (Y2K Liquid Glass): Glossy specular highlights, vibrant sky-blue/emerald gradients, and liquid bubble controls.',
+      'phosphor-terminal': 'Phosphor CRT Terminal: Cathode ray tube dark canvas, vintage P1 phosphor green bloom, monospace font, and scanlines.',
+      'nord-frost': 'Nord Arctic Frost: Polar night slate, glacial ice blues, frozen mint accents, and clean arctic contrast.',
+      'papercraft': 'Papercraft & Origami: Soft handmade paper parchment, layered paper drop-shadows, terracotta and warm ink accents.',
+      'github-dark': 'GitHub Primer Dark: Official GitHub dark theme with #0D1117 canvas, #238636 primer green action buttons, and #30363D borders.',
+      'vscode-dark': 'VS Code Modern Dark+: Microsoft Visual Studio Code IDE theme with #1E1E1E editor canvas, #007ACC signature blue, and 2px radii.',
+      'tokyo-night': 'Tokyo Night (Folke): Iconic Neovim/terminal theme with #1A1B26 night canvas, #7AA2F7 primary blue, and vibrant neon accents.',
+      'catppuccin-mocha': 'Catppuccin Mocha: Global community favorite pastel theme with #1E1E2E base, #CBA6F7 mauve primary, and soothing contrast.',
+      'dracula': 'Dracula Official (Zeno Rocha): Legendary gothic developer theme with #282A36 canvas, #BD93F9 vibrant purple, and hot pink accents.',
+      'one-dark': 'One Dark Pro: The classic Atom & JetBrains dark palette with #282C34 canvas, #61AFEF atom blue, and leaf green accents.',
+      'solarized-dark': 'Solarized Dark (Ethan Schoonover): Scientifically calibrated LAB color space theme with #002B36 base and precision cyan/blue contrast.'
+    };
+
+    // Toast Notification helper
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMsg');
+    const toastIcon = document.getElementById('toastIcon');
+    let toastTimer = null;
+
+    function showToast(message, icon = 'check') {
+      if (toastTimer) clearTimeout(toastTimer);
+      toastMsg.textContent = message;
+      toastIcon.textContent = icon;
+      toast.classList.add('show');
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+
+    // =========================================================================
+    // Mode Switcher Controller: System | Light | Dark
+    // =========================================================================
+    const themeModes = {
+      'material3': 'light',
+      'minimal-mono': 'light',
+      'glass-light': 'light',
+      'claymorphism': 'light',
+      'neobrutalism': 'light',
+      'neumorphism': 'light',
+      'nord-frost': 'light',
+      'papercraft': 'light',
+      'material3-dark': 'dark',
+      'minimal-dark': 'dark',
+      'glassmorphism': 'dark',
+      'cyberpunk': 'dark',
+      'bento-modern': 'dark',
+      'retro-90s': 'dark',
+      'oled-black': 'dark',
+      'aurora-glow': 'dark',
+      'frutiger-aero': 'dark',
+      'phosphor-terminal': 'dark',
+      'github-dark': 'dark',
+      'vscode-dark': 'dark',
+      'tokyo-night': 'dark',
+      'catppuccin-mocha': 'dark',
+      'dracula': 'dark',
+      'one-dark': 'dark',
+      'solarized-dark': 'dark'
+    };
+
+    const modeBtnSystem = document.getElementById('modeBtnSystem');
+    const modeBtnLight = document.getElementById('modeBtnLight');
+    const modeBtnDark = document.getElementById('modeBtnDark');
+    const modeBtns = [modeBtnSystem, modeBtnLight, modeBtnDark];
+
+    let currentMode = localStorage.getItem('pt-active-mode') || 'system';
+    let lastLightTheme = localStorage.getItem('pt-last-light-theme') || 'material3';
+    let lastDarkTheme = localStorage.getItem('pt-last-dark-theme') || 'tokyo-night';
+
+    const systemDarkMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function updateModeButtonUI(mode) {
+      modeBtns.forEach(btn => {
+        if (!btn) return;
+        btn.classList.toggle('active', btn.getAttribute('data-mode') === mode);
+      });
+    }
+
+    function setMode(mode, autoSelectTheme = true) {
+      currentMode = mode;
+      localStorage.setItem('pt-active-mode', mode);
+      updateModeButtonUI(mode);
+
+      if (autoSelectTheme) {
+        if (mode === 'light') {
+          applyTheme(lastLightTheme || 'material3');
+          showToast('Switched to Light Themes default', 'light_mode');
+        } else if (mode === 'dark') {
+          applyTheme(lastDarkTheme || 'tokyo-night');
+          showToast('Switched to Dark Themes default', 'dark_mode');
+        } else if (mode === 'system') {
+          const isDark = systemDarkMedia.matches;
+          const targetTheme = isDark ? (lastDarkTheme || 'tokyo-night') : (lastLightTheme || 'material3');
+          applyTheme(targetTheme);
+          showToast(`System Mode active: ${isDark ? 'Dark' : 'Light'} appearance detected`, 'devices');
+        }
+      }
+    }
+
+    if (modeBtnSystem) modeBtnSystem.addEventListener('click', () => setMode('system', true));
+    if (modeBtnLight) modeBtnLight.addEventListener('click', () => setMode('light', true));
+    if (modeBtnDark) modeBtnDark.addEventListener('click', () => setMode('dark', true));
+
+    // Listen to OS theme changes if in System mode
+    systemDarkMedia.addEventListener('change', (e) => {
+      if (currentMode === 'system') {
+        const targetTheme = e.matches ? (lastDarkTheme || 'tokyo-night') : (lastLightTheme || 'material3');
+        applyTheme(targetTheme);
+        showToast(`OS Appearance changed: Switched to ${e.matches ? 'Dark' : 'Light'}`, 'devices');
+      }
+    });
+
+    // Theme switching logic
+    function applyTheme(themeKey, syncSidebar = true) {
+      htmlElem.setAttribute('data-theme', themeKey);
+      themeSelect.value = themeKey;
+      if (activeThemeCode) activeThemeCode.textContent = themeKey;
+      document.querySelectorAll('.active-cdn-theme').forEach(el => el.textContent = themeKey);
+      if (themeTitleDisplay && themeSelect.selectedIndex >= 0) {
+        themeTitleDisplay.textContent = themeSelect.options[themeSelect.selectedIndex].text;
+      }
+      const desc = document.getElementById('themeDescDisplay');
+      if (desc && descriptions[themeKey]) desc.textContent = descriptions[themeKey];
+
+      // Update chip active states
+      chipButtons.forEach(btn => {
+        if (btn.getAttribute('data-set-theme') === themeKey) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      localStorage.setItem('pt-selected-theme', themeKey);
+      const detectedMode = themeModes[themeKey] || 'dark';
+      if (detectedMode === 'light') {
+        lastLightTheme = themeKey;
+        localStorage.setItem('pt-last-light-theme', themeKey);
+      } else {
+        lastDarkTheme = themeKey;
+        localStorage.setItem('pt-last-dark-theme', themeKey);
+      }
+
+      // If user is explicitly in light mode but selects dark theme, update mode indicator
+      if (currentMode === 'light' && detectedMode === 'dark') {
+        currentMode = 'dark';
+        localStorage.setItem('pt-active-mode', 'dark');
+        updateModeButtonUI('dark');
+      } else if (currentMode === 'dark' && detectedMode === 'light') {
+        currentMode = 'light';
+        localStorage.setItem('pt-active-mode', 'light');
+        updateModeButtonUI('light');
+      }
+
+      // Smooth scroll active chip inside .theme-chips track only (prevent page vertical shifts)
+      const chipsTrack = document.querySelector('.theme-chips');
+      const activeChip = document.querySelector(`.chip-btn[data-set-theme="${themeKey}"]`);
+      if (chipsTrack && activeChip) {
+        const chipLeft = activeChip.offsetLeft;
+        const chipWidth = activeChip.offsetWidth;
+        const trackScroll = chipsTrack.scrollLeft;
+        const trackWidth = chipsTrack.clientWidth;
+        if (chipLeft < trackScroll || (chipLeft + chipWidth) > (trackScroll + trackWidth)) {
+          chipsTrack.scrollTo({
+            left: Math.max(0, chipLeft - 24),
+            behavior: 'smooth'
+          });
+        }
+      }
+      if (syncSidebar) {
+        setTimeout(readActiveThemeValuesToSidebar, 50);
+      }
+    }
+
+    themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
+    chipButtons.forEach(btn => {
+      btn.addEventListener('click', () => applyTheme(btn.getAttribute('data-set-theme')));
+    });
+
+    // =========================================================================
+    // UI Modular Studio State & Controller
+    // =========================================================================
+    const studioDrawer = document.getElementById('themeSidebar');
+    const studioBackdrop = document.getElementById('studioBackdrop');
+    const toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const customEditedPill = document.getElementById('customEditedPill');
+
+    function openStudio() {
+      studioDrawer.classList.add('open');
+      document.body.classList.add('studio-docked');
+      // On mobile / tablet, show backdrop overlay; on desktop (>=1024px) CSS hides it
+      if (window.innerWidth < 1024) {
+        studioBackdrop.classList.add('active');
+      }
+      readActiveThemeValuesToSidebar();
+    }
+
+    function closeStudio() {
+      studioDrawer.classList.remove('open');
+      document.body.classList.remove('studio-docked');
+      studioBackdrop.classList.remove('active');
+      stopInspectMode();
+    }
+
+    toggleSidebarBtn.addEventListener('click', () => {
+      if (studioDrawer.classList.contains('open')) closeStudio();
+      else openStudio();
+    });
+    closeSidebarBtn.addEventListener('click', closeStudio);
+    studioBackdrop.addEventListener('click', closeStudio);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && studioDrawer.classList.contains('open')) {
+        closeStudio();
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'b') {
+        e.preventDefault();
+        toggleSidebarBtn.click();
+      }
+    });
+
+    // Studio Tab Switching
+    const studioTabBtns = document.querySelectorAll('.studio-tab-btn');
+    const studioPanels = document.querySelectorAll('.studio-tab-panel');
+
+    function switchStudioTab(tabKey) {
+      studioTabBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === tabKey);
+      });
+      studioPanels.forEach(panel => {
+        panel.classList.toggle('active', panel.id === 'tab-' + tabKey);
+      });
+    }
+
+    studioTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => switchStudioTab(btn.getAttribute('data-tab')));
+    });
+
+    // Color conversion helpers (rgb to hex)
+    function rgbToHex(rgbStr) {
+      if (!rgbStr) return '#000000';
+      if (rgbStr.startsWith('#')) return rgbStr;
+      const m = rgbStr.match(/\d+/g);
+      if (!m || m.length < 3) return '#000000';
+      const r = parseInt(m[0]).toString(16).padStart(2, '0');
+      const g = parseInt(m[1]).toString(16).padStart(2, '0');
+      const b = parseInt(m[2]).toString(16).padStart(2, '0');
+      return `#${r}${g}${b}`;
+    }
+
+    // State of user customized overrides
+    const activeCustomOverrides = JSON.parse(localStorage.getItem('pt-custom-tokens') || '{}');
+
+    function applyTokenOverride(cssVar, value) {
+      document.documentElement.style.setProperty(cssVar, value);
+      activeCustomOverrides[cssVar] = value;
+      localStorage.setItem('pt-custom-tokens', JSON.stringify(activeCustomOverrides));
+      customEditedPill.style.display = Object.keys(activeCustomOverrides).length > 0 ? 'inline-block' : 'none';
+    }
+
+    // Color inputs & Sliders references
+    const colorBindings = [
+      { id: 'primary', var: '--theme-primary' },
+      { id: 'bg', var: '--theme-bg' },
+      { id: 'surface', var: '--theme-surface' },
+      { id: 'surface-container', var: '--theme-surface-container' },
+      { id: 'text', var: '--theme-text' },
+      { id: 'accent', var: '--theme-accent' }
+    ];
+
+    colorBindings.forEach(b => {
+      const picker = document.getElementById('picker-' + b.id);
+      const hexInput = document.getElementById('hex-' + b.id);
+
+      picker.addEventListener('input', (e) => {
+        hexInput.value = e.target.value;
+        applyTokenOverride(b.var, e.target.value);
+      });
+
+      hexInput.addEventListener('change', (e) => {
+        let val = e.target.value.trim();
+        if (!val.startsWith('#')) val = '#' + val;
+        picker.value = val;
+        applyTokenOverride(b.var, val);
+      });
+    });
+
+    // Geometry sliders
+    const sliderCardRadius = document.getElementById('sliderCardRadius');
+    const radiusCardVal = document.getElementById('radiusCardVal');
+    sliderCardRadius.addEventListener('input', (e) => {
+      const px = e.target.value + 'px';
+      radiusCardVal.textContent = px;
+      applyTokenOverride('--theme-border-radius', px);
+    });
+
+    const sliderBtnRadius = document.getElementById('sliderBtnRadius');
+    const radiusBtnVal = document.getElementById('radiusBtnVal');
+    sliderBtnRadius.addEventListener('input', (e) => {
+      const v = parseInt(e.target.value);
+      const val = v >= 50 ? '9999px' : v + 'px';
+      radiusBtnVal.textContent = v >= 50 ? '9999px (Pill)' : v + 'px';
+      applyTokenOverride('--theme-btn-radius', val);
+    });
+
+    const sliderCardPad = document.getElementById('sliderCardPad');
+    const cardPadVal = document.getElementById('cardPadVal');
+    sliderCardPad.addEventListener('input', (e) => {
+      const px = e.target.value + 'px';
+      cardPadVal.textContent = px;
+      applyTokenOverride('--theme-card-padding', px);
+    });
+
+    const sliderBtnPadX = document.getElementById('sliderBtnPadX');
+    const btnPadXVal = document.getElementById('btnPadXVal');
+    sliderBtnPadX.addEventListener('input', (e) => {
+      const px = e.target.value + 'px';
+      btnPadXVal.textContent = px;
+      applyTokenOverride('--theme-btn-padding-x', px);
+    });
+
+    const sliderBtnPadY = document.getElementById('sliderBtnPadY');
+    const btnPadYVal = document.getElementById('btnPadYVal');
+    sliderBtnPadY.addEventListener('input', (e) => {
+      const px = e.target.value + 'px';
+      btnPadYVal.textContent = px;
+      applyTokenOverride('--theme-btn-padding-y', px);
+    });
+
+    const sliderAmbient = document.getElementById('sliderAmbient');
+    const ambientVal = document.getElementById('ambientVal');
+    sliderAmbient.addEventListener('input', (e) => {
+      const val = (e.target.value / 100).toFixed(2);
+      ambientVal.textContent = e.target.value + '%';
+      applyTokenOverride('--theme-ambient-opacity', val);
+    });
+
+    function readActiveThemeValuesToSidebar() {
+      const cs = getComputedStyle(document.documentElement);
+      colorBindings.forEach(b => {
+        const raw = cs.getPropertyValue(b.var).trim();
+        const hex = rgbToHex(raw);
+        const picker = document.getElementById('picker-' + b.id);
+        const hexInput = document.getElementById('hex-' + b.id);
+        if (picker && hex) picker.value = hex;
+        if (hexInput && hex) hexInput.value = hex;
+      });
+
+      // Card Radius
+      const r = cs.getPropertyValue('--theme-border-radius').trim();
+      const rNum = parseInt(r) || 16;
+      sliderCardRadius.value = rNum;
+      radiusCardVal.textContent = rNum + 'px';
+
+      // Btn Radius
+      const br = cs.getPropertyValue('--theme-btn-radius').trim();
+      if (br.includes('9999') || br.includes('full')) {
+        sliderBtnRadius.value = 50;
+        radiusBtnVal.textContent = '9999px (Pill)';
+      } else {
+        const brNum = parseInt(br) || 8;
+        sliderBtnRadius.value = Math.min(brNum, 50);
+        radiusBtnVal.textContent = brNum + 'px';
+      }
+
+      // Card Padding
+      const cp = cs.getPropertyValue('--theme-card-padding').trim();
+      const cpNum = parseInt(cp) || 32;
+      sliderCardPad.value = cpNum;
+      cardPadVal.textContent = cpNum + 'px';
+    }
+
+    // Reset tokens
+    function resetTokenOverrides() {
+      Object.keys(activeCustomOverrides).forEach(key => {
+        document.documentElement.style.removeProperty(key);
+      });
+      for (const k in activeCustomOverrides) delete activeCustomOverrides[k];
+      localStorage.removeItem('pt-custom-tokens');
+      customEditedPill.style.display = 'none';
+      readActiveThemeValuesToSidebar();
+      showToast('Theme tokens reset to preset defaults!', 'refresh');
+    }
+
+    document.getElementById('resetTokensBtn').addEventListener('click', resetTokenOverrides);
+    document.getElementById('resetAllBtn').addEventListener('click', () => {
+      resetTokenOverrides();
+      clearCustomCss();
+      resetComponentHtml();
+      showToast('All customizations and live code reset!', 'restart_alt');
+    });
+
+    // =========================================================================
+    // Live HTML & CSS Editor ("Selection of Ours")
+    // =========================================================================
+    const componentSelect = document.getElementById('componentSelect');
+    const liveHtmlEditor = document.getElementById('liveHtmlEditor');
+    const liveCssEditor = document.getElementById('liveCssEditor');
+    const userCustomCssTag = document.getElementById('user-custom-css');
+
+    // Default HTML store for all sections
+    const defaultComponentHTML = {};
+    const sections = ['hero', 'buttons', 'forms', 'bento', 'telemetry', 'cdn', 'badges', 'sandbox'];
+    sections.forEach(id => {
+      const el = document.getElementById('content-' + id);
+      if (el) defaultComponentHTML[id] = el.innerHTML.trim();
+    });
+
+    // Saved custom HTML
+    const customHtmlStore = JSON.parse(localStorage.getItem('pt-custom-html') || '{}');
+    for (const id in customHtmlStore) {
+      const el = document.getElementById('content-' + id);
+      if (el && customHtmlStore[id]) el.innerHTML = customHtmlStore[id];
+    }
+
+    function syncHtmlEditorToSelectedComponent() {
+      const id = componentSelect.value;
+      const el = document.getElementById('content-' + id);
+      if (el) {
+        liveHtmlEditor.value = el.innerHTML.trim();
+      }
+    }
+
+    componentSelect.addEventListener('change', syncHtmlEditorToSelectedComponent);
+
+    // Live HTML debounce update
+    let htmlDebounceTimer = null;
+    liveHtmlEditor.addEventListener('input', (e) => {
+      if (htmlDebounceTimer) clearTimeout(htmlDebounceTimer);
+      htmlDebounceTimer = setTimeout(() => {
+        const id = componentSelect.value;
+        const el = document.getElementById('content-' + id);
+        if (el) {
+          try {
+            el.innerHTML = e.target.value;
+            customHtmlStore[id] = e.target.value;
+            localStorage.setItem('pt-custom-html', JSON.stringify(customHtmlStore));
+            customEditedPill.style.display = 'inline-block';
+          } catch (err) {
+            console.warn('HTML update warning:', err);
+          }
+        }
+      }, 120);
+    });
+
+    function resetComponentHtml() {
+      const id = componentSelect.value;
+      const el = document.getElementById('content-' + id);
+      if (el && defaultComponentHTML[id]) {
+        el.innerHTML = defaultComponentHTML[id];
+        liveHtmlEditor.value = defaultComponentHTML[id];
+        delete customHtmlStore[id];
+        localStorage.setItem('pt-custom-html', JSON.stringify(customHtmlStore));
+        showToast(`Reset HTML for ${id}!`, 'refresh');
+      }
+    }
+    document.getElementById('resetHtmlBtn').addEventListener('click', resetComponentHtml);
+
+    // HTML Snippet Inserters
+    document.querySelectorAll('[data-insert-html]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const snippet = btn.getAttribute('data-insert-html');
+        liveHtmlEditor.value += '\n' + snippet;
+        liveHtmlEditor.dispatchEvent(new Event('input'));
+        showToast('Snippet inserted into HTML!', 'add');
+      });
+    });
+
+    // Live CSS Editor
+    const savedCss = localStorage.getItem('pt-custom-css') || '';
+    if (savedCss) {
+      liveCssEditor.value = savedCss;
+      userCustomCssTag.textContent = savedCss;
+      customEditedPill.style.display = 'inline-block';
+    }
+
+    let cssDebounceTimer = null;
+    liveCssEditor.addEventListener('input', (e) => {
+      if (cssDebounceTimer) clearTimeout(cssDebounceTimer);
+      cssDebounceTimer = setTimeout(() => {
+        const css = e.target.value;
+        userCustomCssTag.textContent = css;
+        localStorage.setItem('pt-custom-css', css);
+        if (css.trim().length > 0) customEditedPill.style.display = 'inline-block';
+      }, 120);
+    });
+
+    function clearCustomCss() {
+      liveCssEditor.value = '';
+      userCustomCssTag.textContent = '';
+      localStorage.removeItem('pt-custom-css');
+      showToast('Custom CSS cleared!', 'delete');
+    }
+    document.getElementById('clearCssBtn').addEventListener('click', clearCustomCss);
+
+    // CSS Snippet Inserters
+    document.querySelectorAll('[data-insert-css]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const snippet = btn.getAttribute('data-insert-css');
+        liveCssEditor.value += '\n' + snippet;
+        liveCssEditor.dispatchEvent(new Event('input'));
+        showToast('CSS preset snippet added!', 'add');
+      });
+    });
+
+    // Open Studio to Section helper
+    function openStudioToSection(sectionId) {
+      openStudio();
+      switchStudioTab('livecode');
+      componentSelect.value = sectionId;
+      syncHtmlEditorToSelectedComponent();
+    }
+    window.openStudioToSection = openStudioToSection;
+
+    document.querySelectorAll('.edit-section-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = btn.getAttribute('data-edit-section');
+        openStudioToSection(target);
+      });
+    });
+
+    // Inspect on Page Mode
+    const inspectModeBtn = document.getElementById('inspectModeBtn');
+    let isInspectMode = false;
+
+    function startInspectMode() {
+      isInspectMode = true;
+      document.body.classList.add('inspect-mode');
+      inspectModeBtn.classList.add('active');
+      showToast('Inspect Mode Active: Click any section on page!', 'ads_click');
+    }
+
+    function stopInspectMode() {
+      isInspectMode = false;
+      document.body.classList.remove('inspect-mode');
+      inspectModeBtn.classList.remove('active');
+    }
+
+    inspectModeBtn.addEventListener('click', () => {
+      if (isInspectMode) stopInspectMode();
+      else startInspectMode();
+    });
+
+    document.getElementById('pickOnPageBtn').addEventListener('click', () => {
+      closeStudio();
+      startInspectMode();
+    });
+
+    document.querySelectorAll('[data-section-id]').forEach(section => {
+      section.addEventListener('click', (e) => {
+        if (isInspectMode) {
+          e.preventDefault();
+          e.stopPropagation();
+          const sid = section.getAttribute('data-section-id');
+          stopInspectMode();
+          openStudioToSection(sid);
+          showToast(`Inspecting: ${sid}`, 'search');
+        }
+      });
+    });
+
+    // =========================================================================
+    // Clipboard & Download Generator Engine ("Download as UI Editor")
+    // =========================================================================
+    
+    // Copy Tokens to Clipboard
+    function generateTokensCssBlock() {
+      const cs = getComputedStyle(document.documentElement);
+      let css = `/* Universal UI Themes - Customized Token Variables */\n[data-theme="custom"], :root {\n`;
+      colorBindings.forEach(b => {
+        css += `  ${b.var}: ${cs.getPropertyValue(b.var).trim()};\n`;
+      });
+      css += `  --theme-border-radius: ${cs.getPropertyValue('--theme-border-radius').trim()};\n`;
+      css += `  --theme-btn-radius: ${cs.getPropertyValue('--theme-btn-radius').trim()};\n`;
+      css += `  --theme-card-padding: ${cs.getPropertyValue('--theme-card-padding').trim()};\n`;
+      css += `  --theme-btn-padding-x: ${cs.getPropertyValue('--theme-btn-padding-x').trim()};\n`;
+      css += `  --theme-btn-padding-y: ${cs.getPropertyValue('--theme-btn-padding-y').trim()};\n`;
+      css += `}\n`;
+      return css;
+    }
+
+    document.getElementById('copyTokensBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText(generateTokensCssBlock());
+      showToast('Token variables copied to clipboard!', 'content_copy');
+    });
+
+    document.getElementById('copyHtmlBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText(liveHtmlEditor.value);
+      showToast('HTML copied to clipboard!', 'content_copy');
+    });
+
+    document.getElementById('copyCssBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText(liveCssEditor.value);
+      showToast('Custom CSS copied to clipboard!', 'content_copy');
+    });
+
+    document.getElementById('copyCdnCodeBtn').addEventListener('click', () => {
+      const code = document.getElementById('cdnCodeBlock').innerText;
+      navigator.clipboard.writeText(code);
+      showToast('CDN code copied!', 'content_copy');
+    });
+
+    // Trigger File Download Helper
+    function triggerDownload(filename, content, mimeType = 'text/plain') {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(`Downloaded ${filename}!`, 'download_done');
+    }
+
+    // 1. Download Custom Theme CSS
+    document.getElementById('downloadCssBtn').addEventListener('click', () => {
+      const tokenBlock = generateTokensCssBlock();
+      const customCss = liveCssEditor.value;
+      const fullCss = `/**\n * Universal UI Themes - Custom Theme Bundle\n * Exported from UI Modular Studio\n */\n\n${tokenBlock}\n\n/* Custom Component Overrides */\n${customCss}\n`;
+      triggerDownload('universal-theme-custom.css', fullCss, 'text/css');
+    });
+
+    // 2. Download Standalone HTML Showcase
+    document.getElementById('downloadHtmlBtn').addEventListener('click', () => {
+      const docHtml = document.documentElement.outerHTML;
+      triggerDownload('custom-ui-showcase.html', docHtml, 'text/html');
+    });
+
+    // 3. Download Component HTML
+    document.getElementById('downloadCompBtn').addEventListener('click', () => {
+      const sid = componentSelect.value;
+      const compHtml = liveHtmlEditor.value;
+      const scopedContent = `<!-- Component: ${sid} (Exported from UI Modular Studio) -->\n<div class="component-${sid}">\n${compHtml}\n</div>\n`;
+      triggerDownload(`${sid}-component.html`, scopedContent, 'text/html');
+    });
+
+    // Init page state
+    // Init mode and theme
+    updateModeButtonUI(currentMode);
+    let initialTheme = localStorage.getItem('pt-selected-theme');
+    if (!initialTheme) {
+      if (currentMode === 'system') {
+        initialTheme = systemDarkMedia.matches ? 'tokyo-night' : 'material3';
+      } else if (currentMode === 'light') {
+        initialTheme = 'material3';
+      } else {
+        initialTheme = 'tokyo-night';
+      }
+    }
+    applyTheme(initialTheme, false);
+
+    // Reapply saved custom token overrides
+    if (Object.keys(activeCustomOverrides).length > 0) {
+      for (const k in activeCustomOverrides) {
+        document.documentElement.style.setProperty(k, activeCustomOverrides[k]);
+      }
+      customEditedPill.style.display = 'inline-block';
+    }
+    readActiveThemeValuesToSidebar();
+    syncHtmlEditorToSelectedComponent();
+  </script>
+
+</body>
+</html>
