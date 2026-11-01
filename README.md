@@ -84,7 +84,7 @@ Import `dist/universal-themes.min.css` or the modular source files:
 | **01** | `material3` | **Google Material 3** | Official Material You tonal surface containers and pill buttons. | `#00639B` |
 | **01b**| `material3-dark` | **Google Material 3 (Dark)** | Dark neutral tonal elevation with accessible contrast. | `#93CCFF` |
 | **02** | `minimal-mono` | **Minimal 2D Mono (Light)** | Stark black and white line art, 1px outlines, 16px dot matrix. | `#000000` |
-| **02b**| `minimal-dark` | **Minimal 2D Mono (Dark)** | Obsidian charcoal canvas with high-contrast white hairline art. | `#FFFFFF` |
+| **02b**| `minimal-dark` | **Minimal 2D Mono (Dark)** | Minimal 2D Monochrome (Dark): High-contrast white line art over an obsidian charcoal canvas. | `#FFFFFF` |
 | **03** | `glassmorphism` | **Glassmorphism 2.0 (Dark)** | Frosted translucent panels, `backdrop-filter: blur`, ambient glows. | `#38BDF8` |
 | **03b**| `glass-light` | **Glassmorphism (Light)** | Floating glass panels over soft rose/indigo ambient gradients. | `#6366F1` |
 | **04** | `claymorphism` | **3D Puffy Claymorphism** | Inflatable squishy matte clay with tactile dual inset highlights. | `#7C4DFF` |
