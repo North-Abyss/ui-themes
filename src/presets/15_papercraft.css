@@ -5,6 +5,8 @@
  */
 
 :root[data-theme="papercraft"] {
+  --theme-name: "Papercraft & Origami";
+  --theme-mode: light;
   /* Handmade Paper Parchment */
   --theme-bg: #F5F2EB;
   --theme-bg-gradient: linear-gradient(135deg, #F8F5EE 0%, #EFEBE0 100%);

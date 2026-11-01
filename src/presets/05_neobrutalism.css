@@ -8,6 +8,7 @@
 [data-theme="neobrutalism"],
 [data-theme="neo-light"] {
   --theme-name: "Neo-Brutalism Pop";
+  --theme-mode: light;
   --theme-bg: #FFFDF8;
   --theme-bg-subtle: #FFF4D0;
 

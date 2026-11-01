@@ -8,6 +8,7 @@
 [data-theme="neumorphism"],
 [data-theme="neu-light"] {
   --theme-name: "Neumorphism Light";
+  --theme-mode: light;
   --theme-bg: #E0E5EC;
   --theme-bg-subtle: #D8DFE9;
 

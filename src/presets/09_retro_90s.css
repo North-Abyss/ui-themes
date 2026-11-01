@@ -8,6 +8,7 @@
 [data-theme="retro-90s"],
 [data-theme="win95"] {
   --theme-name: "Retro 90s OS";
+  --theme-mode: light;
   --theme-bg: #008080;                          /* Classic Win95 Teal Canvas */
   --theme-bg-subtle: #C0C0C0;
 

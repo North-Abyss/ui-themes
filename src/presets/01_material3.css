@@ -8,6 +8,8 @@
 [data-theme="material3"],
 [data-theme="material3-light"] {
   --theme-name: "Material 3 Light";
+  --theme-mode: light;
+  --theme-name: "Material 3 Light";
   --theme-bg: var(--pal-neutral-98);
   --theme-bg-subtle: var(--pal-neutral-95);
   
@@ -51,6 +53,8 @@
 }
 
 [data-theme="material3-dark"] {
+  --theme-name: "Material 3 Dark";
+  --theme-mode: dark;
   --theme-name: "Material 3 Dark";
   --theme-bg: var(--pal-neutral-6);
   --theme-bg-subtle: var(--pal-neutral-10);

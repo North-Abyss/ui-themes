@@ -106,6 +106,8 @@
 [data-theme="material3"],
 [data-theme="material3-light"] {
   --theme-name: "Material 3 Light";
+  --theme-mode: light;
+  --theme-name: "Material 3 Light";
   --theme-bg: var(--pal-neutral-98);
   --theme-bg-subtle: var(--pal-neutral-95);
   
@@ -149,6 +151,8 @@
 }
 
 [data-theme="material3-dark"] {
+  --theme-name: "Material 3 Dark";
+  --theme-mode: dark;
   --theme-name: "Material 3 Dark";
   --theme-bg: var(--pal-neutral-6);
   --theme-bg-subtle: var(--pal-neutral-10);
@@ -199,6 +203,8 @@
 [data-theme="minimal-mono"],
 [data-theme="minimal-light"] {
   --theme-name: "Minimal 2D Mono Light";
+  --theme-mode: light;
+  --theme-name: "Minimal 2D Mono Light";
   --theme-bg: #FFFFFF;
   --theme-bg-subtle: #F6F6F6;
   
@@ -243,6 +249,8 @@
 }
 
 [data-theme="minimal-dark"] {
+  --theme-name: "Minimal 2D Mono Dark";
+  --theme-mode: dark;
   --theme-name: "Minimal 2D Mono Dark";
   --theme-bg: #0A0A0A;
   --theme-bg-subtle: #141414;
@@ -293,6 +301,8 @@
 
 [data-theme="glassmorphism"],
 [data-theme="glass-dark"] {
+  --theme-name: "Glassmorphism 2.0 Dark";
+  --theme-mode: dark;
   --theme-name: "Glassmorphism Dark";
   --theme-bg: #0b0f19;
   --theme-bg-subtle: #111827;
@@ -339,6 +349,8 @@
 }
 
 [data-theme="glass-light"] {
+  --theme-name: "Glassmorphism Light";
+  --theme-mode: light;
   --theme-name: "Glassmorphism Light";
   --theme-bg: #E0E7FF;
   --theme-bg-subtle: #EEF2FF;
@@ -391,6 +403,7 @@
 [data-theme="claymorphism"],
 [data-theme="clay-light"] {
   --theme-name: "Claymorphism Light";
+  --theme-mode: light;
   --theme-bg: #F4F0FD;
   --theme-bg-subtle: #ECE6FA;
 
@@ -451,6 +464,7 @@
 [data-theme="neobrutalism"],
 [data-theme="neo-light"] {
   --theme-name: "Neo-Brutalism Pop";
+  --theme-mode: light;
   --theme-bg: #FFFDF8;
   --theme-bg-subtle: #FFF4D0;
 
@@ -500,6 +514,7 @@
 [data-theme="neumorphism"],
 [data-theme="neu-light"] {
   --theme-name: "Neumorphism Light";
+  --theme-mode: light;
   --theme-bg: #E0E5EC;
   --theme-bg-subtle: #D8DFE9;
 
@@ -551,6 +566,7 @@
 [data-theme="cyberpunk"],
 [data-theme="cyber-dark"] {
   --theme-name: "Cyberpunk Synthwave";
+  --theme-mode: dark;
   --theme-bg: #090014;
   --theme-bg-subtle: #120029;
 
@@ -604,6 +620,7 @@
 [data-theme="bento-modern"],
 [data-theme="linear-dark"] {
   --theme-name: "Bento Modern Dark";
+  --theme-mode: dark;
   --theme-bg: #080808;
   --theme-bg-subtle: #0F0F0F;
 
@@ -655,6 +672,7 @@
 [data-theme="retro-90s"],
 [data-theme="win95"] {
   --theme-name: "Retro 90s OS";
+  --theme-mode: light;
   --theme-bg: #008080;                          /* Classic Win95 Teal Canvas */
   --theme-bg-subtle: #C0C0C0;
 
@@ -708,6 +726,7 @@
 [data-theme="oled-black"],
 [data-theme="oled-pure"] {
   --theme-name: "OLED Pure Black";
+  --theme-mode: dark;
   --theme-bg: #000000;
   --theme-bg-subtle: #080808;
 
@@ -752,6 +771,8 @@
  */
 
 :root[data-theme="aurora-glow"] {
+  --theme-name: "Aurora Mesh Glow";
+  --theme-mode: dark;
   /* Surfaces & Ambient Gradients */
   --theme-bg: #090714;
   --theme-bg-gradient: radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.28) 0%, transparent 45%),
@@ -806,6 +827,8 @@
  */
 
 :root[data-theme="frutiger-aero"] {
+  --theme-name: "Frutiger Aero (Y2K Liquid)";
+  --theme-mode: light;
   /* Surfaces & Sky Canvas */
   --theme-bg: #E0F2FE;
   --theme-bg-gradient: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 35%, #7DD3FC 100%);
@@ -857,6 +880,8 @@
  */
 
 :root[data-theme="phosphor-terminal"] {
+  --theme-name: "Phosphor CRT Terminal";
+  --theme-mode: dark;
   /* CRT Monitor Canvas & Scanlines */
   --theme-bg: #070B07;
   --theme-bg-gradient: repeating-linear-gradient(
@@ -914,6 +939,8 @@
  */
 
 :root[data-theme="nord-frost"] {
+  --theme-name: "Nord Arctic Frost";
+  --theme-mode: dark;
   /* Polar Night Surfaces */
   --theme-bg: #2E3440;
   --theme-bg-gradient: linear-gradient(180deg, #2E3440 0%, #242933 100%);
@@ -965,6 +992,8 @@
  */
 
 :root[data-theme="papercraft"] {
+  --theme-name: "Papercraft & Origami";
+  --theme-mode: light;
   /* Handmade Paper Parchment */
   --theme-bg: #F5F2EB;
   --theme-bg-gradient: linear-gradient(135deg, #F8F5EE 0%, #EFEBE0 100%);
@@ -1017,6 +1046,8 @@
  */
 
 :root[data-theme="github-dark"] {
+  --theme-name: "GitHub Primer Dark";
+  --theme-mode: dark;
   /* Canvas & Backgrounds */
   --theme-bg: #0D1117;
   --theme-bg-subtle: #161B22;
@@ -1073,6 +1104,8 @@
  */
 
 :root[data-theme="vscode-dark"] {
+  --theme-name: "VS Code Modern Dark+";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #1E1E1E;
   --theme-bg-subtle: #252526;
@@ -1129,6 +1162,8 @@
  */
 
 :root[data-theme="tokyo-night"] {
+  --theme-name: "Tokyo Night (Folke)";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #1A1B26;
   --theme-bg-subtle: #16161E;
@@ -1185,6 +1220,8 @@
  */
 
 :root[data-theme="catppuccin-mocha"] {
+  --theme-name: "Catppuccin Mocha";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #1E1E2E;
   --theme-bg-subtle: #181825;
@@ -1241,6 +1278,8 @@
  */
 
 :root[data-theme="dracula"] {
+  --theme-name: "Dracula Official";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #282A36;
   --theme-bg-subtle: #21222C;
@@ -1297,6 +1336,8 @@
  */
 
 :root[data-theme="one-dark"] {
+  --theme-name: "One Dark Pro";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #282C34;
   --theme-bg-subtle: #21252B;
@@ -1353,6 +1394,8 @@
  */
 
 :root[data-theme="solarized-dark"] {
+  --theme-name: "Solarized Dark";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #002B36;
   --theme-bg-subtle: #073642;

@@ -6,6 +6,8 @@
  */
 
 :root[data-theme="solarized-dark"] {
+  --theme-name: "Solarized Dark";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #002B36;
   --theme-bg-subtle: #073642;

@@ -6,6 +6,8 @@
  */
 
 :root[data-theme="tokyo-night"] {
+  --theme-name: "Tokyo Night (Folke)";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #1A1B26;
   --theme-bg-subtle: #16161E;

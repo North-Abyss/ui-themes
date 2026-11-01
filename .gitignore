@@ -3,3 +3,6 @@ Thumbs.db
 node_modules/
 *.log
 workspace/tmp/
+tmp/
+.playwright-mcp/
+

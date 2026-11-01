@@ -8,6 +8,7 @@
 [data-theme="claymorphism"],
 [data-theme="clay-light"] {
   --theme-name: "Claymorphism Light";
+  --theme-mode: light;
   --theme-bg: #F4F0FD;
   --theme-bg-subtle: #ECE6FA;
 

@@ -5,6 +5,8 @@
  */
 
 :root[data-theme="phosphor-terminal"] {
+  --theme-name: "Phosphor CRT Terminal";
+  --theme-mode: dark;
   /* CRT Monitor Canvas & Scanlines */
   --theme-bg: #070B07;
   --theme-bg-gradient: repeating-linear-gradient(

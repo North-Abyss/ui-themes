@@ -5,6 +5,8 @@
  */
 
 :root[data-theme="aurora-glow"] {
+  --theme-name: "Aurora Mesh Glow";
+  --theme-mode: dark;
   /* Surfaces & Ambient Gradients */
   --theme-bg: #090714;
   --theme-bg-gradient: radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.28) 0%, transparent 45%),

@@ -6,6 +6,8 @@
  */
 
 :root[data-theme="catppuccin-mocha"] {
+  --theme-name: "Catppuccin Mocha";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #1E1E2E;
   --theme-bg-subtle: #181825;

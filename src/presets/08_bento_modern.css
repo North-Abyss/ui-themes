@@ -8,6 +8,7 @@
 [data-theme="bento-modern"],
 [data-theme="linear-dark"] {
   --theme-name: "Bento Modern Dark";
+  --theme-mode: dark;
   --theme-bg: #080808;
   --theme-bg-subtle: #0F0F0F;
 

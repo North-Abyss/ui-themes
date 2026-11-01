@@ -5,6 +5,8 @@
  */
 
 :root[data-theme="frutiger-aero"] {
+  --theme-name: "Frutiger Aero (Y2K Liquid)";
+  --theme-mode: light;
   /* Surfaces & Sky Canvas */
   --theme-bg: #E0F2FE;
   --theme-bg-gradient: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 35%, #7DD3FC 100%);

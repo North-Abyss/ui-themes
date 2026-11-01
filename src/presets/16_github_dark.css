@@ -6,6 +6,8 @@
  */
 
 :root[data-theme="github-dark"] {
+  --theme-name: "GitHub Primer Dark";
+  --theme-mode: dark;
   /* Canvas & Backgrounds */
   --theme-bg: #0D1117;
   --theme-bg-subtle: #161B22;

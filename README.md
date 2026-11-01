@@ -1,17 +1,18 @@
 <div align="center">
 
 # 🎨 Universal UI Themes
-### Zero-Dependency Design Tokens & 22 Production Theme Presets in Pure Vanilla CSS
+### Zero-Dependency Design Tokens & 22+ Production Theme Presets in Pure Vanilla CSS
 
 [![GitHub Pages](https://img.shields.io/badge/Live_Demo-GitHub_Pages-8A2BE2?style=for-the-badge&logo=github)](https://north-abyss.github.io/ui-themes/)
-[![Presets](https://img.shields.io/badge/Themes-22_Presets-blue?style=for-the-badge)](https://north-abyss.github.io/ui-themes/)
+[![Presets](https://img.shields.io/badge/Themes-22+_Presets_(Expanding)-blue?style=for-the-badge)](https://north-abyss.github.io/ui-themes/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-0_(Vanilla_CSS)-green?style=for-the-badge)](#)
 [![Author](https://img.shields.io/badge/Author-Yuvanesh_KS_(@North--Abyss)-purple?style=for-the-badge&logo=github)](https://github.com/North-Abyss)
 
 <p align="center">
-  <b>A single CSS file that gives your web apps 22 state-of-the-art visual styles.</b><br>
-  No Tailwind. No PostCSS. No npm dependencies. Pure standard CSS custom properties.
+  <b>A single CSS file that gives your web apps 22+ state-of-the-art visual styles.</b><br>
+  No Tailwind. No PostCSS. No npm dependencies. Pure standard CSS custom properties.<br>
+  <i>22 production presets available right now, with continuous community & platform additions.</i>
 </p>
 
 [**🚀 Live Interactive Showcase & Kitchen Sink**](https://north-abyss.github.io/ui-themes/)
@@ -23,6 +24,7 @@
 ## ✨ Features
 
 - **22 Production-Ready Presets:** Trending modern morphisms (*Glassmorphism, Claymorphism, Neumorphism, Aurora Spatial Glow, Frutiger Aero*) + famous developer color schemes (*GitHub Primer, VS Code, Tokyo Night, Catppuccin, Dracula, One Dark, Solarized*).
+- **Interactive UI Modular Studio:** Real-time token customizer (colors, radii, padding, glow), live HTML & CSS component editor with on-page element inspection, and one-click export to standalone custom CSS bundles or HTML showcases.
 - **Zero Runtime & Zero Dependencies:** 100% compliant Vanilla CSS custom properties.
 - **1-Line Dynamic Switching:** Switch the entire look and feel of your application instantly by changing one attribute:
   ```html
@@ -114,6 +116,28 @@ Import `dist/universal-themes.min.css` or the modular source files:
 
 ---
 
+### Part 3: 🚀 Upcoming Themes Pipeline (+ More Being Added)
+
+We have **22 production themes active now**, and are continuously expanding our token engine with canonical additions:
+
+| Status | Theme Key | Name | Visual Philosophy | Primary Color |
+|---|---|---|---|---|
+| ⏳ *In Pipeline* | `synthwave-84` | **Synthwave '84** | Robb Owen's neon glow retro-futuristic purple HUD & electric cyan. | `#FF7EDB` |
+| ⏳ *In Pipeline* | `monokai-pro` | **Monokai Pro** | Wimer Hazenberg's Filter Octagon spectrum & matte dark ergonomics. | `#FFD866` |
+| ⏳ *In Pipeline* | `gruvbox-dark` | **Gruvbox Dark** | Retro groove warm autumnal brown, forest green, and amber gold. | `#FABD2F` |
+| ⏳ *In Pipeline* | `gruvbox-light`| **Gruvbox Light** | Retro groove warm parchment background and rich book ink contrast. | `#B57614` |
+| ⏳ *In Pipeline* | `rose-pine` | **Rosé Pine** | All natural pine needles, soft muted rose, gold, and foam accents. | `#EB6F92` |
+| ⏳ *In Pipeline* | `shades-purple`| **Shades of Purple** | Ahmad Awais's high-voltage purple canvas with electric neon yellow. | `#FAD000` |
+| ⏳ *In Pipeline* | `ayu-mirage` | **Ayu Mirage** | Warm slate modern developer theme with golden sunset orange. | `#FFCC66` |
+| ⏳ *In Pipeline* | `kanagawa` | **Kanagawa** | Hokusai woodblock print palette: sumi ink, wave blue, autumn leaf red. | `#7E9CD8` |
+| ⏳ *In Pipeline* | `github-light` | **GitHub Primer Light** | Canonical GitHub white desktop canvas with crisp slate borders. | `#0969DA` |
+| ⏳ *In Pipeline* | `solarized-light`|**Solarized Light** | Ethan Schoonover's precision daylight LAB color space theme. | `#268BD2` |
+| ⏳ *In Pipeline* | `cyberpunk-2077`|**Night City Yellow** | High-energy yellow hazard UI, glitch cyan, and dark alloy panels. | `#FCEE0A` |
+
+> 💡 **Want to request or contribute a theme?** Submit an issue or PR to [`North-Abyss/ui-themes`](https://github.com/North-Abyss/ui-themes). Any new preset automatically works with all components and the UI Modular Studio!
+
+---
+
 ## 🎛️ Dynamic Switching in JavaScript
 
 To switch themes dynamically at runtime (via select menu, toggle, or settings):
@@ -138,6 +162,36 @@ To recompile `dist/universal-themes.css` and `dist/universal-themes.min.css`:
 ```bash
 chmod +x build.sh
 ./build.sh
+```
+
+---
+
+## 🔄 Keeping Other Projects Updated (`sync-ui-themes.sh`)
+
+Any external project can install or stay updated with the latest Universal UI Themes CSS bundles (22 presets + tokens) using the one-line updater:
+
+```bash
+# In your downstream repo:
+curl -fsSL https://raw.githubusercontent.com/North-Abyss/ui-themes/main/sync-ui-themes.sh | bash
+```
+
+Or run locally if this template is on your machine:
+```bash
+./sync-ui-themes.sh --dest src/themes
+```
+
+---
+
+## 🚀 GitHub Pages & Deployment
+
+To publish this showcase to GitHub Pages with zero overhead:
+```bash
+# Commit and deploy in one unified command:
+./git-sync.sh --deploy-gh-pages
+```
+Or directly:
+```bash
+./scripts/deployment/deploy_gh_pages.sh
 ```
 
 ---

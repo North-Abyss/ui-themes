@@ -5,6 +5,8 @@
  */
 
 :root[data-theme="nord-frost"] {
+  --theme-name: "Nord Arctic Frost";
+  --theme-mode: dark;
   /* Polar Night Surfaces */
   --theme-bg: #2E3440;
   --theme-bg-gradient: linear-gradient(180deg, #2E3440 0%, #242933 100%);

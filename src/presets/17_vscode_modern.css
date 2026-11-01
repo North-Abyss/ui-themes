@@ -6,6 +6,8 @@
  */
 
 :root[data-theme="vscode-dark"] {
+  --theme-name: "VS Code Modern Dark+";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #1E1E1E;
   --theme-bg-subtle: #252526;

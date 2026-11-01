@@ -8,6 +8,7 @@
 [data-theme="cyberpunk"],
 [data-theme="cyber-dark"] {
   --theme-name: "Cyberpunk Synthwave";
+  --theme-mode: dark;
   --theme-bg: #090014;
   --theme-bg-subtle: #120029;
 

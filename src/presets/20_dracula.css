@@ -6,6 +6,8 @@
  */
 
 :root[data-theme="dracula"] {
+  --theme-name: "Dracula Official";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #282A36;
   --theme-bg-subtle: #21222C;

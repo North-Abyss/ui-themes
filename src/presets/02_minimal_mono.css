@@ -8,6 +8,8 @@
 [data-theme="minimal-mono"],
 [data-theme="minimal-light"] {
   --theme-name: "Minimal 2D Mono Light";
+  --theme-mode: light;
+  --theme-name: "Minimal 2D Mono Light";
   --theme-bg: #FFFFFF;
   --theme-bg-subtle: #F6F6F6;
   
@@ -52,6 +54,8 @@
 }
 
 [data-theme="minimal-dark"] {
+  --theme-name: "Minimal 2D Mono Dark";
+  --theme-mode: dark;
   --theme-name: "Minimal 2D Mono Dark";
   --theme-bg: #0A0A0A;
   --theme-bg-subtle: #141414;

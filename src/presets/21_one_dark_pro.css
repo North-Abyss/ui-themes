@@ -6,6 +6,8 @@
  */
 
 :root[data-theme="one-dark"] {
+  --theme-name: "One Dark Pro";
+  --theme-mode: dark;
   /* Surfaces */
   --theme-bg: #282C34;
   --theme-bg-subtle: #21252B;

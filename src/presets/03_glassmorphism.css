@@ -7,6 +7,8 @@
 
 [data-theme="glassmorphism"],
 [data-theme="glass-dark"] {
+  --theme-name: "Glassmorphism 2.0 Dark";
+  --theme-mode: dark;
   --theme-name: "Glassmorphism Dark";
   --theme-bg: #0b0f19;
   --theme-bg-subtle: #111827;
@@ -53,6 +55,8 @@
 }
 
 [data-theme="glass-light"] {
+  --theme-name: "Glassmorphism Light";
+  --theme-mode: light;
   --theme-name: "Glassmorphism Light";
   --theme-bg: #E0E7FF;
   --theme-bg-subtle: #EEF2FF;
