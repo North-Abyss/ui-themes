@@ -156,7 +156,11 @@ fi
 # 4. Optional Release Tagging
 echo -e "\n${YELLOW}--- Release Pipeline ---${NC}"
 if [[ -z "$RELEASE_TAG" ]]; then
-    read -p "Do you want to publish a release tag now? (y/n) [n]: " trigger_release
+    if [[ "$SYNC_ONLY" == true ]]; then
+        trigger_release="n"
+    else
+        read -p "Do you want to publish a release tag now? (y/n) [n]: " trigger_release
+    fi
 else
     trigger_release="y"
 fi
