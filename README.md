@@ -1,18 +1,18 @@
 <div align="center">
 
 # 🎨 Universal UI Themes
-### Zero-Dependency Design Tokens & 22+ Production Theme Presets in Pure Vanilla CSS
+### Zero-Dependency Design Tokens & 26+ Production Theme Presets in Pure Vanilla CSS
 
 [![GitHub Pages](https://img.shields.io/badge/Live_Demo-GitHub_Pages-8A2BE2?style=for-the-badge&logo=github)](https://north-abyss.github.io/ui-themes/)
-[![Presets](https://img.shields.io/badge/Themes-22+_Presets_(Expanding)-blue?style=for-the-badge)](https://north-abyss.github.io/ui-themes/)
+[![Presets](https://img.shields.io/badge/Themes-26+_Presets_(Expanding)-blue?style=for-the-badge)](https://north-abyss.github.io/ui-themes/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-0_(Vanilla_CSS)-green?style=for-the-badge)](#)
 [![Author](https://img.shields.io/badge/Author-Yuvanesh_KS_(@North--Abyss)-purple?style=for-the-badge&logo=github)](https://github.com/North-Abyss)
 
 <p align="center">
-  <b>A single CSS file that gives your web apps 22+ state-of-the-art visual styles.</b><br>
+  <b>A single CSS file that gives your web apps 26+ state-of-the-art visual styles.</b><br>
   No Tailwind. No PostCSS. No npm dependencies. Pure standard CSS custom properties.<br>
-  <i>22 production presets available right now, with continuous community & platform additions.</i>
+  <i>Complete Morphisms UI Suite (Skeuomorphism, Neumorphism, Glassmorphism, Claymorphism, Neo-Brutalism) with paired Light & Dark variants + built-in Auto System mode.</i>
 </p>
 
 [**🚀 Live Interactive Showcase & Kitchen Sink**](https://north-abyss.github.io/ui-themes/)
@@ -23,7 +23,9 @@
 
 ## ✨ Features
 
-- **22 Production-Ready Presets:** Trending modern morphisms (*Glassmorphism, Claymorphism, Neumorphism, Aurora Spatial Glow, Frutiger Aero*) + famous developer color schemes (*GitHub Primer, VS Code, Tokyo Night, Catppuccin, Dracula, One Dark, Solarized*).
+- **26+ Production-Ready Presets:** Complete Morphisms Suite (*Skeuomorphism, Neumorphism, Glassmorphism 2.0, Claymorphism 3D, Neo-Brutalism, Minimal 2D Mono*) + famous developer color schemes (*GitHub Primer, VS Code, Tokyo Night, Catppuccin, Dracula, One Dark, Solarized*).
+- **Built-in Dynamic Family Pairing & Auto Mode:** Seamlessly switch between Light and Dark mode while preserving your active aesthetic family (e.g. `claymorphism` $\leftrightarrow$ `clay-dark`, `neumorphism` $\leftrightarrow$ `neu-dark`, `skeuomorphism` $\leftrightarrow$ `skeuo-dark`). System mode automatically syncs with OS `prefers-color-scheme` in real-time.
+- **Component-Level Tactile Fidelity:** Tactile beveled calculator buttons, extruded soft toggle switches, 3D squishy inflatable clay forms, and visionOS frosted glass panels matching modern UI design standards.
 - **Interactive UI Modular Studio:** Real-time token customizer (colors, radii, padding, glow), live HTML & CSS component editor with on-page element inspection, and one-click export to standalone custom CSS bundles or HTML showcases.
 - **Zero Runtime & Zero Dependencies:** 100% compliant Vanilla CSS custom properties.
 - **1-Line Dynamic Switching:** Switch the entire look and feel of your application instantly by changing one attribute:
@@ -75,7 +77,7 @@ Import `dist/universal-themes.min.css` or the modular source files:
 
 ---
 
-## 🎨 Complete Theme Catalog (22 Presets)
+## 🎨 Complete Theme Catalog (26+ Presets)
 
 ### Part 1: Design System Morphisms & Modern Aesthetics
 
@@ -84,12 +86,17 @@ Import `dist/universal-themes.min.css` or the modular source files:
 | **01** | `material3` | **Google Material 3** | Official Material You tonal surface containers and pill buttons. | `#00639B` |
 | **01b**| `material3-dark` | **Google Material 3 (Dark)** | Dark neutral tonal elevation with accessible contrast. | `#93CCFF` |
 | **02** | `minimal-mono` | **Minimal 2D Mono (Light)** | Stark black and white line art, 1px outlines, 16px dot matrix. | `#000000` |
-| **02b**| `minimal-dark` | **Minimal 2D Mono (Dark)** | Minimal 2D Monochrome (Dark): High-contrast white line art over an obsidian charcoal canvas. | `#FFFFFF` |
+| **02b**| `minimal-dark` | **Minimal 2D Mono (Dark)** | High-contrast white line art over an obsidian charcoal canvas. | `#FFFFFF` |
 | **03** | `glassmorphism` | **Glassmorphism 2.0 (Dark)** | Frosted translucent panels, `backdrop-filter: blur`, ambient glows. | `#38BDF8` |
 | **03b**| `glass-light` | **Glassmorphism (Light)** | Floating glass panels over soft rose/indigo ambient gradients. | `#6366F1` |
 | **04** | `claymorphism` | **3D Puffy Claymorphism** | Inflatable squishy matte clay with tactile dual inset highlights. | `#7C4DFF` |
+| **04b**| `clay-dark` | **Claymorphism Dark** | Deep inflatable plum & slate clay with triple-shadow volume depth. | `#A78BFA` |
 | **05** | `neobrutalism` | **Neo-Brutalism & Retrobento** | 2.5px solid black borders, 4px hard drop shadow, pop yellow. | `#FFE600` |
-| **06** | `neumorphism` | **Neumorphism / Soft UI** | Soft monochromatic extruded plastic with opposing dual shadows. | `#E0E5EC` |
+| **05b**| `neobrutalism-dark`| **Neo-Brutalism Dark** | Obsidian canvas, 2.5px white outlines, electric pop yellow offset shadows. | `#FFE600` |
+| **06** | `neumorphism` | **Neumorphism / Soft UI** | Seamless monochromatic extruded plastic with opposing dual shadows. | `#E0E5EC` |
+| **06b**| `neu-dark` | **Neumorphism Dark** | Monochromatic extruded dark plane with deep void and light opposing shadows. | `#38BDF8` |
+| **23** | `skeuomorphism` | **Skeuomorphism Light** | Dieter Rams & Braun brushed aluminum, tactile cream buttons, orange accent. | `#FF9500` |
+| **23b**| `skeuo-dark` | **Skeuomorphism Dark** | Tactile matte charcoal calculator body, beveled keys, glowing amber LCD display. | `#FF8C00` |
 | **07** | `cyberpunk` | **Cyberpunk / Synthwave** | Neon cyan/magenta glow borders, angled HUD polygons, CRT scanlines. | `#00F0FF` |
 | **08** | `bento-modern` | **Bento Modern Dark** | Linear & Vercel style dark mode, modular bento card grids. | `#5E6AD2` |
 | **09** | `retro-90s` | **Retro 90s OS** | Classic Windows 95 battleship gray with 3D beveled chrome buttons. | `#000080` |

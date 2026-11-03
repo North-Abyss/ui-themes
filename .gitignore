@@ -2,7 +2,8 @@
 Thumbs.db
 node_modules/
 *.log
-workspace/tmp/
+workspace/
+audit/
 tmp/
 .playwright-mcp/
 

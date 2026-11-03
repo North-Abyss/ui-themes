@@ -395,6 +395,7 @@
  * ==============================================================================
  * Preset 04: Claymorphism (3D Puffy Matte Clay / Inflatable UI)
  * Aesthetic: Playful, tactile squishy volume, chunky organic curves, dual inset shadows
+ * Both Light (Soft Lilac / Warm Peach) and Dark (Inflatable Deep Clay) variants
  * ==============================================================================
  */
 
@@ -452,10 +453,66 @@
   --theme-font-mono: var(--font-mono);
   --theme-backdrop: none;
 }
+
+[data-theme="claymorphism-dark"],
+[data-theme="clay-dark"] {
+  --theme-name: "Claymorphism Dark";
+  --theme-mode: dark;
+  --theme-bg: #13141F;
+  --theme-bg-subtle: #0F101A;
+
+  --theme-surface: #1A1B26;
+  --theme-surface-container: #212332;
+  --theme-surface-elevated: #282A3D;
+
+  --theme-text: #F1F5F9;
+  --theme-text-muted: #94A3B8;
+
+  --theme-primary: #A78BFA;
+  --theme-primary-hover: #9066F6;
+  --theme-on-primary: #0F172A;
+  --theme-primary-container: rgba(167, 139, 250, 0.20);
+  --theme-on-primary-container: #EDE9FE;
+
+  --theme-secondary: #F472B6;
+  --theme-on-secondary: #0F172A;
+  --theme-secondary-container: rgba(244, 114, 182, 0.20);
+
+  --theme-accent: #34D399;
+  --theme-danger: #FB7185;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-2xl);     /* 32px */
+  --theme-btn-radius: var(--radius-xl);         /* 24px */
+
+  /* Triple Box-Shadow Dark Clay Recipe: Deep Ambient Float + Inset Core Shade + Specular Dome Highlight */
+  --theme-shadow-sm: 10px 10px 24px rgba(0, 0, 0, 0.50),
+                     inset -4px -4px 8px rgba(0, 0, 0, 0.45),
+                     inset 4px 4px 8px rgba(255, 255, 255, 0.08);
+
+  --theme-shadow: 20px 20px 40px rgba(0, 0, 0, 0.60),
+                  inset -6px -6px 12px rgba(0, 0, 0, 0.50),
+                  inset 6px 6px 12px rgba(255, 255, 255, 0.08);
+
+  --theme-shadow-hover: 24px 24px 48px rgba(0, 0, 0, 0.70),
+                        inset -8px -8px 16px rgba(0, 0, 0, 0.55),
+                        inset 8px 8px 16px rgba(255, 255, 255, 0.12);
+
+  /* Recessed / Inset Input Field Shadow */
+  --theme-shadow-inset: inset 4px 4px 10px rgba(0, 0, 0, 0.60),
+                        inset -4px -4px 10px rgba(255, 255, 255, 0.05);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
 /**
  * ==============================================================================
  * Preset 05: Neo-Brutalism & Retrobento (Gumroad / Figma Community)
- * Aesthetic: High contrast, thick 2.5px solid black borders, 4px hard drop shadow
+ * Aesthetic: High contrast, thick 2.5px solid borders, hard zero-blur offset shadow
+ * Both Light (Electric Pop Yellow) and Dark (Obsidian Pop Canvas) variants
  * ==============================================================================
  */
 
@@ -502,10 +559,55 @@
   --theme-font-mono: var(--font-mono);
   --theme-backdrop: none;
 }
+
+[data-theme="neobrutalism-dark"],
+[data-theme="neo-dark"] {
+  --theme-name: "Neo-Brutalism Dark";
+  --theme-mode: dark;
+  --theme-bg: #0D0D0D;
+  --theme-bg-subtle: #171717;
+
+  --theme-surface: #171717;
+  --theme-surface-container: #262626;
+  --theme-surface-elevated: #333333;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #A3A3A3;
+
+  --theme-primary: #FFE600;                    /* Electric Yellow */
+  --theme-primary-hover: #FFF04D;
+  --theme-on-primary: #000000;
+  --theme-primary-container: rgba(255, 230, 0, 0.20);
+  --theme-on-primary-container: #FFE600;
+
+  --theme-secondary: #00F0FF;                  /* Neon Cyan */
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: rgba(0, 240, 255, 0.20);
+
+  --theme-accent: #FF007F;                     /* Electric Magenta */
+  --theme-danger: #FF4D4D;
+  --theme-on-danger: #000000;
+
+  /* Crisp White Solid Outlines */
+  --theme-border: 2.5px solid #FFFFFF;
+  --theme-border-subtle: 2px solid #FFFFFF;
+  --theme-border-radius: var(--radius-sm);      /* 8px */
+  --theme-btn-radius: var(--radius-sm);
+
+  /* Hard Offset Electric Pop Shadows */
+  --theme-shadow-sm: 2px 2px 0px #FFE600;
+  --theme-shadow: 4px 4px 0px #FFE600;
+  --theme-shadow-hover: 6px 6px 0px #00F0FF;
+
+  --theme-font: var(--font-display);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
 /**
  * ==============================================================================
- * Preset 06: Neumorphism / Soft UI (Extruded Plastic)
+ * Preset 06: Neumorphism / Soft UI (Extruded Surface)
  * Aesthetic: Seamless background extrusion, opposing light and dark soft shadows
+ * Both Light (#E0E5EC) and Dark (#1E2024) variants
  * ==============================================================================
  */
 
@@ -549,6 +651,52 @@
 
   /* Debossed Inset Shadow (Pressed button / Input field) */
   --theme-shadow-inset: inset 5px 5px 10px #bec3c9, inset -5px -5px 10px #ffffff;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="neumorphism-dark"],
+[data-theme="neu-dark"] {
+  --theme-name: "Neumorphism Dark";
+  --theme-mode: dark;
+  --theme-bg: #1E2024;
+  --theme-bg-subtle: #17191C;
+
+  --theme-surface: #1E2024;
+  --theme-surface-container: #1E2024;
+  --theme-surface-elevated: #1E2024;
+
+  --theme-text: #E2E8F0;
+  --theme-text-muted: #94A3B8;
+
+  --theme-primary: #38BDF8;
+  --theme-primary-hover: #0EA5E9;
+  --theme-on-primary: #0F172A;
+  --theme-primary-container: rgba(56, 189, 248, 0.20);
+  --theme-on-primary-container: #E0F2FE;
+
+  --theme-secondary: #818CF8;
+  --theme-on-secondary: #0F172A;
+  --theme-secondary-container: rgba(129, 140, 248, 0.20);
+
+  --theme-accent: #A855F7;
+  --theme-danger: #F87171;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-md);          /* 12px */
+
+  /* Dual Extruded Dark Shadows: Bottom-Right Deep Void + Top-Left Dim Surface Highlight */
+  --theme-shadow-sm: 4px 4px 8px #121418, -4px -4px 8px #2B2F38;
+  --theme-shadow: 8px 8px 16px #121418, -8px -8px 16px #2B2F38;
+  --theme-shadow-hover: 12px 12px 20px #121418, -12px -12px 20px #2B2F38;
+
+  /* Debossed Inset Shadow */
+  --theme-shadow-inset: inset 5px 5px 10px #121418, inset -5px -5px 10px #2B2F38;
 
   --theme-font: var(--font-sans);
   --theme-font-mono: var(--font-mono);
@@ -1441,4 +1589,111 @@
 
   --theme-btn-transform: translateY(-1px);
   --theme-btn-active-transform: translateY(1px);
+}
+/**
+ * ==============================================================================
+ * Preset 23: Skeuomorphism (Tactile Physical Materials & Realistic Depth)
+ * Aesthetic: Physical realism, beveled key surfaces, inset LCD displays, specular highlights
+ * Both Light (Dieter Rams Braun Aluminum & Cream) and Dark (Tactile Matte Plastic Calculator)
+ * ==============================================================================
+ */
+
+[data-theme="skeuomorphism"],
+[data-theme="skeuo-light"] {
+  --theme-name: "Skeuomorphism Light";
+  --theme-mode: light;
+  --theme-bg: #EAECEF;
+  --theme-bg-subtle: #DFE2E6;
+
+  /* Subtle Brushed Aluminum Pattern */
+  --theme-canvas-pattern: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.02) 100%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: #F5F6F8;
+  --theme-surface-container: #E2E5EA;
+  --theme-surface-elevated: #FFFFFF;
+
+  --theme-text: #1C1D1F;
+  --theme-text-muted: #5A5D62;
+
+  --theme-primary: #FF9500;                    /* Braun Classic Amber/Orange */
+  --theme-primary-hover: #E08500;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #FFECC8;
+  --theme-on-primary-container: #663900;
+
+  --theme-secondary: #475569;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #E2E8F0;
+
+  --theme-accent: #2563EB;
+  --theme-danger: #DC2626;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid rgba(0, 0, 0, 0.15);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.85);
+  --theme-border-radius: var(--radius-lg);     /* 16px */
+  --theme-btn-radius: var(--radius-md);        /* 10px */
+
+  /* Tactile Physical Bevel Shadows */
+  --theme-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.80);
+  --theme-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  --theme-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.10), inset 0 1px 0 #FFFFFF;
+
+  /* Recessed Display & Debossed Inset */
+  --theme-shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.16), inset 0 0 1px rgba(0, 0, 0, 0.25);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="skeuomorphism-dark"],
+[data-theme="skeuo-dark"] {
+  --theme-name: "Skeuomorphism Dark";
+  --theme-mode: dark;
+  --theme-bg: #141517;
+  --theme-bg-subtle: #191B1E;
+
+  /* Matte Texture Ambient Canvas */
+  --theme-canvas-pattern: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: #212327;                    /* Tactile Matte Body */
+  --theme-surface-container: #16171A;          /* Inset Recessed LCD Well */
+  --theme-surface-elevated: #2C2E34;           /* Beveled Key Cap */
+
+  --theme-text: #F1F3F5;
+  --theme-text-muted: #8E929B;
+
+  --theme-primary: #FF8C00;                    /* Glowing LCD Amber Screen */
+  --theme-primary-hover: #FFA229;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #3D2200;
+  --theme-on-primary-container: #FFBD59;
+
+  --theme-secondary: #3B3E45;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #26282D;
+
+  --theme-accent: #38BDF8;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #101113;
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.08);
+  --theme-border-radius: var(--radius-lg);     /* 16px */
+  --theme-btn-radius: var(--radius-md);        /* 10px */
+
+  /* Tactile Dark Bevel Shadows with Ambient Occlusion */
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.50), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --theme-shadow: 0 8px 24px rgba(0, 0, 0, 0.60), 0 2px 6px rgba(0, 0, 0, 0.40), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --theme-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.70), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  /* Recessed Display & Debossed Inset Well */
+  --theme-shadow-inset: inset 0 3px 8px rgba(0, 0, 0, 0.70), inset 0 0 2px rgba(0, 0, 0, 0.85);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
 }

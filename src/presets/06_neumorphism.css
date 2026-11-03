@@ -1,7 +1,8 @@
 /**
  * ==============================================================================
- * Preset 06: Neumorphism / Soft UI (Extruded Plastic)
+ * Preset 06: Neumorphism / Soft UI (Extruded Surface)
  * Aesthetic: Seamless background extrusion, opposing light and dark soft shadows
+ * Both Light (#E0E5EC) and Dark (#1E2024) variants
  * ==============================================================================
  */
 
@@ -45,6 +46,52 @@
 
   /* Debossed Inset Shadow (Pressed button / Input field) */
   --theme-shadow-inset: inset 5px 5px 10px #bec3c9, inset -5px -5px 10px #ffffff;
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="neumorphism-dark"],
+[data-theme="neu-dark"] {
+  --theme-name: "Neumorphism Dark";
+  --theme-mode: dark;
+  --theme-bg: #1E2024;
+  --theme-bg-subtle: #17191C;
+
+  --theme-surface: #1E2024;
+  --theme-surface-container: #1E2024;
+  --theme-surface-elevated: #1E2024;
+
+  --theme-text: #E2E8F0;
+  --theme-text-muted: #94A3B8;
+
+  --theme-primary: #38BDF8;
+  --theme-primary-hover: #0EA5E9;
+  --theme-on-primary: #0F172A;
+  --theme-primary-container: rgba(56, 189, 248, 0.20);
+  --theme-on-primary-container: #E0F2FE;
+
+  --theme-secondary: #818CF8;
+  --theme-on-secondary: #0F172A;
+  --theme-secondary-container: rgba(129, 140, 248, 0.20);
+
+  --theme-accent: #A855F7;
+  --theme-danger: #F87171;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-lg);       /* 16px */
+  --theme-btn-radius: var(--radius-md);          /* 12px */
+
+  /* Dual Extruded Dark Shadows: Bottom-Right Deep Void + Top-Left Dim Surface Highlight */
+  --theme-shadow-sm: 4px 4px 8px #121418, -4px -4px 8px #2B2F38;
+  --theme-shadow: 8px 8px 16px #121418, -8px -8px 16px #2B2F38;
+  --theme-shadow-hover: 12px 12px 20px #121418, -12px -12px 20px #2B2F38;
+
+  /* Debossed Inset Shadow */
+  --theme-shadow-inset: inset 5px 5px 10px #121418, inset -5px -5px 10px #2B2F38;
 
   --theme-font: var(--font-sans);
   --theme-font-mono: var(--font-mono);

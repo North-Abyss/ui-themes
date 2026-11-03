@@ -1,0 +1,107 @@
+/**
+ * ==============================================================================
+ * Preset 23: Skeuomorphism (Tactile Physical Materials & Realistic Depth)
+ * Aesthetic: Physical realism, beveled key surfaces, inset LCD displays, specular highlights
+ * Both Light (Dieter Rams Braun Aluminum & Cream) and Dark (Tactile Matte Plastic Calculator)
+ * ==============================================================================
+ */
+
+[data-theme="skeuomorphism"],
+[data-theme="skeuo-light"] {
+  --theme-name: "Skeuomorphism Light";
+  --theme-mode: light;
+  --theme-bg: #EAECEF;
+  --theme-bg-subtle: #DFE2E6;
+
+  /* Subtle Brushed Aluminum Pattern */
+  --theme-canvas-pattern: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.02) 100%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: #F5F6F8;
+  --theme-surface-container: #E2E5EA;
+  --theme-surface-elevated: #FFFFFF;
+
+  --theme-text: #1C1D1F;
+  --theme-text-muted: #5A5D62;
+
+  --theme-primary: #FF9500;                    /* Braun Classic Amber/Orange */
+  --theme-primary-hover: #E08500;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #FFECC8;
+  --theme-on-primary-container: #663900;
+
+  --theme-secondary: #475569;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #E2E8F0;
+
+  --theme-accent: #2563EB;
+  --theme-danger: #DC2626;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid rgba(0, 0, 0, 0.15);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.85);
+  --theme-border-radius: var(--radius-lg);     /* 16px */
+  --theme-btn-radius: var(--radius-md);        /* 10px */
+
+  /* Tactile Physical Bevel Shadows */
+  --theme-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.80);
+  --theme-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  --theme-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.10), inset 0 1px 0 #FFFFFF;
+
+  /* Recessed Display & Debossed Inset */
+  --theme-shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.16), inset 0 0 1px rgba(0, 0, 0, 0.25);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="skeuomorphism-dark"],
+[data-theme="skeuo-dark"] {
+  --theme-name: "Skeuomorphism Dark";
+  --theme-mode: dark;
+  --theme-bg: #141517;
+  --theme-bg-subtle: #191B1E;
+
+  /* Matte Texture Ambient Canvas */
+  --theme-canvas-pattern: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: #212327;                    /* Tactile Matte Body */
+  --theme-surface-container: #16171A;          /* Inset Recessed LCD Well */
+  --theme-surface-elevated: #2C2E34;           /* Beveled Key Cap */
+
+  --theme-text: #F1F3F5;
+  --theme-text-muted: #8E929B;
+
+  --theme-primary: #FF8C00;                    /* Glowing LCD Amber Screen */
+  --theme-primary-hover: #FFA229;
+  --theme-on-primary: #000000;
+  --theme-primary-container: #3D2200;
+  --theme-on-primary-container: #FFBD59;
+
+  --theme-secondary: #3B3E45;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #26282D;
+
+  --theme-accent: #38BDF8;
+  --theme-danger: #EF4444;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #101113;
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.08);
+  --theme-border-radius: var(--radius-lg);     /* 16px */
+  --theme-btn-radius: var(--radius-md);        /* 10px */
+
+  /* Tactile Dark Bevel Shadows with Ambient Occlusion */
+  --theme-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.50), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --theme-shadow: 0 8px 24px rgba(0, 0, 0, 0.60), 0 2px 6px rgba(0, 0, 0, 0.40), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --theme-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.70), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  /* Recessed Display & Debossed Inset Well */
+  --theme-shadow-inset: inset 0 3px 8px rgba(0, 0, 0, 0.70), inset 0 0 2px rgba(0, 0, 0, 0.85);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

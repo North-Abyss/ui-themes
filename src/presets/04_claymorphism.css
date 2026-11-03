@@ -2,6 +2,7 @@
  * ==============================================================================
  * Preset 04: Claymorphism (3D Puffy Matte Clay / Inflatable UI)
  * Aesthetic: Playful, tactile squishy volume, chunky organic curves, dual inset shadows
+ * Both Light (Soft Lilac / Warm Peach) and Dark (Inflatable Deep Clay) variants
  * ==============================================================================
  */
 
@@ -54,6 +55,61 @@
   /* Recessed / Inset Input Field Shadow */
   --theme-shadow-inset: inset 4px 4px 8px rgba(139, 92, 246, 0.20),
                         inset -4px -4px 8px rgba(255, 255, 255, 0.80);
+
+  --theme-font: var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="claymorphism-dark"],
+[data-theme="clay-dark"] {
+  --theme-name: "Claymorphism Dark";
+  --theme-mode: dark;
+  --theme-bg: #13141F;
+  --theme-bg-subtle: #0F101A;
+
+  --theme-surface: #1A1B26;
+  --theme-surface-container: #212332;
+  --theme-surface-elevated: #282A3D;
+
+  --theme-text: #F1F5F9;
+  --theme-text-muted: #94A3B8;
+
+  --theme-primary: #A78BFA;
+  --theme-primary-hover: #9066F6;
+  --theme-on-primary: #0F172A;
+  --theme-primary-container: rgba(167, 139, 250, 0.20);
+  --theme-on-primary-container: #EDE9FE;
+
+  --theme-secondary: #F472B6;
+  --theme-on-secondary: #0F172A;
+  --theme-secondary-container: rgba(244, 114, 182, 0.20);
+
+  --theme-accent: #34D399;
+  --theme-danger: #FB7185;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: none;
+  --theme-border-subtle: none;
+  --theme-border-radius: var(--radius-2xl);     /* 32px */
+  --theme-btn-radius: var(--radius-xl);         /* 24px */
+
+  /* Triple Box-Shadow Dark Clay Recipe: Deep Ambient Float + Inset Core Shade + Specular Dome Highlight */
+  --theme-shadow-sm: 10px 10px 24px rgba(0, 0, 0, 0.50),
+                     inset -4px -4px 8px rgba(0, 0, 0, 0.45),
+                     inset 4px 4px 8px rgba(255, 255, 255, 0.08);
+
+  --theme-shadow: 20px 20px 40px rgba(0, 0, 0, 0.60),
+                  inset -6px -6px 12px rgba(0, 0, 0, 0.50),
+                  inset 6px 6px 12px rgba(255, 255, 255, 0.08);
+
+  --theme-shadow-hover: 24px 24px 48px rgba(0, 0, 0, 0.70),
+                        inset -8px -8px 16px rgba(0, 0, 0, 0.55),
+                        inset 8px 8px 16px rgba(255, 255, 255, 0.12);
+
+  /* Recessed / Inset Input Field Shadow */
+  --theme-shadow-inset: inset 4px 4px 10px rgba(0, 0, 0, 0.60),
+                        inset -4px -4px 10px rgba(255, 255, 255, 0.05);
 
   --theme-font: var(--font-sans);
   --theme-font-mono: var(--font-mono);

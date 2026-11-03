@@ -1,7 +1,8 @@
 /**
  * ==============================================================================
  * Preset 05: Neo-Brutalism & Retrobento (Gumroad / Figma Community)
- * Aesthetic: High contrast, thick 2.5px solid black borders, 4px hard drop shadow
+ * Aesthetic: High contrast, thick 2.5px solid borders, hard zero-blur offset shadow
+ * Both Light (Electric Pop Yellow) and Dark (Obsidian Pop Canvas) variants
  * ==============================================================================
  */
 
@@ -43,6 +44,50 @@
   --theme-shadow-sm: 2px 2px 0px #000000;
   --theme-shadow: 4px 4px 0px #000000;
   --theme-shadow-hover: 6px 6px 0px #000000;
+
+  --theme-font: var(--font-display);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+[data-theme="neobrutalism-dark"],
+[data-theme="neo-dark"] {
+  --theme-name: "Neo-Brutalism Dark";
+  --theme-mode: dark;
+  --theme-bg: #0D0D0D;
+  --theme-bg-subtle: #171717;
+
+  --theme-surface: #171717;
+  --theme-surface-container: #262626;
+  --theme-surface-elevated: #333333;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #A3A3A3;
+
+  --theme-primary: #FFE600;                    /* Electric Yellow */
+  --theme-primary-hover: #FFF04D;
+  --theme-on-primary: #000000;
+  --theme-primary-container: rgba(255, 230, 0, 0.20);
+  --theme-on-primary-container: #FFE600;
+
+  --theme-secondary: #00F0FF;                  /* Neon Cyan */
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: rgba(0, 240, 255, 0.20);
+
+  --theme-accent: #FF007F;                     /* Electric Magenta */
+  --theme-danger: #FF4D4D;
+  --theme-on-danger: #000000;
+
+  /* Crisp White Solid Outlines */
+  --theme-border: 2.5px solid #FFFFFF;
+  --theme-border-subtle: 2px solid #FFFFFF;
+  --theme-border-radius: var(--radius-sm);      /* 8px */
+  --theme-btn-radius: var(--radius-sm);
+
+  /* Hard Offset Electric Pop Shadows */
+  --theme-shadow-sm: 2px 2px 0px #FFE600;
+  --theme-shadow: 4px 4px 0px #FFE600;
+  --theme-shadow-hover: 6px 6px 0px #00F0FF;
 
   --theme-font: var(--font-display);
   --theme-font-mono: var(--font-mono);
