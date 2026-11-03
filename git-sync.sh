@@ -148,8 +148,8 @@ else
     echo -e "${YELLOW}Notice: No remote configured. Local commit succeeded.${NC}"
 fi
 
-# Exit early if running in non-interactive sync mode
-if [[ "$SYNC_ONLY" == true ]]; then
+# Exit early if running in non-interactive sync mode unless deployment or release flags were passed
+if [[ "$SYNC_ONLY" == true && -z "$RELEASE_TAG" && -z "$DEPLOY_GH_PAGES" && -z "$DEPLOY_WEB" ]]; then
     exit 0
 fi
 
