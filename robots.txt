@@ -1,0 +1,8 @@
+# Robots.txt for Universal UI Themes & Modular Tools
+# https://north-abyss.github.io/ui-themes/
+
+User-agent: *
+Allow: /
+
+# Host & Sitemap Location
+Sitemap: https://north-abyss.github.io/ui-themes/sitemap.xml

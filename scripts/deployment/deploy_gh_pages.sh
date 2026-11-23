@@ -152,6 +152,12 @@ fi
 if [[ -f "LICENSE" ]]; then
     cp LICENSE "$TEMP_WORKTREE"/
 fi
+if [[ -f "robots.txt" ]]; then
+    cp robots.txt "$TEMP_WORKTREE"/
+fi
+if [[ -f "sitemap.xml" ]]; then
+    cp sitemap.xml "$TEMP_WORKTREE"/
+fi
 
 # Add .nojekyll to prevent Jekyll processing on GitHub Pages
 touch "$TEMP_WORKTREE/.nojekyll"
