@@ -17,6 +17,11 @@
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://north-abyss.github.io/ui-themes/">
 
+  <!-- Favicon & Touch Icons for GitHub Pages -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/social-preview-5x4.png">
+  <link rel="apple-touch-icon" href="assets/social-preview-5x4.png">
+
   <!-- Open Graph / Facebook (5:4 Aspect Ratio) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="UI Themes, Templates &amp; Modular Tools">
@@ -1826,6 +1831,217 @@
   --theme-backdrop: none;
 }
 
+/**
+ * ==============================================================================
+ * Preset 24: Spatial UI (Apple VisionOS / visionOS 2.0)
+ * Aesthetic: Spatial depth, gaze-hover illumination, translucent frosted glass, vibrant Apple hues
+ * ==============================================================================
+ */
+
+[data-theme="visionos"],
+[data-theme="spatial-ui"] {
+  --theme-name: "Spatial UI (visionOS)";
+  --theme-mode: dark;
+  --theme-bg: #090B10;
+  --theme-bg-subtle: #121520;
+
+  --theme-canvas-pattern: radial-gradient(circle at 50% 15%, rgba(0, 122, 255, 0.20) 0%, transparent 55%),
+                          radial-gradient(circle at 85% 80%, rgba(48, 209, 88, 0.15) 0%, transparent 50%),
+                          radial-gradient(circle at 15% 75%, rgba(255, 159, 10, 0.15) 0%, transparent 45%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: rgba(255, 255, 255, 0.08);
+  --theme-surface-container: rgba(255, 255, 255, 0.14);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.20);
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: rgba(255, 255, 255, 0.65);
+
+  --theme-primary: #007AFF;
+  --theme-primary-hover: #0A84FF;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(0, 122, 255, 0.25);
+  --theme-on-primary-container: #E0F2FE;
+
+  --theme-secondary: #30D158;
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: rgba(48, 209, 88, 0.20);
+
+  --theme-accent: #FF9F0A;
+  --theme-danger: #FF453A;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid rgba(255, 255, 255, 0.24);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.12);
+  --theme-border-radius: var(--radius-xl);
+  --theme-btn-radius: var(--radius-lg);
+
+  --theme-shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --theme-shadow: 0 16px 48px rgba(0, 0, 0, 0.50), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  --theme-shadow-hover: 0 24px 64px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 122, 255, 0.40), inset 0 1px 0 #FFFFFF;
+
+  --theme-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(28px) saturate(200%);
+}
+
+/**
+ * ==============================================================================
+ * Preset 25: E-Ink / Paper (Distraction-Free Matte Reading)
+ * Aesthetic: High contrast, matte texture, zero animation, reading typography
+ * ==============================================================================
+ */
+
+[data-theme="e-ink"],
+[data-theme="e-ink-paper"] {
+  --theme-name: "E-Ink / Matte Paper";
+  --theme-mode: light;
+  --theme-bg: #FDFBF7;
+  --theme-bg-subtle: #F3EFE6;
+
+  --theme-canvas-pattern: none;
+  --theme-canvas-size: auto;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #EFE9DD;
+  --theme-surface-elevated: #FAF6EE;
+
+  --theme-text: #1A1A1A;
+  --theme-text-muted: #525252;
+
+  --theme-primary: #1A1A1A;
+  --theme-primary-hover: #333333;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #E5DFD3;
+  --theme-on-primary-container: #1A1A1A;
+
+  --theme-secondary: #4A4A4A;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EDE6DA;
+
+  --theme-accent: #E27D60;
+  --theme-danger: #990000;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1.5px solid #1A1A1A;
+  --theme-border-subtle: 1px solid #D6CEBE;
+  --theme-border-radius: var(--radius-xs);
+  --theme-btn-radius: var(--radius-xs);
+
+  --theme-shadow-sm: none;
+  --theme-shadow: 2px 2px 0px rgba(26, 26, 26, 0.12);
+  --theme-shadow-hover: 3px 3px 0px rgba(26, 26, 26, 0.25);
+
+  --theme-font: "Georgia", "Times New Roman", serif;
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+/**
+ * ==============================================================================
+ * Preset 26: Swiss Modernism 2.0 (International Typographic Style)
+ * Aesthetic: Strict mathematical grid, stark contrast, objective typography, International Red
+ * ==============================================================================
+ */
+
+[data-theme="swiss-style"],
+[data-theme="swiss-modernism"] {
+  --theme-name: "Swiss Modernism 2.0";
+  --theme-mode: light;
+  --theme-bg: #FFFFFF;
+  --theme-bg-subtle: #F5F5F7;
+
+  --theme-canvas-pattern: none;
+  --theme-canvas-size: auto;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #EAEAEA;
+  --theme-surface-elevated: #F9F9F9;
+
+  --theme-text: #000000;
+  --theme-text-muted: #555555;
+
+  --theme-primary: #FF3B30;
+  --theme-primary-hover: #D70015;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #FFE5E5;
+  --theme-on-primary-container: #A3000B;
+
+  --theme-secondary: #000000;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EEEEEE;
+
+  --theme-accent: #007AFF;
+  --theme-danger: #FF3B30;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1px solid #000000;
+  --theme-border-subtle: 1px solid #CCCCCC;
+  --theme-border-radius: 0px;
+  --theme-btn-radius: 0px;
+
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #000000;
+
+  --theme-font: "Helvetica Neue", "Arial", sans-serif;
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
+/**
+ * ==============================================================================
+ * Preset 27: Vaporwave / Retro-Futurism (Aesthetic Neon Sunset)
+ * Aesthetic: Sunset neon magenta, electric cyan, midnight violet grid, CRT vibes
+ * ==============================================================================
+ */
+
+[data-theme="vaporwave"],
+[data-theme="retro-futurism"] {
+  --theme-name: "Vaporwave Neon Sunset";
+  --theme-mode: dark;
+  --theme-bg: #140C26;
+  --theme-bg-subtle: #1F133B;
+
+  --theme-canvas-pattern: linear-gradient(rgba(255, 113, 206, 0.10) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(1, 205, 254, 0.10) 1px, transparent 1px);
+  --theme-canvas-size: 32px 32px;
+
+  --theme-surface: #221640;
+  --theme-surface-container: #2D1D54;
+  --theme-surface-elevated: #39256B;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #BFA9E8;
+
+  --theme-primary: #FF71CE;
+  --theme-primary-hover: #FF85D6;
+  --theme-on-primary: #140C26;
+  --theme-primary-container: rgba(255, 113, 206, 0.25);
+  --theme-on-primary-container: #FFD1F1;
+
+  --theme-secondary: #01CDFE;
+  --theme-on-secondary: #140C26;
+  --theme-secondary-container: rgba(1, 205, 254, 0.25);
+
+  --theme-accent: #05FFA1;
+  --theme-danger: #FF4F79;
+  --theme-on-danger: #FFFFFF;
+
+  --theme-border: 1.5px solid #FF71CE;
+  --theme-border-subtle: 1px solid rgba(1, 205, 254, 0.40);
+  --theme-border-radius: var(--radius-md);
+  --theme-btn-radius: var(--radius-sm);
+
+  --theme-shadow-sm: 0 0 10px rgba(255, 113, 206, 0.35);
+  --theme-shadow: 0 0 20px rgba(255, 113, 206, 0.35), 0 8px 24px rgba(0, 0, 0, 0.50);
+  --theme-shadow-hover: 0 0 30px rgba(1, 205, 254, 0.60), 0 0 15px rgba(255, 113, 206, 0.50);
+
+  --theme-font: var(--font-display);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+
   </style>
 
 
@@ -2230,6 +2446,549 @@
       100% { transform: scale(0.95); opacity: 0.8; }
     }
 
+    /* Header Action Pill Buttons (Download Theme & Reset All) */
+    .action-btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: var(--theme-border-subtle, 1px solid rgba(127,127,127,0.25));
+      background-color: var(--theme-surface-container);
+      color: var(--theme-text);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .action-btn-pill:hover {
+      filter: brightness(1.12);
+      transform: translateY(-1px);
+    }
+    .download-pill {
+      background-color: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border-color: var(--theme-primary);
+      box-shadow: var(--theme-shadow-sm);
+    }
+    .reset-pill {
+      color: var(--theme-text-muted);
+    }
+    .reset-pill:hover {
+      color: #ef4444;
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    /* Live Search & Tag Filter Bar */
+    .search-tag-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 0.35rem;
+      border-top: var(--theme-border-subtle);
+    }
+    .theme-search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: var(--theme-surface-container);
+      border: var(--theme-border, 1px solid rgba(127,127,127,0.25));
+      border-radius: var(--theme-btn-radius, 8px);
+      padding: 0.3rem 0.75rem;
+      gap: 0.5rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .theme-search-box:focus-within {
+      border-color: var(--theme-primary);
+      box-shadow: 0 0 0 2px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.25);
+    }
+    .theme-search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      color: var(--theme-text);
+      font-family: inherit;
+      font-size: 0.84rem;
+      outline: none;
+    }
+    .theme-search-input::placeholder {
+      color: var(--theme-text-muted);
+      opacity: 0.75;
+    }
+    .clear-search-btn {
+      background: none;
+      border: none;
+      color: var(--theme-text-muted);
+      cursor: pointer;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+    }
+    .clear-search-btn:hover {
+      color: var(--theme-text);
+    }
+
+    .theme-tags-track {
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 2px;
+    }
+    .theme-tags-track::-webkit-scrollbar {
+      display: none;
+    }
+    .tag-filter-pill {
+      padding: 0.24rem 0.65rem;
+      font-size: 0.74rem;
+      font-weight: 600;
+      border-radius: var(--theme-btn-radius, 9999px);
+      border: var(--theme-border-subtle, 1px solid rgba(127,127,127,0.2));
+      background: var(--theme-surface-container);
+      color: var(--theme-text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .tag-filter-pill:hover {
+      color: var(--theme-text);
+      border-color: var(--theme-primary);
+    }
+    .tag-filter-pill.active {
+      background: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border-color: var(--theme-primary);
+    }
+
+    /* Famous Website & Retro Palette Swapper Ribbon */
+    .palette-swapper-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.3rem 0.6rem;
+      background: rgba(127,127,127,0.06);
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border-subtle);
+      margin-top: 0.25rem;
+    }
+    .palette-bar-label {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--theme-text-muted);
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .palette-chips-scroll {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      flex: 1;
+    }
+    .palette-chips-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .palette-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: var(--theme-btn-radius, 6px);
+      border: var(--theme-border-subtle, 1px solid rgba(127,127,127,0.25));
+      background: var(--theme-surface);
+      color: var(--theme-text);
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+      flex-shrink: 0;
+    }
+    .palette-chip:hover {
+      border-color: var(--theme-primary);
+      transform: translateY(-1px);
+    }
+    .palette-chip.active {
+      background: var(--theme-primary-container, rgba(59, 130, 246, 0.18));
+      border-color: var(--theme-primary);
+      color: var(--theme-primary);
+      box-shadow: 0 0 8px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.3);
+    }
+    .palette-chip .swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .palette-reset-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: var(--theme-btn-radius, 6px);
+      border: 1px dashed rgba(239, 68, 68, 0.45);
+      background: rgba(239, 68, 68, 0.08);
+      color: #ef4444;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.18s ease;
+    }
+    .palette-reset-btn:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    /* Spiced-Up Scrolling Carousel Track */
+    .theme-chips-wrapper {
+      position: relative;
+    }
+    .theme-chips-wrapper::before,
+    .theme-chips-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 24px;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+    .theme-chips-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, var(--theme-bg), transparent);
+    }
+    .theme-chips-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, var(--theme-bg), transparent);
+    }
+    .chip-btn {
+      transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease, background-color 0.2s ease;
+    }
+    .chip-btn:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .chip-btn.active {
+      box-shadow: 0 0 14px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.45);
+    }
+
+    /* =========================================================================
+       New Interactive Kitchen Sink Components (Tabs, Modal, Profile, Accordion, Table)
+       ========================================================================= */
+    /* Tabs & Command Bar */
+    .tabs-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .tab-nav-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: var(--theme-border-subtle);
+      padding-bottom: 0.25rem;
+      overflow-x: auto;
+    }
+    .tab-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--theme-text-muted);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-pill-btn:hover {
+      color: var(--theme-text);
+    }
+    .tab-pill-btn.active {
+      color: var(--theme-primary);
+      border-bottom-color: var(--theme-primary);
+    }
+    .tab-showcase-panel {
+      display: none;
+      padding: 1.25rem;
+      background: var(--theme-surface-container);
+      border-radius: var(--theme-border-radius, 8px);
+      border: var(--theme-border-subtle);
+      animation: fadeIn 0.2s ease;
+    }
+    .tab-showcase-panel.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(3px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Command Palette Bar Preview */
+    .command-bar-preview {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--theme-surface);
+      border: var(--theme-border);
+      border-radius: var(--theme-border-radius, 10px);
+      box-shadow: var(--theme-shadow-sm);
+    }
+    .command-input-sim {
+      flex: 1;
+      font-size: 0.9rem;
+      color: var(--theme-text-muted);
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: inherit;
+    }
+    .kbd-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.2rem 0.45rem;
+      font-family: var(--theme-font-mono, monospace);
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: var(--theme-surface-container);
+      border: var(--theme-border-subtle);
+      border-radius: 4px;
+      color: var(--theme-text-muted);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Floating Modal & User Profile Layout */
+    .dual-component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Simulated Modal Dialog Box */
+    .modal-box-sim {
+      background: var(--theme-surface);
+      border: var(--theme-border);
+      border-radius: var(--theme-border-radius, 14px);
+      box-shadow: var(--theme-shadow);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+    }
+    .modal-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-box-title {
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--theme-text);
+    }
+    .modal-box-body {
+      font-size: 0.86rem;
+      line-height: 1.5;
+      color: var(--theme-text-muted);
+    }
+    .modal-box-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    /* User Profile & Avatar Card */
+    .user-profile-widget {
+      background: var(--theme-surface);
+      border: var(--theme-border);
+      border-radius: var(--theme-border-radius, 14px);
+      box-shadow: var(--theme-shadow);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .user-profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .avatar-wrapper {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+    }
+    .avatar-circle {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--theme-primary), var(--theme-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      box-shadow: 0 0 12px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.35);
+    }
+    .status-dot-online {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #10B981;
+      border: 2px solid var(--theme-surface);
+    }
+    .user-profile-meta {
+      flex: 1;
+    }
+    .user-profile-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--theme-text);
+    }
+    .user-profile-role {
+      font-size: 0.78rem;
+      color: var(--theme-text-muted);
+    }
+    .profile-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+      text-align: center;
+      background: var(--theme-surface-container);
+      padding: 0.65rem 0.5rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border-subtle);
+    }
+    .profile-stat-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--theme-text);
+    }
+    .profile-stat-lbl {
+      font-size: 0.68rem;
+      color: var(--theme-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    /* Accordions & Collapsible Details */
+    .styled-accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .styled-details {
+      background: var(--theme-surface);
+      border: var(--theme-border);
+      border-radius: var(--theme-btn-radius, 8px);
+      overflow: hidden;
+      box-shadow: var(--theme-shadow-sm);
+      transition: border-color 0.2s ease;
+    }
+    .styled-details[open] {
+      border-color: var(--theme-primary);
+    }
+    .styled-summary {
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      color: var(--theme-text);
+      list-style: none;
+    }
+    .styled-summary::-webkit-details-marker {
+      display: none;
+    }
+    .summary-chevron {
+      transition: transform 0.2s ease;
+      font-size: 18px;
+      color: var(--theme-text-muted);
+    }
+    .styled-details[open] .summary-chevron {
+      transform: rotate(180deg);
+      color: var(--theme-primary);
+    }
+    .accordion-inner-content {
+      padding: 0.85rem 1rem 1rem;
+      border-top: var(--theme-border-subtle);
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: var(--theme-text-muted);
+      background: var(--theme-surface-container);
+    }
+
+    /* Polished Interactive Data Table */
+    .table-container-card {
+      overflow-x: auto;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border);
+      background: var(--theme-surface);
+      box-shadow: var(--theme-shadow-sm);
+    }
+    .theme-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+    .theme-table th {
+      padding: 0.75rem 1rem;
+      background: var(--theme-surface-container);
+      color: var(--theme-text-muted);
+      font-weight: 600;
+      border-bottom: var(--theme-border);
+      white-space: nowrap;
+    }
+    .theme-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: var(--theme-border-subtle);
+      color: var(--theme-text);
+      white-space: nowrap;
+    }
+    .theme-table tr:last-child td {
+      border-bottom: none;
+    }
+    .theme-table tr:hover td {
+      background: rgba(127, 127, 127, 0.05);
+    }
+
     /* Container */
     .container {
       max-width: 1040px;
@@ -2610,7 +3369,7 @@
     .studio-drawer {
       position: fixed;
       top: 0; right: 0;
-      width: 440px;
+      width: min(440px, 92vw);
       max-width: 100vw;
       height: 100vh;
       background-color: var(--theme-surface);
@@ -2992,7 +3751,7 @@
     }
     @media (min-width: 1024px) {
       body.studio-docked {
-        padding-right: 440px;
+        padding-right: min(440px, 35vw);
       }
       body.studio-docked .theme-header {
         width: 100%;
@@ -3001,6 +3760,14 @@
         display: none !important;
         pointer-events: none !important;
         opacity: 0 !important;
+      }
+    }
+    @media (max-width: 1023px) {
+      body.studio-docked {
+        padding-right: 0 !important;
+      }
+      .studio-drawer {
+        width: 100vw !important;
       }
     }
   </style>
@@ -3051,6 +3818,18 @@
           </button>
         </div>
 
+        <!-- 1-Click Download Theme CSS -->
+        <button id="btnDownloadActiveTheme" class="action-btn-pill download-pill" title="1-Click Download Standalone CSS for Active Theme">
+          <span class="google-icon material-symbols-outlined" style="font-size: 16px;">download</span>
+          <span>Download CSS</span>
+        </button>
+
+        <!-- 1-Click Reset All -->
+        <button id="btnResetAll" class="action-btn-pill reset-pill" title="Reset all palettes, custom tokens, and filters to defaults">
+          <span class="google-icon material-symbols-outlined" style="font-size: 16px;">restart_alt</span>
+          <span>Reset All</span>
+        </button>
+
         <button id="toggleSidebarBtn" class="studio-toggle-btn" title="Open Modular UI Studio Editor">
           <span class="google-icon material-symbols-outlined" style="font-size: 18px;">tune</span>
           <span>UI Studio</span>
@@ -3064,7 +3843,7 @@
 
         <!-- Cleanly Categorized Presets Dropdown -->
         <select id="themeSelect" class="theme-select" aria-label="Select Theme Preset">
-          <optgroup label="☀️ Curated Light Themes & Morphisms (9)">
+          <optgroup label="☀️ Curated Light Themes & Morphisms (11)">
             <option value="material3">01. Google Material 3 (Light)</option>
             <option value="minimal-mono">02. Minimal 2D Mono (Light)</option>
             <option value="glass-light">03. Glassmorphism (Light)</option>
@@ -3072,10 +3851,12 @@
             <option value="neobrutalism">05. Neo-Brutalism (Bold Pop)</option>
             <option value="neumorphism">06. Neumorphism (Soft UI Extruded)</option>
             <option value="skeuomorphism">23. Skeuomorphism (Tactile Braun)</option>
+            <option value="e-ink">25. E-Ink / Paper (Distraction-Free)</option>
+            <option value="swiss-style">26. Swiss Modernism 2.0 (Grid &amp; Type)</option>
             <option value="nord-frost">14. Nord Arctic Frost (Polar Snow)</option>
             <option value="papercraft">15. Papercraft & Origami (Tactile)</option>
           </optgroup>
-          <optgroup label="🌙 Modern Dark & Spatial Morphisms (11)">
+          <optgroup label="🌙 Modern Dark & Spatial Morphisms (13)">
             <option value="material3-dark">01. Google Material 3 (Dark)</option>
             <option value="minimal-dark">02. Minimal 2D Mono (Dark)</option>
             <option value="glassmorphism">03. Glassmorphism (Dark)</option>
@@ -3083,6 +3864,8 @@
             <option value="neobrutalism-dark">05. Neo-Brutalism (Dark Pop)</option>
             <option value="neu-dark">06. Neumorphism (Dark Extruded)</option>
             <option value="skeuo-dark">23. Skeuomorphism (Dark Calculator)</option>
+            <option value="visionos">24. Spatial UI (Apple visionOS 2.0)</option>
+            <option value="vaporwave">27. Vaporwave / Retro-Futurism (Neon Sunset)</option>
             <option value="cyberpunk">07. Cyberpunk (Neon Glow HUD)</option>
             <option value="bento-modern">08. Bento Modern Dark (Linear/SaaS)</option>
             <option value="retro-90s">09. Retro 90s OS (Win95 Chrome)</option>
@@ -3109,42 +3892,122 @@
       </div>
     </div>
 
+    <!-- Live Search & Tag Filter Bar -->
+    <div class="search-tag-container">
+      <div style="display: flex; gap: 0.5rem; align-items: center; width: 100%;">
+        <div class="theme-search-box" style="flex: 1;">
+          <span class="google-icon material-symbols-outlined" style="font-size: 17px; color: var(--theme-text-muted);">search</span>
+          <input type="text" id="themeSearchInput" class="theme-search-input" placeholder="Search themes (e.g. glass, dark, retro, paper, spatial, 3d)..." autocomplete="off" spellcheck="false">
+          <button id="clearSearchBtn" class="clear-search-btn" title="Clear search" style="display: none;">
+            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">close</span>
+          </button>
+        </div>
+        <div id="themeCountBadge" style="font-size: 0.72rem; font-weight: 700; color: var(--theme-text-muted); white-space: nowrap; padding: 0.25rem 0.55rem; background: var(--theme-surface-container); border-radius: 9999px; border: var(--theme-border-subtle);">
+          31 Presets
+        </div>
+      </div>
+      <div class="theme-tags-track" role="tablist" aria-label="Theme Tag Filters">
+        <button class="tag-filter-pill active" data-tag="all">All (31)</button>
+        <button class="tag-filter-pill" data-tag="light">☀️ Light</button>
+        <button class="tag-filter-pill" data-tag="dark">🌙 Dark</button>
+        <button class="tag-filter-pill" data-tag="glass">🫧 Glass</button>
+        <button class="tag-filter-pill" data-tag="neumorph">🧱 Neumorph</button>
+        <button class="tag-filter-pill" data-tag="clay">🗿 Clay</button>
+        <button class="tag-filter-pill" data-tag="brutal">📐 Brutal</button>
+        <button class="tag-filter-pill" data-tag="spatial">🕶️ Spatial</button>
+        <button class="tag-filter-pill" data-tag="cyber">⚡ Cyber</button>
+        <button class="tag-filter-pill" data-tag="dev">💻 Dev</button>
+        <button class="tag-filter-pill" data-tag="editorial">📰 Editorial</button>
+      </div>
+    </div>
+
     <!-- Swipeable Horizontal Quick Chips Track -->
     <div class="theme-chips-wrapper">
-      <div class="theme-chips">
+      <div class="theme-chips" id="themeChipsTrack">
         <!-- Light Presets -->
-        <button class="chip-btn" data-set-theme="material3" data-mode="light">☀️ M3 Light</button>
-        <button class="chip-btn" data-set-theme="minimal-mono" data-mode="light">Minimal Mono</button>
-        <button class="chip-btn" data-set-theme="glass-light" data-mode="light">Glass Light</button>
-        <button class="chip-btn" data-set-theme="claymorphism" data-mode="light">Claymorphism</button>
-        <button class="chip-btn" data-set-theme="neobrutalism" data-mode="light">Neo-Brutal</button>
-        <button class="chip-btn" data-set-theme="neumorphism" data-mode="light">Neumorphism</button>
-        <button class="chip-btn" data-set-theme="skeuomorphism" data-mode="light">Skeuo Light</button>
-        <button class="chip-btn" data-set-theme="nord-frost" data-mode="light">Nord Frost</button>
-        <button class="chip-btn" data-set-theme="papercraft" data-mode="light">Papercraft</button>
+        <button class="chip-btn" data-set-theme="material3" data-mode="light" data-tags="light google modern">☀️ M3 Light</button>
+        <button class="chip-btn" data-set-theme="minimal-mono" data-mode="light" data-tags="light mono minimal lineart">Minimal Mono</button>
+        <button class="chip-btn" data-set-theme="glass-light" data-mode="light" data-tags="light glass frosted blur">Glass Light</button>
+        <button class="chip-btn" data-set-theme="claymorphism" data-mode="light" data-tags="light clay 3d soft puffy">Claymorphism</button>
+        <button class="chip-btn" data-set-theme="neobrutalism" data-mode="light" data-tags="light brutal bold pop">Neo-Brutal</button>
+        <button class="chip-btn" data-set-theme="neumorphism" data-mode="light" data-tags="light neumorph soft extruded">Neumorphism</button>
+        <button class="chip-btn" data-set-theme="skeuomorphism" data-mode="light" data-tags="light skeuo tactile braun vintage">Skeuo Light</button>
+        <button class="chip-btn" data-set-theme="e-ink" data-mode="light" data-tags="light editorial mono paper distraction-free">📖 E-Ink Paper</button>
+        <button class="chip-btn" data-set-theme="swiss-style" data-mode="light" data-tags="light editorial brutal grid modern">🇨🇭 Swiss 2.0</button>
+        <button class="chip-btn" data-set-theme="nord-frost" data-mode="light" data-tags="light polar arctic clean">Nord Frost</button>
+        <button class="chip-btn" data-set-theme="papercraft" data-mode="light" data-tags="light editorial paper origami">Papercraft</button>
         <!-- Dark & Spatial Presets -->
-        <button class="chip-btn" data-set-theme="material3-dark" data-mode="dark">🌙 M3 Dark</button>
-        <button class="chip-btn" data-set-theme="minimal-dark" data-mode="dark">Minimal Dark</button>
-        <button class="chip-btn" data-set-theme="glassmorphism" data-mode="dark">Glass Dark</button>
-        <button class="chip-btn" data-set-theme="clay-dark" data-mode="dark">Clay Dark</button>
-        <button class="chip-btn" data-set-theme="neobrutalism-dark" data-mode="dark">Neo Dark</button>
-        <button class="chip-btn" data-set-theme="neu-dark" data-mode="dark">Neu Dark</button>
-        <button class="chip-btn" data-set-theme="skeuo-dark" data-mode="dark">Skeuo Dark</button>
-        <button class="chip-btn" data-set-theme="bento-modern" data-mode="dark">Bento Dark</button>
-        <button class="chip-btn" data-set-theme="cyberpunk" data-mode="dark">Cyberpunk</button>
-        <button class="chip-btn" data-set-theme="aurora-glow" data-mode="dark">Aurora Glow</button>
-        <button class="chip-btn" data-set-theme="frutiger-aero" data-mode="dark">Frutiger Aero</button>
-        <button class="chip-btn" data-set-theme="phosphor-terminal" data-mode="dark">Phosphor CRT</button>
-        <button class="chip-btn" data-set-theme="oled-black" data-mode="dark">OLED Black</button>
-        <button class="chip-btn" data-set-theme="retro-90s" data-mode="dark">Retro 90s</button>
+        <button class="chip-btn" data-set-theme="material3-dark" data-mode="dark" data-tags="dark google modern">🌙 M3 Dark</button>
+        <button class="chip-btn" data-set-theme="minimal-dark" data-mode="dark" data-tags="dark mono minimal lineart">Minimal Dark</button>
+        <button class="chip-btn" data-set-theme="glassmorphism" data-mode="dark" data-tags="dark glass frosted blur">Glass Dark</button>
+        <button class="chip-btn" data-set-theme="clay-dark" data-mode="dark" data-tags="dark clay 3d soft inflatable">Clay Dark</button>
+        <button class="chip-btn" data-set-theme="neobrutalism-dark" data-mode="dark" data-tags="dark brutal bold pop">Neo Dark</button>
+        <button class="chip-btn" data-set-theme="neu-dark" data-mode="dark" data-tags="dark neumorph soft extruded">Neu Dark</button>
+        <button class="chip-btn" data-set-theme="skeuo-dark" data-mode="dark" data-tags="dark skeuo tactile calculator retro">Skeuo Dark</button>
+        <button class="chip-btn" data-set-theme="visionos" data-mode="dark" data-tags="dark spatial glass apple specular vision">🕶️ visionOS</button>
+        <button class="chip-btn" data-set-theme="vaporwave" data-mode="dark" data-tags="dark cyber retro neon synthwave">🌆 Vaporwave</button>
+        <button class="chip-btn" data-set-theme="bento-modern" data-mode="dark" data-tags="dark bento saas linear modern">Bento Dark</button>
+        <button class="chip-btn" data-set-theme="cyberpunk" data-mode="dark" data-tags="dark cyber neon hud synthwave">Cyberpunk</button>
+        <button class="chip-btn" data-set-theme="aurora-glow" data-mode="dark" data-tags="dark spatial aurora glow gradient">Aurora Glow</button>
+        <button class="chip-btn" data-set-theme="frutiger-aero" data-mode="dark" data-tags="dark glass y2k glossy bubble">Frutiger Aero</button>
+        <button class="chip-btn" data-set-theme="phosphor-terminal" data-mode="dark" data-tags="dark cyber terminal crt retro">Phosphor CRT</button>
+        <button class="chip-btn" data-set-theme="oled-black" data-mode="dark" data-tags="dark oled pitch minimalist black">OLED Black</button>
+        <button class="chip-btn" data-set-theme="retro-90s" data-mode="dark" data-tags="dark retro 90s win95 chrome">Retro 90s</button>
         <!-- Developer Presets -->
-        <button class="chip-btn" data-set-theme="tokyo-night" data-mode="dark">💻 Tokyo Night</button>
-        <button class="chip-btn" data-set-theme="catppuccin-mocha" data-mode="dark">Catppuccin</button>
-        <button class="chip-btn" data-set-theme="dracula" data-mode="dark">Dracula</button>
-        <button class="chip-btn" data-set-theme="github-dark" data-mode="dark">GitHub Dark</button>
-        <button class="chip-btn" data-set-theme="vscode-dark" data-mode="dark">VS Code</button>
-        <button class="chip-btn" data-set-theme="one-dark" data-mode="dark">One Dark</button>
-        <button class="chip-btn" data-set-theme="solarized-dark" data-mode="dark">Solarized Dark</button>
+        <button class="chip-btn" data-set-theme="tokyo-night" data-mode="dark" data-tags="dark dev tokyo folke neovim code">💻 Tokyo Night</button>
+        <button class="chip-btn" data-set-theme="catppuccin-mocha" data-mode="dark" data-tags="dark dev pastel catppuccin code">Catppuccin</button>
+        <button class="chip-btn" data-set-theme="dracula" data-mode="dark" data-tags="dark dev dracula gothic code">Dracula</button>
+        <button class="chip-btn" data-set-theme="github-dark" data-mode="dark" data-tags="dark dev github primer code">GitHub Dark</button>
+        <button class="chip-btn" data-set-theme="vscode-dark" data-mode="dark" data-tags="dark dev vscode modern code">VS Code</button>
+        <button class="chip-btn" data-set-theme="one-dark" data-mode="dark" data-tags="dark dev atom onedark code">One Dark</button>
+        <button class="chip-btn" data-set-theme="solarized-dark" data-mode="dark" data-tags="dark dev solarized precision lab code">Solarized Dark</button>
+      </div>
+    </div>
+
+    <!-- Famous Website & Retro Palette Swapper Ribbon -->
+    <div class="palette-swapper-bar">
+      <div class="palette-bar-label">
+        <span class="google-icon material-symbols-outlined" style="font-size: 15px; color: var(--theme-primary);">palette</span>
+        <span>Palettes:</span>
+      </div>
+      <div class="palette-chips-scroll" id="paletteChipsScroll">
+        <button class="palette-chip" data-palette="linear" title="Linear SaaS Indigo & Obsidian">
+          <span class="swatch" style="background: #5E6AD2;"></span>Linear
+        </button>
+        <button class="palette-chip" data-palette="stripe" title="Stripe Radiant Indigo & Slate">
+          <span class="swatch" style="background: #635BFF;"></span>Stripe
+        </button>
+        <button class="palette-chip" data-palette="vercel" title="Vercel Monochrome & Geist Cyan">
+          <span class="swatch" style="background: #0070F3;"></span>Vercel
+        </button>
+        <button class="palette-chip" data-palette="supabase" title="Supabase Emerald & Pitch">
+          <span class="swatch" style="background: #3ECF8E;"></span>Supabase
+        </button>
+        <button class="palette-chip" data-palette="notion" title="Notion Warm Canvas & Charcoal Accent">
+          <span class="swatch" style="background: #2EAADC;"></span>Notion
+        </button>
+        <button class="palette-chip" data-palette="raycast" title="Raycast Prompt Red & Deep Obsidian">
+          <span class="swatch" style="background: #FF6363;"></span>Raycast
+        </button>
+        <button class="palette-chip" data-palette="openai" title="OpenAI ChatGPT Emerald & Charcoal">
+          <span class="swatch" style="background: #10A37F;"></span>ChatGPT
+        </button>
+        <button class="palette-chip" data-palette="figma" title="Figma Vibrant Mint & Dark Slate">
+          <span class="swatch" style="background: #0ACF83;"></span>Figma
+        </button>
+        <button class="palette-chip" data-palette="spotify" title="Spotify Electric Green & Dark Charcoal">
+          <span class="swatch" style="background: #1DB954;"></span>Spotify
+        </button>
+        <button class="palette-chip" data-palette="discord" title="Discord Blurple & Space Gray">
+          <span class="swatch" style="background: #5865F2;"></span>Discord
+        </button>
+        <button class="palette-chip" data-palette="resurrect-64" title="Resurrect-64 Legendary 64-Color Palette (Lospec)">
+          <span class="swatch" style="background: linear-gradient(135deg, #ea4f36, #0eaf9b, #f9c22b);"></span>Resurrect-64
+        </button>
+        <button id="btnResetPalette" class="palette-reset-btn" title="Reset to active theme native palette">
+          <span class="google-icon material-symbols-outlined" style="font-size: 14px;">restart_alt</span>
+          <span>Reset Palette</span>
+        </button>
       </div>
     </div>
   </header>
@@ -3334,6 +4197,9 @@
           <select id="componentSelect" class="form-select" style="font-size: 0.88rem; padding: 0.5rem 0.75rem;">
             <option value="buttons">Buttons & Interactive Controls</option>
             <option value="forms">Form Controls & Inputs</option>
+            <option value="tabs">Tabs & Command Bar</option>
+            <option value="dialogs">Modal Dialog & Profile Card</option>
+            <option value="tables">Data Table & Accordions</option>
             <option value="bento">Bento Grid & Information Architecture</option>
             <option value="telemetry">Live Telemetry & Activity Chart</option>
             <option value="cdn">1-Line CDN Quick Start</option>
@@ -3357,6 +4223,7 @@
             <span style="font-size: 0.72rem; color: var(--theme-text-muted); align-self: center;">Insert:</span>
             <button class="snippet-chip" data-insert-html='<button class="btn btn-primary"><span class="google-icon material-symbols-outlined">bolt</span> Fast Action</button>'>+ Primary Btn</button>
             <button class="snippet-chip" data-insert-html='<span class="badge badge-success"><span class="google-icon material-symbols-outlined" style="font-size: 14px;">verified</span> Verified</span>'>+ Badge</button>
+            <button class="snippet-chip" data-insert-html='<button class="tab-pill-btn active">New Tab</button>'>+ Tab</button>
             <button class="snippet-chip" data-insert-html='<div class="bento-tile"><span style="color:var(--theme-text-muted);font-size:0.85rem;">Custom Stat</span><div class="bento-metric">100%</div></div>'>+ Bento Tile</button>
           </div>
 
@@ -3563,14 +4430,254 @@
 
           <div class="bento-tile">
             <span style="font-size: 0.85rem; font-weight: 600; color: var(--theme-text-muted);">Active Design Presets</span>
-            <div class="bento-metric">22</div>
-            <span style="font-size: 0.85rem; color: var(--theme-text-muted);">Morphisms & Developer Themes</span>
+            <div class="bento-metric">27+</div>
+            <span style="font-size: 0.85rem; color: var(--theme-text-muted);">Morphisms & Developer Themes (31 Variants)</span>
           </div>
 
           <div class="bento-tile">
             <span style="font-size: 0.85rem; font-weight: 600; color: var(--theme-text-muted);">CSS Architecture Tier</span>
             <div class="bento-metric">Tier 3</div>
             <span style="font-size: 0.85rem; color: var(--theme-primary);">Primitives → Semantic → Component</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs & Command Palette Interactive Showcase -->
+    <section class="section-card" data-section-id="tabs">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" style="color:var(--theme-primary);">tab</span>
+          <h2>Tabs, Segmented Controls & Command Bar</h2>
+        </div>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="tabs" title="Edit Tabs in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit</span>
+          </button>
+          <span class="badge badge-primary">Interactive</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-tabs">
+        <div class="tabs-wrapper">
+          <!-- Command Bar Simulation -->
+          <div class="command-bar-preview">
+            <span class="google-icon material-symbols-outlined" style="font-size: 20px; color: var(--theme-primary);">search</span>
+            <input type="text" class="command-input-sim" value="Search actions, presets, tokens..." readonly>
+            <div style="display: flex; gap: 0.35rem;">
+              <span class="kbd-badge">⌘</span>
+              <span class="kbd-badge">K</span>
+            </div>
+          </div>
+
+          <!-- Interactive Tab Strip -->
+          <div class="tab-nav-bar" role="tablist">
+            <button class="tab-pill-btn active" data-tab-target="showcase-tab-1">
+              <span class="google-icon material-symbols-outlined" style="font-size: 17px;">monitoring</span>
+              <span>Overview</span>
+            </button>
+            <button class="tab-pill-btn" data-tab-target="showcase-tab-2">
+              <span class="google-icon material-symbols-outlined" style="font-size: 17px;">palette</span>
+              <span>Design Tokens</span>
+            </button>
+            <button class="tab-pill-btn" data-tab-target="showcase-tab-3">
+              <span class="google-icon material-symbols-outlined" style="font-size: 17px;">security</span>
+              <span>Permissions</span>
+            </button>
+          </div>
+
+          <!-- Tab Panels -->
+          <div id="showcase-tab-1" class="tab-showcase-panel active">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--theme-text);">Active Architecture Overview</h4>
+            <p style="font-size: 0.85rem; color: var(--theme-text-muted); line-height: 1.5;">
+              All surfaces, buttons, borders, and shadows react instantly to the selected theme token variables without causing reflows. Click between tabs to verify state preservation.
+            </p>
+          </div>
+          <div id="showcase-tab-2" class="tab-showcase-panel">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--theme-text);">Pure CSS Custom Properties</h4>
+            <p style="font-size: 0.85rem; color: var(--theme-text-muted); line-height: 1.5;">
+              Consumes standard tokens: <code>--theme-primary</code>, <code>--theme-surface</code>, <code>--theme-border-radius</code>, and <code>--theme-shadow</code>. Zero JavaScript bundle dependencies required.
+            </p>
+          </div>
+          <div id="showcase-tab-3" class="tab-showcase-panel">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--theme-text);">Access &amp; Security State</h4>
+            <p style="font-size: 0.85rem; color: var(--theme-text-muted); line-height: 1.5;">
+              Full WCAG 2.1 AA/AAA contrast conformance across all light, dark, and high-contrast OLED themes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Dialog Preview & User Profile Card -->
+    <section class="section-card" data-section-id="dialogs">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" style="color:var(--theme-primary);">web_stories</span>
+          <h2>Modal Dialog & User Profile Card</h2>
+        </div>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="dialogs" title="Edit Dialogs in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit</span>
+          </button>
+          <span class="badge badge-success">Try Out</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-dialogs">
+        <div class="dual-component-grid">
+          <!-- Modal Preview Card -->
+          <div class="modal-box-sim">
+            <div class="modal-box-header">
+              <div class="modal-box-title">
+                <span class="google-icon material-symbols-outlined" style="color: var(--theme-primary); font-size: 20px;">info</span>
+                <span>Confirm Deployment</span>
+              </div>
+              <span class="google-icon material-symbols-outlined" style="font-size: 18px; color: var(--theme-text-muted); cursor: pointer;">close</span>
+            </div>
+            <div class="modal-box-body">
+              Are you sure you want to push the newly compiled <code>universal-themes.css</code> bundle live to the edge CDN network?
+            </div>
+            <div class="modal-box-actions">
+              <button class="btn btn-outline" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;">Cancel</button>
+              <button class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;">
+                <span class="google-icon material-symbols-outlined" style="font-size: 16px;">cloud_upload</span>
+                <span>Deploy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- User Profile Avatar Card -->
+          <div class="user-profile-widget">
+            <div class="user-profile-header">
+              <div class="avatar-wrapper">
+                <div class="avatar-circle">YK</div>
+                <div class="status-dot-online" title="Online"></div>
+              </div>
+              <div class="user-profile-meta">
+                <div class="user-profile-name">Yuvanesh KS</div>
+                <div class="user-profile-role">@North-Abyss • Lead Architect</div>
+              </div>
+            </div>
+            <div class="profile-stats-row">
+              <div class="profile-stat-item">
+                <div class="profile-stat-val">31</div>
+                <div class="profile-stat-lbl">Themes</div>
+              </div>
+              <div class="profile-stat-item">
+                <div class="profile-stat-val">100%</div>
+                <div class="profile-stat-lbl">CSS Pure</div>
+              </div>
+              <div class="profile-stat-item">
+                <div class="profile-stat-val">MIT</div>
+                <div class="profile-stat-lbl">License</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn btn-primary" style="flex: 1; padding: 0.4rem 0.75rem; font-size: 0.82rem;">
+                <span class="google-icon material-symbols-outlined" style="font-size: 16px;">person_add</span>
+                <span>Connect</span>
+              </button>
+              <button class="btn btn-secondary" style="padding: 0.4rem 0.75rem; font-size: 0.82rem;">
+                <span class="google-icon material-symbols-outlined" style="font-size: 16px;">chat</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Table & Accordion Disclosure -->
+    <section class="section-card" data-section-id="tables">
+      <div class="section-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="google-icon material-symbols-outlined" style="color:var(--theme-primary);">table_chart</span>
+          <h2>Data Table & Accordion Details</h2>
+        </div>
+        <div class="section-actions">
+          <button class="edit-section-btn" data-edit-section="tables" title="Edit Tables in Studio">
+            <span class="google-icon material-symbols-outlined" style="font-size: 14px;">edit</span>
+            <span>Edit</span>
+          </button>
+          <span class="badge badge-warning">Polished</span>
+        </div>
+      </div>
+
+      <div class="component-content" id="content-tables">
+        <div class="dual-component-grid" style="margin-bottom: 0.5rem;">
+          <!-- Accordion Disclosures -->
+          <div class="styled-accordion-group">
+            <details class="styled-details" open>
+              <summary class="styled-summary">
+                <span>What are Universal Theme Tokens?</span>
+                <span class="google-icon material-symbols-outlined summary-chevron">expand_more</span>
+              </summary>
+              <div class="accordion-inner-content">
+                They are a standardized set of 30+ CSS custom properties that completely define an interface's typography, palette, depth, elevation, radii, and backdrops with zero JS overhead.
+              </div>
+            </details>
+
+            <details class="styled-details">
+              <summary class="styled-summary">
+                <span>Can I download standalone themes?</span>
+                <span class="google-icon material-symbols-outlined summary-chevron">expand_more</span>
+              </summary>
+              <div class="accordion-inner-content">
+                Yes! Click the <strong>Download CSS</strong> button in the top toolbar to instantly grab a clean, single-file stylesheet for whichever theme is currently active.
+              </div>
+            </details>
+
+            <details class="styled-details">
+              <summary class="styled-summary">
+                <span>How does the Palette Swapper work?</span>
+                <span class="google-icon material-symbols-outlined summary-chevron">expand_more</span>
+              </summary>
+              <div class="accordion-inner-content">
+                The palette swapper re-maps the color variables (such as Linear, Stripe, Supabase, or Resurrect-64) without breaking the surface physics (shadows, blur, borders, and bevels) of the active morphism.
+              </div>
+            </details>
+          </div>
+
+          <!-- Activity Matrix Table -->
+          <div class="table-container-card">
+            <table class="theme-table">
+              <thead>
+                <tr>
+                  <th>Style Archetype</th>
+                  <th>Mode</th>
+                  <th>Physics</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Spatial UI (visionOS)</strong></td>
+                  <td>Dark</td>
+                  <td>Translucent Glass</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Neumorphism Soft</strong></td>
+                  <td>Light/Dark</td>
+                  <td>Extruded Plastic</td>
+                  <td><span class="badge badge-primary">Synced</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Claymorphism 3D</strong></td>
+                  <td>Light/Dark</td>
+                  <td>Squishy Inflatable</td>
+                  <td><span class="badge badge-warning">Calibrated</span></td>
+                </tr>
+                <tr>
+                  <td><strong>E-Ink Distraction-Free</strong></td>
+                  <td>Light</td>
+                  <td>Paper Canvas</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -3721,7 +4828,7 @@
 
     <footer style="text-align: center; padding: 2.5rem 1rem 1rem; border-top: var(--theme-border-subtle); margin-top: 3rem; color: var(--theme-text-muted); font-size: 0.9rem;">
       <p style="margin-bottom: 0.5rem;">
-        Crafted with 💜 by <a href="https://github.com/North-Abyss" target="_blank" style="color: var(--theme-primary); font-weight: 600; text-decoration: none;">Yuvanesh KS (@North-Abyss)</a>
+        Crafted by <a href="https://github.com/North-Abyss" target="_blank" style="color: var(--theme-primary); font-weight: 600; text-decoration: none;">Yuvanesh KS (@North-Abyss)</a>
       </p>
       <p style="font-size: 0.8rem; opacity: 0.8;">
         Released under the <a href="https://github.com/North-Abyss/ui-themes/blob/main/LICENSE" target="_blank" style="color: inherit;">MIT License</a> • 100% Free & Open Source
@@ -3773,7 +4880,218 @@
       'skeuo-dark': 'Skeuomorphism Dark: Tactile matte charcoal calculator body, beveled keys with physical depth, and glowing amber LCD display.',
       'clay-dark': 'Claymorphism (Dark): Deep inflatable plum & slate clay with triple-shadow volume, chunky 32px curves, and dome highlights.',
       'neu-dark': 'Neumorphism (Dark): Seamless extruded #1E2024 dark plane with opposing deep void and subtle highlight drop shadows.',
-      'neobrutalism-dark': 'Neo-Brutalism (Dark): High-contrast obsidian canvas with 2.5px white solid outlines and electric pop yellow hard offset shadows.'
+      'neobrutalism-dark': 'Neo-Brutalism (Dark): High-contrast obsidian canvas with 2.5px white solid outlines and electric pop yellow hard offset shadows.',
+      'visionos': 'Apple visionOS 2.0 Spatial UI: Volumetric frosted glass, specular gaze illumination, and high-contrast Apple UI colors.',
+      'e-ink': 'E-Ink / Paper Modern: Stark distraction-free electronic paper, #FDFBF7 tactile canvas, #1A1A1A ink, and zero eye fatigue.',
+      'swiss-style': 'Swiss Modernism 2.0: Strict mathematical grid layout, bold objective typography, and International Red accent.',
+      'vaporwave': 'Vaporwave / Retro-Futurism: Neon sunset magenta & cyan wireframe aesthetics over midnight violet void.'
+    };
+
+    // Theme Tags catalogue for Search and Multi-Tag Filters
+    const THEME_TAGS = {
+      'material3': ['light', 'google', 'modern'],
+      'minimal-mono': ['light', 'mono', 'minimal', 'lineart', 'editorial'],
+      'glass-light': ['light', 'glass', 'frosted', 'blur'],
+      'claymorphism': ['light', 'clay', '3d', 'soft', 'puffy'],
+      'neobrutalism': ['light', 'brutal', 'bold', 'pop'],
+      'neumorphism': ['light', 'neumorph', 'soft', 'extruded'],
+      'skeuomorphism': ['light', 'skeuo', 'tactile', 'braun', 'vintage'],
+      'e-ink': ['light', 'editorial', 'mono', 'paper', 'distraction-free'],
+      'swiss-style': ['light', 'editorial', 'brutal', 'grid', 'modern'],
+      'nord-frost': ['light', 'polar', 'arctic', 'clean'],
+      'papercraft': ['light', 'editorial', 'paper', 'origami'],
+      'material3-dark': ['dark', 'google', 'modern'],
+      'minimal-dark': ['dark', 'mono', 'minimal', 'lineart'],
+      'glassmorphism': ['dark', 'glass', 'frosted', 'blur'],
+      'clay-dark': ['dark', 'clay', '3d', 'soft', 'inflatable'],
+      'neobrutalism-dark': ['dark', 'brutal', 'bold', 'pop'],
+      'neu-dark': ['dark', 'neumorph', 'soft', 'extruded'],
+      'skeuo-dark': ['dark', 'skeuo', 'tactile', 'calculator', 'retro'],
+      'visionos': ['dark', 'spatial', 'glass', 'apple', 'specular', 'vision'],
+      'vaporwave': ['dark', 'cyber', 'retro', 'neon', 'synthwave'],
+      'bento-modern': ['dark', 'bento', 'saas', 'linear', 'modern'],
+      'cyberpunk': ['dark', 'cyber', 'neon', 'hud', 'synthwave'],
+      'aurora-glow': ['dark', 'spatial', 'aurora', 'glow', 'gradient'],
+      'frutiger-aero': ['dark', 'glass', 'y2k', 'glossy', 'bubble'],
+      'phosphor-terminal': ['dark', 'cyber', 'terminal', 'crt', 'retro'],
+      'oled-black': ['dark', 'oled', 'pitch', 'minimalist', 'black'],
+      'retro-90s': ['dark', 'retro', '90s', 'win95', 'chrome'],
+      'tokyo-night': ['dark', 'dev', 'tokyo', 'folke', 'neovim', 'code'],
+      'catppuccin-mocha': ['dark', 'dev', 'pastel', 'catppuccin', 'code'],
+      'dracula': ['dark', 'dev', 'dracula', 'gothic', 'code'],
+      'github-dark': ['dark', 'dev', 'github', 'primer', 'code'],
+      'vscode-dark': ['dark', 'dev', 'vscode', 'modern', 'code'],
+      'one-dark': ['dark', 'dev', 'atom', 'onedark', 'code'],
+      'solarized-dark': ['dark', 'dev', 'solarized', 'precision', 'lab', 'code']
+    };
+
+    // Famous Website & Retro Color Palettes (Pure CSS token overrides preserving active morphism physics)
+    const FAMOUS_PALETTES = {
+      'linear': {
+        name: 'Linear',
+        tokens: {
+          '--theme-primary': '#5E6AD2',
+          '--theme-primary-container': 'rgba(94, 106, 210, 0.16)',
+          '--theme-bg': '#0D0E11',
+          '--theme-bg-subtle': '#13151B',
+          '--theme-surface': '#16181D',
+          '--theme-surface-container': '#1F2228',
+          '--theme-text': '#F7F8F8',
+          '--theme-text-muted': '#8A8F98',
+          '--theme-accent': '#6875F5',
+          '--theme-border': '1px solid rgba(255, 255, 255, 0.08)'
+        }
+      },
+      'stripe': {
+        name: 'Stripe',
+        tokens: {
+          '--theme-primary': '#635BFF',
+          '--theme-primary-container': '#EDEBFF',
+          '--theme-bg': '#F8F9FA',
+          '--theme-bg-subtle': '#F1F4F9',
+          '--theme-surface': '#FFFFFF',
+          '--theme-surface-container': '#F4F6F8',
+          '--theme-text': '#0A2540',
+          '--theme-text-muted': '#425466',
+          '--theme-accent': '#00D4AA',
+          '--theme-border': '1px solid #E3E8EE'
+        }
+      },
+      'vercel': {
+        name: 'Vercel',
+        tokens: {
+          '--theme-primary': '#0070F3',
+          '--theme-primary-container': 'rgba(0, 112, 243, 0.12)',
+          '--theme-bg': '#000000',
+          '--theme-bg-subtle': '#0A0A0A',
+          '--theme-surface': '#111111',
+          '--theme-surface-container': '#1A1A1A',
+          '--theme-text': '#EDEDED',
+          '--theme-text-muted': '#888888',
+          '--theme-accent': '#50E3C2',
+          '--theme-border': '1px solid #333333'
+        }
+      },
+      'supabase': {
+        name: 'Supabase',
+        tokens: {
+          '--theme-primary': '#3ECF8E',
+          '--theme-primary-container': 'rgba(62, 207, 142, 0.14)',
+          '--theme-bg': '#1C1C1C',
+          '--theme-bg-subtle': '#181818',
+          '--theme-surface': '#242424',
+          '--theme-surface-container': '#2A2A2A',
+          '--theme-text': '#EDEDED',
+          '--theme-text-muted': '#9E9E9E',
+          '--theme-accent': '#24B47E',
+          '--theme-border': '1px solid #343434'
+        }
+      },
+      'notion': {
+        name: 'Notion',
+        tokens: {
+          '--theme-primary': '#2EAADC',
+          '--theme-primary-container': '#EBF5FB',
+          '--theme-bg': '#FFFFFF',
+          '--theme-bg-subtle': '#F7F6F3',
+          '--theme-surface': '#FFFFFF',
+          '--theme-surface-container': '#F1F1EF',
+          '--theme-text': '#37352F',
+          '--theme-text-muted': '#787774',
+          '--theme-accent': '#EB5757',
+          '--theme-border': '1px solid #E1E1E0'
+        }
+      },
+      'raycast': {
+        name: 'Raycast',
+        tokens: {
+          '--theme-primary': '#FF6363',
+          '--theme-primary-container': 'rgba(255, 99, 99, 0.15)',
+          '--theme-bg': '#0C0C0D',
+          '--theme-bg-subtle': '#121214',
+          '--theme-surface': '#161618',
+          '--theme-surface-container': '#212124',
+          '--theme-text': '#FFFFFF',
+          '--theme-text-muted': '#8F8F92',
+          '--theme-accent': '#FF8F8F',
+          '--theme-border': '1px solid rgba(255, 255, 255, 0.1)'
+        }
+      },
+      'openai': {
+        name: 'ChatGPT',
+        tokens: {
+          '--theme-primary': '#10A37F',
+          '--theme-primary-container': 'rgba(16, 163, 127, 0.15)',
+          '--theme-bg': '#202123',
+          '--theme-bg-subtle': '#2A2B32',
+          '--theme-surface': '#2A2B32',
+          '--theme-surface-container': '#343541',
+          '--theme-text': '#ECECF1',
+          '--theme-text-muted': '#ACACBE',
+          '--theme-accent': '#19C37D',
+          '--theme-border': '1px solid rgba(255, 255, 255, 0.12)'
+        }
+      },
+      'figma': {
+        name: 'Figma',
+        tokens: {
+          '--theme-primary': '#0ACF83',
+          '--theme-primary-container': 'rgba(10, 207, 131, 0.15)',
+          '--theme-bg': '#1E1E1E',
+          '--theme-bg-subtle': '#252525',
+          '--theme-surface': '#2C2C2C',
+          '--theme-surface-container': '#383838',
+          '--theme-text': '#FFFFFF',
+          '--theme-text-muted': '#B3B3B3',
+          '--theme-accent': '#F24E1E',
+          '--theme-border': '1px solid #444444'
+        }
+      },
+      'spotify': {
+        name: 'Spotify',
+        tokens: {
+          '--theme-primary': '#1DB954',
+          '--theme-primary-container': 'rgba(29, 185, 84, 0.15)',
+          '--theme-bg': '#121212',
+          '--theme-bg-subtle': '#181818',
+          '--theme-surface': '#1F1F1F',
+          '--theme-surface-container': '#282828',
+          '--theme-text': '#FFFFFF',
+          '--theme-text-muted': '#B3B3B3',
+          '--theme-accent': '#1ED760',
+          '--theme-border': '1px solid #333333'
+        }
+      },
+      'discord': {
+        name: 'Discord',
+        tokens: {
+          '--theme-primary': '#5865F2',
+          '--theme-primary-container': 'rgba(88, 101, 242, 0.18)',
+          '--theme-bg': '#1E1F22',
+          '--theme-bg-subtle': '#2B2D31',
+          '--theme-surface': '#2B2D31',
+          '--theme-surface-container': '#313338',
+          '--theme-text': '#DBDEE1',
+          '--theme-text-muted': '#949BA4',
+          '--theme-accent': '#57F287',
+          '--theme-border': '1px solid #3F4147'
+        }
+      },
+      'resurrect-64': {
+        name: 'Resurrect-64',
+        tokens: {
+          '--theme-primary': '#EA4F36',
+          '--theme-primary-container': 'rgba(234, 79, 54, 0.18)',
+          '--theme-bg': '#2E222F',
+          '--theme-bg-subtle': '#3E3546',
+          '--theme-surface': '#3E3546',
+          '--theme-surface-container': '#625565',
+          '--theme-text': '#FFFFFF',
+          '--theme-text-muted': '#9BABB2',
+          '--theme-accent': '#0EAF9B',
+          '--theme-border': '1px solid rgba(249, 194, 43, 0.25)'
+        }
+      }
     };
 
     // Toast Notification helper
@@ -3805,6 +5123,10 @@
       'neumorphism': 'light',
       'skeuomorphism': 'light',
       'skeuo-light': 'light',
+      'e-ink': 'light',
+      'e-ink-paper': 'light',
+      'swiss-style': 'light',
+      'swiss-modernism': 'light',
       'nord-frost': 'light',
       'papercraft': 'light',
       'material3-dark': 'dark',
@@ -3817,6 +5139,9 @@
       'neumorphism-dark': 'dark',
       'skeuo-dark': 'dark',
       'skeuomorphism-dark': 'dark',
+      'visionos': 'dark',
+      'spatial-ui': 'dark',
+      'vaporwave': 'dark',
       'cyberpunk': 'dark',
       'bento-modern': 'dark',
       'retro-90s': 'dark',
@@ -3849,6 +5174,10 @@
       'neu-dark': 'neumorphism',
       'skeuomorphism': 'skeuo-dark',
       'skeuo-dark': 'skeuomorphism',
+      'visionos': 'glass-light',
+      'e-ink': 'minimal-dark',
+      'swiss-style': 'vaporwave',
+      'vaporwave': 'swiss-style',
       'nord-frost': 'bento-modern',
       'papercraft': 'phosphor-terminal'
     };
@@ -3994,6 +5323,229 @@
     themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
     chipButtons.forEach(btn => {
       btn.addEventListener('click', () => applyTheme(btn.getAttribute('data-set-theme')));
+    });
+
+    // =========================================================================
+    // Palette Swapper Engine (Famous Web Palettes & Resurrect-64)
+    // =========================================================================
+    let currentActivePalette = localStorage.getItem('pt-active-palette') || null;
+
+    function applyPalette(paletteKey, saveStorage = true) {
+      const p = FAMOUS_PALETTES[paletteKey];
+      if (!p) return;
+      currentActivePalette = paletteKey;
+      if (saveStorage) localStorage.setItem('pt-active-palette', paletteKey);
+
+      for (const [prop, val] of Object.entries(p.tokens)) {
+        document.documentElement.style.setProperty(prop, val);
+      }
+
+      document.querySelectorAll('.palette-chip').forEach(chip => {
+        chip.classList.toggle('active', chip.getAttribute('data-palette') === paletteKey);
+      });
+
+      readActiveThemeValuesToSidebar();
+      showToast(`Applied ${p.name} palette!`, 'palette');
+    }
+
+    function resetPalette(saveStorage = true) {
+      if (currentActivePalette && FAMOUS_PALETTES[currentActivePalette]) {
+        const p = FAMOUS_PALETTES[currentActivePalette];
+        for (const prop of Object.keys(p.tokens)) {
+          document.documentElement.style.removeProperty(prop);
+        }
+      }
+      currentActivePalette = null;
+      if (saveStorage) localStorage.removeItem('pt-active-palette');
+
+      document.querySelectorAll('.palette-chip').forEach(chip => chip.classList.remove('active'));
+      readActiveThemeValuesToSidebar();
+      showToast('Restored native theme palette', 'restart_alt');
+    }
+
+    document.querySelectorAll('.palette-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pal = btn.getAttribute('data-palette');
+        if (btn.classList.contains('active')) {
+          resetPalette(true);
+        } else {
+          applyPalette(pal, true);
+        }
+      });
+    });
+
+    const btnResetPalette = document.getElementById('btnResetPalette');
+    if (btnResetPalette) {
+      btnResetPalette.addEventListener('click', () => resetPalette(true));
+    }
+
+    // =========================================================================
+    // Standalone 1-Click Theme Downloader
+    // =========================================================================
+    function downloadCurrentThemeCSS() {
+      const currentTheme = htmlElem.getAttribute('data-theme') || 'material3';
+      const presetsStyle = document.getElementById('universalThemePresets');
+      let extractedCss = '';
+
+      if (presetsStyle) {
+        const fullText = presetsStyle.textContent;
+        const regex = new RegExp(`(\\/\\*\\*[\\s\\S]*?\\*\\/\\s*)?\\[data-theme=["']?${currentTheme}["']?[\\s\\S]*?\\n\\}`, 'g');
+        const match = fullText.match(regex);
+        if (match && match.length > 0) {
+          extractedCss = match[0];
+        }
+      }
+
+      if (!extractedCss) {
+        extractedCss = generateTokensCssBlock();
+      }
+
+      let paletteNote = '';
+      if (currentActivePalette && FAMOUS_PALETTES[currentActivePalette]) {
+        paletteNote = `\n/* Active Palette: ${FAMOUS_PALETTES[currentActivePalette].name} */\n`;
+      }
+
+      const standaloneBundle = `/**\n * Universal UI Themes - Standalone Theme: ${currentTheme}\n * Author: Yuvanesh KS (@North-Abyss)\n * License: MIT\n * Source: https://github.com/North-Abyss/ui-themes\n */\n${paletteNote}\n${extractedCss}\n`;
+
+      triggerDownload(`${currentTheme}.css`, standaloneBundle, 'text/css');
+    }
+
+    const btnDownloadActiveTheme = document.getElementById('btnDownloadActiveTheme');
+    if (btnDownloadActiveTheme) {
+      btnDownloadActiveTheme.addEventListener('click', downloadCurrentThemeCSS);
+    }
+
+    // =========================================================================
+    // 1-Click Global Reset Engine
+    // =========================================================================
+    function resetAllToDefaults() {
+      // 1. Reset active palette
+      resetPalette(true);
+
+      // 2. Clear custom tokens
+      localStorage.removeItem('pt-custom-tokens');
+      for (const k in activeCustomOverrides) {
+        document.documentElement.style.removeProperty(k);
+        delete activeCustomOverrides[k];
+      }
+      customEditedPill.style.display = 'none';
+
+      // 3. Clear user custom CSS sandbox
+      const userCssElem = document.getElementById('user-custom-css');
+      if (userCssElem) userCssElem.textContent = '';
+      const liveCssEditor = document.getElementById('liveCssEditor');
+      if (liveCssEditor) liveCssEditor.value = '';
+
+      // 4. Reset search input and tag pills
+      const searchInput = document.getElementById('themeSearchInput');
+      if (searchInput) searchInput.value = '';
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (clearBtn) clearBtn.style.display = 'none';
+      document.querySelectorAll('.tag-filter-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.getAttribute('data-tag') === 'all');
+      });
+      activeTagFilter = 'all';
+      filterThemes('', 'all');
+
+      // 5. Re-apply current theme defaults and refresh studio
+      const currentTheme = htmlElem.getAttribute('data-theme') || 'material3';
+      applyTheme(currentTheme, true);
+
+      showToast('All palettes, custom tokens & filters reset!', 'restart_alt');
+    }
+
+    const btnResetAll = document.getElementById('btnResetAll');
+    if (btnResetAll) {
+      btnResetAll.addEventListener('click', resetAllToDefaults);
+    }
+    const studioResetAllBtn = document.getElementById('resetAllBtn');
+    if (studioResetAllBtn) {
+      studioResetAllBtn.addEventListener('click', resetAllToDefaults);
+    }
+
+    // =========================================================================
+    // Theme Search & Multi-Tag Filter Engine
+    // =========================================================================
+    let activeTagFilter = 'all';
+    const themeSearchInput = document.getElementById('themeSearchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const tagFilterPills = document.querySelectorAll('.tag-filter-pill');
+
+    function filterThemes(searchQuery = '', activeTag = 'all') {
+      const query = searchQuery.trim().toLowerCase();
+      const selectElem = document.getElementById('themeSelect');
+      const chipBtns = document.querySelectorAll('#themeChipsTrack .chip-btn');
+      let matchCount = 0;
+
+      chipBtns.forEach(btn => {
+        const themeKey = btn.getAttribute('data-set-theme') || '';
+        const tags = ((btn.getAttribute('data-tags') || '') + ' ' + (THEME_TAGS[themeKey] ? THEME_TAGS[themeKey].join(' ') : '') + ' ' + themeKey + ' ' + btn.textContent).toLowerCase();
+
+        const matchesTag = (activeTag === 'all') || tags.includes(activeTag);
+        const matchesQuery = !query || tags.includes(query);
+
+        if (matchesTag && matchesQuery) {
+          btn.style.display = 'inline-flex';
+          matchCount++;
+        } else {
+          btn.style.display = 'none';
+        }
+      });
+
+      if (selectElem) {
+        selectElem.querySelectorAll('option').forEach(opt => {
+          const themeKey = opt.value;
+          const tags = ((THEME_TAGS[themeKey] ? THEME_TAGS[themeKey].join(' ') : '') + ' ' + themeKey + ' ' + opt.text).toLowerCase();
+          const matchesTag = (activeTag === 'all') || tags.includes(activeTag);
+          const matchesQuery = !query || tags.includes(query);
+          opt.hidden = !(matchesTag && matchesQuery);
+        });
+      }
+
+      const countBadge = document.getElementById('themeCountBadge');
+      if (countBadge) {
+        countBadge.textContent = `${matchCount} Preset${matchCount === 1 ? '' : 's'}`;
+      }
+    }
+
+    if (themeSearchInput) {
+      themeSearchInput.addEventListener('input', (e) => {
+        const q = e.target.value;
+        if (clearSearchBtn) clearSearchBtn.style.display = q ? 'flex' : 'none';
+        filterThemes(q, activeTagFilter);
+      });
+    }
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        if (themeSearchInput) themeSearchInput.value = '';
+        clearSearchBtn.style.display = 'none';
+        filterThemes('', activeTagFilter);
+        if (themeSearchInput) themeSearchInput.focus();
+      });
+    }
+
+    tagFilterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        tagFilterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        activeTagFilter = pill.getAttribute('data-tag') || 'all';
+        filterThemes(themeSearchInput ? themeSearchInput.value : '', activeTagFilter);
+      });
+    });
+
+    // =========================================================================
+    // Kitchen Sink Interactive Tabs Controller
+    // =========================================================================
+    document.querySelectorAll('.tab-pill-btn[data-tab-target]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tab-target');
+        document.querySelectorAll('.tab-pill-btn[data-tab-target]').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-showcase-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) targetPanel.classList.add('active');
+      });
     });
 
     // =========================================================================
@@ -4220,7 +5772,7 @@
 
     // Default HTML store for all sections
     const defaultComponentHTML = {};
-    const sections = ['hero', 'buttons', 'forms', 'bento', 'telemetry', 'cdn', 'badges', 'sandbox'];
+    const sections = ['hero', 'buttons', 'forms', 'tabs', 'dialogs', 'tables', 'bento', 'telemetry', 'cdn', 'badges', 'sandbox'];
     sections.forEach(id => {
       const el = document.getElementById('content-' + id);
       if (el) defaultComponentHTML[id] = el.innerHTML.trim();
@@ -4478,6 +6030,11 @@
         document.documentElement.style.setProperty(k, activeCustomOverrides[k]);
       }
       customEditedPill.style.display = 'inline-block';
+    }
+
+    // Reapply saved palette if present
+    if (currentActivePalette && FAMOUS_PALETTES[currentActivePalette]) {
+      applyPalette(currentActivePalette, false);
     }
     readActiveThemeValuesToSidebar();
     syncHtmlEditorToSelectedComponent();

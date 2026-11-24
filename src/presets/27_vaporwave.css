@@ -1,0 +1,55 @@
+/**
+ * ==============================================================================
+ * Preset 27: Vaporwave / Retro-Futurism (Aesthetic Neon Sunset)
+ * Aesthetic: Sunset neon magenta, electric cyan, midnight violet grid, CRT vibes
+ * ==============================================================================
+ */
+
+[data-theme="vaporwave"],
+[data-theme="retro-futurism"] {
+  --theme-name: "Vaporwave Neon Sunset";
+  --theme-mode: dark;
+  --theme-bg: #140C26;                         /* Midnight Violet Canvas */
+  --theme-bg-subtle: #1F133B;
+
+  /* Neon Sunset Grid Pattern */
+  --theme-canvas-pattern: linear-gradient(rgba(255, 113, 206, 0.10) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(1, 205, 254, 0.10) 1px, transparent 1px);
+  --theme-canvas-size: 32px 32px;
+
+  --theme-surface: #221640;
+  --theme-surface-container: #2D1D54;
+  --theme-surface-elevated: #39256B;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #BFA9E8;
+
+  --theme-primary: #FF71CE;                    /* Sunset Magenta */
+  --theme-primary-hover: #FF85D6;
+  --theme-on-primary: #140C26;
+  --theme-primary-container: rgba(255, 113, 206, 0.25);
+  --theme-on-primary-container: #FFD1F1;
+
+  --theme-secondary: #01CDFE;                  /* Electric Cyan */
+  --theme-on-secondary: #140C26;
+  --theme-secondary-container: rgba(1, 205, 254, 0.25);
+
+  --theme-accent: #05FFA1;                     /* Neon Mint */
+  --theme-danger: #FF4F79;
+  --theme-on-danger: #FFFFFF;
+
+  /* Neon Glowing Borders */
+  --theme-border: 1.5px solid #FF71CE;
+  --theme-border-subtle: 1px solid rgba(1, 205, 254, 0.40);
+  --theme-border-radius: var(--radius-md);     /* 12px */
+  --theme-btn-radius: var(--radius-sm);        /* 8px */
+
+  /* Radiant Neon Glow Shadows */
+  --theme-shadow-sm: 0 0 10px rgba(255, 113, 206, 0.35);
+  --theme-shadow: 0 0 20px rgba(255, 113, 206, 0.35), 0 8px 24px rgba(0, 0, 0, 0.50);
+  --theme-shadow-hover: 0 0 30px rgba(1, 205, 254, 0.60), 0 0 15px rgba(255, 113, 206, 0.50);
+
+  --theme-font: var(--font-display);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

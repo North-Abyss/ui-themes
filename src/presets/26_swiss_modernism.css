@@ -1,0 +1,53 @@
+/**
+ * ==============================================================================
+ * Preset 26: Swiss Modernism 2.0 (International Typographic Style)
+ * Aesthetic: Strict mathematical grid, stark contrast, objective typography, International Red
+ * ==============================================================================
+ */
+
+[data-theme="swiss-style"],
+[data-theme="swiss-modernism"] {
+  --theme-name: "Swiss Modernism 2.0";
+  --theme-mode: light;
+  --theme-bg: #FFFFFF;
+  --theme-bg-subtle: #F5F5F7;
+
+  --theme-canvas-pattern: none;
+  --theme-canvas-size: auto;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #EAEAEA;
+  --theme-surface-elevated: #F9F9F9;
+
+  --theme-text: #000000;
+  --theme-text-muted: #555555;
+
+  --theme-primary: #FF3B30;                    /* Signature Swiss International Red */
+  --theme-primary-hover: #D70015;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #FFE5E5;
+  --theme-on-primary-container: #A3000B;
+
+  --theme-secondary: #000000;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EEEEEE;
+
+  --theme-accent: #007AFF;
+  --theme-danger: #FF3B30;
+  --theme-on-danger: #FFFFFF;
+
+  /* Strict Geometric Hairline Rules */
+  --theme-border: 1px solid #000000;
+  --theme-border-subtle: 1px solid #CCCCCC;
+  --theme-border-radius: 0px;                  /* Pure Grid 0px */
+  --theme-btn-radius: 0px;
+
+  /* Zero Drop Shadow (Pure Functionalism) */
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #000000;
+
+  --theme-font: "Helvetica Neue", "Arial", sans-serif;
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

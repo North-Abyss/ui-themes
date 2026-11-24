@@ -1697,3 +1697,220 @@
   --theme-font-mono: var(--font-mono);
   --theme-backdrop: none;
 }
+/**
+ * ==============================================================================
+ * Preset 24: Spatial UI (Apple VisionOS / visionOS 2.0)
+ * Aesthetic: Spatial depth, gaze-hover illumination, translucent frosted glass, vibrant Apple hues
+ * ==============================================================================
+ */
+
+[data-theme="visionos"],
+[data-theme="spatial-ui"] {
+  --theme-name: "Spatial UI (visionOS)";
+  --theme-mode: dark;
+  --theme-bg: #090B10;
+  --theme-bg-subtle: #121520;
+
+  /* Ambient Spatial Mesh Backdrop */
+  --theme-canvas-pattern: radial-gradient(circle at 50% 15%, rgba(0, 122, 255, 0.20) 0%, transparent 55%),
+                          radial-gradient(circle at 85% 80%, rgba(48, 209, 88, 0.15) 0%, transparent 50%),
+                          radial-gradient(circle at 15% 75%, rgba(255, 159, 10, 0.15) 0%, transparent 45%);
+  --theme-canvas-size: 100% 100%;
+
+  --theme-surface: rgba(255, 255, 255, 0.08);
+  --theme-surface-container: rgba(255, 255, 255, 0.14);
+  --theme-surface-elevated: rgba(255, 255, 255, 0.20);
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: rgba(255, 255, 255, 0.65);
+
+  --theme-primary: #007AFF;                    /* Apple System Blue */
+  --theme-primary-hover: #0A84FF;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: rgba(0, 122, 255, 0.25);
+  --theme-on-primary-container: #E0F2FE;
+
+  --theme-secondary: #30D158;                  /* Apple Vision Mint Green */
+  --theme-on-secondary: #000000;
+  --theme-secondary-container: rgba(48, 209, 88, 0.20);
+
+  --theme-accent: #FF9F0A;                     /* Vision Amber */
+  --theme-danger: #FF453A;
+  --theme-on-danger: #FFFFFF;
+
+  /* Specular Edge Borders & Gaze Glow */
+  --theme-border: 1px solid rgba(255, 255, 255, 0.24);
+  --theme-border-subtle: 1px solid rgba(255, 255, 255, 0.12);
+  --theme-border-radius: var(--radius-xl);     /* 24px */
+  --theme-btn-radius: var(--radius-lg);        /* 16px */
+
+  /* Deep Spatial Shadows */
+  --theme-shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --theme-shadow: 0 16px 48px rgba(0, 0, 0, 0.50), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  --theme-shadow-hover: 0 24px 64px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 122, 255, 0.40), inset 0 1px 0 #FFFFFF;
+
+  --theme-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-sans);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: blur(28px) saturate(200%);
+}
+/**
+ * ==============================================================================
+ * Preset 25: E-Ink / Paper (Distraction-Free Matte Reading)
+ * Aesthetic: High contrast, matte texture, zero animation, reading typography
+ * ==============================================================================
+ */
+
+[data-theme="e-ink"],
+[data-theme="e-ink-paper"] {
+  --theme-name: "E-Ink / Matte Paper";
+  --theme-mode: light;
+  --theme-bg: #FDFBF7;                         /* Warm Paper Canvas */
+  --theme-bg-subtle: #F3EFE6;
+
+  --theme-canvas-pattern: none;
+  --theme-canvas-size: auto;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #EFE9DD;
+  --theme-surface-elevated: #FAF6EE;
+
+  --theme-text: #1A1A1A;                        /* Pitch Black Ink */
+  --theme-text-muted: #525252;
+
+  --theme-primary: #1A1A1A;
+  --theme-primary-hover: #333333;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #E5DFD3;
+  --theme-on-primary-container: #1A1A1A;
+
+  --theme-secondary: #4A4A4A;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EDE6DA;
+
+  --theme-accent: #E27D60;
+  --theme-danger: #990000;
+  --theme-on-danger: #FFFFFF;
+
+  /* Crisp Book-Binding Outlines */
+  --theme-border: 1.5px solid #1A1A1A;
+  --theme-border-subtle: 1px solid #D6CEBE;
+  --theme-border-radius: var(--radius-xs);      /* 4px crisp */
+  --theme-btn-radius: var(--radius-xs);
+
+  /* Flat Paper Zero Shadow */
+  --theme-shadow-sm: none;
+  --theme-shadow: 2px 2px 0px rgba(26, 26, 26, 0.12);
+  --theme-shadow-hover: 3px 3px 0px rgba(26, 26, 26, 0.25);
+
+  --theme-font: "Georgia", "Times New Roman", serif;
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 26: Swiss Modernism 2.0 (International Typographic Style)
+ * Aesthetic: Strict mathematical grid, stark contrast, objective typography, International Red
+ * ==============================================================================
+ */
+
+[data-theme="swiss-style"],
+[data-theme="swiss-modernism"] {
+  --theme-name: "Swiss Modernism 2.0";
+  --theme-mode: light;
+  --theme-bg: #FFFFFF;
+  --theme-bg-subtle: #F5F5F7;
+
+  --theme-canvas-pattern: none;
+  --theme-canvas-size: auto;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #EAEAEA;
+  --theme-surface-elevated: #F9F9F9;
+
+  --theme-text: #000000;
+  --theme-text-muted: #555555;
+
+  --theme-primary: #FF3B30;                    /* Signature Swiss International Red */
+  --theme-primary-hover: #D70015;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #FFE5E5;
+  --theme-on-primary-container: #A3000B;
+
+  --theme-secondary: #000000;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EEEEEE;
+
+  --theme-accent: #007AFF;
+  --theme-danger: #FF3B30;
+  --theme-on-danger: #FFFFFF;
+
+  /* Strict Geometric Hairline Rules */
+  --theme-border: 1px solid #000000;
+  --theme-border-subtle: 1px solid #CCCCCC;
+  --theme-border-radius: 0px;                  /* Pure Grid 0px */
+  --theme-btn-radius: 0px;
+
+  /* Zero Drop Shadow (Pure Functionalism) */
+  --theme-shadow-sm: none;
+  --theme-shadow: none;
+  --theme-shadow-hover: 0 0 0 1px #000000;
+
+  --theme-font: "Helvetica Neue", "Arial", sans-serif;
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}
+/**
+ * ==============================================================================
+ * Preset 27: Vaporwave / Retro-Futurism (Aesthetic Neon Sunset)
+ * Aesthetic: Sunset neon magenta, electric cyan, midnight violet grid, CRT vibes
+ * ==============================================================================
+ */
+
+[data-theme="vaporwave"],
+[data-theme="retro-futurism"] {
+  --theme-name: "Vaporwave Neon Sunset";
+  --theme-mode: dark;
+  --theme-bg: #140C26;                         /* Midnight Violet Canvas */
+  --theme-bg-subtle: #1F133B;
+
+  /* Neon Sunset Grid Pattern */
+  --theme-canvas-pattern: linear-gradient(rgba(255, 113, 206, 0.10) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(1, 205, 254, 0.10) 1px, transparent 1px);
+  --theme-canvas-size: 32px 32px;
+
+  --theme-surface: #221640;
+  --theme-surface-container: #2D1D54;
+  --theme-surface-elevated: #39256B;
+
+  --theme-text: #FFFFFF;
+  --theme-text-muted: #BFA9E8;
+
+  --theme-primary: #FF71CE;                    /* Sunset Magenta */
+  --theme-primary-hover: #FF85D6;
+  --theme-on-primary: #140C26;
+  --theme-primary-container: rgba(255, 113, 206, 0.25);
+  --theme-on-primary-container: #FFD1F1;
+
+  --theme-secondary: #01CDFE;                  /* Electric Cyan */
+  --theme-on-secondary: #140C26;
+  --theme-secondary-container: rgba(1, 205, 254, 0.25);
+
+  --theme-accent: #05FFA1;                     /* Neon Mint */
+  --theme-danger: #FF4F79;
+  --theme-on-danger: #FFFFFF;
+
+  /* Neon Glowing Borders */
+  --theme-border: 1.5px solid #FF71CE;
+  --theme-border-subtle: 1px solid rgba(1, 205, 254, 0.40);
+  --theme-border-radius: var(--radius-md);     /* 12px */
+  --theme-btn-radius: var(--radius-sm);        /* 8px */
+
+  /* Radiant Neon Glow Shadows */
+  --theme-shadow-sm: 0 0 10px rgba(255, 113, 206, 0.35);
+  --theme-shadow: 0 0 20px rgba(255, 113, 206, 0.35), 0 8px 24px rgba(0, 0, 0, 0.50);
+  --theme-shadow-hover: 0 0 30px rgba(1, 205, 254, 0.60), 0 0 15px rgba(255, 113, 206, 0.50);
+
+  --theme-font: var(--font-display);
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

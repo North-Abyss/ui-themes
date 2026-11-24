@@ -1,0 +1,53 @@
+/**
+ * ==============================================================================
+ * Preset 25: E-Ink / Paper (Distraction-Free Matte Reading)
+ * Aesthetic: High contrast, matte texture, zero animation, reading typography
+ * ==============================================================================
+ */
+
+[data-theme="e-ink"],
+[data-theme="e-ink-paper"] {
+  --theme-name: "E-Ink / Matte Paper";
+  --theme-mode: light;
+  --theme-bg: #FDFBF7;                         /* Warm Paper Canvas */
+  --theme-bg-subtle: #F3EFE6;
+
+  --theme-canvas-pattern: none;
+  --theme-canvas-size: auto;
+
+  --theme-surface: #FFFFFF;
+  --theme-surface-container: #EFE9DD;
+  --theme-surface-elevated: #FAF6EE;
+
+  --theme-text: #1A1A1A;                        /* Pitch Black Ink */
+  --theme-text-muted: #525252;
+
+  --theme-primary: #1A1A1A;
+  --theme-primary-hover: #333333;
+  --theme-on-primary: #FFFFFF;
+  --theme-primary-container: #E5DFD3;
+  --theme-on-primary-container: #1A1A1A;
+
+  --theme-secondary: #4A4A4A;
+  --theme-on-secondary: #FFFFFF;
+  --theme-secondary-container: #EDE6DA;
+
+  --theme-accent: #E27D60;
+  --theme-danger: #990000;
+  --theme-on-danger: #FFFFFF;
+
+  /* Crisp Book-Binding Outlines */
+  --theme-border: 1.5px solid #1A1A1A;
+  --theme-border-subtle: 1px solid #D6CEBE;
+  --theme-border-radius: var(--radius-xs);      /* 4px crisp */
+  --theme-btn-radius: var(--radius-xs);
+
+  /* Flat Paper Zero Shadow */
+  --theme-shadow-sm: none;
+  --theme-shadow: 2px 2px 0px rgba(26, 26, 26, 0.12);
+  --theme-shadow-hover: 3px 3px 0px rgba(26, 26, 26, 0.25);
+
+  --theme-font: "Georgia", "Times New Roman", serif;
+  --theme-font-mono: var(--font-mono);
+  --theme-backdrop: none;
+}

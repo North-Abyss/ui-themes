@@ -37,7 +37,11 @@ cat src/tokens/primitives.css \
     src/presets/20_dracula.css \
     src/presets/21_one_dark_pro.css \
     src/presets/22_solarized_dark.css \
-    src/presets/23_skeuomorphism.css > dist/universal-themes.css
+    src/presets/23_skeuomorphism.css \
+    src/presets/24_spatial_visionos.css \
+    src/presets/25_e_ink_paper.css \
+    src/presets/26_swiss_modernism.css \
+    src/presets/27_vaporwave.css > dist/universal-themes.css
 
 python3 -c "
 import re

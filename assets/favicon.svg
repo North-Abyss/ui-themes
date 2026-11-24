@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="primGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <linearGradient id="neuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background Rounded Canvas -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)"/>
+  <rect width="64" height="64" rx="16" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+  
+  <!-- Back Layer (Neumorphic Card) -->
+  <rect x="12" y="12" width="40" height="40" rx="10" fill="#1E293B" filter="url(#glow)"/>
+  
+  <!-- Frosted Glassmorphism Layer -->
+  <rect x="18" y="18" width="34" height="34" rx="8" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"/>
+  
+  <!-- Accent Morphic Geometry Shapes -->
+  <circle cx="28" cy="28" r="7" fill="url(#primGrad)"/>
+  <rect x="36" y="24" width="10" height="8" rx="4" fill="url(#neuGrad)"/>
+  <rect x="24" y="38" width="22" height="6" rx="3" fill="#38BDF8" opacity="0.85"/>
+</svg>
