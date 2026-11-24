@@ -2292,231 +2292,131 @@
       overflow: visible;
     }
 
-    /* Top Sticky Theme Controller Bar */
+    /* =========================================================================
+       Ultra-Modern 2-Tier Header & Floating Command Dock
+       ========================================================================= */
     .theme-header {
       position: sticky;
       top: 0;
       z-index: 1000;
       background-color: var(--theme-surface);
-      border-bottom: var(--theme-border, 1px solid rgba(0,0,0,0.1));
-      box-shadow: var(--theme-shadow-sm);
-      backdrop-filter: var(--theme-backdrop, blur(16px));
-      padding: 0.65rem 1.25rem;
+      border-bottom: var(--theme-border, 1px solid rgba(127,127,127,0.18));
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      backdrop-filter: var(--theme-backdrop, blur(20px));
+      -webkit-backdrop-filter: var(--theme-backdrop, blur(20px));
+      padding: 0.45rem 1.25rem 0.4rem;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
-    .header-top-row {
+    /* Tier 1: Main App Bar */
+    .header-main-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
       gap: 0.75rem;
-      flex-wrap: wrap;
     }
 
     .brand-title {
-      font-size: 1.15rem;
-      font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .theme-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .theme-select {
-      padding: 0.45rem 0.85rem;
-      border-radius: var(--theme-btn-radius, 8px);
-      border: var(--theme-border, 1px solid #ccc);
-      background-color: var(--theme-surface-container, var(--theme-bg));
-      color: var(--theme-text);
-      font-family: inherit;
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
-      outline: none;
-      max-width: 240px;
-    }
-
-    /* Swipeable Horizontal Quick Chips Track */
-    .theme-chips-wrapper {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .theme-chips {
-      display: flex;
-      gap: 0.4rem;
-      overflow-x: auto;
-      white-space: nowrap;
-      padding: 0.15rem 0.1rem 0.35rem;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .theme-chips::-webkit-scrollbar {
-      display: none;
-    }
-
-    .chip-btn {
-      padding: 0.32rem 0.75rem;
-      border-radius: var(--theme-btn-radius, 6px);
-      border: var(--theme-border-subtle, 1px solid #ccc);
-      background-color: var(--theme-surface-container, #eee);
-      color: var(--theme-text);
-      font-size: 0.76rem;
-      font-weight: 600;
-      cursor: pointer;
+      gap: 0.55rem;
       flex-shrink: 0;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
+      user-select: none;
     }
-
-    .chip-btn.active {
-      background-color: var(--theme-primary);
-      color: var(--theme-on-primary);
-      border-color: var(--theme-primary);
+    .brand-logo-icon {
+      font-size: 22px;
+      color: var(--theme-primary);
+      filter: drop-shadow(0 0 6px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.4));
     }
-
-    /* Studio & Action Buttons in Header */
-    .studio-toggle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.45rem 0.85rem;
-      border-radius: var(--theme-btn-radius, 8px);
-      background-color: var(--theme-primary);
-      color: var(--theme-on-primary);
-      border: 1px solid var(--theme-primary);
-      font-family: inherit;
-      font-size: 0.85rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: var(--theme-shadow-sm);
-      position: relative;
-    }
-    .studio-toggle-btn:hover {
-      filter: brightness(1.1);
-    }
-
-    .inspect-toggle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.45rem 0.75rem;
-      border-radius: var(--theme-btn-radius, 8px);
-      background-color: var(--theme-surface-container);
-      color: var(--theme-text);
-      border: var(--theme-border-subtle);
-      font-family: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .inspect-toggle-btn.active {
-      background: #00F0FF;
-      color: #000;
-      border-color: #00F0FF;
-      box-shadow: 0 0 12px rgba(0,240,255,0.4);
-    }
-
-    .custom-edited-pill {
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #10B981;
-      margin-left: 2px;
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.3); opacity: 1; }
-      100% { transform: scale(0.95); opacity: 0.8; }
-    }
-
-    /* Header Action Pill Buttons (Download Theme & Reset All) */
-    .action-btn-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.45rem 0.8rem;
-      border-radius: var(--theme-btn-radius, 8px);
-      font-family: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      border: var(--theme-border-subtle, 1px solid rgba(127,127,127,0.25));
-      background-color: var(--theme-surface-container);
-      color: var(--theme-text);
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .action-btn-pill:hover {
-      filter: brightness(1.12);
-      transform: translateY(-1px);
-    }
-    .download-pill {
-      background-color: var(--theme-primary);
-      color: var(--theme-on-primary);
-      border-color: var(--theme-primary);
-      box-shadow: var(--theme-shadow-sm);
-    }
-    .reset-pill {
-      color: var(--theme-text-muted);
-    }
-    .reset-pill:hover {
-      color: #ef4444;
-      border-color: rgba(239, 68, 68, 0.4);
-    }
-
-    /* Live Search & Tag Filter Bar */
-    .search-tag-container {
-      width: 100%;
+    .brand-text-block {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
-      padding-top: 0.35rem;
-      border-top: var(--theme-border-subtle);
+      line-height: 1.15;
     }
-    .theme-search-box {
+    .brand-name-row {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .brand-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--theme-text);
+      white-space: nowrap;
+    }
+    .preset-count-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.12rem 0.45rem;
+      border-radius: 9999px;
+      background: var(--theme-surface-container);
+      color: var(--theme-text-muted);
+      border: var(--theme-border-subtle);
+      white-space: nowrap;
+    }
+    .brand-author-sub {
+      font-size: 0.68rem;
+      color: var(--theme-text-muted);
+      font-weight: 500;
+    }
+    .brand-author-sub a {
+      color: inherit;
+      text-decoration: underline;
+      opacity: 0.85;
+    }
+
+    /* Center Command Search Input */
+    .header-search-wrapper {
       position: relative;
       display: flex;
       align-items: center;
+      gap: 0.4rem;
       background: var(--theme-surface-container);
-      border: var(--theme-border, 1px solid rgba(127,127,127,0.25));
+      border: var(--theme-border-subtle, 1px solid rgba(127,127,127,0.2));
       border-radius: var(--theme-btn-radius, 8px);
-      padding: 0.3rem 0.75rem;
-      gap: 0.5rem;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      padding: 0.32rem 0.7rem;
+      width: clamp(200px, 22vw, 300px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .theme-search-box:focus-within {
+    .header-search-wrapper:focus-within {
       border-color: var(--theme-primary);
-      box-shadow: 0 0 0 2px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.25);
+      box-shadow: 0 0 0 2px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.2);
+      width: clamp(230px, 28vw, 360px);
     }
-    .theme-search-input {
+    .search-icon {
+      font-size: 16px;
+      color: var(--theme-text-muted);
+      flex-shrink: 0;
+    }
+    .header-search-input {
       flex: 1;
       border: none;
       background: transparent;
       color: var(--theme-text);
       font-family: inherit;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       outline: none;
+      min-width: 0;
     }
-    .theme-search-input::placeholder {
+    .header-search-input::placeholder {
       color: var(--theme-text-muted);
       opacity: 0.75;
+    }
+    .search-kbd-shortcut {
+      font-family: var(--theme-font-mono, monospace);
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--theme-text-muted);
+      background: rgba(127,127,127,0.12);
+      padding: 0.12rem 0.32rem;
+      border-radius: 4px;
+      border: var(--theme-border-subtle);
+      pointer-events: none;
+      flex-shrink: 0;
     }
     .clear-search-btn {
       background: none;
@@ -2527,166 +2427,400 @@
       display: flex;
       align-items: center;
       border-radius: 50%;
+      flex-shrink: 0;
     }
     .clear-search-btn:hover {
       color: var(--theme-text);
     }
 
-    .theme-tags-track {
+    /* Controls Group */
+    .theme-controls {
       display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    /* 3-Way Mode Segmented Control */
+    .mode-segmented-control {
+      display: inline-flex;
+      align-items: center;
+      background: var(--theme-surface-container);
+      border: var(--theme-border-subtle);
+      border-radius: var(--theme-btn-radius, 9999px);
+      padding: 2px;
+      gap: 1px;
+    }
+    .mode-segment-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: transparent;
+      color: var(--theme-text-muted);
+      border-radius: var(--theme-btn-radius, 9999px);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .mode-segment-btn .google-icon {
+      font-size: 15px;
+    }
+    .mode-segment-btn:hover {
+      color: var(--theme-text);
+      background: rgba(127, 127, 127, 0.12);
+    }
+    .mode-segment-btn.active {
+      background: var(--theme-primary);
+      color: var(--theme-on-primary);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    }
+
+    /* Floating Palette Popover */
+    .palette-popover-container {
+      position: relative;
+    }
+    .palette-menu-btn {
+      display: inline-flex;
+      align-items: center;
       gap: 0.35rem;
+      padding: 0.36rem 0.65rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border-subtle);
+      background: var(--theme-surface-container);
+      color: var(--theme-text);
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .palette-menu-btn:hover {
+      border-color: var(--theme-primary);
+    }
+    .swatch-indicator {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .dropdown-arrow {
+      font-size: 16px;
+      color: var(--theme-text-muted);
+      margin-right: -2px;
+      transition: transform 0.2s ease;
+    }
+    .palette-popover-container.open .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .palette-popover-tray {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: 290px;
+      background: var(--theme-surface);
+      border: var(--theme-border);
+      border-radius: var(--theme-border-radius, 12px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+      z-index: 1500;
+      padding: 0.75rem;
+      display: none;
+      animation: popoverFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .palette-popover-container.open .palette-popover-tray {
+      display: block;
+    }
+    @keyframes popoverFadeIn {
+      from { opacity: 0; transform: translateY(-4px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .popover-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-bottom: var(--theme-border-subtle);
+    }
+    .popover-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--theme-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .popover-reset-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px dashed rgba(239, 68, 68, 0.35);
+      border-radius: 4px;
+      padding: 0.15rem 0.4rem;
+      cursor: pointer;
+    }
+    .popover-reset-btn:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+    .popover-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+    }
+    .palette-grid-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.5rem;
+      border-radius: var(--theme-btn-radius, 6px);
+      border: var(--theme-border-subtle);
+      background: var(--theme-surface-container);
+      color: var(--theme-text);
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+    }
+    .palette-grid-item:hover {
+      border-color: var(--theme-primary);
+      transform: translateY(-1px);
+    }
+    .palette-grid-item.active {
+      background: var(--theme-primary-container, rgba(59, 130, 246, 0.15));
+      border-color: var(--theme-primary);
+      color: var(--theme-primary);
+    }
+    .swatch-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .resurrect-item {
+      grid-column: 1 / -1;
+      justify-content: center;
+      background: rgba(234, 79, 54, 0.08);
+      border-color: rgba(234, 79, 54, 0.3);
+    }
+
+    /* Presets Dropdown */
+    .theme-select {
+      padding: 0.36rem 0.65rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border-subtle);
+      background-color: var(--theme-surface-container);
+      color: var(--theme-text);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      max-width: 185px;
+    }
+
+    /* Studio Toggle Button */
+    .studio-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.36rem 0.75rem;
+      border-radius: var(--theme-btn-radius, 8px);
+      background-color: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border: 1px solid var(--theme-primary);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--theme-shadow-sm);
+      white-space: nowrap;
+    }
+    .studio-toggle-btn:hover {
+      filter: brightness(1.1);
+    }
+    .custom-edited-pill {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      margin-left: 2px;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    /* Tool Icon Buttons (Compact 30px x 30px) */
+    .tool-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: var(--theme-btn-radius, 8px);
+      border: var(--theme-border-subtle);
+      background: var(--theme-surface-container);
+      color: var(--theme-text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .tool-icon-btn .google-icon {
+      font-size: 16px;
+    }
+    .tool-icon-btn:hover {
+      color: var(--theme-text);
+      border-color: var(--theme-primary);
+      transform: translateY(-1px);
+    }
+    .download-icon-btn:hover {
+      color: var(--theme-primary);
+    }
+    .reset-icon-btn:hover {
+      color: #ef4444;
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+    .inspect-icon-btn.active {
+      background: #00F0FF;
+      color: #000;
+      border-color: #00F0FF;
+      box-shadow: 0 0 10px rgba(0,240,255,0.4);
+    }
+    .star-btn {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
+    }
+    .star-btn:hover {
+      background: #f59e0b;
+      color: #000;
+    }
+
+    /* Tier 2: Unified Interactive Dock (Category Pills + Chips Track) */
+    .header-dock-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 0.15rem;
+      border-top: var(--theme-border-subtle);
+    }
+    .dock-tags-group {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      flex-shrink: 0;
       overflow-x: auto;
       scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 2px;
     }
-    .theme-tags-track::-webkit-scrollbar {
+    .dock-tags-group::-webkit-scrollbar {
       display: none;
     }
-    .tag-filter-pill {
-      padding: 0.24rem 0.65rem;
-      font-size: 0.74rem;
+    .dock-tag-pill {
+      padding: 0.2rem 0.55rem;
+      font-size: 0.72rem;
       font-weight: 600;
       border-radius: var(--theme-btn-radius, 9999px);
-      border: var(--theme-border-subtle, 1px solid rgba(127,127,127,0.2));
+      border: var(--theme-border-subtle);
       background: var(--theme-surface-container);
       color: var(--theme-text-muted);
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.2s ease;
+      transition: all 0.18s ease;
     }
-    .tag-filter-pill:hover {
+    .dock-tag-pill:hover {
       color: var(--theme-text);
       border-color: var(--theme-primary);
     }
-    .tag-filter-pill.active {
+    .dock-tag-pill.active {
       background: var(--theme-primary);
       color: var(--theme-on-primary);
       border-color: var(--theme-primary);
     }
-
-    /* Famous Website & Retro Palette Swapper Ribbon */
-    .palette-swapper-bar {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      padding: 0.3rem 0.6rem;
-      background: rgba(127,127,127,0.06);
-      border-radius: var(--theme-btn-radius, 8px);
-      border: var(--theme-border-subtle);
-      margin-top: 0.25rem;
-    }
-    .palette-bar-label {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--theme-text-muted);
-      white-space: nowrap;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-    .palette-chips-scroll {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-      flex: 1;
-    }
-    .palette-chips-scroll::-webkit-scrollbar {
-      display: none;
-    }
-    .palette-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.22rem 0.55rem;
-      border-radius: var(--theme-btn-radius, 6px);
-      border: var(--theme-border-subtle, 1px solid rgba(127,127,127,0.25));
-      background: var(--theme-surface);
-      color: var(--theme-text);
-      font-size: 0.72rem;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.18s ease;
+    .dock-divider {
+      width: 1px;
+      height: 16px;
+      background: var(--theme-border-subtle);
       flex-shrink: 0;
-    }
-    .palette-chip:hover {
-      border-color: var(--theme-primary);
-      transform: translateY(-1px);
-    }
-    .palette-chip.active {
-      background: var(--theme-primary-container, rgba(59, 130, 246, 0.18));
-      border-color: var(--theme-primary);
-      color: var(--theme-primary);
-      box-shadow: 0 0 8px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.3);
-    }
-    .palette-chip .swatch {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-      flex-shrink: 0;
-      border: 1px solid rgba(255,255,255,0.4);
-    }
-    .palette-reset-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.22rem 0.55rem;
-      border-radius: var(--theme-btn-radius, 6px);
-      border: 1px dashed rgba(239, 68, 68, 0.45);
-      background: rgba(239, 68, 68, 0.08);
-      color: #ef4444;
-      font-size: 0.72rem;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: all 0.18s ease;
-    }
-    .palette-reset-btn:hover {
-      background: #ef4444;
-      color: #fff;
+      margin: 0 0.1rem;
     }
 
-    /* Spiced-Up Scrolling Carousel Track */
+    /* Theme Chips Track in Dock */
     .theme-chips-wrapper {
+      flex: 1;
+      min-width: 0;
       position: relative;
+      overflow: hidden;
     }
     .theme-chips-wrapper::before,
     .theme-chips-wrapper::after {
       content: '';
       position: absolute;
       top: 0; bottom: 0;
-      width: 24px;
+      width: 20px;
       pointer-events: none;
       z-index: 2;
-      opacity: 0.8;
-      transition: opacity 0.2s ease;
     }
     .theme-chips-wrapper::before {
       left: 0;
-      background: linear-gradient(to right, var(--theme-bg), transparent);
+      background: linear-gradient(to right, var(--theme-surface), transparent);
     }
     .theme-chips-wrapper::after {
       right: 0;
-      background: linear-gradient(to left, var(--theme-bg), transparent);
+      background: linear-gradient(to left, var(--theme-surface), transparent);
+    }
+    .theme-chips {
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 0.1rem 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .theme-chips::-webkit-scrollbar {
+      display: none;
     }
     .chip-btn {
-      transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease, background-color 0.2s ease;
+      padding: 0.22rem 0.62rem;
+      border-radius: var(--theme-btn-radius, 6px);
+      border: var(--theme-border-subtle);
+      background-color: var(--theme-surface-container);
+      color: var(--theme-text);
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.18s ease;
     }
     .chip-btn:hover {
-      transform: translateY(-1px) scale(1.02);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      border-color: var(--theme-primary);
+      transform: translateY(-1px);
     }
     .chip-btn.active {
-      box-shadow: 0 0 14px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.45);
+      background-color: var(--theme-primary);
+      color: var(--theme-on-primary);
+      border-color: var(--theme-primary);
+      box-shadow: 0 0 10px rgba(var(--theme-primary-rgb, 59, 130, 246), 0.4);
     }
 
     /* =========================================================================
@@ -3664,16 +3798,23 @@
     }
 
     /* Media Queries for Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .theme-header {
-        padding: 0.5rem 1rem;
+    @media (max-width: 960px) {
+      .header-search-wrapper {
+        display: none;
       }
-      .brand-title span:first-child {
-        font-size: 1rem;
+      .brand-author-sub {
+        display: none;
       }
       .theme-select {
-        max-width: 170px;
-        font-size: 0.82rem;
+        max-width: 140px;
+      }
+    }
+    @media (max-width: 768px) {
+      .theme-header {
+        padding: 0.4rem 0.85rem;
+      }
+      .brand-name {
+        font-size: 0.92rem;
       }
       .container {
         padding: 0 0.85rem;
@@ -3695,50 +3836,60 @@
       .studio-drawer {
         width: 100vw;
       }
-    }
-
-
-    /* Mode Segmented Control */
-    .mode-segmented-control {
-      display: inline-flex;
-      align-items: center;
-      background: var(--theme-surface-container);
-      border: var(--theme-border-subtle);
-      border-radius: var(--theme-btn-radius, 9999px);
-      padding: 3px;
-      gap: 2px;
-    }
-    .mode-segment-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.35rem 0.7rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      border: none;
-      background: transparent;
-      color: var(--theme-text-muted);
-      border-radius: var(--theme-btn-radius, 9999px);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-      white-space: nowrap;
-    }
-    .mode-segment-btn:hover {
-      color: var(--theme-text);
-      background: rgba(127, 127, 127, 0.12);
-    }
-    .mode-segment-btn.active {
-      background: var(--theme-primary);
-      color: var(--theme-on-primary);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    }
-    @media (max-width: 640px) {
-      .mode-segment-btn .mode-text {
+      .tool-icon-btn.inspect-icon-btn,
+      .tool-icon-btn.download-icon-btn,
+      .tool-icon-btn.reset-icon-btn,
+      .tool-icon-btn.star-btn {
         display: none;
       }
+    }
+    @media (max-width: 640px) {
+      .theme-select {
+        display: none;
+      }
+      .dock-divider {
+        display: none;
+      }
+      .preset-count-badge {
+        display: none;
+      }
+      .brand-name {
+        font-size: 0.88rem;
+      }
+      .theme-header {
+        padding: 0.35rem 0.65rem;
+      }
+      .palette-popover-tray {
+        position: fixed;
+        top: 55px;
+        left: 0.75rem;
+        right: 0.75rem;
+        width: auto;
+        max-width: calc(100vw - 1.5rem);
+      }
+      .palette-popover-tray .popover-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .header-main-bar {
+        gap: 0.4rem;
+      }
+      .theme-controls {
+        gap: 0.3rem;
+      }
       .mode-segment-btn {
-        padding: 0.35rem 0.5rem;
+        padding: 0.28rem 0.38rem;
+      }
+      .studio-toggle-btn span:not(.google-icon):not(.custom-edited-pill) {
+        display: none;
+      }
+      .studio-toggle-btn {
+        padding: 0.32rem 0.55rem;
+      }
+      .palette-menu-btn span:not(.swatch-indicator):not(.dropdown-arrow) {
+        display: none;
+      }
+      .palette-menu-btn {
+        padding: 0.32rem 0.5rem;
       }
     }
 
@@ -3790,56 +3941,111 @@
 
   <!-- Top Sticky Theme Switcher Controller Bar -->
   <header class="theme-header">
-    <div class="header-top-row">
+    <!-- Tier 1: Main App Bar (Clean, Spacious, Modern) -->
+    <div class="header-main-bar">
+      <!-- Left: Brand Logo & Title -->
       <div class="brand-title">
-        <span class="google-icon material-symbols-outlined" title="Universal Design Theme Palette" aria-label="Palette Icon" role="img">palette</span>
-        <div>
-          <span>Universal Theme Engine</span>
-          <div style="font-size: 0.72rem; font-weight: 500; opacity: 0.8;">
-            UI Themes, Templates &amp; Modular Tools by <a href="https://github.com/North-Abyss" target="_blank" style="color: inherit; text-decoration: underline;">Yuvanesh KS (@North-Abyss)</a>
+        <span class="google-icon material-symbols-outlined brand-logo-icon" title="Universal Design Theme Palette" aria-label="Palette Icon" role="img">palette</span>
+        <div class="brand-text-block">
+          <div class="brand-name-row">
+            <span class="brand-name">Universal Themes</span>
+            <span class="preset-count-badge" id="themeCountBadge">31 Themes</span>
+          </div>
+          <div class="brand-author-sub">
+            by <a href="https://github.com/North-Abyss" target="_blank">Yuvanesh KS</a>
           </div>
         </div>
       </div>
 
+      <!-- Center: Sleek Modern Command Search (⌘K) -->
+      <div class="header-search-wrapper">
+        <span class="google-icon material-symbols-outlined search-icon">search</span>
+        <input type="text" id="themeSearchInput" class="header-search-input" placeholder="Search 31 themes, morphisms & styles..." autocomplete="off" spellcheck="false">
+        <span class="search-kbd-shortcut">⌘K</span>
+        <button id="clearSearchBtn" class="clear-search-btn" title="Clear search" style="display: none;">
+          <span class="google-icon material-symbols-outlined" style="font-size: 15px;">close</span>
+        </button>
+      </div>
+
+      <!-- Right: Primary Controls Group -->
       <div class="theme-controls">
-        <!-- 3-Way Mode Switcher: System | Light | Dark -->
+        <!-- 3-Way Mode Switcher (Icon-only compact modern segmented) -->
         <div class="mode-segmented-control" role="radiogroup" aria-label="Theme Appearance Mode">
-          <button id="modeBtnSystem" class="mode-segment-btn active" data-mode="system" title="Follow OS Preference">
-            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">devices</span>
-            <span class="mode-text">System</span>
+          <button id="modeBtnSystem" class="mode-segment-btn active" data-mode="system" title="System / Follow OS Preference">
+            <span class="google-icon material-symbols-outlined">devices</span>
           </button>
-          <button id="modeBtnLight" class="mode-segment-btn" data-mode="light" title="Light Mode Themes">
-            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">light_mode</span>
-            <span class="mode-text">Light</span>
+          <button id="modeBtnLight" class="mode-segment-btn" data-mode="light" title="Light Mode">
+            <span class="google-icon material-symbols-outlined">light_mode</span>
           </button>
-          <button id="modeBtnDark" class="mode-segment-btn" data-mode="dark" title="Dark Mode Themes">
-            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">dark_mode</span>
-            <span class="mode-text">Dark</span>
+          <button id="modeBtnDark" class="mode-segment-btn" data-mode="dark" title="Dark Mode">
+            <span class="google-icon material-symbols-outlined">dark_mode</span>
           </button>
         </div>
 
-        <!-- 1-Click Download Theme CSS -->
-        <button id="btnDownloadActiveTheme" class="action-btn-pill download-pill" title="1-Click Download Standalone CSS for Active Theme">
-          <span class="google-icon material-symbols-outlined" style="font-size: 16px;">download</span>
-          <span>Download CSS</span>
-        </button>
+        <!-- Palette Swapper Popover Dropdown Button -->
+        <div class="palette-popover-container">
+          <button id="paletteMenuBtn" class="palette-menu-btn" title="Famous Website & Retro Color Palettes">
+            <span id="activePaletteDot" class="swatch-indicator" style="background: var(--theme-primary);"></span>
+            <span>Palettes</span>
+            <span class="google-icon material-symbols-outlined dropdown-arrow">arrow_drop_down</span>
+          </button>
 
-        <!-- 1-Click Reset All -->
-        <button id="btnResetAll" class="action-btn-pill reset-pill" title="Reset all palettes, custom tokens, and filters to defaults">
-          <span class="google-icon material-symbols-outlined" style="font-size: 16px;">restart_alt</span>
-          <span>Reset All</span>
-        </button>
-
-        <button id="toggleSidebarBtn" class="studio-toggle-btn" title="Open Modular UI Studio Editor">
-          <span class="google-icon material-symbols-outlined" style="font-size: 18px;">tune</span>
-          <span>UI Studio</span>
-          <span id="customEditedPill" class="custom-edited-pill" style="display:none;" title="Active Custom Modifications"></span>
-        </button>
-
-        <button id="inspectModeBtn" class="inspect-toggle-btn" title="Toggle Inspect on Page Mode">
-          <span class="google-icon material-symbols-outlined" style="font-size: 18px;">ads_click</span>
-          <span>Inspect</span>
-        </button>
+          <!-- Floating Palette Tray Popover -->
+          <div id="paletteDropdownMenu" class="palette-popover-tray">
+            <div class="popover-header">
+              <span class="popover-title">🎨 Famous Web & Retro Palettes</span>
+              <button id="btnResetPalette" class="popover-reset-btn" title="Restore active theme's native colorway">
+                <span class="google-icon material-symbols-outlined" style="font-size: 13px;">restart_alt</span> Reset
+              </button>
+            </div>
+            <div class="popover-grid">
+              <button class="palette-grid-item palette-chip" data-palette="linear">
+                <span class="swatch-dot" style="background: #5E6AD2;"></span>
+                <span>Linear</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="stripe">
+                <span class="swatch-dot" style="background: #635BFF;"></span>
+                <span>Stripe</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="vercel">
+                <span class="swatch-dot" style="background: #0070F3;"></span>
+                <span>Vercel</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="supabase">
+                <span class="swatch-dot" style="background: #3ECF8E;"></span>
+                <span>Supabase</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="notion">
+                <span class="swatch-dot" style="background: #2EAADC;"></span>
+                <span>Notion</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="raycast">
+                <span class="swatch-dot" style="background: #FF6363;"></span>
+                <span>Raycast</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="openai">
+                <span class="swatch-dot" style="background: #10A37F;"></span>
+                <span>ChatGPT</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="figma">
+                <span class="swatch-dot" style="background: #0ACF83;"></span>
+                <span>Figma</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="spotify">
+                <span class="swatch-dot" style="background: #1DB954;"></span>
+                <span>Spotify</span>
+              </button>
+              <button class="palette-grid-item palette-chip" data-palette="discord">
+                <span class="swatch-dot" style="background: #5865F2;"></span>
+                <span>Discord</span>
+              </button>
+              <button class="palette-grid-item palette-chip resurrect-item" data-palette="resurrect-64" title="Resurrect-64 Legendary 64-Color Palette">
+                <span class="swatch-dot" style="background: linear-gradient(135deg, #ea4f36, #0eaf9b, #f9c22b);"></span>
+                <span>Resurrect-64</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
         <!-- Cleanly Categorized Presets Dropdown -->
         <select id="themeSelect" class="theme-select" aria-label="Select Theme Preset">
@@ -3885,129 +4091,95 @@
           </optgroup>
         </select>
 
-        <a href="https://github.com/North-Abyss/ui-themes" target="_blank" class="chip-btn" style="text-decoration: none; background-color: var(--theme-primary); color: var(--theme-on-primary); border-color: var(--theme-primary);" title="Star on GitHub" aria-label="Star on GitHub">
-          <span class="google-icon material-symbols-outlined" style="font-size: 16px;">star</span>
-          <span>Star</span>
+        <!-- UI Studio Toggle -->
+        <button id="toggleSidebarBtn" class="studio-toggle-btn" title="Open Modular UI Studio Editor">
+          <span class="google-icon material-symbols-outlined" style="font-size: 16px;">tune</span>
+          <span>Studio</span>
+          <span id="customEditedPill" class="custom-edited-pill" style="display:none;" title="Active Custom Modifications"></span>
+        </button>
+
+        <!-- Inspect on Page Mode -->
+        <button id="inspectModeBtn" class="tool-icon-btn inspect-icon-btn" title="Toggle Inspect on Page Mode">
+          <span class="google-icon material-symbols-outlined">ads_click</span>
+        </button>
+
+        <!-- 1-Click Download Theme CSS -->
+        <button id="btnDownloadActiveTheme" class="tool-icon-btn download-icon-btn" title="1-Click Download Standalone CSS for Active Theme">
+          <span class="google-icon material-symbols-outlined">download</span>
+        </button>
+
+        <!-- 1-Click Reset All -->
+        <button id="btnResetAll" class="tool-icon-btn reset-icon-btn" title="Reset all palettes, custom tokens, and filters to defaults">
+          <span class="google-icon material-symbols-outlined">restart_alt</span>
+        </button>
+
+        <!-- Star on GitHub -->
+        <a href="https://github.com/North-Abyss/ui-themes" target="_blank" class="tool-icon-btn star-btn" title="Star on GitHub" aria-label="Star on GitHub">
+          <span class="google-icon material-symbols-outlined">star</span>
         </a>
       </div>
     </div>
 
-    <!-- Live Search & Tag Filter Bar -->
-    <div class="search-tag-container">
-      <div style="display: flex; gap: 0.5rem; align-items: center; width: 100%;">
-        <div class="theme-search-box" style="flex: 1;">
-          <span class="google-icon material-symbols-outlined" style="font-size: 17px; color: var(--theme-text-muted);">search</span>
-          <input type="text" id="themeSearchInput" class="theme-search-input" placeholder="Search themes (e.g. glass, dark, retro, paper, spatial, 3d)..." autocomplete="off" spellcheck="false">
-          <button id="clearSearchBtn" class="clear-search-btn" title="Clear search" style="display: none;">
-            <span class="google-icon material-symbols-outlined" style="font-size: 16px;">close</span>
-          </button>
-        </div>
-        <div id="themeCountBadge" style="font-size: 0.72rem; font-weight: 700; color: var(--theme-text-muted); white-space: nowrap; padding: 0.25rem 0.55rem; background: var(--theme-surface-container); border-radius: 9999px; border: var(--theme-border-subtle);">
-          31 Presets
-        </div>
+    <!-- Tier 2: Unified Interactive Dock (Category Pills + Chips Track in 1 Sleek Row) -->
+    <div class="header-dock-row">
+      <!-- Tag Filter Pills -->
+      <div class="dock-tags-group" role="tablist" aria-label="Theme Tag Filters">
+        <button class="dock-tag-pill tag-filter-pill active" data-tag="all">All</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="light">☀️ Light</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="dark">🌙 Dark</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="glass">🫧 Glass</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="neumorph">🧱 Neu</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="clay">🗿 Clay</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="brutal">📐 Brutal</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="spatial">🕶️ Spatial</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="cyber">⚡ Cyber</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="dev">💻 Dev</button>
+        <button class="dock-tag-pill tag-filter-pill" data-tag="editorial">📰 Paper</button>
       </div>
-      <div class="theme-tags-track" role="tablist" aria-label="Theme Tag Filters">
-        <button class="tag-filter-pill active" data-tag="all">All (31)</button>
-        <button class="tag-filter-pill" data-tag="light">☀️ Light</button>
-        <button class="tag-filter-pill" data-tag="dark">🌙 Dark</button>
-        <button class="tag-filter-pill" data-tag="glass">🫧 Glass</button>
-        <button class="tag-filter-pill" data-tag="neumorph">🧱 Neumorph</button>
-        <button class="tag-filter-pill" data-tag="clay">🗿 Clay</button>
-        <button class="tag-filter-pill" data-tag="brutal">📐 Brutal</button>
-        <button class="tag-filter-pill" data-tag="spatial">🕶️ Spatial</button>
-        <button class="tag-filter-pill" data-tag="cyber">⚡ Cyber</button>
-        <button class="tag-filter-pill" data-tag="dev">💻 Dev</button>
-        <button class="tag-filter-pill" data-tag="editorial">📰 Editorial</button>
-      </div>
-    </div>
 
-    <!-- Swipeable Horizontal Quick Chips Track -->
-    <div class="theme-chips-wrapper">
-      <div class="theme-chips" id="themeChipsTrack">
-        <!-- Light Presets -->
-        <button class="chip-btn" data-set-theme="material3" data-mode="light" data-tags="light google modern">☀️ M3 Light</button>
-        <button class="chip-btn" data-set-theme="minimal-mono" data-mode="light" data-tags="light mono minimal lineart">Minimal Mono</button>
-        <button class="chip-btn" data-set-theme="glass-light" data-mode="light" data-tags="light glass frosted blur">Glass Light</button>
-        <button class="chip-btn" data-set-theme="claymorphism" data-mode="light" data-tags="light clay 3d soft puffy">Claymorphism</button>
-        <button class="chip-btn" data-set-theme="neobrutalism" data-mode="light" data-tags="light brutal bold pop">Neo-Brutal</button>
-        <button class="chip-btn" data-set-theme="neumorphism" data-mode="light" data-tags="light neumorph soft extruded">Neumorphism</button>
-        <button class="chip-btn" data-set-theme="skeuomorphism" data-mode="light" data-tags="light skeuo tactile braun vintage">Skeuo Light</button>
-        <button class="chip-btn" data-set-theme="e-ink" data-mode="light" data-tags="light editorial mono paper distraction-free">📖 E-Ink Paper</button>
-        <button class="chip-btn" data-set-theme="swiss-style" data-mode="light" data-tags="light editorial brutal grid modern">🇨🇭 Swiss 2.0</button>
-        <button class="chip-btn" data-set-theme="nord-frost" data-mode="light" data-tags="light polar arctic clean">Nord Frost</button>
-        <button class="chip-btn" data-set-theme="papercraft" data-mode="light" data-tags="light editorial paper origami">Papercraft</button>
-        <!-- Dark & Spatial Presets -->
-        <button class="chip-btn" data-set-theme="material3-dark" data-mode="dark" data-tags="dark google modern">🌙 M3 Dark</button>
-        <button class="chip-btn" data-set-theme="minimal-dark" data-mode="dark" data-tags="dark mono minimal lineart">Minimal Dark</button>
-        <button class="chip-btn" data-set-theme="glassmorphism" data-mode="dark" data-tags="dark glass frosted blur">Glass Dark</button>
-        <button class="chip-btn" data-set-theme="clay-dark" data-mode="dark" data-tags="dark clay 3d soft inflatable">Clay Dark</button>
-        <button class="chip-btn" data-set-theme="neobrutalism-dark" data-mode="dark" data-tags="dark brutal bold pop">Neo Dark</button>
-        <button class="chip-btn" data-set-theme="neu-dark" data-mode="dark" data-tags="dark neumorph soft extruded">Neu Dark</button>
-        <button class="chip-btn" data-set-theme="skeuo-dark" data-mode="dark" data-tags="dark skeuo tactile calculator retro">Skeuo Dark</button>
-        <button class="chip-btn" data-set-theme="visionos" data-mode="dark" data-tags="dark spatial glass apple specular vision">🕶️ visionOS</button>
-        <button class="chip-btn" data-set-theme="vaporwave" data-mode="dark" data-tags="dark cyber retro neon synthwave">🌆 Vaporwave</button>
-        <button class="chip-btn" data-set-theme="bento-modern" data-mode="dark" data-tags="dark bento saas linear modern">Bento Dark</button>
-        <button class="chip-btn" data-set-theme="cyberpunk" data-mode="dark" data-tags="dark cyber neon hud synthwave">Cyberpunk</button>
-        <button class="chip-btn" data-set-theme="aurora-glow" data-mode="dark" data-tags="dark spatial aurora glow gradient">Aurora Glow</button>
-        <button class="chip-btn" data-set-theme="frutiger-aero" data-mode="dark" data-tags="dark glass y2k glossy bubble">Frutiger Aero</button>
-        <button class="chip-btn" data-set-theme="phosphor-terminal" data-mode="dark" data-tags="dark cyber terminal crt retro">Phosphor CRT</button>
-        <button class="chip-btn" data-set-theme="oled-black" data-mode="dark" data-tags="dark oled pitch minimalist black">OLED Black</button>
-        <button class="chip-btn" data-set-theme="retro-90s" data-mode="dark" data-tags="dark retro 90s win95 chrome">Retro 90s</button>
-        <!-- Developer Presets -->
-        <button class="chip-btn" data-set-theme="tokyo-night" data-mode="dark" data-tags="dark dev tokyo folke neovim code">💻 Tokyo Night</button>
-        <button class="chip-btn" data-set-theme="catppuccin-mocha" data-mode="dark" data-tags="dark dev pastel catppuccin code">Catppuccin</button>
-        <button class="chip-btn" data-set-theme="dracula" data-mode="dark" data-tags="dark dev dracula gothic code">Dracula</button>
-        <button class="chip-btn" data-set-theme="github-dark" data-mode="dark" data-tags="dark dev github primer code">GitHub Dark</button>
-        <button class="chip-btn" data-set-theme="vscode-dark" data-mode="dark" data-tags="dark dev vscode modern code">VS Code</button>
-        <button class="chip-btn" data-set-theme="one-dark" data-mode="dark" data-tags="dark dev atom onedark code">One Dark</button>
-        <button class="chip-btn" data-set-theme="solarized-dark" data-mode="dark" data-tags="dark dev solarized precision lab code">Solarized Dark</button>
-      </div>
-    </div>
+      <div class="dock-divider" aria-hidden="true"></div>
 
-    <!-- Famous Website & Retro Palette Swapper Ribbon -->
-    <div class="palette-swapper-bar">
-      <div class="palette-bar-label">
-        <span class="google-icon material-symbols-outlined" style="font-size: 15px; color: var(--theme-primary);">palette</span>
-        <span>Palettes:</span>
-      </div>
-      <div class="palette-chips-scroll" id="paletteChipsScroll">
-        <button class="palette-chip" data-palette="linear" title="Linear SaaS Indigo & Obsidian">
-          <span class="swatch" style="background: #5E6AD2;"></span>Linear
-        </button>
-        <button class="palette-chip" data-palette="stripe" title="Stripe Radiant Indigo & Slate">
-          <span class="swatch" style="background: #635BFF;"></span>Stripe
-        </button>
-        <button class="palette-chip" data-palette="vercel" title="Vercel Monochrome & Geist Cyan">
-          <span class="swatch" style="background: #0070F3;"></span>Vercel
-        </button>
-        <button class="palette-chip" data-palette="supabase" title="Supabase Emerald & Pitch">
-          <span class="swatch" style="background: #3ECF8E;"></span>Supabase
-        </button>
-        <button class="palette-chip" data-palette="notion" title="Notion Warm Canvas & Charcoal Accent">
-          <span class="swatch" style="background: #2EAADC;"></span>Notion
-        </button>
-        <button class="palette-chip" data-palette="raycast" title="Raycast Prompt Red & Deep Obsidian">
-          <span class="swatch" style="background: #FF6363;"></span>Raycast
-        </button>
-        <button class="palette-chip" data-palette="openai" title="OpenAI ChatGPT Emerald & Charcoal">
-          <span class="swatch" style="background: #10A37F;"></span>ChatGPT
-        </button>
-        <button class="palette-chip" data-palette="figma" title="Figma Vibrant Mint & Dark Slate">
-          <span class="swatch" style="background: #0ACF83;"></span>Figma
-        </button>
-        <button class="palette-chip" data-palette="spotify" title="Spotify Electric Green & Dark Charcoal">
-          <span class="swatch" style="background: #1DB954;"></span>Spotify
-        </button>
-        <button class="palette-chip" data-palette="discord" title="Discord Blurple & Space Gray">
-          <span class="swatch" style="background: #5865F2;"></span>Discord
-        </button>
-        <button class="palette-chip" data-palette="resurrect-64" title="Resurrect-64 Legendary 64-Color Palette (Lospec)">
-          <span class="swatch" style="background: linear-gradient(135deg, #ea4f36, #0eaf9b, #f9c22b);"></span>Resurrect-64
-        </button>
-        <button id="btnResetPalette" class="palette-reset-btn" title="Reset to active theme native palette">
-          <span class="google-icon material-symbols-outlined" style="font-size: 14px;">restart_alt</span>
-          <span>Reset Palette</span>
-        </button>
+      <!-- Swipeable Horizontal Quick Chips Track -->
+      <div class="theme-chips-wrapper">
+        <div class="theme-chips" id="themeChipsTrack">
+          <!-- Light Presets -->
+          <button class="chip-btn" data-set-theme="material3" data-mode="light" data-tags="light google modern">☀️ M3 Light</button>
+          <button class="chip-btn" data-set-theme="minimal-mono" data-mode="light" data-tags="light mono minimal lineart">Minimal Mono</button>
+          <button class="chip-btn" data-set-theme="glass-light" data-mode="light" data-tags="light glass frosted blur">Glass Light</button>
+          <button class="chip-btn" data-set-theme="claymorphism" data-mode="light" data-tags="light clay 3d soft puffy">Claymorphism</button>
+          <button class="chip-btn" data-set-theme="neobrutalism" data-mode="light" data-tags="light brutal bold pop">Neo-Brutal</button>
+          <button class="chip-btn" data-set-theme="neumorphism" data-mode="light" data-tags="light neumorph soft extruded">Neumorphism</button>
+          <button class="chip-btn" data-set-theme="skeuomorphism" data-mode="light" data-tags="light skeuo tactile braun vintage">Skeuo Light</button>
+          <button class="chip-btn" data-set-theme="e-ink" data-mode="light" data-tags="light editorial mono paper distraction-free">📖 E-Ink Paper</button>
+          <button class="chip-btn" data-set-theme="swiss-style" data-mode="light" data-tags="light editorial brutal grid modern">🇨🇭 Swiss 2.0</button>
+          <button class="chip-btn" data-set-theme="nord-frost" data-mode="light" data-tags="light polar arctic clean">Nord Frost</button>
+          <button class="chip-btn" data-set-theme="papercraft" data-mode="light" data-tags="light editorial paper origami">Papercraft</button>
+          <!-- Dark & Spatial Presets -->
+          <button class="chip-btn" data-set-theme="material3-dark" data-mode="dark" data-tags="dark google modern">🌙 M3 Dark</button>
+          <button class="chip-btn" data-set-theme="minimal-dark" data-mode="dark" data-tags="dark mono minimal lineart">Minimal Dark</button>
+          <button class="chip-btn" data-set-theme="glassmorphism" data-mode="dark" data-tags="dark glass frosted blur">Glass Dark</button>
+          <button class="chip-btn" data-set-theme="clay-dark" data-mode="dark" data-tags="dark clay 3d soft inflatable">Clay Dark</button>
+          <button class="chip-btn" data-set-theme="neobrutalism-dark" data-mode="dark" data-tags="dark brutal bold pop">Neo Dark</button>
+          <button class="chip-btn" data-set-theme="neu-dark" data-mode="dark" data-tags="dark neumorph soft extruded">Neu Dark</button>
+          <button class="chip-btn" data-set-theme="skeuo-dark" data-mode="dark" data-tags="dark skeuo tactile calculator retro">Skeuo Dark</button>
+          <button class="chip-btn" data-set-theme="visionos" data-mode="dark" data-tags="dark spatial glass apple specular vision">🕶️ visionOS</button>
+          <button class="chip-btn" data-set-theme="vaporwave" data-mode="dark" data-tags="dark cyber retro neon synthwave">🌆 Vaporwave</button>
+          <button class="chip-btn" data-set-theme="bento-modern" data-mode="dark" data-tags="dark bento saas linear modern">Bento Dark</button>
+          <button class="chip-btn" data-set-theme="cyberpunk" data-mode="dark" data-tags="dark cyber neon hud synthwave">Cyberpunk</button>
+          <button class="chip-btn" data-set-theme="aurora-glow" data-mode="dark" data-tags="dark spatial aurora glow gradient">Aurora Glow</button>
+          <button class="chip-btn" data-set-theme="frutiger-aero" data-mode="dark" data-tags="dark glass y2k glossy bubble">Frutiger Aero</button>
+          <button class="chip-btn" data-set-theme="phosphor-terminal" data-mode="dark" data-tags="dark cyber terminal crt retro">Phosphor CRT</button>
+          <button class="chip-btn" data-set-theme="oled-black" data-mode="dark" data-tags="dark oled pitch minimalist black">OLED Black</button>
+          <button class="chip-btn" data-set-theme="retro-90s" data-mode="dark" data-tags="dark retro 90s win95 chrome">Retro 90s</button>
+          <!-- Developer Presets -->
+          <button class="chip-btn" data-set-theme="tokyo-night" data-mode="dark" data-tags="dark dev tokyo folke neovim code">💻 Tokyo Night</button>
+          <button class="chip-btn" data-set-theme="catppuccin-mocha" data-mode="dark" data-tags="dark dev pastel catppuccin code">Catppuccin</button>
+          <button class="chip-btn" data-set-theme="dracula" data-mode="dark" data-tags="dark dev dracula gothic code">Dracula</button>
+          <button class="chip-btn" data-set-theme="github-dark" data-mode="dark" data-tags="dark dev github primer code">GitHub Dark</button>
+          <button class="chip-btn" data-set-theme="vscode-dark" data-mode="dark" data-tags="dark dev vscode modern code">VS Code</button>
+          <button class="chip-btn" data-set-theme="one-dark" data-mode="dark" data-tags="dark dev atom onedark code">One Dark</button>
+          <button class="chip-btn" data-set-theme="solarized-dark" data-mode="dark" data-tags="dark dev solarized precision lab code">Solarized Dark</button>
+        </div>
       </div>
     </div>
   </header>
@@ -5329,6 +5501,28 @@
     // Palette Swapper Engine (Famous Web Palettes & Resurrect-64)
     // =========================================================================
     let currentActivePalette = localStorage.getItem('pt-active-palette') || null;
+    const paletteMenuBtn = document.getElementById('paletteMenuBtn');
+    const paletteContainer = document.querySelector('.palette-popover-container');
+    const activePaletteDot = document.getElementById('activePaletteDot');
+
+    if (paletteMenuBtn && paletteContainer) {
+      paletteMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        paletteContainer.classList.toggle('open');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!paletteContainer.contains(e.target)) {
+          paletteContainer.classList.remove('open');
+        }
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          paletteContainer.classList.remove('open');
+        }
+      });
+    }
 
     function applyPalette(paletteKey, saveStorage = true) {
       const p = FAMOUS_PALETTES[paletteKey];
@@ -5340,9 +5534,17 @@
         document.documentElement.style.setProperty(prop, val);
       }
 
+      if (activePaletteDot && p.tokens['--theme-primary']) {
+        activePaletteDot.style.background = p.tokens['--theme-primary'];
+      }
+
       document.querySelectorAll('.palette-chip').forEach(chip => {
         chip.classList.toggle('active', chip.getAttribute('data-palette') === paletteKey);
       });
+
+      if (paletteContainer) {
+        paletteContainer.classList.remove('open');
+      }
 
       readActiveThemeValuesToSidebar();
       showToast(`Applied ${p.name} palette!`, 'palette');
@@ -5358,7 +5560,15 @@
       currentActivePalette = null;
       if (saveStorage) localStorage.removeItem('pt-active-palette');
 
+      if (activePaletteDot) {
+        activePaletteDot.style.background = 'var(--theme-primary)';
+      }
+
       document.querySelectorAll('.palette-chip').forEach(chip => chip.classList.remove('active'));
+      if (paletteContainer) {
+        paletteContainer.classList.remove('open');
+      }
+
       readActiveThemeValuesToSidebar();
       showToast('Restored native theme palette', 'restart_alt');
     }
@@ -5524,6 +5734,17 @@
         if (themeSearchInput) themeSearchInput.focus();
       });
     }
+
+    // Global Command Search shortcut (⌘K or Ctrl+K)
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (themeSearchInput) {
+          themeSearchInput.focus();
+          themeSearchInput.select();
+        }
+      }
+    });
 
     tagFilterPills.forEach(pill => {
       pill.addEventListener('click', () => {
