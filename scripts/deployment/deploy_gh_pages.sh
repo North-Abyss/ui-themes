@@ -146,6 +146,9 @@ fi
 if [[ -d "assets" ]]; then
     cp -r assets "$TEMP_WORKTREE"/
 fi
+if [[ -d "docs" ]]; then
+    cp -r docs "$TEMP_WORKTREE"/
+fi
 if [[ -f "README.md" ]]; then
     cp README.md "$TEMP_WORKTREE"/
 fi

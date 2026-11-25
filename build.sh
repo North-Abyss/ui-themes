@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # UI Themes Distribution Bundler (build.sh)
-# Author: Yuvanesh KS (@North-Abyss)
+# Author: @North-Abyss (Public UI Template of PT)
 # License: MIT
 # Compiles src/ tokens and presets into production CSS bundles in dist/
 # ==============================================================================

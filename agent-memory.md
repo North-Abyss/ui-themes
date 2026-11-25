@@ -10,13 +10,14 @@
 
 | Field | Value |
 |---|---|
-| **Project Name** | Universal UI Themes |
-| **Description** | Zero-Dependency Vanilla CSS Design Tokens & 22 Production Theme Presets |
+| **Project Name** | Universal UI Themes (Public UI Template of PT) |
+| **Description** | Zero-Dependency Vanilla CSS Design Tokens, 34 Production Theme Presets & 11 Curated Palettes |
 | **Primary Stack** | Pure Vanilla CSS Custom Properties, HTML5, Bash Bundler |
-| **Primary Branch** | `main` (or `core`) |
+| **Primary Branch** | `main` |
 | **Repository URL** | https://github.com/North-Abyss/ui-themes |
-| **Lead / Author** | Yuvanesh KS (@North-Abyss) |
-| **Target Platforms** | Web, Mobile, Desktop, Framework-Agnostic (React, Vue, Svelte, Astro, HTML) (e.g. Web / Desktop / Mobile / Cloud) |
+| **Live Showcase** | https://north-abyss.github.io/ui-themes/ |
+| **Maintainer** | [@North-Abyss](https://github.com/North-Abyss) ([Portfolio](https://north-abyss.github.io/Portfolio)) |
+| **Target Platforms** | Web, Mobile, Desktop, Framework-Agnostic (React, Vue, Svelte, Astro, HTML) |
 
 ---
 
@@ -64,15 +65,15 @@ Before executing any task, consult files in this exact sequence:
 ## 4. Architectural Decisions Record (ADR)
 Record significant architectural choices here (Date, Decision, Reason, Trade-offs):
 
-- **ADR-001 [{{INITIAL_DATE}}]: Project Initialization**
-  - **Decision:** Adopted universal project template structure.
+- **ADR-001 [2026-10-14]: Project Initialization**
+  - **Decision:** Adopted Public UI Template of PT structure.
   - **Context:** Bootstrapped repository using standardized directory governance and AI agent integration guidelines.
   - **Status:** APPROVED.
 
 - **ADR-002 [2026-10-14]: Modular Source Architecture & Layered Governance**
-  - **Decision:** Partitioned `src/` into 6 isolated layers (`frontend/`, `backend/`, `database/`, `integrations/`, `shared/`, `themes/`) with strict Anti-Corruption Layer (ACL) and theme token rules.
-  - **Context:** Standardize code organization across multi-stack projects (e.g. ECOM-SAA, PT) to prevent circular imports, isolate external vendor APIs, and prevent design token drift.
-  - **Status:** APPROVED. Standard documented in `src/ARCHITECTURE.md` and `docs/architecture/codebase_architecture_policy.md`.
+  - **Decision:** Partitioned `src/` around clean token and preset CSS layers (`src/tokens/`, `src/presets/`, `src/index.css`) with strict design token rules.
+  - **Context:** Standardize UI styling across multi-stack web/desktop projects powered by PT to prevent hardcoded color drift.
+  - **Status:** APPROVED.
 
 - **ADR-003 [2026-10-21]: Directory Governance & Workspace Scratchpad Standard**
   - **Decision:** Formalized full directory governance in `docs/guides/directory_governance_guide.md` and created `workspace/README.md` with explicit subdirectories (`archive/`, `docs/`, `repos/`, `tmp/`). Configured `.gitignore` to track directory scaffolding while ignoring all scratch contents.
@@ -100,13 +101,18 @@ Record significant architectural choices here (Date, Decision, Reason, Trade-off
   - **Status:** APPROVED.
 
 - **ADR-008 [2026-10-30]: Context Shielding, Remote Safety Gate, Native Git Hooks & Product Blueprint**
-  - **Decision:** Implemented AI context window shielding via `.cursorignore` and `.agentignore` to strip 250+ KB lockfiles and build directories, cutting agent token consumption by 50–80%. Enhanced `hook_safety_gate.py` to intercept unauthorized remote network commands (`ssh`, `scp`, `rsync.*@`). Established zero-dependency native pre-commit quality gate (`.githooks/pre-commit` via `git config core.hooksPath .githooks`). Created zero-dependency environment variable parity auditor (`scripts/dev/verify_env.py`). Introduced canonical high-level product blueprint template (`docs/APP_SPEC.md.template`) and full-stack Docker Compose starters in `config/docker/` mounting `./workspace/data`.
-  - **Context:** Cross-project audit of downstream repositories (`ggs-hotelMS`, `ECOM-SAA`, `Project-Proteus`) revealed real-world friction where agents wasted tokens parsing lockfiles, projects lacked high-level product architecture templates, and agents risked executing remote SSH commands without human confirmation.
+  - **Decision:** Implemented AI context window shielding via `.cursorignore` and `.agentignore` to strip lockfiles and build directories. Enhanced `hook_safety_gate.py` to intercept destructive or remote network commands. Established native pre-commit quality checks and standardized template tooling.
+  - **Context:** Real-world usage across PT-derived applications revealed that stripping lockfiles cuts agent token consumption and strict hooks safeguard repositories.
   - **Status:** APPROVED.
 
-- **ADR-009 [2026-11-01]: Universal Theme Engine, UI Modular Studio & SEO / 4:5 Social Preview**
-  - **Decision:** Codified 22 production theme presets (8 Light, 7 Dark & Spatial, 7 Legendary Developer themes) in pure CSS with `--theme-name` and `--theme-mode` tokens. Integrated UI Modular Studio with desktop side-by-side docking (`body.studio-docked { padding-right: 460px; }` with zero backdrop dimming) for unobstructed live editing, real-time token sliders, live HTML & CSS injection, and standalone export. Added a 3-way Mode Switcher (`System`, `Light`, `Dark`) with OS media query listener. Configured full SEO suite with canonical URL `https://north-abyss.github.io/ui-themes/` and an exact 4:5 aspect ratio (1080x1350) social preview card (`assets/social-preview-4x5.png`). Provided downstream sync client (`sync-ui-themes.sh`) and integrated automated GitHub Pages deployment into `git-sync.sh` (`--deploy-gh-pages`).
-  - **Context:** User requirements for a production-grade UI design system template with live interactive customization, authentic developer theme reproduction (Tokyo Night, Catppuccin, Dracula, GitHub Dark), clean mode defaults, and seamless downstream project synchronization.
+- **ADR-009 [2026-11-01]: Universal Theme Engine, UI Modular Studio & SEO / 5:4 Social Preview**
+  - **Decision:** Codified production theme presets in pure CSS with `--theme-name` and `--theme-mode` tokens. Integrated UI Modular Studio with desktop side-by-side docking, real-time token sliders, live HTML & CSS injection, and standalone export. Added a 3-way Mode Switcher (`System`, `Light`, `Dark`) with OS media query listener, SEO suite with canonical URL `https://north-abyss.github.io/ui-themes/`, 5:4 social preview card (`assets/social-preview-5x4.png`), and downstream sync client (`sync-ui-themes.sh`).
+  - **Context:** Needed a public, zero-dependency UI PT template with live interactive customization and seamless downstream synchronization.
+  - **Status:** APPROVED.
+
+- **ADR-010 [2026-11-25]: 34 Theme Presets, 11 Famous Palettes, Left Theme Explorer & Public Template Docs**
+  - **Decision:** Expanded catalog to 34 active presets across 27 modular preset files (12 Light, 14 Modern Dark/Spatial, 8 Developer Syntax) plus 11 Famous Website & Retro Palettes (including Resurrect-64). Added Left Theme Explorer drawer (`⌘B`, live `⌘K` search, High-Contrast, Compact Density, Surprise Me, JSON/CSS export), expanded form components, and documented full theme & palette hex values in `README.md` and `docs/THEMES_AND_PALETTES.md`. Sanitized public tree as the Public UI Template of PT.
+  - **Context:** Make themes and palettes effortless to browse, copy, customize, and consume publicly.
   - **Status:** APPROVED.
 
 
@@ -143,7 +149,7 @@ graph TD
 - **Current Phase:** Phase 0 — Project Setup & Architecture Scaffolding
 - **Active Milestones:**
   - [x] Template initialization and directory structure
-  - [x] Universal UI theme engine (22 presets: 15 morphisms + 7 famous developer themes with Google Icons)
+  - [x] Universal UI theme engine (34 presets + 11 famous palettes with Material Symbols)
   - [x] What & Why documentation standard & governance tooling (8 on-demand skills, verify_template.mjs, verify_code_rules.py)
   - [x] MCP audit artifact governance (`workspace/audit/`), Antigravity lifecycle hooks (`.agents/hooks.json`), and 10 on-demand skills
   - [ ] Core environment and dependency setup

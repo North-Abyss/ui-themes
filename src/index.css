@@ -31,11 +31,17 @@
 @import "./presets/20_dracula.css";
 @import "./presets/21_one_dark_pro.css";
 @import "./presets/22_solarized_dark.css";
+@import "./presets/23_skeuomorphism.css";
+@import "./presets/24_spatial_visionos.css";
+@import "./presets/25_e_ink_paper.css";
+@import "./presets/26_swiss_modernism.css";
+@import "./presets/27_vaporwave.css";
 
 /* 3. Default Fallback Binding (Only applies when data-theme is NOT specified) */
 :root:not([data-theme]),
 :root[data-theme="default"] {
   --theme-name: "Material 3 Light (Default)";
+  --theme-mode: light;
   --theme-bg: var(--pal-neutral-98);
   --theme-bg-subtle: var(--pal-neutral-95);
   

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # Universal UI Themes Sync & Distribution Script (sync-ui-themes.sh)
-# Author: Yuvanesh KS (@North-Abyss)
+# Public UI Template of PT • @North-Abyss (https://north-abyss.github.io/Portfolio)
 # Repository: https://github.com/North-Abyss/ui-themes
 #
 # Use this script in any other project to install or stay updated with
-# the latest Universal UI Themes CSS bundles (22 production presets & tokens).
+# the latest Universal UI Themes CSS bundles (34 production presets & tokens).
 #
 # Usage:
 #   ./sync-ui-themes.sh [options]
@@ -30,7 +30,7 @@ BOLD='\033[1m'
 NC='\033[0m'
 
 UPSTREAM_RAW="https://raw.githubusercontent.com/North-Abyss/ui-themes/main"
-LOCAL_FALLBACK="/mnt/sda5/Projects/UI-Template"
+LOCAL_FALLBACK="${UI_THEMES_LOCAL_DIR:-}"
 TARGET_DIR=""
 MINIFIED_ONLY=false
 CHECK_ONLY=false
@@ -89,8 +89,8 @@ fetch_file() {
     local filename="$1"
     local dest_path="$TARGET_DIR/$filename"
 
-    # 1. Try local repository if available
-    if [[ -d "$LOCAL_FALLBACK/dist" && -f "$LOCAL_FALLBACK/dist/$filename" ]]; then
+    # 1. Try optional local repository override if provided
+    if [[ -n "$LOCAL_FALLBACK" && -d "$LOCAL_FALLBACK/dist" && -f "$LOCAL_FALLBACK/dist/$filename" ]]; then
         cp "$LOCAL_FALLBACK/dist/$filename" "$dest_path"
         echo -e "  ${GREEN}✓ Synced from local master template:${NC} $dest_path ($(wc -c < "$dest_path") bytes)"
         return 0
@@ -128,7 +128,7 @@ fetch_file "$CSS_MIN"
 
 echo -e "\n${BOLD}${GREEN}✨ Universal UI Themes successfully synced!${NC}"
 echo -e "${BLUE}----------------------------------------------------------------${NC}"
-echo -e "To activate any of the 22 themes in your project HTML:"
+echo -e "To activate any of the 34 themes in your project HTML:"
 echo -e "  1. Include stylesheet: ${YELLOW}<link rel=\"stylesheet\" href=\"${TARGET_DIR}/${CSS_MIN}\">${NC}"
 echo -e "  2. Set active theme:   ${YELLOW}<html data-theme=\"tokyo-night\">${NC} (or material3, catppuccin-mocha, etc.)"
 echo -e "${BLUE}================================================================${NC}\n"

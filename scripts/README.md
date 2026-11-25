@@ -1,4 +1,4 @@
-# Scripts Reference Manual — {{PROJECT_NAME}}
+# Scripts Reference Manual — Universal UI Themes (Public UI Template of PT)
 
 > **Upstream Master:** [North-Abyss/PT](https://github.com/North-Abyss/PT)  
 > **Related Documentation:** [agent-rules.md](agent-rules.md) | [src/ARCHITECTURE.md](src/ARCHITECTURE.md)
