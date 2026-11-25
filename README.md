@@ -173,10 +173,12 @@ chmod +x build.sh
 ./build.sh
 ```
 
-To commit and deploy the live showcase to GitHub Pages:
+To commit, push to `main` (which automatically deploys GitHub Pages from `/`), or publish a versioned release:
 
 ```bash
-./git-sync.sh --sync -m "chore: update themes" --deploy-gh-pages
+./git-sync.sh --sync -m "chore: update themes"
+# Or publish a tagged release:
+./git-sync.sh --sync -t v1.0.0
 ```
 
 ---
