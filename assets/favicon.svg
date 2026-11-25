@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Minimal 2D Mono Dark Container -->
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0A0A0A" stroke="#333333" stroke-width="2"/>
+  <!-- Minimal 2D Mono Light Container (Inverted) -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="2"/>
 
-  <!-- Outlined Paint Palette Pad (Black Body + Crisp White Outline) -->
+  <!-- Outlined Paint Palette Pad (White Body + Crisp Black Outline) -->
   <g transform="translate(8, 8) scale(2)">
     <path
       d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10c1.38 0 2.5-1.12 2.5-2.5 0-.61-.23-1.2-.64-1.67-.08-.1-.13-.21-.13-.33 0-.28.22-.5.5-.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9z"
-      fill="#000000"
-      stroke="#FFFFFF"
+      fill="#FFFFFF"
+      stroke="#000000"
       stroke-width="1.6"
       stroke-linejoin="round"
     />
     <!-- Four Paint Wells -->
-    <circle cx="6.5" cy="11.5" r="1.45" fill="#FFFFFF"/>
-    <circle cx="9.5" cy="7.5" r="1.45" fill="#FFFFFF"/>
-    <circle cx="14.5" cy="7.5" r="1.45" fill="#FFFFFF"/>
-    <circle cx="17.5" cy="11.5" r="1.45" fill="#FFFFFF"/>
+    <circle cx="6.5" cy="11.5" r="1.45" fill="#000000"/>
+    <circle cx="9.5" cy="7.5" r="1.45" fill="#000000"/>
+    <circle cx="14.5" cy="7.5" r="1.45" fill="#000000"/>
+    <circle cx="17.5" cy="11.5" r="1.45" fill="#000000"/>
   </g>
 </svg>

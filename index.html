@@ -2325,7 +2325,8 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      gap: 0.75rem;
+      gap: 0.65rem;
+      row-gap: 0.45rem;
       flex-wrap: nowrap;
     }
 
@@ -2333,8 +2334,9 @@
     .header-left-group {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.55rem;
       flex-shrink: 0;
+      order: 1;
     }
 
     .header-explorer-btn {
@@ -2417,31 +2419,37 @@
     .header-center-group {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      flex-shrink: 1;
+      gap: 0.45rem;
+      flex: 0 1 auto;
+      order: 2;
       min-width: 0;
     }
 
     .header-category-select, .theme-select {
-      padding: 0.36rem 0.65rem;
+      padding: 0.36rem 0.6rem;
       border-radius: min(var(--theme-btn-radius, 8px), 10px);
       border: 1.5px solid var(--theme-border-color, rgba(127,127,127,0.3));
       background-color: var(--theme-surface);
       color: var(--theme-text);
       font-family: inherit;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
       outline: none;
       transition: all 0.2s ease;
       box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      min-width: 0;
+      text-overflow: ellipsis;
+    }
+    .header-category-select {
+      max-width: 155px;
     }
     .header-category-select:focus, .theme-select:focus,
     .header-category-select:hover, .theme-select:hover {
       border-color: var(--theme-primary);
     }
     .theme-select {
-      max-width: 210px;
+      max-width: 195px;
     }
 
     /* 3-Way Mode Segmented Control */
@@ -2622,8 +2630,9 @@
     .header-right-group {
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
       flex-shrink: 0;
+      order: 3;
     }
 
     .studio-toggle-btn {
@@ -2762,15 +2771,17 @@
     .explorer-drawer.open {
       transform: translateX(0);
     }
-    body.explorer-docked {
-      padding-left: min(390px, 28vw);
-    }
-    body.explorer-docked .explorer-drawer {
-      transform: translateX(0);
-      box-shadow: 2px 0 12px rgba(0, 0, 0, 0.06);
-    }
-    body.explorer-docked .explorer-backdrop {
-      display: none !important;
+    @media (min-width: 1024px) {
+      body.explorer-docked {
+        padding-left: min(370px, 27vw);
+      }
+      body.explorer-docked .explorer-drawer {
+        transform: translateX(0);
+        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.06);
+      }
+      body.explorer-docked .explorer-backdrop {
+        display: none !important;
+      }
     }
 
     .explorer-header {
@@ -4364,29 +4375,113 @@
       opacity: 1;
     }
 
-    /* Media Queries for Mobile Responsiveness */
-    @media (max-width: 1080px) {
-      .header-action-pill .action-btn-text {
+    /* =========================================================================
+       Responsive Header & Docked Drawer Layouts (Zero Overlap Across All Widths)
+       ========================================================================= */
+    /* Compact button labels on standard laptops & whenever a drawer is docked */
+    @media (max-width: 1400px) {
+      .header-action-pill .action-btn-text,
+      .header-explorer-btn .btn-shortcut {
         display: none;
       }
       .header-action-pill {
         padding: 0.36rem 0.55rem;
       }
-      .theme-select {
-        max-width: 150px;
-      }
-    }
-    @media (max-width: 860px) {
       .header-category-select {
-        display: none;
-      }
-      .header-action-pill.action-star {
-        display: none;
-      }
-      .theme-select {
         max-width: 135px;
       }
+      .theme-select {
+        max-width: 165px;
+      }
     }
+
+    body.studio-docked .header-action-pill .action-btn-text,
+    body.studio-docked .header-explorer-btn .btn-shortcut,
+    body.explorer-docked .header-action-pill .action-btn-text,
+    body.explorer-docked .header-explorer-btn .btn-shortcut {
+      display: none;
+    }
+    body.studio-docked .header-action-pill,
+    body.explorer-docked .header-action-pill {
+      padding: 0.36rem 0.55rem;
+    }
+
+    /* Clean 2-row wrapped header when narrow OR when docked sidebars leave <1050px */
+    @media (max-width: 1060px) {
+      .header-main-bar {
+        flex-wrap: wrap;
+      }
+      .header-right-group {
+        order: 2;
+        margin-left: auto;
+      }
+      .header-center-group {
+        order: 3;
+        flex: 1 1 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding-top: 0.4rem;
+        border-top: 1px solid rgba(127, 127, 127, 0.14);
+      }
+      .header-category-select {
+        max-width: 160px;
+      }
+      .theme-select {
+        max-width: 210px;
+        flex: 1 1 150px;
+      }
+    }
+
+    @media (min-width: 1024px) and (max-width: 1520px) {
+      body.studio-docked .header-main-bar,
+      body.explorer-docked .header-main-bar {
+        flex-wrap: wrap;
+      }
+      body.studio-docked .header-right-group,
+      body.explorer-docked .header-right-group {
+        order: 2;
+        margin-left: auto;
+      }
+      body.studio-docked .header-center-group,
+      body.explorer-docked .header-center-group {
+        order: 3;
+        flex: 1 1 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding-top: 0.4rem;
+        border-top: 1px solid rgba(127, 127, 127, 0.14);
+      }
+      body.studio-docked .theme-select,
+      body.explorer-docked .theme-select {
+        max-width: 210px;
+        flex: 1 1 150px;
+      }
+    }
+
+    /* When BOTH left Explorer and right Studio are pinned simultaneously */
+    @media (min-width: 1024px) {
+      body.studio-docked.explorer-docked .header-main-bar {
+        flex-wrap: wrap;
+      }
+      body.studio-docked.explorer-docked .header-right-group {
+        order: 2;
+        margin-left: auto;
+      }
+      body.studio-docked.explorer-docked .header-center-group {
+        order: 3;
+        flex: 1 1 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding-top: 0.4rem;
+        border-top: 1px solid rgba(127, 127, 127, 0.14);
+      }
+      body.studio-docked.explorer-docked .studio-toggle-btn span:not(.google-icon):not(.custom-edited-pill),
+      body.studio-docked.explorer-docked .header-explorer-btn .btn-text,
+      body.studio-docked.explorer-docked .preset-count-badge {
+        display: none;
+      }
+    }
+
     @media (max-width: 768px) {
       .theme-header {
         padding: 0.4rem 0.85rem;
@@ -4415,11 +4510,29 @@
         width: 100vw;
       }
     }
+
     @media (max-width: 640px) {
-      .theme-select {
-        display: none;
+      .header-main-bar {
+        flex-wrap: nowrap;
+        gap: 0.35rem;
       }
-      .preset-count-badge {
+      .header-center-group {
+        order: 2;
+        flex: 0 1 auto;
+        padding-top: 0;
+        border-top: none;
+        flex-wrap: nowrap;
+        gap: 0.35rem;
+      }
+      .header-right-group {
+        order: 3;
+        margin-left: auto;
+        gap: 0.3rem;
+      }
+      .header-category-select,
+      .theme-select,
+      .preset-count-badge,
+      .header-action-pill.action-star {
         display: none;
       }
       .brand-name {
@@ -4430,7 +4543,7 @@
         display: none;
       }
       .header-explorer-btn {
-        padding: 0.32rem 0.5rem;
+        padding: 0.32rem 0.48rem;
       }
       .theme-header {
         padding: 0.35rem 0.65rem;
@@ -4446,29 +4559,36 @@
       .palette-popover-tray .popover-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .header-main-bar {
-        gap: 0.4rem;
-      }
       .mode-segment-btn {
-        padding: 0.28rem 0.38rem;
+        width: 24px;
+        height: 24px;
       }
       .studio-toggle-btn span:not(.google-icon):not(.custom-edited-pill) {
         display: none;
       }
       .studio-toggle-btn {
-        padding: 0.32rem 0.55rem;
+        padding: 0.32rem 0.5rem;
       }
       .palette-menu-btn span:not(.swatch-indicator):not(.dropdown-arrow) {
         display: none;
       }
       .palette-menu-btn {
-        padding: 0.32rem 0.5rem;
+        padding: 0.32rem 0.45rem;
+      }
+      .header-action-pill {
+        padding: 0.32rem 0.45rem;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .brand-text-block {
+        display: none;
       }
     }
 
     /* Desktop Docked Live Editing Layout */
     body {
-      transition: padding-right 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease;
+      transition: padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding-right 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease;
     }
     .theme-header {
       transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease;
